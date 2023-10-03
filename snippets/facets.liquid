@@ -139,16 +139,14 @@
                     >
                       {%- if filter_type != 'vertical' -%}
                         <div class="facets__header">
+                          <span class="facets__selected no-js-hidden">
+                            {{- 'products.facets.filters_selected' | t: count: filter.active_values.size -}}
+                          </span>
                           <facet-remove>
                             <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link">
                               {{ 'products.facets.reset' | t }}
                             </a>
                           </facet-remove>
-                         <facet-remove>
-                            <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link">
-                              {{ 'products.facets.product_category' | t }}
-                            </a>
-                          </facet-remove> 
                         </div>
                       {%- endif -%}
                       <fieldset class="facets-wrap parent-wrap {% if filter_type == 'vertical' %} facets-wrap-vertical{% endif %}">
@@ -222,7 +220,7 @@
                           role="list"
                         >
                           {%- for value in filter.values -%}
-                            {% comment %} <li class="list-menu__item facets__item">
+                            <li class="list-menu__item facets__item">
                               <label
                                 for="Filter-{{ filter.param_name | escape }}-{{ forloop.index }}-no-js"
                                 class="facet-checkbox{% if value.count == 0 and value.active == false %} facet-checkbox--disabled{% endif %}"
@@ -277,7 +275,7 @@
                                   )</span
                                 >
                               </label>
-                            </li> {% endcomment %}
+                            </li>
                           {%- endfor -%}
                         </ul>
                       </fieldset>
