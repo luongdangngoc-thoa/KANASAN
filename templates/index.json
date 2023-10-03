@@ -78,10 +78,10 @@
         },
         "top-section-concept-button": {
           "type": "button",
-           "settings": { 
+          "settings": {
             "button_label": "もっと知る",
-            "button_link" : "https://kanasan.okinawa.jp"
-           }
+            "button_link": "https:\/\/kanasan.okinawa.jp"
+          }
         }
       },
       "block_order": [
@@ -93,6 +93,10 @@
         "content_alignment": "center",
         "color_scheme": "background-1"
       }
+    },
+    "top-collection-list":{
+      "type": "top-collection-list",
+      "settings": {}
     },
     "featured_collection": {
       "type": "featured-collection",
@@ -127,9 +131,7 @@
     "slideshow",
     "category-link",
     "top-section-concept",
+    "top-collection-list",
     "featured_collection"
   ]
 }
-
-
-

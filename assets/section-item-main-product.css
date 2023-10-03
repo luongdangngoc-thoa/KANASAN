@@ -134,6 +134,7 @@
 .product-review__rating--list-star li {
   list-style: none;
   padding: 0px;
+  margin-right: 8px;
 }
 
 .product-review__rating--btn {
@@ -217,4 +218,11 @@
   display: flex;
   align-items: center;
   gap: 25px;
+}
+.thumbnail-list {
+  display: none !important;
+}
+
+.slider__slide.is-active {
+  display: flex !important;
 }

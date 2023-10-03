@@ -663,7 +663,9 @@
     <div>
       {{ product.description }}
     </div>
-    <button class="product-description__btn">関連記事はこちら</button>
+    <a href="/collections">
+      <button class="product-description__btn">関連記事はこちら</button>
+    </a>
   </div>
   {% comment %} Nhà sản phẩm {% endcomment %}
   <div class="product-author">
@@ -705,10 +707,16 @@
     <div class="product-review__rating">
       <p class="product-review__rating--number">4.0</p>
       <ul class="product-review__rating--list-star">
-        <ryviu-widget-total
-          reviews_data="{{product.metafields.ryviu.product_reviews_info  | escape  }}"
-          product_id="{{product.id}}"
-          handle="{{product.handle}}"></ryviu-widget-total>
+        {% comment %} <ryviu-widget-total
+        reviews_data="{{product.metafields.ryviu.product_reviews_info  | escape  }}"
+        product_id="{{product.id}}"
+        handle="{{product.handle}}"></ryviu-widget-total> {% endcomment %}
+        <li>{% render 'icon-star-full' %}</li>
+        <li>{% render 'icon-star-full' %}</li>
+        <li>{% render 'icon-star-full' %}</li>
+        <li>{% render 'icon-star-full' %}</li>
+        <li>{% render 'icon-star-empty' %}</li>
+
       </ul>
     </div>
     <div class="product-review__rating--btn">
@@ -730,7 +738,7 @@
       var selectedQuantity = document.querySelector('#quantity').value;
 
 // Add an event listener to the "Buy" button (adjust the selector as needed)
-      document.querySelector('#ProductSubmitButton-                                                                       {{ section_id }}').addEventListener('click', function(e) {
+      document.querySelector('#ProductSubmitButton-                                                                              {{ section_id }}').addEventListener('click', function(e) {
 
 // Prevent the default form submission
         e.preventDefault();
@@ -755,13 +763,13 @@
 
 
 
-      const hiddenInput = document.querySelector('#                                                                       {{ product_form_id }} input[name="id"]');
+      const hiddenInput = document.querySelector('#                                                                              {{ product_form_id }} input[name="id"]');
       const noScriptInputWrapper = document.createElement('div');
-      const variantSwitcher = document.querySelector('variant-radios[data-section="                                                                       {{ section.id }} "]') || document.querySelector('variant-selects[data-section="                                                                       {{ section.id }} "]');
-      noScriptInputWrapper.innerHTML = document.querySelector('.product-form__noscript-wrapper-                                                                       {{ section.id }}').textContent;
+      const variantSwitcher = document.querySelector('variant-radios[data-section="                                                                              {{ section.id }} "]') || document.querySelector('variant-selects[data-section="                                                                              {{ section.id }} "]');
+      noScriptInputWrapper.innerHTML = document.querySelector('.product-form__noscript-wrapper-                                                                              {{ section.id }}').textContent;
       variantSwitcher.outerHTML = noScriptInputWrapper.outerHTML;
 
-      document.querySelector('#Variants-                                                                       {{ section.id }}').addEventListener('change', function(event) {
+      document.querySelector('#Variants-                                                                              {{ section.id }}').addEventListener('change', function(event) {
         hiddenInput.value = event.currentTarget.value;
       });
     });
@@ -778,8 +786,8 @@
   <script type="application/ld+json">
     {
     "@context": "http://schema.org/",
-                                                                                                                                                                                                                                                                                                  "@type": "Product",
-                                                                                                                                                                                                                                                                                                  "name": {{ product.title | json }},
+                                                                                                                                                                                                                                                                                                                              "@type": "Product",
+                                                                                                                                                                                                                                                                                                                              "name": {{ product.title | json }},
     "url": {{ request.origin | append: product.url | json }},
     {% if seo_media -%}
       "image": [
@@ -792,7 +800,7 @@
     {%- endif %}
     "brand": {
     "@type": "Brand",
-                                                                                                                                                                                                                                                                                                    "name": {{ product.vendor | json }}
+                                                                                                                                                                                                                                                                                                                                "name": {{ product.vendor | json }}
     },
     "offers": [
     {%- for variant in product.variants -%}
