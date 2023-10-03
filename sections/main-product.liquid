@@ -70,7 +70,7 @@
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}" style=padding-top:63px;>
     <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
-      {% render 'product-media-gallery', variant_images: variant_images %}
+      {% render 'product-media-product-main', variant_images: variant_images %}
     </div>
     <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <product-info
@@ -220,27 +220,28 @@
               {{- product.selected_or_first_available_variant.sku -}}
             </p>
             {%- when 'custom_liquid' -%}
-            {{ block.settings.custom_liquid }}
+            {% comment %} {{ block.settings.custom_liquid }}
             {%- when 'collapsible_tab' -%}
             <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
-              <details id="Details-{{ block.id }}-{{ section.id }}">
-                <summary>
-                  <div class="summary__title">
-                    {% render 'icon-accordion', icon: block.settings.icon %}
-                    <h2 class="h4 accordion__title inline-richtext">
-                      {{ block.settings.heading | default: block.settings.page.title }}
-                    </h2>
-                  </div>
-                  {% render 'icon-caret' %}
-                </summary>
-                <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
-                  {{ block.settings.content }}
-                  {{ block.settings.page.content }}
-                </div>
-              </details>
+            <details id="Details-{{ block.id }}-{{ section.id }}">
+            <summary>
+            <div class="summary__title">
+            {% render 'icon-accordion', icon: block.settings.icon %}
+            <h2 class="h4 accordion__title inline-richtext">
+            {{ block.settings.heading | default: block.settings.page.title }}
+            </h2>
             </div>
+            {% render 'icon-caret' %}
+            </summary>
+            <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
+            {{ block.settings.content }}
+            {{ block.settings.page.content }}
+            </div>
+            </details>
+            </div> {% endcomment %}
             {%- when 'quantity_selector' -%}
-              <div id="Quantity-Form-{{ section.id }}"
+              <div
+              id="Quantity-Form-{{ section.id }}"
               class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
               {{ block.shopify_attributes }}>
               {% comment %} TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter {% endcomment %}
@@ -450,7 +451,7 @@
             </div>
 
             {%- when 'variant_picker' -%}
-            {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+            {% comment %} {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %} {% endcomment %}
             {%- when 'buy_buttons' -%}
             {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
             {%- when 'rating' -%}
@@ -729,7 +730,7 @@
       var selectedQuantity = document.querySelector('#quantity').value;
 
 // Add an event listener to the "Buy" button (adjust the selector as needed)
-      document.querySelector('#ProductSubmitButton-                                                      {{ section_id }}').addEventListener('click', function(e) {
+      document.querySelector('#ProductSubmitButton-                                                                      {{ section_id }}').addEventListener('click', function(e) {
 
 // Prevent the default form submission
         e.preventDefault();
@@ -754,13 +755,13 @@
 
 
 
-      const hiddenInput = document.querySelector('#                                                      {{ product_form_id }} input[name="id"]');
+      const hiddenInput = document.querySelector('#                                                                      {{ product_form_id }} input[name="id"]');
       const noScriptInputWrapper = document.createElement('div');
-      const variantSwitcher = document.querySelector('variant-radios[data-section="                                                      {{ section.id }} "]') || document.querySelector('variant-selects[data-section="                                                      {{ section.id }} "]');
-      noScriptInputWrapper.innerHTML = document.querySelector('.product-form__noscript-wrapper-                                                      {{ section.id }}').textContent;
+      const variantSwitcher = document.querySelector('variant-radios[data-section="                                                                      {{ section.id }} "]') || document.querySelector('variant-selects[data-section="                                                                      {{ section.id }} "]');
+      noScriptInputWrapper.innerHTML = document.querySelector('.product-form__noscript-wrapper-                                                                      {{ section.id }}').textContent;
       variantSwitcher.outerHTML = noScriptInputWrapper.outerHTML;
 
-      document.querySelector('#Variants-                                                      {{ section.id }}').addEventListener('change', function(event) {
+      document.querySelector('#Variants-                                                                      {{ section.id }}').addEventListener('change', function(event) {
         hiddenInput.value = event.currentTarget.value;
       });
     });
@@ -777,8 +778,8 @@
   <script type="application/ld+json">
     {
     "@context": "http://schema.org/",
-                                                                                                                                                                                                                              "@type": "Product",
-                                                                                                                                                                                                                              "name": {{ product.title | json }},
+                                                                                                                                                                                                                                                                                              "@type": "Product",
+                                                                                                                                                                                                                                                                                              "name": {{ product.title | json }},
     "url": {{ request.origin | append: product.url | json }},
     {% if seo_media -%}
       "image": [
@@ -791,7 +792,7 @@
     {%- endif %}
     "brand": {
     "@type": "Brand",
-                                                                                                                                                                                                                                "name": {{ product.vendor | json }}
+                                                                                                                                                                                                                                                                                                "name": {{ product.vendor | json }}
     },
     "offers": [
     {%- for variant in product.variants -%}
