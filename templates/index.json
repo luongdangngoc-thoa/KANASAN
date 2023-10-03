@@ -6,7 +6,7 @@
         "placeholder-0": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/background.png",
+            "image": "shopify://shop_images/background.png",
             "heading": "素朴で身近で <br> “愛おしい”<br> 沖縄の <br> たからさがし",
             "box_align": "middle-left",
             "show_text_box": true,
@@ -19,7 +19,7 @@
         "placeholder-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/background.png",
+            "image": "shopify://shop_images/background.png",
             "heading": "素朴で身近で <br> “愛おしい”<br> 沖縄の <br> たからさがし",
             "box_align": "middle-left",
             "show_text_box": true,
@@ -32,7 +32,7 @@
         "placeholder-2": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/background.png",
+            "image": "shopify://shop_images/background.png",
             "heading": "素朴で身近で <br> “愛おしい”<br> 沖縄の <br> たからさがし",
             "box_align": "middle-left",
             "show_text_box": true,
@@ -43,11 +43,7 @@
           }
         }
       },
-      "block_order": [
-        "placeholder-0",
-        "placeholder-1",
-        "placeholder-2"
-      ],
+      "block_order": ["placeholder-0", "placeholder-1", "placeholder-2"],
       "settings": {
         "slide_height": "large",
         "slider_visual": "dots",
@@ -73,14 +69,14 @@
         "top-section-concept-text": {
           "type": "text",
           "settings": {
-            "text": "<p>豊かな自然に恵まれた島、沖縄。<br\/>そこには、次の世代にもその景色を残すために、<br\/>環境に配慮したものづくりを行う人たちが沢山います。<br\/><br\/>KANASANプロジェクトでは、自然を守る取り組みや、<br\/>そこから生まれた製品の普及を支援しております。<br\/>人にも環境にも優しい、作り手の想いの詰まった製品は、<br\/>沖縄各地のホテルのアメニティにも採用され、<br\/>島を訪れた人々の滞在時間に彩りを添えてくれます。<br\/><br\/>このサイトでは、そんなこだわりの品々をストーリーと共にご紹介しています。<br\/>大切な人へのギフトや自分へのご褒美に、<br\/>沖縄が育んだ“たからもの”を届けてみませんか？<\/p>"
+            "text": "<p>豊かな自然に恵まれた島、沖縄。<br/>そこには、次の世代にもその景色を残すために、<br/>環境に配慮したものづくりを行う人たちが沢山います。<br/><br/>KANASANプロジェクトでは、自然を守る取り組みや、<br/>そこから生まれた製品の普及を支援しております。<br/>人にも環境にも優しい、作り手の想いの詰まった製品は、<br/>沖縄各地のホテルのアメニティにも採用され、<br/>島を訪れた人々の滞在時間に彩りを添えてくれます。<br/><br/>このサイトでは、そんなこだわりの品々をストーリーと共にご紹介しています。<br/>大切な人へのギフトや自分へのご褒美に、<br/>沖縄が育んだ“たからもの”を届けてみませんか？</p>"
           }
         },
         "top-section-concept-button": {
           "type": "button",
           "settings": {
             "button_label": "もっと知る",
-            "button_link": "https:\/\/kanasan.okinawa.jp"
+            "button_link": "https://kanasan.okinawa.jp"
           }
         }
       },
@@ -94,7 +90,7 @@
         "color_scheme": "background-1"
       }
     },
-    "top-collection-list":{
+    "top-collection-list": {
       "type": "top-collection-list",
       "settings": {}
     },
