@@ -1,0 +1,39 @@
+
+<div class="collection-link-container page-width">
+    {% for collection in collections %}
+  <span class="collection-link">
+    {{- collection.title | link_to: collection.url }}
+  </span> 
+{% endfor %}
+
+</div>
+
+
+
+<style>
+    .collection-link-container {
+        margin-top: 6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .collection-link a {
+        color: #595757;
+        font-family: Noto Sans JP;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        letter-spacing: 1.6px;
+        padding: 0 5rem;
+        text-decoration: none ;
+    }
+
+      .collection-link a:hover {
+        font-weight: 500;
+        cursor: pointer;
+        opacity: 0.7;
+    }
+
+</style>
