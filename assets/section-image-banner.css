@@ -7,7 +7,12 @@
 .banner__box {
   text-align: center;
 }
-
+.banner .banner__box.banner__box_text {
+  padding: 0;
+}
+.banner__box.banner__box_text .banner__text {
+  text-align: left;
+}
 /* Needed for gradient continuity with or without animation, the transform scopes the gradient to its container which happens already when animation are turned on */
 .banner__box.gradient {
   transform: perspective(0);
@@ -436,7 +441,17 @@
 .banner__heading {
   margin-bottom: 0;
 }
-
+.image_banner_heading{
+  margin-bottom: 0;
+  color: #595757;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 30px; /* 136.364% */
+  letter-spacing: 3.3px;
+  text-align: left;
+}
 .banner__box .banner__heading + * {
   margin-top: 1rem;
 }

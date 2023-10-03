@@ -180,7 +180,9 @@
   display: flex;
   flex-wrap: wrap;
 }
-
+.facets__wrapper.filter_wapper{
+  justify-content: flex-end;
+}
 .facets__heading {
   display: block;
   color: rgba(var(--color-foreground), 0.85);
@@ -202,7 +204,28 @@
   padding: 0 1.75rem 0 0;
   margin-bottom: 1.5rem;
 }
+.facets-container .facets__form .facets__summary.facest_details {
+  color: white;
+  border-radius: 3px;
+  border: 0.5px solid rgba(89, 87, 87, 0.20);
+  width: 260px;
+  height: 50px;
+  background: #595757;
+  align-items: center;
+}
+.facets-container .facets__summary.facest_details:hover {
+  color: #fff;
+}
 
+.facets-container .facets__summary.facest_details div {
+  justify-content: center;
+  height: 100%;
+  gap: 20px;
+}
+
+.facets-container .facets__summary.facest_details .icon-caret {
+  position: unset;
+}
 .facets__disclosure fieldset {
   padding: 0;
   margin: 0;
