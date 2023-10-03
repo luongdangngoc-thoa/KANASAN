@@ -63,23 +63,31 @@
     "top-section-concept": {
       "type": "top-section-concept",
       "blocks": {
-        "top-section-concept-heading-1": {
+        "top-section-concept-heading": {
           "type": "heading",
           "settings": {
             "heading": "沖縄の“たからもの”をもっと身近に",
             "heading_size": "h2"
           }
         },
-        "top-section-concept-text-1": {
+        "top-section-concept-text": {
           "type": "text",
           "settings": {
             "text": "<p>豊かな自然に恵まれた島、沖縄。<br\/>そこには、次の世代にもその景色を残すために、<br\/>環境に配慮したものづくりを行う人たちが沢山います。<br\/><br\/>KANASANプロジェクトでは、自然を守る取り組みや、<br\/>そこから生まれた製品の普及を支援しております。<br\/>人にも環境にも優しい、作り手の想いの詰まった製品は、<br\/>沖縄各地のホテルのアメニティにも採用され、<br\/>島を訪れた人々の滞在時間に彩りを添えてくれます。<br\/><br\/>このサイトでは、そんなこだわりの品々をストーリーと共にご紹介しています。<br\/>大切な人へのギフトや自分へのご褒美に、<br\/>沖縄が育んだ“たからもの”を届けてみませんか？<\/p>"
           }
+        },
+        "top-section-concept-button": {
+          "type": "button",
+           "settings": { 
+            "button_label": "もっと知る",
+            "button_link" : "https://kanasan.okinawa.jp"
+           }
         }
       },
       "block_order": [
-        "top-section-concept-heading-1",
-        "top-section-concept-text-1"
+        "top-section-concept-heading",
+        "top-section-concept-text",
+        "top-section-concept-button"
       ],
       "settings": {
         "content_alignment": "center",
@@ -122,3 +130,6 @@
     "featured_collection"
   ]
 }
+
+
+
