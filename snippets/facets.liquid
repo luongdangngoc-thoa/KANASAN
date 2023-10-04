@@ -113,7 +113,15 @@
               {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
               {% case filter.type %}
                 {% when 'boolean', 'list' %}
-                  <details
+                  <div
+                    class="button-show facets__summary facest_details caption-large focus-offset">絞り込み検索
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="11" viewBox="0 0 17 11" fill="none">
+                    <path opacity="0.9" d="M0.5 0.5L8.5 9.5L16.5 0.5" stroke="white"/>
+                    </svg>
+                    
+                  </div>
+                  <div class="open-modal" style="display: none;"></div>
+                  {% comment %} <details
                     id="Details-{{ forloop.index }}-{{ section.id }}"
                     class="{% if filter_type == 'horizontal' %}disclosure-has-popup facets_details facets_details_wrap facets__disclosure{% else %} facets__disclosure-vertical{% endif %} js-filter"
                     data-index="{{ forloop.index }}"
@@ -230,7 +238,7 @@
                             </li>
                           {%- endfor -%}
                         </ul>
-                        {% comment %} No show more for no JS {% endcomment %}
+                        
                         <ul
                           class="{% if filter_type != 'vertical' %} facets__list{% endif %} no-js-list list-unstyled no-js"
                           role="list"
@@ -410,7 +418,7 @@
                         </div>
                       </price-range>
                     </div>
-                  </details>
+                  </details> {% endcomment %}
               {% endcase %}
             {%- endfor -%}
             <noscript>
