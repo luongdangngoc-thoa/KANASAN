@@ -291,6 +291,25 @@
   z-index: 1;
 }
 
+.facets_details_wrap {
+  width: 100%;
+  margin-right: 0;
+}
+.facets_details_wrap .facets__summary{
+  float: right;
+}
+
+.facets__form.facets__form-wrap {
+  display: block;
+}
+
+.facets__display.facet_remove{
+  width: 100%;
+  height:25rem;
+  position: sticky;
+  top: 0;
+}
+
 .facets__list {
   padding: 0.5rem 2rem;
 }

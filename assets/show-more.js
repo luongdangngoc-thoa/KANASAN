@@ -24,4 +24,22 @@ if (!customElements.get('show-more-button')) {
       }
     }
   );
+
 }
+let openSelect = false
+
+const button = document.querySelector('.button-show');
+
+const selectContainer = document.querySelector('.open-modal');
+
+button.addEventListener('click', (event) => {
+    if (openSelect) {
+        selectContainer.style.display = 'block';
+    } else {
+        selectContainer.style.display = 'none';
+    }
+
+    openSelect = !openSelect;
+  console.log(openSelect)
+
+});

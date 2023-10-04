@@ -455,7 +455,11 @@
 .banner__box .banner__heading + * {
   margin-top: 1rem;
 }
+.banner_image{
+  width: 1104px;
+  margin: 50px auto;
 
+}
 .banner__buttons {
   display: inline-flex;
   flex-wrap: wrap;

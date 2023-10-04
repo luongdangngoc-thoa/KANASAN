@@ -173,9 +173,12 @@
 }
 
 .product-quantity select {
-  background-image: url("data:image/svg+xml;utf8,<svg width='18' height='11' viewBox='001811' fill='none' xmlns='http://www.w3.org/2000/svg'><path opacity='0.9' d='M11L910L171' stroke='#595757'/></svg>");
+  background: url(select.png);
   background-repeat: no-repeat;
   -webkit-appearance: none;
+  background-repeat: no-repeat;
+  background-position-x: 80%;
+  background-position-y: 50%;
   width: 89px;
   height: 47px;
   flex-shrink: 0;
@@ -218,11 +221,4 @@
   display: flex;
   align-items: center;
   gap: 25px;
-}
-.thumbnail-list {
-  display: none !important;
-}
-
-.slider__slide.is-active {
-  display: flex !important;
 }
