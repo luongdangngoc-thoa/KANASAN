@@ -6,7 +6,7 @@
         "placeholder-0": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/background.png",
+            "image": "shopify:\/\/shop_images\/background.png",
             "heading": "素朴で身近で <br> “愛おしい”<br> 沖縄の <br> たからさがし",
             "box_align": "middle-left",
             "show_text_box": true,
@@ -19,7 +19,7 @@
         "placeholder-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/background.png",
+            "image": "shopify:\/\/shop_images\/background.png",
             "heading": "素朴で身近で <br> “愛おしい”<br> 沖縄の <br> たからさがし",
             "box_align": "middle-left",
             "show_text_box": true,
@@ -32,7 +32,7 @@
         "placeholder-2": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/background.png",
+            "image": "shopify:\/\/shop_images\/background.png",
             "heading": "素朴で身近で <br> “愛おしい”<br> 沖縄の <br> たからさがし",
             "box_align": "middle-left",
             "show_text_box": true,
@@ -43,7 +43,11 @@
           }
         }
       },
-      "block_order": ["placeholder-0", "placeholder-1", "placeholder-2"],
+      "block_order": [
+        "placeholder-0",
+        "placeholder-1",
+        "placeholder-2"
+      ],
       "settings": {
         "slide_height": "large",
         "slider_visual": "dots",
@@ -52,7 +56,7 @@
         "image_behavior": "none"
       }
     },
-    "category-link": {
+    "top-section-category-link": {
       "type": "top-section-category-link",
       "settings": {}
     },
@@ -69,14 +73,14 @@
         "top-section-concept-text": {
           "type": "text",
           "settings": {
-            "text": "<p>豊かな自然に恵まれた島、沖縄。<br/>そこには、次の世代にもその景色を残すために、<br/>環境に配慮したものづくりを行う人たちが沢山います。<br/><br/>KANASANプロジェクトでは、自然を守る取り組みや、<br/>そこから生まれた製品の普及を支援しております。<br/>人にも環境にも優しい、作り手の想いの詰まった製品は、<br/>沖縄各地のホテルのアメニティにも採用され、<br/>島を訪れた人々の滞在時間に彩りを添えてくれます。<br/><br/>このサイトでは、そんなこだわりの品々をストーリーと共にご紹介しています。<br/>大切な人へのギフトや自分へのご褒美に、<br/>沖縄が育んだ“たからもの”を届けてみませんか？</p>"
+            "text": "<p>豊かな自然に恵まれた島、沖縄。<br\/>そこには、次の世代にもその景色を残すために、<br\/>環境に配慮したものづくりを行う人たちが沢山います。<br\/><br\/>KANASANプロジェクトでは、自然を守る取り組みや、<br\/>そこから生まれた製品の普及を支援しております。<br\/>人にも環境にも優しい、作り手の想いの詰まった製品は、<br\/>沖縄各地のホテルのアメニティにも採用され、<br\/>島を訪れた人々の滞在時間に彩りを添えてくれます。<br\/><br\/>このサイトでは、そんなこだわりの品々をストーリーと共にご紹介しています。<br\/>大切な人へのギフトや自分へのご褒美に、<br\/>沖縄が育んだ“たからもの”を届けてみませんか？<\/p>"
           }
         },
         "top-section-concept-button": {
           "type": "button",
           "settings": {
             "button_label": "もっと知る",
-            "button_link": "https://kanasan.okinawa.jp"
+            "button_link": "https:\/\/kanasan.okinawa.jp"
           }
         }
       },
@@ -121,13 +125,154 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "top-section-category-search": {
+      "type": "top-section-category-search",
+      "blocks": {
+        "category-1": {
+          "type": "Block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shopping_1.png",
+            "category-name": "ヘアケア",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/types?q=%E3%83%98%E3%82%A2%E3%82%B1%E3%82%A2"
+          }
+        },
+        "category-2": {
+          "type": "Block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/i-drwu-vcm001_1.png",
+            "category-name": "フェイスケア",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/types?q=%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%B1%E3%82%A2"
+          }
+        },
+        "category-3": {
+          "type": "Block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/161285399_1.png",
+            "category-name": "ホテルアメニティ",
+            "url": ""
+          }
+        },
+        "category-4": {
+          "type": "Block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/a02296885d3734f75686db99b8252051_1_8088a9ac-f3e7-4187-b65f-1aa1d3b36ffb.png",
+            "category-name": "ボディケア",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/types?q=%E3%83%9C%E3%83%87%E3%82%A3%E3%82%B1%E3%82%A2"
+          }
+        },
+        "category-5": {
+          "type": "Block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/000000004369-01-l_1_4a1926c0-663b-4d9c-a52d-7a331d52b629.png",
+            "category-name": "美容",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/types?q=%E7%BE%8E%E5%AE%B9"
+          }
+        }
+      },
+      "block_order": [
+        "category-1",
+        "category-2",
+        "category-3",
+        "category-4",
+        "category-5"
+      ],
+      "settings": {
+        "section_color_scheme": "",
+        "title": "カテゴリーから探す"
+      }
+    },
+    "top-section-material-search": {
+      "type": "top-section-material-search",
+      "blocks": {
+        "material-1": {
+          "type": "Block",
+          "settings": {
+            "material-name": "Material name",
+            "material-name-en": "Material name-English",
+            "url": ""
+          }
+        },
+        "material-2": {
+          "type": "Block",
+          "settings": {
+            "material-name": "Material name",
+            "material-name-en": "Material name-English",
+            "url": ""
+          }
+        },
+        "material-3": {
+          "type": "Block",
+          "settings": {
+            "material-name": "Material name",
+            "material-name-en": "Material name-English",
+            "url": ""
+          }
+        },
+        "material-4": {
+          "type": "Block",
+          "settings": {
+            "material-name": "Material name",
+            "material-name-en": "Material name-English",
+            "url": ""
+          }
+        },
+        "material-5": {
+          "type": "Block",
+          "settings": {
+            "material-name": "Material name",
+            "material-name-en": "Material name-English",
+            "url": ""
+          }
+        },
+        "material-6": {
+          "type": "Block",
+          "settings": {
+            "material-name": "Material name",
+            "material-name-en": "Material name-English",
+            "url": ""
+          }
+        },
+        "material-7": {
+          "type": "Block",
+          "settings": {
+            "material-name": "Material name",
+            "material-name-en": "Material name-English",
+            "url": ""
+          }
+        },
+        "material-8": {
+          "type": "Block",
+          "settings": {
+            "material-name": "Material name",
+            "material-name-en": "Material name-English",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "material-1",
+        "material-2",
+        "material-3",
+        "material-4",
+        "material-5",
+        "material-6",
+        "material-7",
+        "material-8"
+      ],
+      "settings": {
+        "section_color_scheme": "",
+        "title": "素材から探す"
+      }
     }
   },
   "order": [
     "slideshow",
-    "category-link",
+    "top-section-category-link",
     "top-section-concept",
     "top-collection-list",
-    "featured_collection"
+    "featured_collection",
+    "top-section-category-search",
+    "top-section-material-search"
   ]
 }

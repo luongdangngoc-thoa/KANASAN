@@ -102,7 +102,11 @@
                 {%- endfor -%}
               </div> 
             {%- endif -%}
-
+            <div class="facets_link">
+              <span>
+                hello
+              </span>
+            </div>
             <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
             {% comment %} Filters for both horizontal and vertical filter {% endcomment %}
             {%- for filter in results.filters -%}
@@ -116,7 +120,7 @@
                     {% if filter_type == 'vertical' and forloop.index == 1 %}
                       open
                     {% endif %}
-                  >
+                  >                  
                     <summary
                       class="facets__summary facest_details caption-large focus-offset"
                       aria-label="{{ filter.label }} ({{ 'products.facets.filters_selected.one' | t: count: filter.active_values.size }})"
@@ -227,7 +231,7 @@
                           {%- endfor -%}
                         </ul>
                         {% comment %} No show more for no JS {% endcomment %}
-                        {% comment %} <ul
+                        <ul
                           class="{% if filter_type != 'vertical' %} facets__list{% endif %} no-js-list list-unstyled no-js"
                           role="list"
                         >
@@ -289,7 +293,7 @@
                               </label>
                             </li> 
                           {%- endfor -%}
-                        </ul> {% endcomment %}
+                        </ul> 
                       </fieldset>
                       {%- if filter.values.size > 10 and filter_type == 'vertical' -%}
                         <show-more-button>

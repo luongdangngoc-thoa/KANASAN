@@ -1,0 +1,241 @@
+<div class=" section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} scroll-trigger animate--slide-in">
+  <div class="material-search-wrapper page-width">
+    <h2 class="material-search-title">
+      {{ section.settings.title }}</h2>
+    <div class="material-search-list">
+      {%- for block in section.blocks -%}
+        <a class="material-link" href="{{block.settings.url}}">
+          <img
+            class="material-img"
+            src="{{block.settings.image | img_url: 'large'}}"
+            alt="{{ block.settings.material-name }}">
+          <div class="material-img-overlay">
+            <p class="material-name">
+              {{ block.settings.material-name }}</p>
+            <p class="material-name material-name-EN">
+              {{ block.settings.material-name-en }}</p>
+
+          </div>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<style>
+  .material-search-wrapper {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+  .material-search-title {
+    color: #595757;
+    font-family: Noto Sans JP;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    padding-bottom: 2.6rem;
+    border-bottom: rgb(208 208 208) solid 1px;
+  }
+  .material-search-list {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem 8rem;
+  }
+
+  .material-search-list .material-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: relative;
+  }
+  .material-img {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    max-width: 200;
+  }
+
+  .material-img-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.2);
+  }
+  .material-img-overlay:hover {
+    background: none;
+    transition: 0.7s ease;
+  }
+  .material-img-overlay .material-name {
+    text-decoration: none;
+    color: #FFF;
+    font-family: Noto Sans JP;
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.8;
+    text-align: center;
+  }
+
+  .material-img-overlay .material-name-EN {
+    font-family: Poppins;
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+
+  @media screen and (max-width: 1200px) {
+    .material-search-list {
+      gap: 3rem 5.5em;
+    }
+
+    .material-img {
+      max-width: 170px;
+    }
+  }
+
+
+  @media screen and (max-width: 1065px) {
+    .material-search-list {
+      gap: 3rem 3rem;
+    }
+
+    .material-img {
+      max-width: 160px;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .material-search-list {
+      gap: 2rem;
+    }
+    .material-img {
+      max-width: 150px;
+    }
+
+    .material-img-overlay .material-name {
+      font-size: 1.8rem;
+    }
+
+    .material-img-overlay .material-name-EN {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media screen and (max-width: 710px) {
+    .material-search-list {
+      gap: 1.5rem;
+    }
+    .material-img {
+      max-width: 130px;
+    }
+
+    .material-img-overlay .material-name {
+      font-size: 1.8rem;
+    }
+
+    .material-img-overlay .material-name-EN {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media screen and (max-width: 615px) {
+    .material-search-list {
+      gap: 3rem;
+    }
+
+    .material-img {
+      max-width: 170px;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    .material-search-list {
+      gap: 1.5rem;
+    }
+
+    .material-img {
+      max-width: 140px;
+    }
+
+    .material-img-overlay .material-name {
+      font-size: 1.8rem;
+    }
+
+    .material-img-overlay .material-name-EN {
+      font-size: 1.2rem;
+    }
+  }
+</style>
+{% schema %}
+  {
+    "name": "Search by Material",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "color_scheme",
+        "id": "section_color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "background-1"
+      }, {
+        "type": "text",
+        "id": "title",
+        "label": "Section title",
+        "default": "カテゴリーから探す"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "Block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }, {
+            "type": "text",
+            "id": "material-name",
+            "default": "Material name",
+            "label": "Material name"
+          }, {
+            "type": "text",
+            "id": "material-name-en",
+            "default": "Material name-English",
+            "label": "Material name-English"
+          }, {
+            "type": "url",
+            "id": "url",
+            "label": "URL"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "presets.material-search",
+        "blocks": [
+          {
+            "type": "Block"
+          }, {
+            "type": "Block"
+          }, {
+            "type": "Block"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

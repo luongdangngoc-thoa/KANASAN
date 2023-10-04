@@ -1,4 +1,4 @@
-<div class="top-collection-list">
+<div class="top-collection-list scroll-trigger animate--slide-in">
   <div class="collection-list-container page-width">
     {% for collection in collections %}
       {% if collection.title != "All" %}
@@ -40,6 +40,14 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+
+  }
+
+  .collection-img img:hover {
+    -ms-transform: scale(1.05); /* IE 9 */
+    -webkit-transform: scale(1.05); /* Safari 3-8 */
+    transform: scale(1.05);
+    transition: all 1s;
   }
 
   .collection-des-wrapper .collection-title {

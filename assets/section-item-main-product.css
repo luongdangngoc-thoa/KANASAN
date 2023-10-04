@@ -218,7 +218,6 @@
 
 .product-quantity select {
   background: url(select.png);
-  background-repeat: no-repeat;
   -webkit-appearance: none;
   background-repeat: no-repeat;
   background-position-x: 80%;
@@ -242,6 +241,7 @@
   font-family: Poppins;
   font-size: 1.8rem;
   font-size: 1.4rem;
+  background: #595757;
 }
 
 .product-quantity select option:not(:checked) {
