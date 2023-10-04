@@ -1,16 +1,14 @@
 <div class=" section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} scroll-trigger animate--slide-in">
-  <div class="category-search-wrapper page-width">
-    <h2 class="category-search-title">
+  <div class="gallery-wrapper page-width">
+    <h2 class="gallery-title">
       {{ section.settings.title }}</h2>
-    <div class="category-search-list">
+    <div class="gallery-list">
       {%- for block in section.blocks -%}
-        <a class="category-link" href="{{block.settings.url}}">
+        <a class="gallery-link" href="{{block.settings.url}}">
           <img
-            class="category-img"
+            class="gallery-img"
             src="{{block.settings.image | img_url: 'large'}}"
-            alt="{{ block.settings.category-name }}">
-          <p class="category-name">
-            {{ block.settings.category-name }}</p>
+            alt="{{ block.settings.image }}">
         </a>
       {%- endfor -%}
     </div>
@@ -18,11 +16,11 @@
 </div>
 
 <style>
-  .category-search-wrapper {
+  .gallery-wrapper {
     padding-top: 12rem;
     padding-bottom: 12rem;
   }
-  .category-search-title {
+  .gallery-title {
     color: #595757;
     font-family: Noto Sans JP;
     font-size: 2rem;
@@ -31,43 +29,44 @@
     padding-bottom: 2.6rem;
     border-bottom: rgb(208 208 208) solid 1px;
   }
-  .category-search-list {
+  .gallery-list {
     margin-top: 6rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 6rem;
   }
 
-  .category-search-list .category-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: #595757;
-    font-family: Noto Sans JP;
-    font-size: 1.6rem;
-    font-weight: 400;
+  @media screen and (max-width: 1000px) {
+    .gallery-list {
+      gap: 4rem;
+    }
   }
 
-  .category-search-list .category-link:hover {
-    opacity: 1;
+  @media screen and (max-width: 800px) {
+    .gallery-list {
+      gap: 3rem;
+    }
   }
-  .category-search-list .category-img {
-    max-width: 12rem;
+
+  @media screen and (max-width: 600px) {
+    .gallery-list {
+      gap: 2rem;
+    }
   }
-  .category-search-list .category-img:hover {
-    -ms-transform: scale(1.08); /* IE 9 */
-    -webkit-transform: scale(1.08); /* Safari 3-8 */
-    transform: scale(1.08);
-    transition: all 0.8s;
+
+  @media screen and (max-width: 500px) {
+    .gallery-list {
+      gap: 1rem;
+    }
+  }
+  .gallery-img {
+    height: 100%;
+    width: 100%;
   }
 </style>
 {% schema %}
   {
-    "name": "Search by category",
+    "name": "Search by Material",
     "tag": "section",
     "class": "section",
     "settings": [
@@ -75,12 +74,12 @@
         "type": "color_scheme",
         "id": "section_color_scheme",
         "label": "t:sections.all.colors.label",
-        "default": "background-2"
+        "default": "background-1"
       }, {
         "type": "text",
         "id": "title",
         "label": "Section title",
-        "default": "カテゴリーから探す"
+        "default": "GALLERY"
       }
     ],
     "blocks": [
@@ -93,11 +92,6 @@
             "id": "image",
             "label": "Image"
           }, {
-            "type": "text",
-            "id": "category-name",
-            "default": "Category name",
-            "label": "Category name"
-          }, {
             "type": "url",
             "id": "url",
             "label": "URL"
@@ -107,7 +101,7 @@
     ],
     "presets": [
       {
-        "name": "Search by category",
+        "name": "GALLERY",
         "blocks": [
           {
             "type": "Block"
