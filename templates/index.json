@@ -273,58 +273,6 @@
     },
     "top-section-gallery": {
       "type": "top-section-gallery",
-      "blocks": {
-        "block-1": {
-          "type": "Block",
-          "settings": {
-            "image": "shopify://shop_images/galley1.png",
-            "url": "https://kanasan-okinawa.myshopify.com/collections/types?q=%E3%83%98%E3%82%A2%E3%82%B1%E3%82%A2"
-          }
-        },
-        "block-2": {
-          "type": "Block",
-          "settings": {
-            "image": "shopify://shop_images/galley2.png",
-            "url": "https://kanasan-okinawa.myshopify.com/collections/types?q=%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%B1%E3%82%A2"
-          }
-        },
-        "block-3": {
-          "type": "Block",
-          "settings": {
-            "image": "shopify://shop_images/galley3.png",
-            "url": "https://kanasan-okinawa.myshopify.com/collections/types?q=%E3%83%9B%E3%83%86%E3%83%AB%E3%82%A2%E3%83%A1%E3%83%8B%E3%83%86%E3%82%A3"
-          }
-        },
-        "block-4": {
-          "type": "Block",
-          "settings": {
-            "image": "shopify://shop_images/galley4.png",
-            "url": "https://kanasan-okinawa.myshopify.com/collections/types?q=%E3%83%9C%E3%83%87%E3%82%A3%E3%82%B1%E3%82%A2"
-          }
-        },
-        "block-5": {
-          "type": "Block",
-          "settings": {
-            "image": "shopify://shop_images/galley5.png",
-            "url": "https://kanasan-okinawa.myshopify.com/collections/types?q=%E3%81%9D%E3%81%AE%E4%BB%96%E9%9B%91%E8%B2%A8"
-          }
-        },
-        "block-6": {
-          "type": "Block",
-          "settings": {
-            "image": "shopify://shop_images/galley6.png",
-            "url": "https://kanasan-okinawa.myshopify.com/collections/types?q=%E3%81%9D%E3%81%AE%E4%BB%96%E9%9B%91%E8%B2%A8"
-          }
-        }
-      },
-      "block_order": [
-        "block-1",
-        "block-2",
-        "block-3",
-        "block-4",
-        "block-5",
-        "block-6"
-      ],
       "settings": {
         "section_color_scheme": "background-2",
         "title": "GALLERY",
