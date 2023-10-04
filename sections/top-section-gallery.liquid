@@ -1,6 +1,8 @@
 <div class=" section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} scroll-trigger animate--slide-in">
   <div class="gallery-wrapper page-width">
-    <div class='sk-ww-instagram-hashtag-feed' data-embed-id='204461'></div>
+    <h2 class="gallery-title">
+      {{ section.settings.title }}</h2>
+    <div class='sk-ww-instagram-hashtag-feed gallery-list' data-embed-id='204461'></div>
     <script
       src='https://widgets.sociablekit.com/instagram-hashtag-feed/widget.js'
       async
@@ -37,34 +39,6 @@
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 6rem;
-  }
-
-  @media screen and (max-width: 1000px) {
-    .gallery-list {
-      gap: 4rem;
-    }
-  }
-
-  @media screen and (max-width: 800px) {
-    .gallery-list {
-      gap: 3rem;
-    }
-  }
-
-  @media screen and (max-width: 600px) {
-    .gallery-list {
-      gap: 2rem;
-    }
-  }
-
-  @media screen and (max-width: 500px) {
-    .gallery-list {
-      gap: 1rem;
-    }
-  }
-  .gallery-img {
-    height: 100%;
-    width: 100%;
   }
 
   .galley-link-button {
@@ -115,3 +89,33 @@
     transition: 0.3s;
   }
 </style>
+
+{% schema %}
+  {
+    "name": "Search by Material",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "color_scheme",
+        "id": "section_color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "background-1"
+      }, {
+        "type": "text",
+        "id": "title",
+        "label": "Section title",
+        "default": "GALLERY"
+      }, {
+        "type": "url",
+        "id": "instagram_link",
+        "label": "Instagram link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "GALLERY"
+      }
+    ]
+  }
+{% endschema %}
