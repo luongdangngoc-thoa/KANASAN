@@ -19,6 +19,10 @@
         </a>
       {%- endfor -%}
     </div>
+    <div class="material-search-button">
+      <a href="{{section.settings.button_link}}">
+        {{ section.settings.button_lable }}</a>
+    </div>
   </div>
 </div>
 
@@ -44,7 +48,6 @@
     justify-content: center;
     gap: 4rem 8rem;
   }
-
   .material-search-list .material-link {
     display: flex;
     align-items: center;
@@ -58,7 +61,6 @@
     width: 100%;
     max-width: 200;
   }
-
   .material-img-overlay {
     position: absolute;
     inset: 0;
@@ -94,6 +96,49 @@
     text-align: center;
   }
 
+  .material-search-button {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .material-search-button a {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: #595757;
+    font-size: 1.6rem;
+    font-family: Poppins;
+    border: #595757 1px solid;
+    min-width: 34rem;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+  }
+
+  @media screen and (max-width: 650px) {
+    .material-search-button a {
+      width: 80%;
+    }
+  }
+
+
+  @media screen and (max-width: 400px) {
+    .material-search-button a {
+      width: 100%;
+    }
+  }
+
+  .material-search-button a:hover {
+    color: #fff;
+    transition: 0.3s;
+  }
+
+  .material-search-button a:hover {
+    background-color: #595757;
+    transition: 0.3s;
+  }
 
   @media screen and (max-width: 1200px) {
     .material-search-list {
@@ -194,6 +239,15 @@
         "id": "title",
         "label": "Section title",
         "default": "カテゴリーから探す"
+      }, {
+        "type": "text",
+        "id": "button_lable",
+        "label": "Button lable",
+        "default": "口コミランキングはこちら"
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
       }
     ],
     "blocks": [

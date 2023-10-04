@@ -1,12 +1,17 @@
 <div class=" section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} scroll-trigger animate--slide-in">
   <div class="gallery-wrapper page-width">
-    <div class='sk-ww-instagram-hashtag-feed' data-embed-id='204461'></div>
-    <div class='sk-ww-instagram-hashtag-feed' data-embed-id='204461'></div>
-    <script
-      src='https://widgets.sociablekit.com/instagram-hashtag-feed/widget.js'
-      async
-      defer></script>
-
+    <h2 class="gallery-title">
+      {{ section.settings.title }}</h2>
+    <div class="gallery-list">
+      {%- for block in section.blocks -%}
+        <a class="gallery-link" href="{{block.settings.url}}">
+          <img
+            class="gallery-img"
+            src="{{block.settings.image | img_url: 'large'}}"
+            alt="{{ block.settings.image }}">
+        </a>
+      {%- endfor -%}
+    </div>
 
     <div class="galley-link-button">
       <a href="{{section.settings.button_link}}">
@@ -16,6 +21,12 @@
         <img src="{{ "instagram.svg" | asset_url }}">
       </a>
     </div>
+
+    <div class='sk-ww-instagram-hashtag-feed' data-embed-id='204461'></div>
+    <script
+      src='https://widgets.sociablekit.com/instagram-hashtag-feed/widget.js'
+      async
+      defer></script>
   </div>
 </div>
 
