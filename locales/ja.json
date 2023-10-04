@@ -199,7 +199,10 @@
         "one": "{{ count }}個の商品",
         "other": "{{ count }}個の商品"
       },
-      "reset": "リセット",
+      "reset": "ブランド",
+      "product_category": "製品カテゴリー",
+      "material": "素材",
+      "producer":"生産者",
       "sort_button": "並び替え",
       "sort_by_label": "並び替え: ",
       "to": "まで",

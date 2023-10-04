@@ -269,7 +269,10 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
-  </head>
+  {% render 'hulkapps-reorder-css' %}
+
+{% comment %} PRODUCT PAGE SLIDER APP CODE START {% endcomment %}{% render 'pmslider_inline.liquid' %}{% comment %} PRODUCT PAGE SLIDER APP CODE END {% endcomment %}
+</head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">

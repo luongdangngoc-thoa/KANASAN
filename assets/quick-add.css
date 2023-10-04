@@ -214,6 +214,16 @@ quick-add-modal .product-form__buttons {
   min-width: 100%;
   box-sizing: border-box;
 }
+.quick_add__submit.button_cart{
+  border: 0.5px solid #595757;
+  width: 340px;
+  height: 58px;
+  z-index: 10;
+}
+.quick_add__submit.button_cart:hover{
+  background-color: #595757;
+  color: #fff;
+}
 
 quick-add-modal .product-media-container.constrain-height {
   --viewport-offset: calc((var(--modal-height-offset) + var(--modal-padding) + var(--popup-border-width)) * 2);
