@@ -5,7 +5,7 @@
 .product-prices p {
   color: #595757;
   font-family: Noto Sans JP;
-  font-size: 2.4rem;
+  font-size: 24px;
   font-style: normal;
   font-weight: 350;
   line-height: 3.2rem; /* 133.333% */
@@ -19,7 +19,7 @@
 .product__title h1 {
   color: #595757;
   font-family: Noto Sans JP;
-  font-size: 2.4rem;
+  font-size: 24px;
   font-style: normal;
   font-weight: 350;
   line-height: 2.8rem;
@@ -45,12 +45,20 @@
   font-weight: 300;
   line-height: 34px; /* 200% */
   letter-spacing: 1.7px;
+  width: 100%;
 }
+
 .product-description__btn {
   padding: 0.875rem 5.875rem;
   border: 0.5px solid #595757;
   background: #ffff;
   cursor: pointer;
+
+  padding: 0.875rem 5.875rem;
+  width: 27.6rem;
+  font-size: 18px;
+  font-weight: 400;
+  white-space: nowrap;
 }
 .product-description__btn:hover {
   color: #fff;
@@ -64,6 +72,7 @@
   border: 1px solid #eee;
   padding: 5.1rem 15.8rem;
   gap: 48px;
+  width: 100%;
 }
 .product-author__detail {
   display: flex;
@@ -102,7 +111,7 @@
   margin: 0px;
   color: #595757;
   font-family: Poppins;
-  font-size: 1.6rem;
+  font-size: 16px;
   font-style: normal;
   font-weight: 300;
   line-height: 3.4rem; /* 212.5% */
@@ -180,10 +189,10 @@
 }
 
 .product-review__rating--btn button {
-  padding: 1.4rem 9.4rem;
+  padding: 0.875rem 5.875rem;
   width: 27.6rem;
   cursor: pointer;
-  font-size: 1.8rem;
+  font-size: 18px;
   font-weight: 400;
   white-space: nowrap;
   display: flex;
@@ -230,8 +239,8 @@
   color: #595757;
   font-family: Poppins;
   border: 0.3px solid #595757;
-  font-size: 1.4rem;
-  padding-left: 2rem;
+  font-size: 18px;
+  padding-left: 20px;
 }
 
 .product-quantity select option {
@@ -239,8 +248,7 @@
   letter-spacing: 1.8px;
   color: #595757;
   font-family: Poppins;
-  font-size: 18px;
-  font-size: 1.4rem;
+  font-size: 14px;
   background: #595757;
 }
 

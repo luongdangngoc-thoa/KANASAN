@@ -40,4 +40,6 @@ button.addEventListener('click', (event) => {
     }
 
     openSelect = !openSelect;
+  console.log(openSelect)
+
 });
