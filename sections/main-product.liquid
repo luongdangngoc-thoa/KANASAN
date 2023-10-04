@@ -22,7 +22,7 @@
       px;
     }
 
-    @media screen and (min-width: 750px) {
+    @media screen and (min-width: 75rem) {
       .section-{{ section.id }}-padding {
         padding-top: {{ section.settings.padding_top }}
         px;
@@ -660,7 +660,7 @@
   {%- endif -%}
 
   {% comment %} description {% endcomment %}
-  <div class="product-description">
+  <div class="product__description">
     <div>
       {{ product.description }}
     </div>
@@ -668,12 +668,12 @@
       <button class="product-description__btn">関連記事はこちら</button>
     </a>
   </div>
-  {% comment %} Nhà sản phẩm {% endcomment %}
+  {% comment %} Nhà sản xuất {% endcomment %}
   <div class="product-author">
     <p class="product-author__title">生産者からのメッセージ</p>
     <div class="product-author__detail">
       <div class="product-author__detail--info">
-        <img src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=" alt="">
+        {% render 'icon-ellipse-avatar' %}
         <p>彩色二衣重さん</p>
       </div>
       <p class="product-author__detail--description">
@@ -725,7 +725,7 @@
         <button class="btn-1">レビューを書く</button>
       </a>
       <a>
-        <button>質問をする</button>
+        <button class="btn-2">質問をする</button>
       </a>
     </div>
   </div>
@@ -740,7 +740,7 @@
       var selectedQuantity = document.querySelector('#quantity').value;
 
 // Add an event listener to the "Buy" button (adjust the selector as needed)
-      document.querySelector('#ProductSubmitButton-                                                                                   {{ section_id }}').addEventListener('click', function(e) {
+      document.querySelector('#ProductSubmitButton-                                                                                        {{ section_id }}').addEventListener('click', function(e) {
 
 // Prevent the default form submission
         e.preventDefault();
@@ -765,13 +765,13 @@
 
 
 
-      const hiddenInput = document.querySelector('#                                                                                   {{ product_form_id }} input[name="id"]');
+      const hiddenInput = document.querySelector('#                                                                                        {{ product_form_id }} input[name="id"]');
       const noScriptInputWrapper = document.createElement('div');
-      const variantSwitcher = document.querySelector('variant-radios[data-section="                                                                                   {{ section.id }} "]') || document.querySelector('variant-selects[data-section="                                                                                   {{ section.id }} "]');
-      noScriptInputWrapper.innerHTML = document.querySelector('.product-form__noscript-wrapper-                                                                                   {{ section.id }}').textContent;
+      const variantSwitcher = document.querySelector('variant-radios[data-section="                                                                                        {{ section.id }} "]') || document.querySelector('variant-selects[data-section="                                                                                        {{ section.id }} "]');
+      noScriptInputWrapper.innerHTML = document.querySelector('.product-form__noscript-wrapper-                                                                                        {{ section.id }}').textContent;
       variantSwitcher.outerHTML = noScriptInputWrapper.outerHTML;
 
-      document.querySelector('#Variants-                                                                                   {{ section.id }}').addEventListener('change', function(event) {
+      document.querySelector('#Variants-                                                                                        {{ section.id }}').addEventListener('change', function(event) {
         hiddenInput.value = event.currentTarget.value;
       });
     });
@@ -788,8 +788,8 @@
   <script type="application/ld+json">
     {
     "@context": "http://schema.org/",
-                                                                                                                                                                                                                                                                                                                                                  "@type": "Product",
-                                                                                                                                                                                                                                                                                                                                                  "name": {{ product.title | json }},
+                                                                                                                                                                                                                                                                                                                                                                      "@type": "Product",
+                                                                                                                                                                                                                                                                                                                                                                      "name": {{ product.title | json }},
     "url": {{ request.origin | append: product.url | json }},
     {% if seo_media -%}
       "image": [
@@ -802,7 +802,7 @@
     {%- endif %}
     "brand": {
     "@type": "Brand",
-                                                                                                                                                                                                                                                                                                                                                    "name": {{ product.vendor | json }}
+                                                                                                                                                                                                                                                                                                                                                                        "name": {{ product.vendor | json }}
     },
     "offers": [
     {%- for variant in product.variants -%}
