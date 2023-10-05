@@ -173,6 +173,22 @@
         "minimum": "{{ quantity }}個以上",
         "price_at_each": "{{ price }}\/ユニットで",
         "price_range": "{{ minimum }}～{{ maximum }}"
+      },
+      "author": {
+        "title": "生産者からのメッセージ"
+      },
+      "ingredient": {
+        "title": "製品情報",
+        "instruction": "使用方法",
+        "weight": "内容量",
+        "component": "成分"
+      },
+      "review": {
+        "title": "カスタマーレビュー",
+        "button": {
+          "comment": "レビューを書く",
+          "question": "質問をする"
+        }
       }
     },
     "modal": {
@@ -199,7 +215,10 @@
         "one": "{{ count }}個の商品",
         "other": "{{ count }}個の商品"
       },
-      "reset": "リセット",
+      "reset": "ブランド",
+      "product_category": "製品カテゴリー",
+      "material": "素材",
+      "producer": "生産者",
       "sort_button": "並び替え",
       "sort_by_label": "並び替え: ",
       "to": "まで",
