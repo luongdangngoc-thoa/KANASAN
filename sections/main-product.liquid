@@ -537,6 +537,7 @@
                                      show_secondary_image: false,
                                      lazy_load: false,
                                      show_quick_add: block.settings.enable_quick_add,
+                                     Producer:
                                      section_id: section.id,
                                      horizontal_class: true,
                                      horizontal_quick_add: true %}
@@ -664,7 +665,7 @@
     <div class="description-detail">
       {{ product.description }}
     </div>
-    <a href="/collections">
+    <a href="https://kanasan.okinawa.jp" target="_blank">
       <button class="product-description__btn">関連記事はこちら</button>
     </a>
   </div>
@@ -732,7 +733,9 @@
       {{ 'products.product.review.title' | t }}
     </p>
     <div class="product-review__rating">
-      <p class="product-review__rating--number">4.0</p>
+      <p class="product-review__rating--number">
+        {{ product.metafields.custom.rating.value }}
+      </p>
       <ul class="product-review__rating--list-star">
         {% comment %} <ryviu-widget-total
         reviews_data="{{product.metafields.ryviu.product_reviews_info  | escape  }}"
@@ -770,7 +773,7 @@
       var selectedQuantity = document.querySelector('#quantity').value;
 
 // Add an event listener to the "Buy" button (adjust the selector as needed)
-      document.querySelector('#ProductSubmitButton-                                                                                                                                                                                    {{ section_id }}').addEventListener('click', function(e) {
+      document.querySelector('#ProductSubmitButton-                                                                                                                                                                                             {{ section_id }}').addEventListener('click', function(e) {
 
 // Prevent the default form submission
         e.preventDefault();
@@ -795,13 +798,13 @@
 
 
 
-      const hiddenInput = document.querySelector('#                                                                                                                                                                                    {{ product_form_id }} input[name="id"]');
+      const hiddenInput = document.querySelector('#                                                                                                                                                                                             {{ product_form_id }} input[name="id"]');
       const noScriptInputWrapper = document.createElement('div');
-      const variantSwitcher = document.querySelector('variant-radios[data-section="                                                                                                                                                                                    {{ section.id }} "]') || document.querySelector('variant-selects[data-section="                                                                                                                                                                                    {{ section.id }} "]');
-      noScriptInputWrapper.innerHTML = document.querySelector('.product-form__noscript-wrapper-                                                                                                                                                                                    {{ section.id }}').textContent;
+      const variantSwitcher = document.querySelector('variant-radios[data-section="                                                                                                                                                                                             {{ section.id }} "]') || document.querySelector('variant-selects[data-section="                                                                                                                                                                                             {{ section.id }} "]');
+      noScriptInputWrapper.innerHTML = document.querySelector('.product-form__noscript-wrapper-                                                                                                                                                                                             {{ section.id }}').textContent;
       variantSwitcher.outerHTML = noScriptInputWrapper.outerHTML;
 
-      document.querySelector('#Variants-                                                                                                                                                                                    {{ section.id }}').addEventListener('change', function(event) {
+      document.querySelector('#Variants-                                                                                                                                                                                             {{ section.id }}').addEventListener('change', function(event) {
         hiddenInput.value = event.currentTarget.value;
       });
     });
@@ -818,8 +821,8 @@
   <script type="application/ld+json">
     {
     "@context": "http://schema.org/",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      "@type": "Product",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      "name": {{ product.title | json }},
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          "@type": "Product",
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          "name": {{ product.title | json }},
     "url": {{ request.origin | append: product.url | json }},
     {% if seo_media -%}
       "image": [
@@ -832,7 +835,7 @@
     {%- endif %}
     "brand": {
     "@type": "Brand",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "name": {{ product.vendor | json }}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            "name": {{ product.vendor | json }}
     },
     "offers": [
     {%- for variant in product.variants -%}

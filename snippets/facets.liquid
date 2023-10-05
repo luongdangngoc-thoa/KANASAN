@@ -42,12 +42,17 @@
           <div
             id="FacetsWrapperDesktop"
             {% if filter_type == 'horizontal' %}
-              class="facets__wrapperfilter_wapper"
+              class="facets__wrapper filter_wapper"
             {% endif %}
           >
+            {%- if filter_type == 'horizontal' and results.filters != empty -%}
+              {% comment %} <h2 class="facets__heading caption-large text-body" id="verticalTitle" tabindex="-1">
+                {{ 'products.facets.filter_by_label' | t }}
+              </h2> {% endcomment %}
+            {%- endif -%}
             {% comment %} Pills are right below the title for filter type vertical {% endcomment %}
             {%- if filter_type == 'vertical' -%}
-               <div class="active-facets active-facets-desktop">
+              <div class="active-facets active-facets-desktop">
                 <div class="active-facets-vertical-filter">
                   {%- unless results.filters == empty -%}
                     <h2
@@ -58,21 +63,21 @@
                       {{ 'products.facets.filter_by_label' | t }}
                     </h2>
                   {%- endunless -%}
-                   <facet-remove class="active-facets__button-wrapper">
+                  <facet-remove class="active-facets__button-wrapper">
                     <a href="{{ results_url }}" class="active-facets__button-remove underlined-link">
                       <span>{{ 'products.facets.clear_all' | t }}</span>
                     </a>
-                  </facet-remove> 
+                  </facet-remove>
                 </div>
                 {%- for filter in results.filters -%}
                   {%- for value in filter.active_values -%}
                     <facet-remove>
                       <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
-                        <span class="active-facets__button-inner button button--tertiary">
+                         <span class="active-facets__button-inner button button--tertiary">
                           {{ filter.label }}: {{ value.label | escape }}
                           {% render 'icon-close-small' %}
                           <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
-                        </span>
+                        </span> 
                       </a>
                     </facet-remove>
                   {%- endfor -%}
@@ -94,15 +99,14 @@
                             {%- endif -%}
                             {% render 'icon-close-small' %}
                             <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
-                          </span>
+                          </span> 
                         </a>
                       </facet-remove>
                     {%- endif -%}
                   {% endif %}
                 {%- endfor -%}
-              </div> 
+              </div>
             {%- endif -%}
-
             <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
             {% comment %} Filters for both horizontal and vertical filter {% endcomment %}
             {%- for filter in results.filters -%}
@@ -121,7 +125,7 @@
                       class="facets__summary facest_details caption-large focus-offset"
                       aria-label="{{ filter.label }} ({{ 'products.facets.filters_selected.one' | t: count: filter.active_values.size }})"
                     >
-                      <div>
+                       <div>
                         <span>
                           {{- filter.label | escape }}
                           {%- if filter_type == 'vertical' -%}
@@ -131,12 +135,39 @@
                           {%- endif -%}
                         </span>
                         {% render 'icon-caret' %}
-                      </div>
+                      </div> 
                     </summary>
                     <div
                       id="Facet-{{ forloop.index }}-{{ section.id }}"
                       class="parent-display {% if filter_type == 'horizontal' %}facets__display facets_list{% else %}facets__display-vertical{% endif %}"
                     >
+                      {%- if filter_type != 'vertical' -%}
+                        <div class="facets__header">
+                          {% comment %} <span class="facets__selected no-js-hidden">
+                            {{- 'products.facets.filters_selected' | t: count: filter.active_values.size -}}
+                          </span> {% endcomment %}
+                          <facet-remove>
+                            <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link">
+                              {{ 'products.facets.reset' | t }}
+                            </a>
+                          </facet-remove>
+                          <facet-remove>
+                            <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link">
+                              {{ 'products.facets.product_category' | t }}
+                            </a>
+                          </facet-remove>
+                          <facet-remove>
+                            <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link">
+                              {{ 'products.facets.material' | t }}
+                            </a>
+                          </facet-remove>
+                          <facet-remove>
+                            <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link">
+                              {{ 'products.facets.producer' | t }}
+                            </a>
+                          </facet-remove>
+                        </div>
+                      {%- endif -%}
                       <fieldset class="facets-wrap parent-wrap {% if filter_type == 'vertical' %} facets-wrap-vertical{% endif %}">
                         <legend class="visually-hidden">{{ filter.label | escape }}</legend>
                         <ul
@@ -208,7 +239,7 @@
                           role="list"
                         >
                           {%- for value in filter.values -%}
-                            {% comment %} <li class="list-menu__item facets__item">
+                            <li class="list-menu__item facets__item">
                               <label
                                 for="Filter-{{ filter.param_name | escape }}-{{ forloop.index }}-no-js"
                                 class="facet-checkbox{% if value.count == 0 and value.active == false %} facet-checkbox--disabled{% endif %}"
@@ -263,7 +294,7 @@
                                   )</span
                                 >
                               </label>
-                            </li> {% endcomment %}
+                            </li>
                           {%- endfor -%}
                         </ul>
                       </fieldset>
@@ -301,7 +332,7 @@
                       open
                     {% endif %}
                   >
-                    <summary class=" facets__summary facest_details caption-large focus-offset">
+                    <summary class="facets__summary caption-large focus-offset">
                       <div>
                         <span>{{ filter.label | escape }}</span>
                         {% render 'icon-caret' %}
@@ -393,18 +424,9 @@
           </div>
           {% comment %} Pills after filtes on filter type horizontal {% endcomment %}
           {%- if filter_type == 'horizontal' -%}
-            {% comment %} <div class="active-facets active-facets-desktop">
+            <div class="active-facets active-facets-desktop">
               {%- for filter in results.filters -%}
                 {%- for value in filter.active_values -%}
-                  <facet-remove>
-                    <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
-                      <span class="active-facets__button-inner button button--tertiary">
-                        {{ filter.label }}: {{ value.label | escape }}
-                        {% render 'icon-close-small' %}
-                        <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
-                      </span>
-                    </a>
-                  </facet-remove>
                 {%- endfor -%}
                 {% if filter.type == 'price_range' %}
                   {%- if filter.min_value.value != null or filter.max_value.value != null -%}
@@ -435,7 +457,7 @@
                   <span>{{ 'products.facets.clear_all' | t }}</span>
                 </a>
               </facet-remove>
-            </div> {% endcomment %}
+            </div>
           {%- endif -%}
         {% endif %}
 
@@ -482,20 +504,6 @@
             </div>
           {%- endif -%}
           <div class="product-count light" role="status">
-            {% comment %} <h2 class="product-count__text text-body">
-              <span id="ProductCountDesktop">
-                {%- if results.results_count -%}
-                  {{ 'templates.search.results_with_count' | t: terms: results.terms, count: results.results_count }}
-                {%- elsif results.products_count == results.all_products_count -%}
-                  {{ 'products.facets.product_count_simple' | t: count: results.products_count }}
-                {%- else -%}
-                  {{
-                    'products.facets.product_count'
-                    | t: product_count: results.products_count, count: results.all_products_count
-                  }}
-                {%- endif -%}
-              </span>
-            </h2> {% endcomment %}
             <div class="loading-overlay__spinner">
               <svg
                 aria-hidden="true"
@@ -1081,7 +1089,7 @@
               <span>{{ 'products.facets.clear_all' | t }}</span>
             </a>
           </facet-remove>
-        </div> 
+        </div>
       </form>
     </facet-filters-form>
   {%- endif -%}

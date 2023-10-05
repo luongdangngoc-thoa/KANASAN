@@ -280,6 +280,7 @@
 }
 .facets__display.facets_list{
   position: relative;
+  width: 1104px;
 }
 
 .facets__header {
