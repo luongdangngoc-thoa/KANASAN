@@ -10,7 +10,7 @@
 
 
     <div class="galley-link-button">
-      <a href="{{section.settings.button_link}}">
+      <a target="_blank" href="{{section.settings.instagram_link}}">
         <span>
           INSTAGRAM
         </span>
@@ -24,6 +24,14 @@
   .gallery-wrapper {
     padding-top: 12rem;
     padding-bottom: 12rem;
+  }
+
+
+  @media screen and (max-width: 800px) {
+    .gallery-wrapper {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
   }
   .gallery-title {
     color: #595757;
@@ -47,6 +55,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+  }
+  @media screen and (max-width: 800px) {
+    .galley-link-button {
+      margin-top: 6rem;
+    }
   }
 
   .galley-link-button a {
@@ -92,7 +105,7 @@
 
 {% schema %}
   {
-    "name": "Search by Material",
+    "name": "Gallery",
     "tag": "section",
     "class": "section",
     "settings": [
