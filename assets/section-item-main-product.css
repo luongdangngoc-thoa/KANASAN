@@ -216,6 +216,21 @@
   width: 30%;
 }
 
+.product-container {
+  display: flex;
+  justify-content: center;
+  padding-left: 8rem;
+  flex-wrap: wrap;
+}
+
+.product-left {
+  flex: 1;
+}
+
+.product-right {
+  flex: 1;
+}
+
 /* Media Query for screens up to 768px wide */
 @media screen and (max-width: 768px) {
   .product-ingredient {
@@ -228,6 +243,14 @@
   .product-ingredient__list--detail-title {
     white-space: normal;
     width: 100%;
+  }
+
+  .product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 8rem;
+    flex-wrap: wrap;
   }
 }
 
@@ -384,12 +407,20 @@
   align-items: center;
   gap: 2.2rem;
   font-size: 18px;
+  height: 46px;
+}
+
+.add-to-cart__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .checkout-btn {
   background-color: #595757;
   color: #fff;
   text-align: center;
+  width: 271px;
 }
 
 .product__button {

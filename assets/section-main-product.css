@@ -1709,6 +1709,13 @@ a.product__text {
   }
 }
 
+.swym-button-bar {
+  margin-top: 2px;
+}
 .swym-button {
   opacity: 1 !important;
+}
+
+.swym-btn-container .swym-button.swym-added:after {
+  opacity: unset !important;
 }

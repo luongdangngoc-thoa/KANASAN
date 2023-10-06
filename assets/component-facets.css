@@ -183,6 +183,12 @@
 .facets__wrapper.filter_wapper{
   justify-content: flex-end;
 }
+@media screen and (min-width: 480px) {
+  .facets__wrapper.filter_wapper{
+    height: 15rem;
+    max-width: 100%;
+  }
+  }
 .facets__heading {
   display: block;
   color: rgba(var(--color-foreground), 0.85);

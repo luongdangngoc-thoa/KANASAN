@@ -3147,7 +3147,16 @@ details-disclosure > details {
     }
   }
 }
-
+@media screen and (max-width: 480px) {
+  .product-grid-wrap .grid__item {
+    max-width : 100%;
+    width: 100%;
+    
+  }
+  .product-grid-wrap {
+    flex-direction: column;
+  }
+}
 .font-body-bold {
   font-weight: var(--font-body-weight-bold);
 }

@@ -104,6 +104,27 @@
   text-align: var(--text-alignment);
 }
 
+.card-information.product__card{
+  width: 264px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.product__card.button_cart{
+  float: right;
+  width: 30px;
+  height: 29px;
+}
+.product__card.producer_text{
+  color: #595757;
+  font-family: Noto Sans JP;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 32px;
+
+}
 .card__media,
 .card .media {
   bottom: 0;
