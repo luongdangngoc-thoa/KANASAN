@@ -205,7 +205,16 @@
                 <span class="caption">{{ 'products.product.volume_pricing.note' | t }}</span>
               </div>
             {%- endif -%}
-          </div>
+          </div>         
+          <div class="card-information product__card">
+            <h3 class="product__card producer_text">{{- card_product.metafields.custom.producer.value}}</h3>
+            <!-- Swym Wishlist Plus EPI Button-->
+            <div class="product__card button_cart">
+            <button data-with-epi="true" class="swym-button swym-add-to-wishlist-view-product product_{{collection.id}}" data-swaction="addToWishlist" data-product-id="{{collections.id | json}}" 
+            data-variant-id="{{product.variants[0].id}}" data-product-url="{{ shop.url }}{{ collections.url }}"></button>
+            <!-- Swym Wishlist Plus EPI Button-->
+            </div>
+          </div>           
         </div>
         {%- if show_quick_add -%}
           <div class="quick-add no-js-hidden">

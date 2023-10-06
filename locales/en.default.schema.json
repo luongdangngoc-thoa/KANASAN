@@ -1739,6 +1739,7 @@
     "main-cart-items": {
       "name": "Items"
     },
+    
     "main-collection-banner": {
       "name": "Collection banner",
       "settings": {
@@ -1753,6 +1754,10 @@
           "info": "For best results, use an image with a 16:9 aspect ratio. [Learn more](https:\/\/help.shopify.com\/manual\/shopify-admin\/productivity-tools\/image-editor#understanding-image-aspect-ratio)"
         }
       }
+    },
+    "main_collection_link": {
+      "name": "Main collection link",
+      "settings": {}
     },
     "main-collection-product-grid": {
       "name": "Product grid",
@@ -1834,6 +1839,7 @@
         }
       }
     },
+
     "main-list-collections": {
       "name": "Collections list page",
       "settings": {

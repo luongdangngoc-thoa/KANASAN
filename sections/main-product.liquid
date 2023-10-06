@@ -22,7 +22,7 @@
       px;
     }
 
-    @media screen and (min-width: 750px) {
+    @media screen and (min-width: 75rem) {
       .section-{{ section.id }}-padding {
         padding-top: {{ section.settings.padding_top }}
         px;
@@ -537,6 +537,7 @@
                                      show_secondary_image: false,
                                      lazy_load: false,
                                      show_quick_add: block.settings.enable_quick_add,
+                                     Producer:
                                      section_id: section.id,
                                      horizontal_class: true,
                                      horizontal_quick_add: true %}
@@ -660,53 +661,81 @@
   {%- endif -%}
 
   {% comment %} description {% endcomment %}
-  <div class="product-description">
-    <div>
+  <div class="product__description">
+    <div class="description-detail">
       {{ product.description }}
     </div>
-    <a href="/collections">
+    <a href="https://kanasan.okinawa.jp" target="_blank">
       <button class="product-description__btn">関連記事はこちら</button>
     </a>
   </div>
-  {% comment %} Nhà sản phẩm {% endcomment %}
-  <div class="product-author">
-    <p class="product-author__title">生産者からのメッセージ</p>
-    <div class="product-author__detail">
-      <div class="product-author__detail--info">
-        <img src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=" alt="">
-        <p>彩色二衣重さん</p>
-      </div>
-      <p class="product-author__detail--description">
-        柿沼人形は、1950( 昭和 25)年に創業した、江戸木目込人形の節句人形を手がける工房。二代目・柿沼東光は、独創的な人形づくりで数々の受賞歴を持つ伝統工芸士です。螺鈿の象嵌、彩色二衣重 (さいしきふたえかさね ) などの独自技法の追求、時代を見つめた斬新な人形づくりにも意欲的に取り組んで来ました。
+
+  {% if product.metafields.custom.company.value != null %}
+    {% comment %} Nhà sản xuất {% endcomment %}
+    <div class="product-author">
+      <p class="product-author__title">
+        {{ 'products.product.author.title' | t }}
       </p>
+      <div class="product-author__detail">
+        <div class="product-author__detail--info">
+          {% if product.metafields.custom.company.value.avatar == null %}
+            {% render 'icon-ellipse-avatar' %}
+          {% else %}
+            {{ product.metafields.custom.company.value.avatar | img_tag }}
+          {% endif %}
+          {% comment %} {% render 'icon-ellipse-avatar' %} {% endcomment %}
+          <p>{{ product.metafields.custom.company.value.name }}</p>
+        </div>
+        <p class="product-author__detail--description">
+          {{ product.metafields.custom.company.value.description }}
+        </p>
+      </div>
     </div>
-  </div>
+  {% endif %}
+
+
   {% comment %} Thành phần {% endcomment %}
   <div class="product-ingredient">
-    <p class="product-ingredient__title">製品情報</p>
+    <p class="product-ingredient__title">
+      {{ 'products.product.ingredient.title' | t }}
+    </p>
     <div class="product-ingredient__list">
       <div class="product-ingredient__list--detail">
-        <p class="product-ingredient__list--detail-title">使用方法</p>
-        <p class="product-ingredient__list--detail-content">適量を手に取り、水やお湯で濡らしたお肌を優しくマッサージした後、十分に洗い流してください。</p>
+        <p class="product-ingredient__list--detail-title">
+          {{ 'products.product.ingredient.instruction' | t }}
+        </p>
+        <p class="product-ingredient__list--detail-content">
+          {{ product.metafields.custom.description }}
+        </p>
       </div>
       <div class="product-ingredient__list--detail">
-        <p class="product-ingredient__list--detail-title">内容量</p>
+        <p class="product-ingredient__list--detail-title">
+          {{ 'products.product.ingredient.weight' | t }}
+        </p>
         <p class="product-ingredient__list--detail-content">
           {% for variant in product.variants %}
             {{ variant.weight | weight_with_unit }}{% endfor %}
         </p>
       </div>
       <div class="product-ingredient__list--detail">
-        <p class="product-ingredient__list--detail-title">成分</p>
-        <p class="product-ingredient__list--detail-content">アンズ核油、ホホバ種子油、水添ファルネセン、ミツロウ、香料、オリーブ果実油、トコフェロールアンズ核油、ホホバ種子油、水添ファルネセン、ミツロウ、香料、オリーブ果実油、トコフェロールアンズ核油、ホホバ種子油、水添ファルネセン、ミツロウ、香料、オリーブ果実油、トコフェロール</p>
+        <p class="product-ingredient__list--detail-title">
+          {{ 'products.product.ingredient.component' | t }}
+        </p>
+        <p class="product-ingredient__list--detail-content">
+          {{ product.metafields.custom.description2 }}
+        </p>
       </div>
     </div>
   </div>
   {% comment %} Review {% endcomment %}
   <div class="product-review">
-    <p class="product-review__title">カスタマーレビュー</p>
+    <p class="product-review__title">
+      {{ 'products.product.review.title' | t }}
+    </p>
     <div class="product-review__rating">
-      <p class="product-review__rating--number">4.0</p>
+      <p class="product-review__rating--number">
+        {{ product.metafields.custom.rating.value }}
+      </p>
       <ul class="product-review__rating--list-star">
         {% comment %} <ryviu-widget-total
         reviews_data="{{product.metafields.ryviu.product_reviews_info  | escape  }}"
@@ -722,10 +751,14 @@
     </div>
     <div class="product-review__rating--btn">
       <a>
-        <button class="btn-1">レビューを書く</button>
+        <button class="btn-1">
+          {{ 'products.product.review.button.comment' | t }}
+        </button>
       </a>
       <a>
-        <button>質問をする</button>
+        <button class="btn-2">
+          {{ 'products.product.review.button.question' | t }}
+        </button>
       </a>
     </div>
   </div>
@@ -740,7 +773,7 @@
       var selectedQuantity = document.querySelector('#quantity').value;
 
 // Add an event listener to the "Buy" button (adjust the selector as needed)
-      document.querySelector('#ProductSubmitButton-                                                                                   {{ section_id }}').addEventListener('click', function(e) {
+      document.querySelector('#ProductSubmitButton-                                                                                                                                                                                             {{ section_id }}').addEventListener('click', function(e) {
 
 // Prevent the default form submission
         e.preventDefault();
@@ -765,13 +798,13 @@
 
 
 
-      const hiddenInput = document.querySelector('#                                                                                   {{ product_form_id }} input[name="id"]');
+      const hiddenInput = document.querySelector('#                                                                                                                                                                                             {{ product_form_id }} input[name="id"]');
       const noScriptInputWrapper = document.createElement('div');
-      const variantSwitcher = document.querySelector('variant-radios[data-section="                                                                                   {{ section.id }} "]') || document.querySelector('variant-selects[data-section="                                                                                   {{ section.id }} "]');
-      noScriptInputWrapper.innerHTML = document.querySelector('.product-form__noscript-wrapper-                                                                                   {{ section.id }}').textContent;
+      const variantSwitcher = document.querySelector('variant-radios[data-section="                                                                                                                                                                                             {{ section.id }} "]') || document.querySelector('variant-selects[data-section="                                                                                                                                                                                             {{ section.id }} "]');
+      noScriptInputWrapper.innerHTML = document.querySelector('.product-form__noscript-wrapper-                                                                                                                                                                                             {{ section.id }}').textContent;
       variantSwitcher.outerHTML = noScriptInputWrapper.outerHTML;
 
-      document.querySelector('#Variants-                                                                                   {{ section.id }}').addEventListener('change', function(event) {
+      document.querySelector('#Variants-                                                                                                                                                                                             {{ section.id }}').addEventListener('change', function(event) {
         hiddenInput.value = event.currentTarget.value;
       });
     });
@@ -788,8 +821,8 @@
   <script type="application/ld+json">
     {
     "@context": "http://schema.org/",
-                                                                                                                                                                                                                                                                                                                                                  "@type": "Product",
-                                                                                                                                                                                                                                                                                                                                                  "name": {{ product.title | json }},
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          "@type": "Product",
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          "name": {{ product.title | json }},
     "url": {{ request.origin | append: product.url | json }},
     {% if seo_media -%}
       "image": [
@@ -802,7 +835,7 @@
     {%- endif %}
     "brand": {
     "@type": "Brand",
-                                                                                                                                                                                                                                                                                                                                                    "name": {{ product.vendor | json }}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            "name": {{ product.vendor | json }}
     },
     "offers": [
     {%- for variant in product.variants -%}

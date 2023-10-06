@@ -56,7 +56,7 @@
         "image_behavior": "none"
       }
     },
-    "category-link": {
+    "top-section-category-link": {
       "type": "top-section-category-link",
       "settings": {}
     },
@@ -125,13 +125,173 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "top-section-category-search": {
+      "type": "top-section-category-search",
+      "blocks": {
+        "99ceb155-4048-4b39-80da-504273daaa39": {
+          "type": "Block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shopping_1.png",
+            "category-name": "ヘアケア",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/types?q=%E3%83%98%E3%82%A2%E3%82%B1%E3%82%A2"
+          }
+        },
+        "5910751f-bbfd-4387-a939-faf81061d262": {
+          "type": "Block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/i-drwu-vcm001_1.png",
+            "category-name": "フェイスケア",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/types?q=%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%B1%E3%82%A2"
+          }
+        },
+        "4a3d31e8-189b-4522-aef1-cdc4de24e7e6": {
+          "type": "Block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/161285399_1.png",
+            "category-name": "ホテルアメニティ",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/types?q=%E3%83%9B%E3%83%86%E3%83%AB%E3%82%A2%E3%83%A1%E3%83%8B%E3%83%86%E3%82%A3"
+          }
+        },
+        "69d42f6b-4bf1-4e5d-a824-cd6ca7c66b81": {
+          "type": "Block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/a02296885d3734f75686db99b8252051_1_8088a9ac-f3e7-4187-b65f-1aa1d3b36ffb.png",
+            "category-name": "ボディケア",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/types?q=%E3%83%9C%E3%83%87%E3%82%A3%E3%82%B1%E3%82%A2"
+          }
+        },
+        "039eb889-6e05-4208-965d-1bacc5335840": {
+          "type": "Block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/000000004369-01-l_1_4a1926c0-663b-4d9c-a52d-7a331d52b629.png",
+            "category-name": "その他雑貨",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/types?q=%E3%81%9D%E3%81%AE%E4%BB%96%E9%9B%91%E8%B2%A8"
+          }
+        }
+      },
+      "block_order": [
+        "99ceb155-4048-4b39-80da-504273daaa39",
+        "5910751f-bbfd-4387-a939-faf81061d262",
+        "4a3d31e8-189b-4522-aef1-cdc4de24e7e6",
+        "69d42f6b-4bf1-4e5d-a824-cd6ca7c66b81",
+        "039eb889-6e05-4208-965d-1bacc5335840"
+      ],
+      "settings": {
+        "section_color_scheme": "",
+        "title": "カテゴリーから探す"
+      }
+    },
+    "top-section-material-search": {
+      "type": "top-section-material-search",
+      "blocks": {
+        "cf543158-3695-4987-ae50-6a34bbc078e8": {
+          "type": "Block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/material1.png",
+            "material-name": "月桃",
+            "material-name-en": "SHELL GINGER",
+            "url": "#"
+          }
+        },
+        "6f663857-c14a-4a6b-b422-478cdc0aee16": {
+          "type": "Block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/material2.png",
+            "material-name": "アセロラ",
+            "material-name-en": "ACEROLA",
+            "url": "#"
+          }
+        },
+        "69bf6b51-3d3d-4b09-a080-00f0b7dd7d88": {
+          "type": "Block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/material3.png",
+            "material-name": "タマヌ",
+            "material-name-en": "TAMANU",
+            "url": ""
+          }
+        },
+        "1820e4ea-0888-433b-b990-3c2595f29133": {
+          "type": "Block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/material4.png",
+            "material-name": "シークワーサー",
+            "material-name-en": "SHIKUWASA",
+            "url": ""
+          }
+        },
+        "09693eec-8338-4c35-a862-7270cb12b437": {
+          "type": "Block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/material5.png",
+            "material-name": "長命草",
+            "material-name-en": "PEUCEDANUM JAPONICUM",
+            "url": "#"
+          }
+        },
+        "4989f4ed-109c-4fd9-89c6-6c650a59c133": {
+          "type": "Block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/material6.png",
+            "material-name": "海ぶどう",
+            "material-name-en": "SEA GRAPES",
+            "url": "#"
+          }
+        },
+        "ce8fe1c9-a7f2-47ce-9b7b-c210e4aea8cf": {
+          "type": "Block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/material7.png",
+            "material-name": "沖縄もずく",
+            "material-name-en": "MOZUKU",
+            "url": "#"
+          }
+        },
+        "174593f9-d066-49de-92b9-d15534330302": {
+          "type": "Block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/material8.png",
+            "material-name": "久米島海洋深層水",
+            "material-name-en": "SEA WATER",
+            "url": "#"
+          }
+        }
+      },
+      "block_order": [
+        "cf543158-3695-4987-ae50-6a34bbc078e8",
+        "6f663857-c14a-4a6b-b422-478cdc0aee16",
+        "69bf6b51-3d3d-4b09-a080-00f0b7dd7d88",
+        "1820e4ea-0888-433b-b990-3c2595f29133",
+        "09693eec-8338-4c35-a862-7270cb12b437",
+        "4989f4ed-109c-4fd9-89c6-6c650a59c133",
+        "ce8fe1c9-a7f2-47ce-9b7b-c210e4aea8cf",
+        "174593f9-d066-49de-92b9-d15534330302"
+      ],
+      "settings": {
+        "section_color_scheme": "",
+        "title": "素材から探す",
+        "button_lable": "口コミランキングはこちら",
+        "button_link": "https:\/\/kanasan-okinawa.myshopify.com"
+      }
+    },
+    "top-section-gallery": {
+      "type": "top-section-gallery",
+      "settings": {
+        "section_color_scheme": "background-2",
+        "title": "GALLERY",
+        "instagram_link": "#"
+      }
     }
   },
   "order": [
     "slideshow",
-    "category-link",
+    "top-section-category-link",
     "top-section-concept",
     "top-collection-list",
-    "featured_collection"
+    "featured_collection",
+    "top-section-category-search",
+    "top-section-material-search",
+    "top-section-gallery"
   ]
 }
