@@ -1,44 +1,33 @@
-<div class="category-link-list page-width">
-  {% for type in shop.types %}
-    <div class="collection-link-wrapper">
+<div class="category-link-wrapper page-width">
+  <div class="collection-link-list">
+    {% for type in shop.types %}
       <span class="collection-link">
         {{- type | link_to_type }}
       </span>
-    </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
 </div>
 
 <style>
 
-  div.category-link-list {
-    margin-top: 3rem;
-    overflow: auto;
+  div.category-link-wrapper {
+    margin-top: 6rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
     white-space: nowrap;
     display: flex;
     justify-content: center;
   }
+  @media screen and (max-width: 859px) {
+    div.category-link-wrapper {
+      margin-top: unset;
+    }
 
-  .collection-link-wrapper {
-    display: inline-block;
   }
-
-  div.category-link-list a {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
-  }
-
-  div.category-link-list a:hover {
-    background-color: #777;
-  }
-  .collection-link-container {
-    margin-top: 6rem;
-  }
-
 
   .collection-link a {
+    display: inline-block;
     color: #595757;
     font-family: Noto Sans JP;
     font-size: 1.6rem;
@@ -46,46 +35,40 @@
     font-weight: 300;
     line-height: normal;
     letter-spacing: 1.6px;
-    padding: 1rem;
+    padding: 1.6rem 2rem;
     text-decoration: none;
+    min-width: 15rem;
+    text-align: center;
   }
   .collection-link a:hover {
     font-weight: 500;
     cursor: pointer;
     opacity: 0.7;
-  }
-
-  div.category-link-list a {
-    display: inline-block;
-    color: #777;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
-  }
-
-  div.category-link-list a:hover {
     background-color: rgb(231, 224, 224);
   }
 </style>
 
 <style>
+
   /* width */
-  div.category-link-list ::-webkit-scrollbar {
-    width: 2px;
+  .category-link-wrapper::-webkit-scrollbar {
+    height: 4px;
   }
 
   /* Track */
-  div.category-link-list ::-webkit-scrollbar-track {
+  .category-link-wrapper::-webkit-scrollbar-track {
     background: #f1f1f1;
+    height: 2px;
   }
 
   /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888;
+  .category-link-wrapper::-webkit-scrollbar-thumb {
+    background: #595757;
+    height: 2px;
   }
 
   /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+  .category-link-wrapper::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
 </style>

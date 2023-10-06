@@ -1754,6 +1754,10 @@
         }
       }
     },
+    "main_collection_link": {
+      "name": "Main collection link",
+      "settings": {}
+    },
     "main-collection-product-grid": {
       "name": "Product grid",
       "settings": {

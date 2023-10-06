@@ -345,6 +345,13 @@
       }
     },
     "content_for_index": [],
+    "blocks": {
+      "5946647744298494267": {
+        "type": "shopify:\/\/apps\/wishlist-plus\/blocks\/wishlist-app-embed\/80c3b1fc-3a8f-407e-8367-ffdeebb8b612",
+        "disabled": false,
+        "settings": {}
+      }
+    },
     "color_schemes": {
       "main-text": {
         "settings": {
@@ -403,22 +410,22 @@
       },
       "accent-2": {
         "settings": {
-          "background": "#EFA5B5",
+          "background": "#efa5b5",
           "background_gradient": "",
           "text": "#ffffff",
           "button": "#ffffff",
-          "button_label": "#EFA5B5",
+          "button_label": "#efa5b5",
           "secondary_button_label": "#ffffff",
           "shadow": "#595757"
         }
       },
       "accent-3": {
         "settings": {
-          "background": "#7EBAD1",
+          "background": "#7ebad1",
           "background_gradient": "",
           "text": "#ffffff",
           "button": "#ffffff",
-          "button_label": "#7EBAD1",
+          "button_label": "#7ebad1",
           "secondary_button_label": "#ffffff",
           "shadow": "#595757"
         }

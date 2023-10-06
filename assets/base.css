@@ -669,7 +669,9 @@ summary::-webkit-details-marker {
 .disclosure-has-popup.facets_details{
   float: right;
 }
-
+.facets_link{
+  float: left;
+}
 
 .disclosure-has-popup[open] > summary::before {
   position: fixed;
