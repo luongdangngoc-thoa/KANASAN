@@ -3604,6 +3604,16 @@ details-disclosure > details {
 
 /* Instagram - top-page */
 
+#shopify-section-template--21243532411158__169661211538385504 {
+  background: rgba(89, 87, 87, 0.05);
+  padding-top: 12rem;
+}
+
+@media screen and (max-width: 800px) {
+  #shopify-section-template--21243532411158__169661211538385504 {
+    padding-top: 6rem;
+  }
+}
 #shopify-block-9cbd7020-fbb3-403f-8cf3-adf787f549fd h2 {
   color: #595757;
   font-family: Noto Sans JP;

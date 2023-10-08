@@ -29,17 +29,13 @@
   endif
 -%}
 
-<div
-  class="color-{{ section.settings.color_scheme }} isolate gradient">
-  <div
-    class="collection section-{{ section.id }}-padding page-width">
-    <h2
-      class="feature-collection-title inline-richtext scroll-trigger animate--slide-in">
+<div class="color-{{ section.settings.color_scheme }} isolate gradient">
+  <div class="collection section-{{ section.id }}-padding page-width">
+    <h2 class="feature-collection-title inline-richtext scroll-trigger animate--slide-in">
       {{ section.settings.title }}
     </h2>
 
-    <slider-component
-      class="slider-mobile-gutter slider-component-full-width{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %} scroll-trigger animate--slide-in">
+    <slider-component class="slider-mobile-gutter slider-component-full-width{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %} scroll-trigger animate--slide-in">
       <ul
         id="Slider-{{ section.id }}"
         class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop{% if section.settings.collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
@@ -58,8 +54,7 @@
         {%- endfor -%}
       </ul>
 
-      <div
-        class="top-feature-collection-btn slider-buttons no-js-hidden">
+      <div class="top-feature-collection-btn slider-buttons no-js-hidden">
         <button
           type="button"
           class="slider-button slider-button--prev"
@@ -172,6 +167,13 @@
     padding-bottom: 12rem;
   }
 
+  @media screen and (max-width: 800px) {
+    .collection {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+
   .feature-collection-title {
     color: #595757;
     font-family: Noto Sans JP;
@@ -186,15 +188,62 @@
 
   .collection slider-component {
     position: relative;
+    padding-bottom: 2rem;
+  }
+
+  @media screen and (max-width: 749px) {
+    /* Fix to show some space at the end of our sliders in all browsers */
+    .collection .grid--peek.slider:after {
+      margin-left: calc(-1 * var(--grid-mobile-horizontal-spacing));
+    }
+
+    .collection .grid--peek.slider .grid__item:first-of-type {
+      margin-left: 2.5rem;
+    }
+
+
+    /* css for top feature slide */
+    .collection .slider--tablet.grid--peek.grid--2-col-tablet-down .grid__item,
+    .collection .grid--peek .grid__item {
+      width: calc(50% - var(--grid-mobile-horizontal-spacing));
+    }
+
+  }
+  .collection slider-component ul {
+    padding-bottom: 2rem !important;
   }
   .top-feature-collection-btn {
     position: absolute;
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin: 0 -1rem;
+    margin: 0 -1.6rem;
     transform: translateX(-50%) translateY(-50%);
     top: 40%;
     left: 50%;
+  }
+
+  @media screen and (max-width: 649px) {
+    .top-feature-collection-btn {
+      display: none !important;
+    }
+
+  }
+  /* show scroll bar */
+  .collection .slider {
+    scrollbar-color: rgb(var(--color-foreground)) rgba(var(--color-foreground), 0.04);
+    -ms-overflow-style: auto;
+    scrollbar-width: thin;
+  }
+
+  .collection .slider::-webkit-scrollbar {
+    margin-top: 1rem;
+    height: 0.3rem;
+    width: 0.3rem;
+    display: initial;
+  }
+
+  .collection .slider::-webkit-scrollbar-thumb {
+    color: #595757 !important;
   }
 </style>

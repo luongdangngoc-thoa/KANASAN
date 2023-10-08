@@ -408,12 +408,15 @@
   gap: 2.2rem;
   font-size: 18px;
   height: 46px;
+  white-space: nowrap;
 }
 
 .add-to-cart__button {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 34rem;
+  padding-bottom: 0.5rem;
 }
 
 .checkout-btn {
@@ -433,4 +436,28 @@
   width: 30px;
   height: 30px;
   margin-top: 10px;
+}
+
+.featured__button {
+  text-align: center;
+  padding-top: 5.5rem;
+}
+
+.btn-featured {
+  width: 34rem;
+  height: 5.8rem;
+  background: white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid #595757;
+  color: #595757;
+  font-family: Poppins;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: calc(30 / 16);
+  letter-spacing: 1.6px;
+  cursor: pointer;
+
 }

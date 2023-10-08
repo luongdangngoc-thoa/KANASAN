@@ -4,14 +4,51 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "24d395ce-69db-42eb-be7a-d1f5e23560d6": {
+          "type": "link_list",
+          "settings": {
+            "heading": "マイページ",
+            "menu": "link-list"
+          }
+        },
+        "6e76db47-4f18-4e27-b348-738af939a8d6": {
+          "type": "link_list",
+          "settings": {
+            "heading": "ブランドライン",
+            "menu": "link-list-1"
+          }
+        },
+        "927cacaf-0590-44f0-a436-18e5387874da": {
+          "type": "link_list",
+          "settings": {
+            "heading": "運営会社",
+            "menu": "link-list-2"
+          }
+        },
+        "bc2e31b5-90d2-4f79-bd0f-602a3d9a24ce": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2023-08-18_16.06_2.svg",
+            "image_width": 100,
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "24d395ce-69db-42eb-be7a-d1f5e23560d6",
+        "6e76db47-4f18-4e27-b348-738af939a8d6",
+        "927cacaf-0590-44f0-a436-18e5387874da",
+        "bc2e31b5-90d2-4f79-bd0f-602a3d9a24ce"
+      ],
       "settings": {
         "color_scheme": "background-1",
-        "newsletter_enable": true,
+        "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
-        "enable_follow_on_shop": true,
+        "enable_follow_on_shop": false,
         "show_social": true,
-        "enable_country_selector": true,
-        "enable_language_selector": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
         "payment_enable": true,
         "show_policy": false,
         "margin_top": 0,

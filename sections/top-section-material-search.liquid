@@ -46,14 +46,19 @@
     font-weight: 400;
     padding-bottom: 2.6rem;
     border-bottom: rgb(208 208 208) solid 1px;
+    margin-bottom: 6rem;
   }
   .material-search-list {
-    margin-top: 6rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
     justify-content: center;
-    gap: 4rem 8rem;
+    gap: 4rem;
+  }
+
+  @media screen and (max-width: 900px) {
+    .material-search-list {
+      gap: 2rem;
+    }
   }
   .material-search-list .material-link {
     display: flex;
@@ -61,12 +66,28 @@
     justify-content: center;
     border-radius: 50%;
     position: relative;
+    max-width: 200px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
   }
   .material-img {
     border-radius: 50%;
     height: 100%;
     width: 100%;
-    max-width: 200;
+    max-width: 200px;
+  }
+
+  @media screen and (max-width: 650px) {
+    .material-search-list {
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 2rem;
+    }
+    .material-search-list .material-link {
+      max-width: 160px;
+    }
+    .material-img {
+      max-width: 160px;
+    }
   }
   .material-img-overlay {
     position: absolute;
@@ -150,89 +171,6 @@
   .material-search-button a:hover {
     background-color: #595757;
     transition: 0.3s;
-  }
-
-  @media screen and (max-width: 1200px) {
-    .material-search-list {
-      gap: 3rem 5.5em;
-    }
-
-    .material-img {
-      max-width: 170px;
-    }
-  }
-
-
-  @media screen and (max-width: 1065px) {
-    .material-search-list {
-      gap: 3rem 3rem;
-    }
-
-    .material-img {
-      max-width: 160px;
-    }
-  }
-
-  @media screen and (max-width: 900px) {
-    .material-search-list {
-      gap: 2rem;
-    }
-    .material-img {
-      max-width: 150px;
-    }
-
-    .material-img-overlay .material-name {
-      font-size: 1.8rem;
-    }
-
-    .material-img-overlay .material-name-EN {
-      font-size: 1.2rem;
-    }
-  }
-
-  @media screen and (max-width: 710px) {
-    .material-search-list {
-      gap: 1.5rem;
-    }
-    .material-img {
-      max-width: 130px;
-    }
-
-    .material-img-overlay .material-name {
-      font-size: 1.8rem;
-    }
-
-    .material-img-overlay .material-name-EN {
-      font-size: 1.2rem;
-    }
-  }
-
-  @media screen and (max-width: 615px) {
-    .material-search-list {
-      gap: 3rem;
-    }
-
-    .material-img {
-      max-width: 170px;
-    }
-  }
-
-  @media screen and (max-width: 420px) {
-    .material-search-list {
-      gap: 1.5rem;
-    }
-
-    .material-img {
-      max-width: 140px;
-    }
-
-    .material-img-overlay .material-name {
-      font-size: 1.8rem;
-    }
-
-    .material-img-overlay .material-name-EN {
-      font-size: 1.2rem;
-    }
   }
 </style>
 {% schema %}

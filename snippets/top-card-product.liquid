@@ -7,7 +7,6 @@ Accepts:
 (optional)
 - image_shape: {String} Image mask to apply to the product image card. Values are "arch", "blob", "chevronleft",
 "chevronright", "diamond", "parallelogram", and "round". (optional)
-- show_secondary_image: {Boolean} Show the secondary image on hover. Default: false (optional)
 - show_vendor: {Boolean} Show the product vendor. Default: false
 - show_rating: {Boolean} Show the product rating. Default: false
 - extend_height: {Boolean} Card height extends to available container space. Default: true (optional)
@@ -26,37 +25,25 @@ Usage:
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
 
-{%- if card_product and card_product != empty -%}
+{%- if empty -%}
   {%- liquid
-    assign ratio = 1
-    if card_product.featured_media and media_aspect_ratio == 'portrait'
-      assign ratio = 0.8
-    elsif card_product.featured_media and media_aspect_ratio == 'adapt'
-      assign ratio = card_product.featured_media.aspect_ratio
-    endif
-    if ratio == 0 or ratio == null
-      assign ratio = 1
-    endif
+    assign ratio = 0.8
   -%}
-  <div
-    class="top-card-product card-wrapper product-card-wrapper underline-links-hover">
+  <div class="top-card-product card-wrapper product-card-wrapper underline-links-hover">
     <div
       class="
-                        card card--{{ settings.card_style }}
-                        {% if card_product.featured_media %} card--media{% else %} card--text{% endif %}
-                        {% if settings.card_style == 'card' %} color-{{ settings.card_color_scheme }} gradient{% endif %}
-                        {% if image_shape and image_shape != 'default' %} card--shape{% endif %}
-                        {% if extend_height %} card--extend-height{% endif %}
-                        {% if card_product.featured_media == nil and settings.card_style == 'card' %} ratio{% endif %}
-                        {% if horizontal_class %} card--horizontal{% endif %}
-                      "
+                                        card card--{{ settings.card_style }}
+                                        {% if card_product.featured_media %} card--media{% else %} card--text{% endif %}
+                                        {% if settings.card_style == 'card' %} color-{{ settings.card_color_scheme }} gradient{% endif %}
+                                        {% if image_shape and image_shape != 'default' %} card--shape{% endif %}
+                                        {% if extend_height %} card--extend-height{% endif %}
+                                        {% if card_product.featured_media == nil and settings.card_style == 'card' %} ratio{% endif %}
+                                        {% if horizontal_class %} card--horizontal{% endif %}
+                                      "
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
-      <div
-        class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
-        style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
+      <div class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
         {%- if card_product.featured_media -%}
-          <div
-            class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
+          <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
             <div class="media media--transparent media--hover-effect">
               {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
               <img
@@ -74,7 +61,7 @@ Usage:
               {%- if card_product.featured_media.width >= 1066 -%}
                 {{ card_product.featured_media | image_url: width: 1066 }} 1066w,{%- endif -%}
               {{ card_product.featured_media | image_url }} {{ card_product.featured_media.width }}w
-                                            "
+                                                                        "
               src="{{ card_product.featured_media | image_url: width: 533 }}"
               sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
               alt="{{ card_product.featured_media.alt | escape }}"
@@ -86,7 +73,7 @@ Usage:
               height="{{ card_product.featured_media.height }}">
               {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
 
-              {%- if card_product.media[1] != null and show_secondary_image -%}
+              {%- if card_product.media[1] != null -%}
                 <img
                   srcset="
                 {%- if card_product.media[1].width >= 165 -%}
@@ -102,7 +89,7 @@ Usage:
                 {%- if card_product.media[1].width >= 1066 -%}
                   {{ card_product.media[1] | image_url: width: 1066 }} 1066w,{%- endif -%}
                 {{ card_product.media[1] | image_url }} {{ card_product.media[1].width }}w
-                                                  "
+                                                                                  "
                 src="{{ card_product.media[1] | image_url: width: 533 }}"
                 sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
                 alt=""
@@ -114,12 +101,9 @@ Usage:
             </div>
           </div>
         {%- endif -%}
-        <div
-          class="card__content">
-          <div
-            class="card__information">
-            <h3
-              class="product__card producer_text">
+        <div class="card__content">
+          <div class="card__information">
+            <h3 class="product__card producer_text">
               {{- card_product.metafields.custom.producer.value }}
             </h3>
             <h3
@@ -136,30 +120,22 @@ Usage:
               </a>
             </h3>
           </div>
-          <div
-            class="card__badge {{ settings.badge_position }}">
+          <div class="card__badge {{ settings.badge_position }}">
             {%- if card_product.available == false -%}
-              <span
-                id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
-                class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}">
+              <span id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}" class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}">
                 {{- 'products.product.sold_out' | t -}}
               </span>
             {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
-              <span
-                id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
-                class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}">
+              <span id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}" class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}">
                 {{- 'products.product.on_sale' | t -}}
               </span>
             {%- endif -%}
           </div>
         </div>
       </div>
-      <div
-        class="card__content">
-        <div
-          class="card__information">
-          <p
-            class="card__producer">
+      <div class="card__content">
+        <div class="card__information">
+          <p class="card__producer">
             生産者:
             {{- card_product.metafields.custom.producer.value }}
           </p>
@@ -176,8 +152,7 @@ Usage:
               {{ card_product.title | escape }}
             </a>
           </h3>
-          <div
-            class="card-information">
+          <div class="card-information">
             {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
             <!-- Swym Wishlist Plus EPI Button -->
             <button
@@ -194,22 +169,18 @@ Usage:
     </div>
   </div>
 {%- else -%}
-  <div
-    class="top-card-product card-wrapper product-card-wrapper underline-links-hover">
-    <div
-      class="
-                        card card--{{ settings.card_style }}
-                        {% if extend_height %} card--extend-height{% endif %}
-                        {% if settings.card_style == 'card' %} color-{{ settings.card_color_scheme }} gradient{% endif %}
-                      "
-      style="--ratio-percent: 100%;">
-      <div
-        class="card__inner{% if settings.card_style == 'standard' %} color-{{ settings.card_color_scheme }} gradient{% endif %} ratio"
-        style="--ratio-percent: 100%;">
-        <div
-          class="card__media">
-          <div
-            class="media media--transparent">
+  {%- liquid
+    assign ratio = 0.8
+  -%}
+  <div class="top-card-product card-wrapper product-card-wrapper underline-links-hover">
+    <div class="
+                                card card--{{ settings.card_style }}
+                                {% if extend_height %} card--extend-height{% endif %}
+                                {% if settings.card_style == 'card' %} color-{{ settings.card_color_scheme }} gradient{% endif %}
+                              " style="--ratio-percent: 100%;">
+      <div class="card__inner{% if settings.card_style == 'standard' %} color-{{ settings.card_color_scheme }} gradient{% endif %} ratio" style="--ratio-percent: 100%;">
+        <div class="card__media">
+          <div class="media media--transparent">
             {%- if placeholder_image -%}
               {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
             {%- else -%}
@@ -218,16 +189,10 @@ Usage:
           </div>
         </div>
       </div>
-      <div
-        class="card__content">
-        <div
-          class="card__information">
-          <p
-            class="card__producer">
-            生産者: {{ card_product.metafields.custom.company.value.name }}
-          </p>
-          <h3
-            class="card__heading card__heading--placeholder{% if settings.card_style == 'standard' %} h5{% endif %}">
+      <div class="card__content">
+        <div class="card__information">
+          <p class="card__producer">生産者: {{ card_product.metafields.custom.company.value.name }}</p>
+          <h3 class="card__heading card__heading--placeholder{% if settings.card_style == 'standard' %} h5{% endif %}">
             <a
               role="link"
               aria-disabled="true"
@@ -235,8 +200,7 @@ Usage:
               {{ 'onboarding.product_title' | t }}
             </a>
           </h3>
-          <div
-            class="card-information">
+          <div class="card-information">
             {% render 'price', show_compare_at_price: true %}
             <!-- Swym Wishlist Plus EPI Button -->
             <button
