@@ -525,16 +525,20 @@
   margin-top: 5rem;
 }
 /*custom for layout end */
+<<<<<<< HEAD
 /* .footer-block__heading {
     font-weight: 700;
   }
   .footer-block__details-content .list-menu__item--link {
     font-weight: 700;
   } */
+=======
+>>>>>>> origin/feature/nguyenluong
 
 /*responsive for menu */
 
 @media screen and (max-width: 749px) {
+<<<<<<< HEAD
 
   .footer {
     padding-top: 10rem !important;
@@ -564,6 +568,19 @@
 
   .footer-block__details-content li:last-child {
     border-bottom: #000 solid 1px;
+=======
+  .footer-block__heading {
+    border-top: rgb(208 208 208) solid 1px;
+    margin-bottom: 0 !important;
+    line-height: calc(2 + 0.8 / var(--font-body-scale));
+  }
+  .footer-block__details-content .list-menu__item--link {
+    border-top: rgb(208 208 208) solid 1px;
+  }
+
+  .footer-block__details-content li:last-child {
+    border-bottom: rgb(208 208 208) solid 1px;
+>>>>>>> origin/feature/nguyenluong
   }
 
   .footer-block__brand-info .footer__list-social.list-social {
