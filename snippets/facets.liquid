@@ -109,6 +109,13 @@
             {%- endif -%}
             <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
             {% comment %} Filters for both horizontal and vertical filter {% endcomment %}
+            <div class="button-show facets__summary facest_details caption-large focus-offset">
+              <div class="open-modal" style="display: none;">                
+                  絞り込み検索
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="11" viewBox="0 0 17 11" fill="none">
+                  <path opacity="0.9" d="M0.5 0.5L8.5 9.5L16.5 0.5" stroke="white"/>
+                </svg>
+              </div>
             {%- for filter in results.filters -%}
               {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
               {% case filter.type %}
@@ -141,33 +148,7 @@
                       id="Facet-{{ forloop.index }}-{{ section.id }}"
                       class="parent-display {% if filter_type == 'horizontal' %}facets__display facets_list{% else %}facets__display-vertical{% endif %}"
                     >
-                      {%- if filter_type != 'vertical' -%}
-                        <div class="facets__header">
-                          {% comment %} <span class="facets__selected no-js-hidden">
-                            {{- 'products.facets.filters_selected' | t: count: filter.active_values.size -}}
-                          </span> {% endcomment %}
-                          <facet-remove>
-                            <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link">
-                              {{ 'products.facets.reset' | t }}
-                            </a>
-                          </facet-remove>
-                          <facet-remove>
-                            <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link">
-                              {{ 'products.facets.product_category' | t }}
-                            </a>
-                          </facet-remove>
-                          <facet-remove>
-                            <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link">
-                              {{ 'products.facets.material' | t }}
-                            </a>
-                          </facet-remove>
-                          <facet-remove>
-                            <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link">
-                              {{ 'products.facets.producer' | t }}
-                            </a>
-                          </facet-remove>
-                        </div>
-                      {%- endif -%}
+                      
                       <fieldset class="facets-wrap parent-wrap {% if filter_type == 'vertical' %} facets-wrap-vertical{% endif %}">
                         <legend class="visually-hidden">{{ filter.label | escape }}</legend>
                         <ul
@@ -175,7 +156,7 @@
                           role="list"
                         >
                           {%- for value in filter.values -%}
-                            <li class="list-menu__item facets__item{% if forloop.index > 10 and filter_type == 'vertical' %} show-more-item hidden{% endif %}">
+                            <li class="list-menu__item facets__item facets__item_filter{% if forloop.index > 10 and filter_type == 'vertical' %} show-more-item hidden{% endif %}">
                               <label
                                 for="Filter-{{ filter.param_name | escape }}-{{ forloop.index }}"
                                 class="facet-checkbox{% if value.count == 0 and value.active == false %} facet-checkbox--disabled{% endif %}"
@@ -421,6 +402,7 @@
                 {{ 'products.facets.filter_button' | t }}
               </button>
             </noscript>
+          </div>
           </div>
           {% comment %} Pills after filtes on filter type horizontal {% endcomment %}
           {%- if filter_type == 'horizontal' -%}

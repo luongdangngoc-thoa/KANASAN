@@ -183,6 +183,12 @@
 .facets__wrapper.filter_wapper{
   justify-content: flex-end;
 }
+@media screen and (min-width: 480px) {
+  .facets__wrapper.filter_wapper{
+    height: 15rem;
+    max-width: 100%;
+  }
+  }
 .facets__heading {
   display: block;
   color: rgba(var(--color-foreground), 0.85);
@@ -322,7 +328,12 @@
   display: flex;
   align-items: center;
 }
-
+.facets__item.facets__item_filter input{
+  border: 1px solid;
+}
+.facets__item.facets__item_filter va{
+  border: 1px solid;
+}
 .facets__item label,
 .facets__item input[type='checkbox'] {
   cursor: pointer;

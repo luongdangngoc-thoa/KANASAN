@@ -1,3 +1,6 @@
+<script>
+  document.dispatchEvent(new CustomEvent("swym:collections-loaded"));
+</script>
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
@@ -150,6 +153,7 @@
               id="product-grid"
               data-id="{{ section.id }}"
               class="
+                product-grid-wrap
                 grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
                 grid--{{ section.settings.columns_desktop }}-col-desktop
               "
@@ -392,3 +396,4 @@
   ]
 }
 {% endschema %}
+
