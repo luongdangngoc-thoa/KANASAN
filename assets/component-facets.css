@@ -171,19 +171,31 @@
   grid-template-columns: 1fr max-content max-content;
   margin-bottom: 0.5rem;
 }
-.facets__wrapper.filter_wapper .open-modal{
+.facets__form .open-modal{
   display: grid;
   grid-template-columns: repeat(4,1fr);
   gap: 5rem;
+  background: rgba(89, 87, 87, 0.10);
 }
-.facets__wrapper.filter_wapper .open-modal > div > div{
+.facets__form .open-modal > div > div{
   width: 100%;
 }
 @media screen and (min-width: 480px) {
   .facets__wrapper.filter_wapper{
     height: max-content;
     max-width: 100%;
+    display: flex;
   }
+}
+  @media screen and (min-width: 480px) {
+    .category-link-list.page-width{
+      display: flex;
+      gap: 3rem;
+    }
+  }
+  .category-link-list .page-width{
+    display: flex;
+    gap: 3rem;
   }
 .facets__heading {
   display: block;
@@ -210,6 +222,8 @@
 }
 .facets-container .facets__form{
   display: block;
+  background: rgba(89, 87, 87, 0.10);
+  
 }
 .facets-container .facets__form .facets__summary.facest_details {
   display: flex;
