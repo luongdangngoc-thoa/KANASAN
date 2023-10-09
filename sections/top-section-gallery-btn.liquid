@@ -26,45 +26,34 @@
   }
 
   .galley-link-button {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
   }
   .galley-link-button a {
-    display: inline-block;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-flex;
+    width: 34rem;
+    height: 5.8rem;
     text-decoration: none;
-    text-align: center;
-    color: #fff;
-    background-color: #595757;
     font-size: 1.6rem;
     font-family: Poppins;
-    min-width: 34rem;
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
-
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: #595757;
+    font-family: Poppins;
   }
 
   .galley-link-button a img {
     margin-left: 8px;
   }
 
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 500px) {
     .galley-link-button a {
-      width: 80%;
+      width: 30rem;
+      height: 5.6rem;
+      font-size: 1.6rem;
     }
   }
-
-
-  @media screen and (max-width: 400px) {
-    .galley-link-button a {
-      width: 100%;
-    }
-  }
-
   .galley-link-button a:hover {
     cursor: pointer;
     opacity: 0.7;

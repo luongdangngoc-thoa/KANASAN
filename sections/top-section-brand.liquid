@@ -10,7 +10,10 @@
           <p class="brand-des">{{ block.settings.brand-des }}</p>
         </div>
         <div class="brand-button scroll-trigger animate--slide-in">
-          <a role="link" href="{{block.settings.brand-url}}">
+          <a
+            class="page-button btn-transparent"
+            role="link"
+            href="{{block.settings.brand-url}}">
             {{ block.settings.button-lable }}
           </a>
         </div>
@@ -77,34 +80,15 @@
 
   .brand-button {
     margin-top: 2.4rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    text-align: center;
   }
 
   .brand-button a {
-    display: inline-block;
-    text-decoration: none;
-    text-align: center;
-    color: #595757;
-    font-size: 1.6rem;
-    font-family: Poppins;
-    border: #595757 1px solid;
-    width: 80%;
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
+    width: 100%;
+    max-width: 34rem;
   }
 
-  .brand-button a:hover {
-    color: #fff;
-    transition: 0.3s;
-  }
-
-  .brand-button a:hover {
-    background-color: #595757;
-    transition: 0.3s;
-  }
 
   @media screen and (max-width: 800px) {
     .top-brand-list {
@@ -128,13 +112,6 @@
       margin-top: 2.4rem;
     }
 
-    .brand-button a {
-      font-size: 1.6rem;
-      width: 80%;
-      padding-top: 0.8rem;
-      padding-bottom: 0.8rem;
-    }
-
 
     @media screen and (max-width: 650px) {
       .brand-list-container {
@@ -146,9 +123,11 @@
       }
     }
 
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 500px) {
       .brand-button a {
-        width: 100%;
+        width: 30rem;
+        height: 5.6rem;
+        font-size: 1.6rem;
       }
     }
   }
