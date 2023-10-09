@@ -25,7 +25,8 @@
   endif
 -%}
 
-<div class="facets-container{% if filter_type == 'drawer' %} facets-container-drawer{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+<div class="facets-container product_gird{% if filter_type == 'drawer' %} facets-container-drawer{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+   
   {%- if filter_type == 'vertical' or filter_type == 'horizontal' -%}
     <facet-filters-form class="facets small-hide">
       <form
@@ -45,11 +46,6 @@
               class="facets__wrapper filter_wapper"
             {% endif %}
           >
-            {%- if filter_type == 'horizontal' and results.filters != empty -%}
-              {% comment %} <h2 class="facets__heading caption-large text-body" id="verticalTitle" tabindex="-1">
-                {{ 'products.facets.filter_by_label' | t }}
-              </h2> {% endcomment %}
-            {%- endif -%}
             {% comment %} Pills are right below the title for filter type vertical {% endcomment %}
             {%- if filter_type == 'vertical' -%}
               <div class="active-facets active-facets-desktop">
@@ -109,12 +105,25 @@
             {%- endif -%}
             <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
             {% comment %} Filters for both horizontal and vertical filter {% endcomment %}
+            <div class="category-link-list page-width">
+              {% for type in shop.types %}
+                <div class="collection-link-wrapper">
+                  <span class="collection-link">
+                    {{- type | link_to_type }}
+                  </span>
+                </div>
+              {% endfor %}
+            </div>
             <div class="button-show facets__summary facest_details caption-large focus-offset">                  絞り込み検索
-              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="11" viewBox="0 0 17 11" fill="none">
+              <svg class="arrow-down-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="11" viewBox="0 0 17 11" fill="none">
                 <path opacity="0.9" d="M0.5 0.5L8.5 9.5L16.5 0.5" stroke="white"/>
               </svg>
-            </div>
-              <div class="open-modal" style="display: none;">                
+              <svg class="minus-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="17" height="2" viewBox="0 0 17 2" fill="none">
+                <path d="M0.5 1H16.5" stroke="white"/>
+              </svg>
+            </div>          
+          </div>
+                 <div class="open-modal" style="display: none;">                
                 {%- for filter in results.filters -%}
                   {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
                   {% case filter.type %}
@@ -127,29 +136,28 @@
                           open
                         {% endif %}
                       >
-                        {% comment %} <summary
-                          class="facets__summary facest_details caption-large focus-offset"
-                          aria-label="{{ filter.label }} ({{ 'products.facets.filters_selected.one' | t: count: filter.active_values.size }})"
-                        >
-                           <div>
-                            <span>
-                              {{- filter.label | escape }}
-                              {%- if filter_type == 'vertical' -%}
-                                <span class="facets__selected no-js-hidden{% if filter.active_values.size == 0 %} hidden{% endif %}">
-                                  ({{ filter.active_values.size }})</span
-                                >
-                              {%- endif -%}
-                            </span>
-                            {% render 'icon-caret' %}
-                          </div> 
-                        </summary> {% endcomment %}
                         <div
                           id="Facet-{{ forloop.index }}-{{ section.id }}"
-                          class="parent-display {% if filter_type == 'horizontal' %}facets__display facets_list{% else %}facets__display-vertical{% endif %}"
-                        >
+                          class="parent-display {% if filter_type == 'horizontal' %}facets__display facets_list{% else %}facets__display-vertical{% endif %}">
                           
                           <fieldset class="facets-wrap parent-wrap {% if filter_type == 'vertical' %} facets-wrap-vertical{% endif %}">
                             <legend class="visually-hidden">{{ filter.label | escape }}</legend>
+                      <div class="facets__header"
+                      aria-label="{{ filter.label }} ({{ 'products.facets.filters_selected.one' | t: count: filter.active_values.size }})"
+                    >
+                      <div>
+                        <span>
+                          {{- filter.label | escape }}
+                          {%- if filter_type == 'vertical' -%}
+                            <span class="facets__selected no-js-hidden{% if filter.active_values.size == 0 %} hidden{% endif %}">
+                              ({{ filter.active_values.size }})</span
+                            >
+                          {%- endif -%}
+                        </span>
+                        {% render 'icon-caret' %}
+                      </div>
+                    </div>
+                    
                             <ul
                               class="{% if filter_type != 'vertical' %} facets__list{% endif %} list-unstyled no-js-hidden"
                               role="list"
@@ -402,8 +410,6 @@
                   </button>
                 </noscript>
               </div>
-           
-          </div>
           {% comment %} Pills after filtes on filter type horizontal {% endcomment %}
           {%- if filter_type == 'horizontal' -%}
             <div class="active-facets active-facets-desktop">
@@ -999,32 +1005,6 @@
     class="product-count light{% if filter_type == 'vertical' or filter_type == 'horizontal' %} medium-hide large-up-hide{% endif %}"
     role="status"
   >
-    <h2 class="product-count__text text-body">
-      <span id="ProductCount">
-        {%- if results.results_count -%}
-          {{ 'templates.search.results_with_count' | t: terms: results.terms, count: results.results_count }}
-        {%- elsif results.products_count == results.all_products_count -%}
-          {{ 'products.facets.product_count_simple' | t: count: results.products_count }}
-        {%- else -%}
-          {{
-            'products.facets.product_count'
-            | t: product_count: results.products_count, count: results.all_products_count
-          }}
-        {%- endif -%}
-      </span>
-    </h2>
-    <div class="loading-overlay__spinner">
-      <svg
-        aria-hidden="true"
-        focusable="false"
-        class="spinner"
-        viewBox="0 0 66 66"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-      </svg>
-    </div>
-  </div>
   {%- if filter_type == 'drawer' -%}
     <facet-filters-form class="facets facets-pill small-hide">
       <form id="FacetFiltersPillsForm" class="facets__form">

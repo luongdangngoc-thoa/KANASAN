@@ -48,6 +48,7 @@
     },
     "main_collection_link": {
       "type": "main_sections_collections_link",
+      "disabled": true,
       "settings": {}
     },
     "product-grid": {
