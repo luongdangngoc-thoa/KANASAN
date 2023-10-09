@@ -93,6 +93,7 @@
   }
   .product__description img {
     object-fit: cover;
+    width: 100%;
   }
 }
 
@@ -136,7 +137,6 @@
 }
 .product-author__detail {
   display: flex;
-  align-items: flex-start;
   gap: 6.25rem;
   color: #595757;
   font-family: Inter;
@@ -208,8 +208,8 @@
     align-items: center;
   }
   .product-author__detail .product-author__detail--info img {
-    width: 4rem;
-    height: 4rem;
+    width: 12rem;
+    height: 12rem;
   }
   .product-author__detail p {
     font-size: 12px;
@@ -386,7 +386,7 @@
 
 @media screen and (max-width: 480px) {
   .product-quantity {
-    padding: 0 0 0 25.4rem;
+    padding: 0 0 0 20rem;
   }
 }
 

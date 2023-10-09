@@ -124,7 +124,7 @@
             "brand-name": "KANASAN NATURE",
             "brand-des": "コンセプト説明が入ります。コンセプト説明が入ります。コンセプト説明が入ります。コンセプト説明が入ります。",
             "button-lable": "製品を見る",
-            "brand-url": "#"
+            "brand-url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.m.custom.brands=KANASAN+NATURE"
           }
         }
       },
@@ -321,7 +321,7 @@
     "ac018362-c8e8-4f53-8d3b-16b62be7afff": {
       "type": "top-section-gallery-btn",
       "settings": {
-        "instagram_link": ""
+        "instagram_link": "https:\/\/www.instagram.com\/kanasan_project\/"
       }
     },
     "21a8804e-4072-4fbf-934e-bc42e6e5b243": {
@@ -358,7 +358,7 @@
         "section_color_scheme": "",
         "title": "よくある質問",
         "button_lable": "その他のご質問",
-        "button_link": ""
+        "button_link": "https:\/\/kanasan-okinawa.myshopify.com\/pages\/contact"
       }
     },
     "top-section-search": {
