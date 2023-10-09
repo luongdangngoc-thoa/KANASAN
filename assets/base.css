@@ -666,13 +666,9 @@ summary::-webkit-details-marker {
 .disclosure-has-popup {
   position: relative;
 }
-<<<<<<< HEAD
-
-=======
 .disclosure-has-popup.facets_details {
   float: right;
 }
->>>>>>> origin/feature/nguyenluong
 .facets_link {
   float: left;
 }
@@ -3629,9 +3625,8 @@ details-disclosure > details {
   border-bottom: rgb(208 208 208) solid 1px;
   text-align: left;
 }
-<<<<<<< HEAD
-.shopify-section.section .section-template--21243532345622__product-grid-padding {
+
+.shopify-section.section
+  .section-template--21243532345622__product-grid-padding {
   padding-top: 0;
 }
-=======
->>>>>>> origin/feature/nguyenluong

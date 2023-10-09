@@ -26,15 +26,12 @@
             "menu": "link-list-2"
           }
         },
-<<<<<<< HEAD
         "6693b7d3-2d7b-4911-9a85-f253b27f76e1": {
           "type": "brand_information",
           "settings": {
             "show_social": true
           }
         },
-=======
->>>>>>> origin/feature/nguyenluong
         "bc2e31b5-90d2-4f79-bd0f-602a3d9a24ce": {
           "type": "image",
           "settings": {
@@ -48,10 +45,7 @@
         "24d395ce-69db-42eb-be7a-d1f5e23560d6",
         "6e76db47-4f18-4e27-b348-738af939a8d6",
         "927cacaf-0590-44f0-a436-18e5387874da",
-<<<<<<< HEAD
         "6693b7d3-2d7b-4911-9a85-f253b27f76e1",
-=======
->>>>>>> origin/feature/nguyenluong
         "bc2e31b5-90d2-4f79-bd0f-602a3d9a24ce"
       ],
       "settings": {
@@ -59,11 +53,7 @@
         "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
         "enable_follow_on_shop": false,
-<<<<<<< HEAD
         "show_social": false,
-=======
-        "show_social": true,
->>>>>>> origin/feature/nguyenluong
         "enable_country_selector": false,
         "enable_language_selector": false,
         "payment_enable": true,
