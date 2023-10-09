@@ -101,7 +101,7 @@ html.no-js .no-js-hidden {
 
 body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   max-width: 100%;
-}
+}  
 
 .page-width.drawer-menu {
   max-width: 100%;
@@ -118,9 +118,9 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 }
 
 @media screen and (min-width: 750px) {
-  .page-width {
+   .page-width {
     padding: 0 5rem;
-  }
+  } 
 
   .header.page-width,
   .utility-bar__grid.page-width {
@@ -262,6 +262,17 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   font-family: var(--font-body-family);
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+li { 
+    margin: 0;
 }
 
 h1,

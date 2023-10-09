@@ -1,0 +1,191 @@
+<div
+    class=" section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} scroll-trigger animate--slide-in">
+    <div class="section-faq-wrapper page-width">
+        <h2 class="section-faq-title">
+            {{ section.settings.title }}</h2>
+        <ul class="section-faq-list">
+            {%- for block in section.blocks -%}
+            <li>
+                <p class="faq-text faq-question">
+                    Q. 質問{{forloop.index}}: {{ block.settings.faq-question }}</p>
+                <p class="faq-text faq-answer">
+                    A. 回答{{forloop.index}}: {{ block.settings.faq-answer }}</p>
+            </li>
+            {%- endfor -%}
+        </ul>
+        <div class="section-faq-button">
+            <a href="{{section.settings.button_link}}">
+                {{ section.settings.button_lable }}</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .section-faq-wrapper {
+        padding-top: 12rem;
+        padding-bottom: 12rem;
+    }
+
+    .section-faq-title {
+        color: #595757;
+        font-family: Noto Sans JP;
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 400;
+        padding-bottom: 2.6rem;
+        border-bottom: rgb(208 208 208) solid 1px;
+        margin-bottom: 6rem;
+    }
+
+    .section-faq-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        list-style: none;
+        padding: 0 6rem;
+    }
+
+    .section-faq-list li:not(:last-child) {
+        margin-bottom: 6rem;
+        border-bottom: #595757 solid 1px;
+    }
+
+    .section-faq-list .faq-text:first-child {
+        border-bottom: rgb(208 208 208) solid 1px;
+    }
+
+    .section-faq-list .faq-text {
+        color: #595757;
+        font-family: Inter;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        padding: 2rem 0;
+    }
+
+    .section-faq-button {
+        display: flex;
+        justify-content: center;
+        margin-top: 6rem;
+    }
+
+    .section-faq-button a {
+        display: inline-block;
+        text-decoration: none;
+        text-align: center;
+        color: #595757;
+        font-size: 1.6rem;
+        font-family: Poppins;
+        border: #595757 1px solid;
+        min-width: 34rem;
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+    }
+
+    .section-faq-button a:hover {
+        color: #fff;
+        transition: 0.3s;
+    }
+
+    .section-faq-button a:hover {
+        background-color: #595757;
+        transition: 0.3s;
+    }
+
+    @media screen and (max-width: 800px) {
+        .section-faq-wrapper {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+
+        .section-faq-button {
+            margin-top: 4rem;
+        }
+
+        .section-faq-list li:not(:last-child) {
+            margin-bottom: 4rem;
+        }
+    }
+
+    @media screen and (max-width: 650px) {
+        .section-faq-button a {
+            width: 80%;
+        }
+    }
+
+    @media screen and (max-width: 460px) {
+
+        .section-faq-list {
+            padding: 0;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        .section-faq-button a {
+            width: 100%;
+        }
+    }
+</style>
+{% schema %}
+{
+"name": "FAQ",
+"tag": "section",
+"class": "section",
+"settings": [
+{
+"type": "color_scheme",
+"id": "section_color_scheme",
+"label": "t:sections.all.colors.label",
+"default": "background-1"
+}, {
+"type": "text",
+"id": "title",
+"label": "Section title",
+"default": "よくある質問"
+}, {
+"type": "text",
+"id": "button_lable",
+"label": "Button lable",
+"default": "その他のご質問"
+}, {
+"type": "url",
+"id": "button_link",
+"label": "Button link"
+}
+],
+"blocks": [
+{
+"type": "Block",
+"name": "Block",
+"settings": [
+{
+"type": "text",
+"id": "faq-question",
+"default": "Question",
+"label": "Question"
+}, {
+"type": "text",
+"id": "faq-answer",
+"default": "Answer",
+"label": "Answer"
+}
+]
+}
+],
+"presets": [
+{
+"name": "FAQ",
+"blocks": [
+{
+"type": "Block"
+}, {
+"type": "Block"
+}, {
+"type": "Block"
+}
+]
+}
+]
+}
+{% endschema %}
