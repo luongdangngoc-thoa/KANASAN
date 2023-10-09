@@ -3623,3 +3623,6 @@ details-disclosure > details {
   border-bottom: rgb(208 208 208) solid 1px;
   text-align: left;
 }
+.shopify-section.section .section-template--21243532345622__product-grid-padding {
+  padding-top: 0;
+}
