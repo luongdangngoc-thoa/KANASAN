@@ -35,7 +35,9 @@
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
   {%- if product.quantity_price_breaks_configured? -%}
-    <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
+    <script
+      src="{{ 'show-more.js' | asset_url }}"
+      defer="defer"></script>
     <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
 
@@ -48,7 +50,7 @@
   {%- if request.design_mode -%}
     <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
-
+  {% render 'breadcrumbs' %}
   {%- assign first_3d_model = product.media | where: 'media_type', 'model' | first -%}
   {%- if first_3d_model -%}
     {{ 'component-product-model.css' | asset_url | stylesheet_tag }}
@@ -68,11 +70,11 @@
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
-  <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}" style=padding-top:63px;>
-    <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
+  <div class="product product-container product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}" style=padding-top:63px;>
+    <div class="product-left grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
       {% render 'product-media-product-main', variant_images: variant_images %}
     </div>
-    <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    <div class="product-right product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <product-info
         id="ProductInfo-{{ section.id }}"
         data-section="{{ section.id }}"
@@ -448,7 +450,7 @@
             , block: block,
             share_link: share_url %} {% endcomment %}
             <div>
-              <p>お届け予定日</p>
+              <p>{{ product.metafields.custom.delivery }}</p>
             </div>
 
             {%- when 'variant_picker' -%}
@@ -537,7 +539,6 @@
                                      show_secondary_image: false,
                                      lazy_load: false,
                                      show_quick_add: block.settings.enable_quick_add,
-                                     Producer:
                                      section_id: section.id,
                                      horizontal_class: true,
                                      horizontal_quick_add: true %}
@@ -694,7 +695,7 @@
   {% endif %}
 
 
-  {% comment %} Thành phần {% endcomment %}
+  {% comment %} ingredient - detail description {% endcomment %}
   <div class="product-ingredient">
     <p class="product-ingredient__title">
       {{ 'products.product.ingredient.title' | t }}
@@ -714,7 +715,7 @@
         </p>
         <p class="product-ingredient__list--detail-content">
           {% for variant in product.variants %}
-            {{ variant.weight | weight_with_unit }}{% endfor %}
+            {{ variant.weight }}g{% endfor %}
         </p>
       </div>
       <div class="product-ingredient__list--detail">
@@ -727,45 +728,90 @@
       </div>
     </div>
   </div>
+
   {% comment %} Review {% endcomment %}
-  <div class="product-review">
-    <p class="product-review__title">
-      {{ 'products.product.review.title' | t }}
-    </p>
-    <div class="product-review__rating">
-      <p class="product-review__rating--number">
-        {{ product.metafields.custom.rating.value }}
+
+  {% if product.metafields.custom.rating.value == null %}
+    <div class="product-review">
+      <p class="product-review__title">
+        {{ 'products.product.review.title' | t }}
       </p>
-      <ul class="product-review__rating--list-star">
-        {% comment %} <ryviu-widget-total
-        reviews_data="{{product.metafields.ryviu.product_reviews_info  | escape  }}"
-        product_id="{{product.id}}"
-        handle="{{product.handle}}"></ryviu-widget-total> {% endcomment %}
-        <li>{% render 'icon-star-full' %}</li>
-        <li>{% render 'icon-star-full' %}</li>
-        <li>{% render 'icon-star-full' %}</li>
-        <li>{% render 'icon-star-full' %}</li>
-        <li>{% render 'icon-star-empty' %}</li>
+      <div class="product-review__rating">
+        <p class="product-review__rating--number">
+          0.0
+        </p>
 
-      </ul>
+        <ul class="product-review__rating--list-star">
+          <li>
+            {% render 'icon-star-empty' %}
+          </li>
+          <li>
+            {% render 'icon-star-empty' %}
+          </li>
+          <li>
+            {% render 'icon-star-empty' %}
+          </li>
+          <li>
+            {% render 'icon-star-empty' %}
+          </li>
+          <li>
+            {% render 'icon-star-empty' %}
+          </li>
+        </ul>
+      </div>
+      <div class="product-review__rating--btn">
+        <a>
+          <button class="btn-1">
+            {{ 'products.product.review.button.comment' | t }}
+          </button>
+        </a>
+        <a>
+          <button class="btn-2">
+            {{ 'products.product.review.button.question' | t }}
+          </button>
+        </a>
+      </div>
     </div>
-    <div class="product-review__rating--btn">
-      <a>
-        <button class="btn-1">
-          {{ 'products.product.review.button.comment' | t }}
-        </button>
-      </a>
-      <a>
-        <button class="btn-2">
-          {{ 'products.product.review.button.question' | t }}
-        </button>
-      </a>
+  {% else %}
+    <div class="product-review">
+      <p class="product-review__title">
+        {{ 'products.product.review.title' | t }}
+      </p>
+      <div class="product-review__rating">
+        <p class="product-review__rating--number">
+          {{ product.metafields.custom.rating.value }}
+        </p>
+        {% assign reviews = product.metafields.custom.rating.value %}
+        {% if reviews %}
+          {% assign rating = reviews.rating | round %}
+          {% assign max = reviews.scale_max | round %}
+          <ul class="product-review__rating--list-star">
+            {% for iteration in (1..max) %}
+              <li>
+                {% if iteration <= rating %}
+                  {% render 'icon-star-full' %}
+                {% else %}
+                  {% render 'icon-star-empty' %}
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+      <div class="product-review__rating--btn">
+        <a>
+          <button class="btn-1">
+            {{ 'products.product.review.button.comment' | t }}
+          </button>
+        </a>
+        <a>
+          <button class="btn-2">
+            {{ 'products.product.review.button.question' | t }}
+          </button>
+        </a>
+      </div>
     </div>
-  </div>
-  <div>
-    <p>閲覧履歴</p>
-  </div>
-
+  {% endif %}
   <script>
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -773,7 +819,7 @@
       var selectedQuantity = document.querySelector('#quantity').value;
 
 // Add an event listener to the "Buy" button (adjust the selector as needed)
-      document.querySelector('#ProductSubmitButton-                                                                                                                                                                                             {{ section_id }}').addEventListener('click', function(e) {
+      document.querySelector('#ProductSubmitButton-                                                                                                                                                                                                                                                                    {{ section_id }}').addEventListener('click', function(e) {
 
 // Prevent the default form submission
         e.preventDefault();
@@ -798,13 +844,13 @@
 
 
 
-      const hiddenInput = document.querySelector('#                                                                                                                                                                                             {{ product_form_id }} input[name="id"]');
+      const hiddenInput = document.querySelector('#                                                                                                                                                                                                                                                                    {{ product_form_id }} input[name="id"]');
       const noScriptInputWrapper = document.createElement('div');
-      const variantSwitcher = document.querySelector('variant-radios[data-section="                                                                                                                                                                                             {{ section.id }} "]') || document.querySelector('variant-selects[data-section="                                                                                                                                                                                             {{ section.id }} "]');
-      noScriptInputWrapper.innerHTML = document.querySelector('.product-form__noscript-wrapper-                                                                                                                                                                                             {{ section.id }}').textContent;
+      const variantSwitcher = document.querySelector('variant-radios[data-section="                                                                                                                                                                                                                                                                    {{ section.id }} "]') || document.querySelector('variant-selects[data-section="                                                                                                                                                                                                                                                                    {{ section.id }} "]');
+      noScriptInputWrapper.innerHTML = document.querySelector('.product-form__noscript-wrapper-                                                                                                                                                                                                                                                                    {{ section.id }}').textContent;
       variantSwitcher.outerHTML = noScriptInputWrapper.outerHTML;
 
-      document.querySelector('#Variants-                                                                                                                                                                                             {{ section.id }}').addEventListener('change', function(event) {
+      document.querySelector('#Variants-                                                                                                                                                                                                                                                                    {{ section.id }}').addEventListener('change', function(event) {
         hiddenInput.value = event.currentTarget.value;
       });
     });
@@ -821,8 +867,8 @@
   <script type="application/ld+json">
     {
     "@context": "http://schema.org/",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          "@type": "Product",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          "name": {{ product.title | json }},
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      "@type": "Product",
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      "name": {{ product.title | json }},
     "url": {{ request.origin | append: product.url | json }},
     {% if seo_media -%}
       "image": [
@@ -835,7 +881,7 @@
     {%- endif %}
     "brand": {
     "@type": "Brand",
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            "name": {{ product.vendor | json }}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        "name": {{ product.vendor | json }}
     },
     "offers": [
     {%- for variant in product.variants -%}

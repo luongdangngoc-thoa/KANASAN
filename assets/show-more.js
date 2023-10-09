@@ -27,3 +27,27 @@ if (!customElements.get('show-more-button')) {
 
 }
 
+const handleSelectOption = () => {
+  let openSelect = false	
+  const button = document.querySelector('.button-show');	
+  const minus_icon = document.querySelector('.minus-icon');
+  const arrow_down_icon = document.querySelector('.arrow-down-icon');
+
+  const selectContainer = document.querySelector('.open-modal');	
+
+  button.addEventListener('click', (event) => {	
+      if (openSelect) {	
+        arrow_down_icon.style.display = 'none';	
+        minus_icon.style.display = 'block';
+        selectContainer.style.display = 'grid';	
+      } else {	
+        arrow_down_icon.style.display = 'block';
+        minus_icon.style.display = 'none';
+        selectContainer.style.display = 'none';	
+      }	
+
+      openSelect = !openSelect;	
+  });
+}
+
+handleSelectOption()

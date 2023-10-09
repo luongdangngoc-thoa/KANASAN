@@ -68,12 +68,40 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "8eb54896-a171-44b5-a83d-d7bd1c57a3a8": {
+      "type": "rich-text",
+      "blocks": {
+        "template--21243532345622__8eb54896-a171-44b5-a83d-d7bd1c57a3a8-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "TOPへ戻る",
+            "button_link": "shopify:\/\/collections\/all",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "shopify:\/\/collections\/all",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "template--21243532345622__8eb54896-a171-44b5-a83d-d7bd1c57a3a8-button-1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "banner",
     "06c75edb-d296-45e3-8755-8972b42e21a4",
     "main_collection_link",
-    "product-grid"
+    "product-grid",
+    "8eb54896-a171-44b5-a83d-d7bd1c57a3a8"
   ]
 }
