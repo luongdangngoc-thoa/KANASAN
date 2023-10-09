@@ -189,6 +189,10 @@
           "comment": "レビューを書く",
           "question": "質問をする"
         }
+      },
+      "featured": {
+        "title": "閲覧履歴",
+        "button": "商品一覧へ戻る"
       }
     },
     "modal": {

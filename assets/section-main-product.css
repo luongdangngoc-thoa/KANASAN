@@ -14,6 +14,17 @@
 .pmslider-mount {
   width: 90% !important;
 }
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .product--no-media {
+    max-width: 100%; /* Adjust max-width for smaller screens */
+  }
+
+  .pmslider-mount {
+    width: 100% !important; /* Adjust width for smaller screens */
+  }
+}
 .pmslider-arrows--chl .pmslider-arrows_arrow svg {
   color: transparent;
 }
@@ -1718,4 +1729,9 @@ a.product__text {
 
 .swym-btn-container .swym-button.swym-added:after {
   opacity: unset !important;
+}
+@media (max-width: 768px) {
+  .swym-button-bar {
+    margin-top: 1px; /* Adjust margin for smaller screens */
+  }
 }

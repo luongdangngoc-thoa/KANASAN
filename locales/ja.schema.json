@@ -2290,6 +2290,10 @@
         "full_width": {
           "label": "セクションを全幅にする"
         },
+        "main_collection_page": {
+          "name": "Main collection page",
+          "settings": {}
+        },
         "desktop_content_position": {
           "options__1": {
             "label": "左"

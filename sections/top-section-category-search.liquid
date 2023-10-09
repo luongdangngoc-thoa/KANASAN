@@ -38,14 +38,27 @@
     font-weight: 400;
     padding-bottom: 2.6rem;
     border-bottom: rgb(208 208 208) solid 1px;
+    margin-bottom: 6rem;
   }
   .category-search-list {
-    margin-top: 6rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10rem;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 1.6rem;
+  }
+
+  @media screen and (max-width: 900px) {
+    .category-search-list {
+      display: grid;
+      grid-template-columns: auto auto auto;
+    }
+  }
+
+
+  @media screen and (max-width: 650px) {
+    .category-search-list {
+      display: grid;
+      grid-template-columns: auto auto;
+    }
   }
 
   .category-search-list .category-link {
