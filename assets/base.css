@@ -1202,9 +1202,8 @@ deferred-media {
   --color-button-text: var(--color-secondary-button-text);
 }
 .button--secondary.top_button{
-  width: 340px;
-  height: 58px;
-  border: 0.5px solid #595757;
+  width: 34rem;
+  height: 5.8rem;
 }
 .button--tertiary {
   --alpha-button-background: 0;

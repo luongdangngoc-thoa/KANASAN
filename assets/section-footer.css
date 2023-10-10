@@ -574,3 +574,7 @@
   footer.section-sections--21243532804374__footer-padding{
     border-top: none !important;
   }
+  footer.section-sections--21243532804374__footer-padding .footer__content-bottom{
+    border: none !important;
+  }
+  
