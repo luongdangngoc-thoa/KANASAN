@@ -106,13 +106,13 @@
             <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
             {% comment %} Filters for both horizontal and vertical filter {% endcomment %}
             <div class="category-link-list page-width">
-              {% for type in shop.types %}
-                <div class="collection-link-wrapper">
+              <div class="collection-link-wrapper">
+                  {% for type in shop.types %}
                   <span class="collection-link">
                     {{- type | link_to_type }}
                   </span>
-                </div>
-              {% endfor %}
+                {% endfor %}
+              </div>
             </div>
             <div class="button-show facets__summary facest_details caption-large focus-offset">                  絞り込み検索
               <svg class="arrow-down-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="11" viewBox="0 0 17 11" fill="none">

@@ -58,6 +58,12 @@
     margin-bottom: 2rem; /* Adjust margin for smaller screens */
   }
 
+  .product-form__input {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 100%;
+  }
+
   .product-prices p {
     font-size: 18px; /* Adjust font size for smaller screens */
     line-height: 26px; /* Adjust line height for smaller screens */
@@ -87,13 +93,12 @@
 }
 
 /* Media Query for screens up to 768px wide */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 920px) {
   .product__description {
     padding: 4rem;
   }
   .product__description img {
     object-fit: cover;
-    width: 100%;
   }
 }
 
@@ -104,7 +109,11 @@
     font-size: 16px;
     line-height: 28px;
   }
+}
+@media screen and (max-width: 620px) {
   .product__description img {
+    object-fit: cover;
+    width: 100%;
   }
 }
 
@@ -275,7 +284,6 @@
 
   .product-container {
     display: flex;
-    flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
   }
@@ -354,9 +362,6 @@
   .product-ingredient__list--detail-title {
     width: 100%;
   }
-  .product-review__rating--btn button {
-    width: 20.6rem;
-  }
 }
 .product-review__rating--btn .btn-1 {
   border: 0.5px solid #595757;
@@ -382,12 +387,6 @@
   display: flex;
   align-items: center;
   margin-top: 1rem;
-}
-
-@media screen and (max-width: 480px) {
-  .product-quantity {
-    padding: 0 0 0 20rem;
-  }
 }
 
 .product-quantity select {
@@ -469,6 +468,10 @@
 @media (max-width: 768px) {
   .product-form__buttons {
     padding-top: 3rem; /* Adjust padding for smaller screens */
+    max-width: 100%;
+  }
+  .product__button {
+    margin-bottom: 20px;
   }
 
   .btn-add-to-cart {
@@ -479,12 +482,14 @@
   }
 
   .add-to-cart__button {
-    width: 95%; /* Make the button full-width on smaller screens */
-    padding-bottom: 1rem; /* Adjust padding for smaller screens */
+    display: block;
+    width: 100%;
+    padding-bottom: 0;
+    margin-bottom: -1.7rem;
   }
 
   .checkout-btn {
-    width: 74%; /* Make the button full-width on smaller screens */
+    width: 100%; /* Make the button full-width on smaller screens */
   }
 }
 
