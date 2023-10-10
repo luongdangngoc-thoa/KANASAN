@@ -571,4 +571,6 @@
       justify-content: center;
     }
   }
-  
+  footer.section-sections--21243532804374__footer-padding{
+    border-top: none !important;
+  }

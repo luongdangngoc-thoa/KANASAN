@@ -340,7 +340,7 @@
   margin-top: 3rem;
 }
 
-.product-review__rating--btn button {
+.product-review__rating--btn a {
   padding: 0.875rem 5.875rem;
   width: 27.6rem;
   cursor: pointer;
@@ -367,6 +367,9 @@
   border: 0.5px solid #595757;
   background: #595757;
   color: #fff;
+}
+.product-review__rating--btn .btn-2 {
+  border: 0.5px solid #595757;
 }
 
 .product-review__rating--btn .btn-1:hover {

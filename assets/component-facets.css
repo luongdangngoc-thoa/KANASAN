@@ -262,6 +262,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  gap: 2rem;
 }
 .facets-container .facets__summary.facest_details:hover {
   color: #fff;
@@ -476,7 +477,11 @@ button.facets__button {
 .facets__button-no-js {
   transform: translateY(-0.6rem);
 }
-
+.facets__button-no-js.top_button{
+  width: 340px;
+  height: 58px;
+  border: 0.5px solid #595757;
+}
 .active-facets {
   display: flex;
   flex-wrap: wrap;

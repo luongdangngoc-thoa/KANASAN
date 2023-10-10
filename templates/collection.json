@@ -46,15 +46,10 @@
         "show_text_below": true
       }
     },
-    "main_collection_link": {
-      "type": "main_sections_collections_link",
-      "disabled": true,
-      "settings": {}
-    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
-        "products_per_page": 16,
+        "products_per_page": 6,
         "columns_desktop": 3,
         "image_ratio": "adapt",
         "image_shape": "default",
@@ -101,7 +96,6 @@
   "order": [
     "banner",
     "06c75edb-d296-45e3-8755-8972b42e21a4",
-    "main_collection_link",
     "product-grid",
     "8eb54896-a171-44b5-a83d-d7bd1c57a3a8"
   ]
