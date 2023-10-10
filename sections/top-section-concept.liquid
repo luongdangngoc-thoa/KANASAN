@@ -24,13 +24,14 @@
         </div>
         {%- when 'button' -%}
         <div
-          class="section-concept__buttons scroll-trigger animate--slide-in"
+          class="section-concept__button scroll-trigger animate--slide-in"
           {{ block.shopify_attributes }}
           {% if settings.animations_reveal_on_scroll %}
           data-cascade
           style="--animation-order: {{ forloop.index }};"
           {% endif %}>
           <a
+            class="page-button btn-primary"
             target="_blank"
             {% if block.settings.button_link == blank %}
             role="link"
@@ -146,57 +147,14 @@
     margin-top: 3rem;
   }
 
-  .section-concept__buttons {
+  .section-concept__button {
     margin-top: 7rem;
-    background: #FFF;
-    border: #595757 1px solid;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .section-concept__buttons a {
-    text-decoration: none;
-    display: inline-block;
-    color: #595757;
-    padding: 1.5rem 12rem;
-    font-size: 1.6rem;
-    font-family: Poppins;
   }
 
   @media screen and (max-width: 749px) {
-    .section-concept__buttons {
+    .section-concept__button {
       margin-top: 4rem;
     }
-
-    .section-concept__buttons a {
-      padding: 1rem 10rem;
-      font-size: 1.4rem;
-    }
-
-  }
-
-  @media screen and (max-width: 400px) {
-    .section-concept__buttons {
-      width: 100%;
-    }
-    .section-concept__buttons a {
-      width: 100%;
-      font-size: 1.4rem;
-      padding-left: unset;
-      padding-right: unset;
-    }
-  }
-
-  .section-concept__buttons:hover {
-    background: #595757;
-    border: #595757 1px solid;
-    transition: 0.3s;
-  }
-
-  .section-concept__buttons a:hover {
-    color: #FFF;
-    transition: 0.3s;
   }
 </style>
 {% schema %}

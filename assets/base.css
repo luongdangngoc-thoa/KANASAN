@@ -3602,6 +3602,67 @@ details-disclosure > details {
   }
 }
 
+/*common button */
+
+.page-button {
+  display: inline-flex;
+   width: 34rem;
+   height: 5.8rem;
+   text-decoration: none;
+   font-size: 1.6rem;
+   font-family: Poppins;
+   cursor: pointer;
+  align-items: center;
+   justify-content: center;
+}
+
+.page-button:hover {
+    transition: all 0.3s;
+}
+
+
+.btn-primary {
+    color: #595757;
+    background: #FFF;
+    border: #595757 1px solid;
+}
+
+
+.btn-primary:hover {
+    color: #FFF;
+    background-color:#595757;
+    border: #595757 1px solid;
+}
+
+.btn-secondary {
+    color: #FFF;
+    background-color:#595757;
+    border: #595757 1px solid;
+}
+
+.btn-transparent {
+    background-color: transparent;
+    color: #595757;
+    border: #595757 1px solid;
+}
+
+.btn-transparent:hover {
+    color: #FFF;
+    background-color:#595757;
+    border: #595757 1px solid;
+}
+
+@media screen and (max-width: 500px) { 
+    .page-button {
+         width: 30rem;
+         height: 5.6rem;
+         font-size: 1.6rem;
+      }
+}
+
+
+/*common button end*/
+
 /* Instagram - top-page */
 
 #shopify-section-template--21243532411158__169661211538385504 {
@@ -3624,4 +3685,9 @@ details-disclosure > details {
   margin-bottom: 6rem !important;
   border-bottom: rgb(208 208 208) solid 1px;
   text-align: left;
+}
+
+.shopify-section.section
+  .section-template--21243532345622__product-grid-padding {
+  padding-top: 0;
 }

@@ -497,8 +497,8 @@
   margin-top: 1rem;
 }
 .banner_image{
-  width: 110.4rem;
-  margin: 50px auto;
+  max-width: calc(var(--page-width) - 100px);
+  margin: 50px auto 0;
   height:28.8rem ;
   
 }

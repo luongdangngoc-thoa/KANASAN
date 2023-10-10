@@ -80,10 +80,13 @@
         "columns_desktop": 4,
         "enable_desktop_slider": true,
         "color_scheme": "background-1",
-        "columns_mobile": "1",
+        "columns_mobile": "2",
         "swipe_on_mobile": true
       }
     }
   },
-  "order": ["main", "product-featured-collection"]
+  "order": [
+    "main",
+    "product-featured-collection"
+  ]
 }

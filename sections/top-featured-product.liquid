@@ -32,7 +32,7 @@
 <div class="color-{{ section.settings.color_scheme }} isolate gradient">
   <div class="collection section-{{ section.id }}-padding page-width">
     <h2 class="feature-collection-title inline-richtext scroll-trigger animate--slide-in">
-      {{'products.product.featured.title' | t}}
+      {{ 'products.product.featured.title' | t }}
     </h2>
 
     <slider-component class="slider-mobile-gutter slider-component-full-width{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %} scroll-trigger animate--slide-in">
@@ -47,7 +47,7 @@
             class="grid__item slider__slide scroll-trigger animate--slide-in"
             data-cascade
             style="--animation-order: {{ forloop.index }};">
-            {% render 'top-card-product'
+            {% render 'top-card-product' 
              , card_product: product,
              section_id: section.id %}
           </li>
@@ -76,16 +76,16 @@
   </div>
 </div>
 <div class="featured__button">
-  <a href="/">
+  <a href="/" name="top-featured-collection">
     <button class="btn-featured">
-      {{ 'products.product.featured.button' | t }}
+      商品一覧へ戻る
     </button>
   </a>
 </div>
 
 {% schema %}
   {
-    "name": "Product featured collection",
+    "name": "Top featured collection",
     "tag": "section",
     "class": "section",
     "disabled_on": {
@@ -166,18 +166,12 @@
   }
 {% endschema %}
 
+
 <style>
 
   .collection {
     padding-top: 12rem;
     padding-bottom: 12rem;
-  }
-
-  @media screen and (max-width: 800px) {
-    .collection {
-      padding-top: 6rem;
-      padding-bottom: 6rem;
-    }
   }
 
   .feature-collection-title {
@@ -194,65 +188,15 @@
 
   .collection slider-component {
     position: relative;
-    padding-bottom: 2rem;
-  }
-
-  @media screen and (max-width: 749px) {
-    /* Fix to show some space at the end of our sliders in all browsers */
-    .collection .grid--peek.slider:after {
-      margin-left: calc(-1 * var(--grid-mobile-horizontal-spacing));
-    }
-
-    .collection .grid--peek.slider .grid__item:first-of-type {
-      margin-left: 2.5rem;
-    }
-
-
-    /* css for top feature slide */
-    .collection .slider--tablet.grid--peek.grid--2-col-tablet-down .grid__item,
-    .collection .grid--peek .grid__item {
-      width: calc(50% - var(--grid-mobile-horizontal-spacing));
-    }
-
-  }
-  .collection slider-component ul {
-    padding-bottom: 2rem !important;
   }
   .top-feature-collection-btn {
     position: absolute;
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin: 0 -1.6rem;
+    margin: 0 -1rem;
     transform: translateX(-50%) translateY(-50%);
     top: 40%;
     left: 50%;
-  }
-
-  @media screen and (max-width: 649px) {
-    .top-feature-collection-btn {
-      display: none !important;
-    }
-
-  }
-  /* show scroll bar */
-  .collection .slider {
-    scrollbar-color: rgb(var(--color-foreground)) rgba(var(--color-foreground), 0.04);
-    -ms-overflow-style: auto;
-    scrollbar-width: thin;
-  }
-
-  .collection .slider::-webkit-scrollbar {
-    margin-top: 1rem;
-    height: 0.3rem;
-    width: 0.3rem;
-    display: initial;
-  }
-
-  .collection .slider::-webkit-scrollbar-thumb {
-    color: #595757 !important;
-  }
-  .swym-tooltip-text{
-    color: transparent;
   }
 </style>
