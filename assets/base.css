@@ -3612,7 +3612,7 @@ details-disclosure > details {
    font-size: 1.6rem;
    font-family: Poppins;
    cursor: pointer;
-  align-items: center;
+   align-items: center;
    justify-content: center;
 }
 
