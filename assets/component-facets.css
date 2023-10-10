@@ -183,7 +183,14 @@
 .facets__form .open-modal > div > div{
   width: 100%;
 }
-@media screen and (min-width: 480px) {
+/* .facets__wrapper.filter_wapper .category-link-list{
+  display: flex;
+}
+
+.facets__wrapper.filter_wapper .button-show{
+  margin: auto;
+} */
+ @media screen and (min-width: 480px) {
   .facets__wrapper.filter_wapper{
     height: max-content;
     max-width: 100%;
@@ -191,19 +198,32 @@
     background: rgba(89, 87, 87, 0.10);
     padding: 2rem;
   }
+  .collection-link-wrapper{
+    display: flex;
+    gap: 2rem;
+  }
 }
-  @media screen and (min-width: 480px) {
+/*
+  @media screen and (min-width: 1067px) {
     .category-link-list.page-width{
       display: flex;
       gap: 3rem;
       align-items: center;
+      padding: 0.5rem;
     }
   }
-  .category-link-list .page-width{
+  @media screen and (min-width: 750px) {
+    .category-link-list.page-width{
+      display: flex;
+      gap: 3rem;
+      align-items: center;      
+    }
+  } */
+  /* .category-link-list .page-width{
     display: flex;
     gap: 3rem;
     align-items: center;
-  }
+  } */
 .facets__heading {
   display: block;
   color: rgba(var(--color-foreground), 0.85);
@@ -242,6 +262,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  gap: 2rem;
 }
 .facets-container .facets__summary.facest_details:hover {
   color: #fff;
@@ -650,6 +671,9 @@ a.active-facets__button.focused .active-facets__button-inner,
   display: flex;
 }
 
+.mobile-facets__wrapper.medium-hide.large-up-hide{
+  display: none;
+}
 .mobile-facets__wrapper .disclosure-has-popup[open] > summary::before {
   height: 100vh;
   z-index: 3;
@@ -1027,7 +1051,9 @@ input.mobile-facets__checkbox {
 .product-count__text.loading + .loading-overlay__spinner {
   display: block;
 }
-
+.facets-container .small-hide{
+  display: block !important;
+}
 @media screen and (min-width: 750px) {
   .facets-vertical {
     display: flex;
@@ -1134,6 +1160,7 @@ input.mobile-facets__checkbox {
     display: flex;
     flex-direction: column;
   }
+  
 
   .facets-vertical .active-facets facet-remove:last-of-type {
     margin-bottom: 1rem;
@@ -1183,4 +1210,9 @@ input.mobile-facets__checkbox {
   .facets-vertical .active-facets__button-remove {
     padding: 0 1rem 1rem;
   }
+}
+
+.facets-wrapper.facets-wrapper-filters {
+  max-width: calc(var(--page-width) - 100px);
+  padding: 0;
 }

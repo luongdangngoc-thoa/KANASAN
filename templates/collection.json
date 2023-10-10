@@ -46,14 +46,11 @@
         "show_text_below": true
       }
     },
-    {% comment %} "main_collection_link": {
-      "type": "main_sections_collections_link",
-      "settings": {}
-    }, {% endcomment %}
+  
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
-        "products_per_page": 16,
+        "products_per_page": 6,
         "columns_desktop": 3,
         "image_ratio": "adapt",
         "image_shape": "default",

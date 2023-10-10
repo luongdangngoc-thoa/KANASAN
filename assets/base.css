@@ -3624,5 +3624,9 @@ details-disclosure > details {
   text-align: left;
 }
 .shopify-section.section .section-template--21243532345622__product-grid-padding {
-  padding-top: 0;
+  padding-top: 0; 
+}
+
+.shopify-section.section .section-template--21243532345622__product-grid-padding > span {
+  margin-left: 90rem;
 }
