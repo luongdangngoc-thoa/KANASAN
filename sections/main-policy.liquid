@@ -30,8 +30,9 @@
   @media screen and (max-width: 480px){
     .policy__container {
         width: 100%;
-        padding: 0 1rem
+        padding: 0 2.5rem
     }
+
   }
 
 
@@ -110,20 +111,26 @@
  .policy__form {
     padding: 3.5rem;
  }
+ .policy_btn_top{
+  padding: 7.1rem 0 22.3rem 0;
+ }
+ p {
+      font-size: 1.4rem
+    }
   }
 {%- endstyle -%}
 
 <div class="page-width page-width--narrow section-{{ section.id }}-padding">
-    <h3 class="title">プライバシーポリシー</h3>
+    <h3 class="title">{{ 'policy.title' | t }}</h3>
     <div class="policy__container">
         <div class="policy__form">
             <p class="refund-policy">{{ shop.refund_policy }}</p>
             <div class="privacy-policy">
-                <h3>プライバシーポリシー</h3>
+                <h3>{{ 'policy.title' | t }}</h3>
                 <p>{{ shop.privacy_policy }}</p>
             </div>
             <div class="term-service">
-                <h3>プライバシーポリシー</h3>    
+                <h3>{{ 'policy.title' | t }}</h3>    
                 <p>{{ shop.terms_of_service }}</p>
             </div>
         </div>

@@ -76,10 +76,18 @@
         "heading": "その他のお問い合わせ",
         "color_scheme": "background-1"
       }
+    },
+    "6a5d34a1-eeac-450a-bbcf-56985dd6021f": {
+      "type": "common-button",
+      "settings": {
+        "button_link": "https:\/\/kanasan-okinawa.myshopify.com",
+        "button_lable": "TOPへ戻る"
+      }
     }
   },
   "order": [
     "main",
-    "form"
+    "form",
+    "6a5d34a1-eeac-450a-bbcf-56985dd6021f"
   ]
 }
