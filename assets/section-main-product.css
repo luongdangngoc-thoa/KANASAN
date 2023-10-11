@@ -1730,8 +1730,14 @@ a.product__text {
 .swym-btn-container .swym-button.swym-added:after {
   opacity: unset !important;
 }
+.swym-inject {
+  display: block;
+}
 @media (max-width: 768px) {
   .swym-button-bar {
-    margin-top: 1px; /* Adjust margin for smaller screens */
+    margin-top: 0.1rem; /* Adjust margin for smaller screens */
+    right: -1rem;
+    position: absolute;
+    top: -4.5rem;
   }
 }

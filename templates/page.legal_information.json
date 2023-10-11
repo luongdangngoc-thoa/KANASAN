@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "main_legal_information",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

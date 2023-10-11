@@ -1,14 +1,14 @@
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "9894ae5a-05a8-4b83-bd73-5f73b5dc4ab9": {
+      "type": "contact-form",
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "heading": "Contact form",
+        "color_scheme": ""
       }
     }
   },
   "order": [
-    "main"
+    "9894ae5a-05a8-4b83-bd73-5f73b5dc4ab9"
   ]
 }

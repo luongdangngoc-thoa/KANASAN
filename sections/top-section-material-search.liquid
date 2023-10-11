@@ -20,7 +20,7 @@
       {%- endfor -%}
     </div>
     <div class="material-search-button">
-      <a href="{{section.settings.button_link}}">
+      <a class="page-button btn-primary" href="{{section.settings.button_link}}">
         {{ section.settings.button_lable }}</a>
     </div>
   </div>
@@ -126,51 +126,12 @@
 
   .material-search-button {
     margin-top: 10rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
   }
   @media screen and (max-width: 800px) {
     .material-search-button {
       margin-top: 6rem;
     }
-  }
-
-  .material-search-button a {
-    display: inline-block;
-    text-decoration: none;
-    text-align: center;
-    color: #595757;
-    font-size: 1.6rem;
-    font-family: Poppins;
-    border: #595757 1px solid;
-    min-width: 34rem;
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
-  }
-
-  @media screen and (max-width: 650px) {
-    .material-search-button a {
-      width: 80%;
-    }
-  }
-
-
-  @media screen and (max-width: 400px) {
-    .material-search-button a {
-      width: 100%;
-    }
-  }
-
-  .material-search-button a:hover {
-    color: #fff;
-    transition: 0.3s;
-  }
-
-  .material-search-button a:hover {
-    background-color: #595757;
-    transition: 0.3s;
   }
 </style>
 {% schema %}
