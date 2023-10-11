@@ -1,0 +1,178 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  @media screen and (min-width: 990px){
+    .page-width--narrow {
+    max-width: 79.6rem !important;
+    padding: 0;
+    }
+  }
+
+  @media screen and (max-width: 990px){
+    .page-width--narrow {
+    max-width: 79.6rem !important;
+    padding: 0;
+    }
+  }
+
+  @media screen and (max-width: 480px){
+    .policy__container {
+        width: 100%;
+        padding: 0 2.5rem
+    }
+
+  }
+
+
+.title {
+    text-align: center;
+    color: #595757;
+    font-family: Noto Sans JP;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(34/24); /* 141.667% */
+    padding-top: 8rem;
+  }
+  .policy__container {
+    width: 100%;
+  }
+  .policy__form {
+    margin-top: 4.2rem;
+    width: 100%;
+    height: 100%;
+    padding: 8.5rem;
+    border: 1px solid #eee;
+  }
+  p {
+    padding-bottom: 7.9rem;
+    color: #595757;
+    font-family: Poppins;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: calc(34/16); /* 212.5% */
+    letter-spacing: 1.6px;
+    margin: 0px;
+  }
+.policy__form h3 {
+    padding: 3.2rem 0;
+    color: #595757;
+    font-family: Noto Sans JP;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(34/24); /* 141.667% */
+}
+.ddict_btn {
+    display: none
+}
+
+.policy_btn_top {
+    text-align: center;
+    padding: 24.6rem 0 29.9rem 0;
+}
+
+.policy_btn_top button {
+    padding: 1.4rem 9.4rem;
+    background: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.5px solid #595757;
+    color: #595757;
+    font-family: Poppins;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(30 / 18);
+    letter-spacing: 1.8px;
+    cursor: pointer;
+}
+
+.policy_btn_top button:hover{
+    background-color: #595757;
+    color: #fff;
+}
+
+@media screen and (max-width: 750px) {
+ .policy__form {
+    padding: 3.5rem;
+ }
+ .policy_btn_top{
+  padding: 7.1rem 0 22.3rem 0;
+ }
+ p {
+      font-size: 1.4rem
+    }
+  }
+{%- endstyle -%}
+
+<div class="page-width page-width--narrow section-{{ section.id }}-padding">
+    <h3 class="title">{{ 'policy.title' | t }}</h3>
+    <div class="policy__container">
+        <div class="policy__form">
+            <p class="refund-policy">{{ shop.refund_policy }}</p>
+            <div class="privacy-policy">
+                <h3>{{ 'policy.title' | t }}</h3>
+                <p>{{ shop.privacy_policy }}</p>
+            </div>
+            <div class="term-service">
+                <h3>{{ 'policy.title' | t }}</h3>    
+                <p>{{ shop.terms_of_service }}</p>
+            </div>
+        </div>
+    </div>
+   
+    <div class="policy_btn_top">
+        <a href="/">
+            <button>TOPへ戻る</button>
+        </a>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-page.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

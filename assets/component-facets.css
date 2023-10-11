@@ -262,6 +262,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  gap: 2rem;
 }
 .facets-container .facets__summary.facest_details:hover {
   color: #fff;
