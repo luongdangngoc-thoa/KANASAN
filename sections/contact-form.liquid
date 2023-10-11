@@ -144,7 +144,7 @@
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
   }
 
   .form-input-wrapper .form-field__label {
@@ -192,6 +192,100 @@
 
   .form-wrapper .contact__button .button {
     min-width: 27rem;
+    height: 5.8rem;
+    transition: all 0.2s;
+  }
+  .form-wrapper .contact__button .button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .form-wrapper {
+      padding: 6rem 6rem 8rem;
+    }
+    .form-input-wrapper {
+      padding: 5rem;
+    }
+
+    .form-input-wrapper .form-field {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-input-wrapper .form-field__label {
+      min-width: 16rem;
+      font-size: 1.6rem;
+    }
+
+    .form-input-wrapper .form-field__input {
+      flex-grow: 1;
+      height: 4rem;
+    }
+
+    .form-field .text-area {
+      min-height: 20rem;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .form-wrapper {
+      padding: 5rem 5rem 8rem;
+    }
+    .form__message {
+      margin-bottom: 2rem;
+    }
+
+    .form-input-wrapper {
+      padding: 4rem;
+    }
+
+    .form-input-wrapper .form-field__label {
+      min-width: 15rem;
+      font-size: 1.6rem;
+    }
+    .form-wrapper .contact__button .button {
+      min-width: 30rem;
+    }
+
+  }
+
+  @media screen and (max-width: 700px) {
+    .contact .title {
+      margin-bottom: 4rem;
+      font-size: 2rem;
+    }
+    .contact.page-width {
+      padding: unset !important;
+    }
+    .form-wrapper {
+      padding: 2rem 1.5rem;
+    }
+    .form-input-wrapper {
+      padding: 2.7rem 2.2rem 8rem;
+    }
+
+    .form-input-wrapper .form-field {
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    }
+    .form-input-wrapper .form-field__label {
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .form-input-wrapper .form-field__input {
+      height: 4.6rem;
+      width: 100%;
+    }
+
+    .form-wrapper .contact__button {
+      margin-top: unset;
+      padding-bottom: 10rem;
+      background-color: #fff;
+      text-align: center;
+    }
   }
 </style>
 

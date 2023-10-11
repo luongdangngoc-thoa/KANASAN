@@ -1,0 +1,56 @@
+<div class="common-button-wrapper">
+  <div class="page-width">
+    <a class="page-button btn-primary" href="{{section.settings.button_link}}">
+      {{ section.settings.button_lable }}
+    </a>
+  </div>
+</div>
+
+
+<style>
+  .common-button-wrapper {
+    text-align: center;
+    background: #fff;
+    padding-top: 13rem;
+    padding-bottom: 24rem;
+  }
+
+  .common-button-wrapper a {
+    max-width: 27rem;
+  }
+
+  @media screen and (max-width: 800px) {
+    .common-button-wrapper {
+      padding-top: 9rem;
+      padding-bottom: 9rem;
+    }
+
+    .common-button-wrapper a {
+      max-width: 30rem;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Common button",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      }, {
+        "type": "text",
+        "id": "button_lable",
+        "label": "Button lable"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Common button"
+      }
+    ]
+  }
+{% endschema %}
