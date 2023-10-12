@@ -44,7 +44,7 @@
     style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
   >
     <div
-      class="card__inner {% if card_style == 'standard' %}color-{{ card_color_scheme }} gradient{% endif %}{% if card_collection.featured_image or card_style == 'standard' %} ratio{% endif %}"
+      class="card__inner image_card{% if card_style == 'standard' %}color-{{ card_color_scheme }} gradient{% endif %}{% if card_collection.featured_image or card_style == 'standard' %} ratio{% endif %}"
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
     >
       {%- if card_collection.featured_image -%}
@@ -81,7 +81,7 @@
           {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
         </div>
       {%- else -%}
-        <div class="card__content">
+        <div class="card__content image_car">
           <div class="card__information">
             <h3 class="card__heading">
               <a
@@ -113,7 +113,7 @@
       {%- endif -%}
     </div>
     {%- if card_collection != blank and card_style == 'card' or card_collection.featured_image -%}
-      <div class="card__content">
+      <div class="card__content image_car">
         <div class="card__information">
           <h3 class="card__heading">
             <a
@@ -144,7 +144,7 @@
       </div>
     {%- endif -%}
     {%- if card_collection == blank -%}
-      <div class="card__content">
+      <div class="card__contentimage_car">
         <div class="card__information">
           <h3 class="card__heading card__heading--placeholder">
             <a role="link" aria-disabled="true" class="full-unstyled-link">
