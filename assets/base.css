@@ -504,6 +504,7 @@ h6:empty {
   background-color: transparent;
   font-size: 1.4rem;
   font-family: inherit;
+  font-family: Noto Sans JP;
 }
 
 .link--text {
@@ -3613,7 +3614,7 @@ details-disclosure > details {
    height: 5.8rem;
    text-decoration: none;
    font-size: 1.6rem;
-   font-family: Poppins;
+   font-family: Noto Sans JP;
    cursor: pointer;
    align-items: center;
    justify-content: center;

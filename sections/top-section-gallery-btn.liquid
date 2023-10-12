@@ -4,10 +4,9 @@
       <span>
         INSTAGRAM
       </span>
-      <img src="{{ "instagram.svg" | asset_url }}">
+    {%- render 'icon-instagram-w' -%}
     </a>
   </div>
-
 </div>
 
 
@@ -43,8 +42,8 @@
     font-family: Poppins;
   }
 
-  .galley-link-button a img {
-    margin-left: 8px;
+  .galley-link-button span{
+    margin-right: 8px;
   }
 
   @media screen and (max-width: 500px) {
