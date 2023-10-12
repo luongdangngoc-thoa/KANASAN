@@ -2146,7 +2146,7 @@ product-info .loading-overlay:not(.hidden) ~ *,
   justify-content: center;
   align-items: center;
   font-size: 0.9rem;
-  top: 0.8rem;
+  top: 0.3rem;
   left: 2.2rem;
   line-height: unset;
   background-color: rgb(219, 40, 40);

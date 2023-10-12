@@ -6,7 +6,7 @@
     <div class="section-faq-body">
       {% for block in section.blocks %}
         {% if block.type == 'category' %}
-          <h2 class="section-faq-category">{{ block.settings.title }}</h2>
+          <h2 class="section-faq-category">{{ block.settings.title }}について</h2>
         {% else %}
           <div class="section-faq-question">
             <header class="section-faq-question-header">
@@ -45,9 +45,6 @@
     margin: 0 auto;
   }
 
-  .section-faq-header {
-    padding-bottom: 9rem;
-  }
 
   .section-faq-header h1 {
     color: #595757;
@@ -57,7 +54,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: calc(34 / 24);
-    /* 141.667% */
   }
 
   .section-faq-category {
@@ -68,14 +64,22 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin-top: 11rem;
+    margin-bottom: 2.6rem;
   }
 
   .section-faq-question {
     border-bottom: rgb(208 208 208) solid 1px;
+    border-left: rgb(208 208 208) solid 1px;
+    border-right: rgb(208 208 208) solid 1px;
+  }
+
+  h2 + .section-faq-question {
+    border-top: rgb(208 208 208) solid 1px;
   }
 
   .section-faq-question-header {
-    padding: 0;
+    padding: 1rem 4rem;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -99,6 +103,13 @@
   .section-faq-question-header svg {
     width: 2.2rem;
     transition: 0.2s transform;
+  }
+
+
+  .section-faq-question-header svg:hover {
+    padding: 0.4rem;
+    background-color: #ededed;
+    border-radius: 50%;
   }
 
   .section-faq-question.active .section-faq-question-header svg {
@@ -130,18 +141,14 @@
     font-style: normal;
     font-weight: 300;
     line-height: calc(34 / 16);
-    /* 212.5% */
     letter-spacing: 1px;
+    padding: 0 4rem;
   }
 
 
   @media screen and (max-width: 800px) {
     .section-faq {
       padding: 4.3rem 0 13rem;
-    }
-
-    .section-faq-header {
-      padding-bottom: 3rem;
     }
 
     .section-faq-header h1 {
@@ -152,9 +159,13 @@
 
     .section-faq-category {
       font-size: 1.8rem;
+      margin-top: 8rem;
+      margin-bottom: 2.2rem;
     }
 
-
+    .section-faq-question-header {
+      padding: 0.4rem 2rem;
+    }
     .section-faq-question-header h3 {
       font-size: 1.6rem;
     }
@@ -163,15 +174,8 @@
       font-size: 1.4rem;
       line-height: calc(30 / 14);
       letter-spacing: 1px;
+      padding: 0 2rem;
     }
-  }
-
-
-  input:focus,
-  textarea:focus,
-  keygen:focus,
-  select:focus {
-    outline-offset: 0 !important;
   }
 </style>
 
