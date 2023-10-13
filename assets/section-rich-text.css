@@ -66,8 +66,22 @@
   width: 100%;
   max-width: 45rem;
   word-break: break-word;
+  padding: 24rem 0 29.9rem 0;
+  text-align: center;
 }
-
+@media screen and (max-width: 480px) {
+  .rich-text__buttons {
+    display: inline-flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    max-width: 45rem;
+    word-break: break-word;
+    padding: 0; 
+    text-align: center;
+  }
+}
 .rich-text__buttons--multiple > * {
   flex-grow: 1;
   min-width: 22rem;

@@ -4,7 +4,6 @@
 .product-container {
   display: flex;
   justify-content: center;
-  padding-left: 8rem;
   flex-wrap: wrap;
 }
 
@@ -42,7 +41,6 @@
 .product-prices {
   margin-bottom: 3rem;
 }
-
 /* Media query for smaller screens */
 @media (max-width: 768px) {
   .product-container {
@@ -68,6 +66,17 @@
   .product-prices p {
     font-size: 18px; /* Adjust font size for smaller screens */
     line-height: 26px; /* Adjust line height for smaller screens */
+  }
+}
+
+@media (max-width: 850px) {
+  .product-right {
+    padding-right: 9.5rem; /* Remove left padding for smaller screens */
+  }
+}
+@media (max-width: 750px) {
+  .product-right {
+    padding-right: 0px; /* Remove left padding for smaller screens */
   }
 }
 
@@ -571,4 +580,7 @@
     height: 5rem;
     width: 29rem;
   }
+}
+
+@media screen and (max-width: 950px) {
 }

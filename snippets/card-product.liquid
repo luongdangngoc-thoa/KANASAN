@@ -207,7 +207,10 @@
             {%- endif -%}
           </div>         
           <div class="card-information product__card">
-            <h3 class="product__card producer_text"> 生産者 : {{- card_product.metafields.custom.producer.value}}</h3>
+            <h3 class="product__card producer_text"> 
+              <span>生産者 :</span> 
+              <span>{{- card_product.metafields.custom.producer.value}}</span>
+            </h3>
             <!-- Swym Wishlist Plus EPI Button-->
             <div class="product__card button_cart">
               
