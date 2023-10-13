@@ -39,12 +39,12 @@
     <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
 
-  {% if section.settings.image_zoom == 'hover' %}
+  {% comment %} {% if section.settings.image_zoom == 'hover' %}
     <script
       id="EnableZoomOnHover-main"
       src="{{ 'magnify.js' | asset_url }}"
       defer="defer"></script>
-  {% endif %}
+  {% endif %} {% endcomment %}
   {%- if request.design_mode -%}
     <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}

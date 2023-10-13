@@ -52,14 +52,15 @@ const handleSelectOption = () => {
 
 handleSelectOption()
 
-const questionHeaders = document.querySelectorAll(".facets__header");
+// const questionHeaders = document.querySelectorAll(".facets__header");
 
-questionHeaders.forEach((header) => {
-  console.log('header', header)
-  header.addEventListener("click", () => {
-    console.log('click me')
-    header.classList.add("active");
-  });
-});
+// questionHeaders.forEach((header) => {
+//   console.log('header', header)
+//   header.addEventListener("click", () => {
+//     console.log('click me')
+//     header.classList.add("active");
+//   });
+// });
+
 
 

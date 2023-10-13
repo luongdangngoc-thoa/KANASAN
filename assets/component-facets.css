@@ -187,6 +187,16 @@
   .facets__form .open-modal{
     grid-template-columns: none;
   }
+  
+}
+
+@media screen and (max-width: 480px) {
+  .facets__form .open-modal{
+    grid-template-columns: none;
+  }
+  .facets__form {
+    padding: 2rem 0 3rem 0;
+  }
 }
  @media screen and (min-width: 750px) {
   .facets__wrapper.filter_wapper{
@@ -1310,6 +1320,13 @@ input.mobile-facets__checkbox {
   }
   .facets__item.facets__item_filter input{
     border: none;
+  }
+  .collection-arrow-down-icon{
+    padding: 1rem 4rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
   }
   /* .facets-wrap.parent-wrap .facets__list.list-unstyled {
     height: 0 !important;
