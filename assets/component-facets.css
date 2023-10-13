@@ -1295,6 +1295,9 @@ input.mobile-facets__checkbox {
   }
 }
 @media screen and (max-width: 480px) {
+  .facets__header {
+    align-items: center;
+  }
   .facets__header.arrow-down-icon {
     display: block;
     border-bottom: none;
@@ -1308,4 +1311,12 @@ input.mobile-facets__checkbox {
   .facets__item.facets__item_filter input{
     border: none;
   }
+  /* .facets-wrap.parent-wrap .facets__list.list-unstyled {
+    height: 0 !important;
+  }
+  
+  .facets__header.active + .facets__list.list-unstyled {
+    height: auto !important;
+  } */
 }
+

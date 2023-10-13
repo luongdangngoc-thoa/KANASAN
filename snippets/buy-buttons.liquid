@@ -130,8 +130,6 @@ Usage:
           {%- endif -%}
         </div>
 
-
-
       {%- endform -%}
     </product-form>
   {%- else -%}
@@ -176,4 +174,7 @@ Usage:
 
     <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
+  <script>
+    document.dispatchEvent(new CustomEvent("swym:collections-loaded"));
+  </script>
 </div>

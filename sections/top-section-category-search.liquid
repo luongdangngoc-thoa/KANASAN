@@ -1,4 +1,4 @@
-<div class=" section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} scroll-trigger animate--slide-in">
+<div class=" section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
   <div class="category-search-wrapper page-width">
     <h2 class="category-search-title">
       {{ section.settings.title }}</h2>

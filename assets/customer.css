@@ -15,6 +15,7 @@
 .customer > h1,
 .customer__title {
   margin-top: 0;
+  font-family: Noto Sans JP;
 }
 
 .customer form {
@@ -22,9 +23,13 @@
 }
 
 .customer button {
-  margin: 4rem 0 1.5rem;
+  margin-top: 6rem;
+  margin-bottom: 1rem;
+  border: #595757 1px solid;
+  padding: unset;
+  width: 20rem !important;
+  font-family: Noto Sans JP;
 }
-
 .customer ul {
   line-height: calc(1 + 0.6 / var(--font-body-scale));
   padding-left: 4.4rem;
@@ -342,6 +347,7 @@
 
 .login .field + a {
   margin-top: 1rem;
+  font-family: Noto Sans JP;
 }
 
 .login p {

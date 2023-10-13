@@ -296,7 +296,7 @@
         "section_color_scheme": "",
         "title": "素材から探す",
         "button_lable": "口コミランキングはこちら",
-        "button_link": "https:\/\/kanasan-okinawa.myshopify.com"
+        "button_link": "shopify:\/\/collections\/kanasan-nature"
       }
     },
     "169661211538385504": {
@@ -358,7 +358,7 @@
         "section_color_scheme": "",
         "title": "よくある質問",
         "button_lable": "その他のご質問",
-        "button_link": "https:\/\/kanasan-okinawa.myshopify.com\/pages\/contact"
+        "button_link": "shopify:\/\/pages\/contact"
       }
     },
     "top-section-search": {
