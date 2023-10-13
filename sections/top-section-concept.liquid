@@ -24,7 +24,7 @@
         </div>
         {%- when 'button' -%}
         <div
-          class="section-concept__button scroll-trigger animate--slide-in"
+          class="section-concept__button {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
           {{ block.shopify_attributes }}
           {% if settings.animations_reveal_on_scroll %}
           data-cascade

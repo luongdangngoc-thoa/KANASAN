@@ -1,4 +1,4 @@
-<div class=" section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} scroll-trigger animate--slide-in">
+<div class=" section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
   <div class="section-faq-wrapper page-width">
     <h2 class="section-faq-title">
       {{ section.settings.title }}</h2>
@@ -123,12 +123,12 @@
         "name": "Block",
         "settings": [
           {
-            "type": "text",
+            "type": "inline_richtext",
             "id": "faq-question",
             "default": "Question",
             "label": "Question"
           }, {
-            "type": "text",
+            "type": "inline_richtext",
             "id": "faq-answer",
             "default": "Answer",
             "label": "Answer"
