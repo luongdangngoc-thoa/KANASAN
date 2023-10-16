@@ -695,41 +695,19 @@
   {%- endif -%}
 
   {% comment %} description {% endcomment %}
-  <div class="product__description">
+  {% comment %} <div class="product__description">
     <div class="description-detail">
       {{ product.description }}
     </div>
     <a href="https://kanasan.okinawa.jp" target="_blank">
       <button class="product-description__btn">関連記事はこちら</button>
     </a>
-  </div>
+  </div> {% endcomment %}
 
-  {% if product.metafields.custom.company.value != null %}
-    {% comment %} Nhà sản xuất {% endcomment %}
-    <div class="product-author">
-      <p class="product-author__title">
-        {{ 'products.product.author.title' | t }}
-      </p>
-      <div class="product-author__detail">
-        <div class="product-author__detail--info">
-          {% if product.metafields.custom.company.value.avatar == null %}
-            {% render 'icon-ellipse-avatar' %}
-          {% else %}
-            {{ product.metafields.custom.company.value.avatar | img_tag }}
-          {% endif %}
-          {% comment %} {% render 'icon-ellipse-avatar' %} {% endcomment %}
-          <p>{{ product.metafields.custom.company.value.name }}</p>
-        </div>
-        <p class="product-author__detail--description">
-          {{ product.metafields.custom.company.value.description }}
-        </p>
-      </div>
-    </div>
-  {% endif %}
 
 
   {% comment %} ingredient - detail description {% endcomment %}
-  <div class="product-ingredient">
+  {% comment %} <div class="product-ingredient">
     <p class="product-ingredient__title">
       {{ 'products.product.ingredient.title' | t }}
     </p>
@@ -760,11 +738,11 @@
         </p>
       </div>
     </div>
-  </div>
+  </div> {% endcomment %}
 
   {% comment %} Review {% endcomment %}
 
-  {% if product.metafields.custom.rating.value == null %}
+  {% comment %} {% if product.metafields.custom.rating.value == null %}
     <div class="product-review">
       <p class="product-review__title">
         {{ 'products.product.review.title' | t }}
@@ -836,7 +814,7 @@
         </a>
       </div>
     </div>
-  {% endif %}
+  {% endif %} {% endcomment %}
   <script>
 
     document.addEventListener('DOMContentLoaded', function() {

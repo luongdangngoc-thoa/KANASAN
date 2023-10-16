@@ -1,0 +1,80 @@
+<section
+  id="MainProduct-{{ section.id }}"
+  class="page-width section-{{ section.id }}-padding"
+  data-section="{{ section.id }}">
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+{{ 'section-item-main-product.css' | asset_url | stylesheet_tag }}
+
+ {% comment %} ingredient - detail description {% endcomment %}
+ <div class="product-ingredient">
+    <p class="product-ingredient__title">
+      {{ 'products.product.ingredient.title' | t }}
+    </p>
+    <div class="product-ingredient__list">
+      <div class="product-ingredient__list--detail">
+        <p class="product-ingredient__list--detail-title">
+          {{ 'products.product.ingredient.instruction' | t }}
+        </p>
+        <p class="product-ingredient__list--detail-content">
+          {{ product.metafields.custom.description }}
+        </p>
+      </div>
+      <div class="product-ingredient__list--detail">
+        <p class="product-ingredient__list--detail-title">
+          {{ 'products.product.ingredient.weight' | t }}
+        </p>
+        <p class="product-ingredient__list--detail-content">
+          {% for variant in product.variants %}
+            {{ variant.weight }}g{% endfor %}
+        </p>
+      </div>
+      <div class="product-ingredient__list--detail">
+        <p class="product-ingredient__list--detail-title">
+          {{ 'products.product.ingredient.component' | t }}
+        </p>
+        <p class="product-ingredient__list--detail-content">
+          {{ product.metafields.custom.description2 }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  </section>
+
+  {%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}
+      px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}
+      px;
+    }
+
+    @media screen and (min-width: 75rem) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}
+        px;
+        padding-bottom: {{ section.settings.padding_bottom }}
+        px;
+      }
+    }
+  {%- endstyle -%}
+  {% schema %}
+    {
+      "name": "Ingredient Product",
+      "tag": "section",
+      "class": "section",
+      "settings": [
+        {
+          "type": "text",
+          "id": "ingredient",
+          "label": "Ingredient"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Ingredient"
+        }
+      ]
+    }
+  {% endschema %}
