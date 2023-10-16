@@ -125,7 +125,7 @@ span.pmslider-dots_dot:before {
   }
 
   .product--large:not(.product--no-media) .product__info-wrapper {
-    padding: 0 0 0 4rem;
+    padding: 0 0 0 0;
     /* max-width: 35%; */
     flex: 1;
     width: calc(35% - var(--grid-desktop-horizontal-spacing) / 2);

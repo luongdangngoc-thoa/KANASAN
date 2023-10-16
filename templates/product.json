@@ -71,6 +71,22 @@
         "padding_bottom": 12
       }
     },
+    "product-section-description": {
+      "type": "product-section-description",
+      "settings": {}
+    },
+    "product-section-author": {
+      "type": "product-section-author",
+      "settings": {}
+    },
+    "product-section-ingredient": {
+      "type": "product-section-ingredient",
+      "settings": {}
+    },
+    "product-section-review": {
+      "type": "product-section-review",
+      "settings": {}
+    },
     "product-featured-collection": {
       "type": "product-featured-collection",
       "settings": {
@@ -87,6 +103,10 @@
   },
   "order": [
     "main",
+    "product-section-description",
+    "product-section-author",
+    "product-section-ingredient",
+    "product-section-review",
     "product-featured-collection"
   ]
 }
