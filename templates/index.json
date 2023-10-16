@@ -104,7 +104,7 @@
             "brand-name": "KANASAN RESORT",
             "brand-des": "コンセプト説明が入ります。コンセプト説明が入ります。コンセプト説明が入ります。コンセプト説明が入ります。",
             "button-lable": "製品を見る",
-            "brand-url": "#"
+            "brand-url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.m.custom.brands=KANASAN+RESORT"
           }
         },
         "template--21243532411158__38bb6c77-9b15-4402-90e6-d8a01881d8f5-Block-2": {
@@ -114,7 +114,7 @@
             "brand-name": "KANASAN STYLE",
             "brand-des": "コンセプト説明が入ります。コンセプト説明が入ります。コンセプト説明が入ります。コンセプト説明が入ります。",
             "button-lable": "製品を見る",
-            "brand-url": "#"
+            "brand-url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.m.custom.brands=KANASAN+STYLE+"
           }
         },
         "template--21243532411158__38bb6c77-9b15-4402-90e6-d8a01881d8f5-Block-3": {
@@ -296,7 +296,7 @@
         "section_color_scheme": "",
         "title": "素材から探す",
         "button_lable": "口コミランキングはこちら",
-        "button_link": "https:\/\/kanasan-okinawa.myshopify.com"
+        "button_link": "shopify:\/\/collections\/kanasan-nature"
       }
     },
     "169661211538385504": {
@@ -358,7 +358,7 @@
         "section_color_scheme": "",
         "title": "よくある質問",
         "button_lable": "その他のご質問",
-        "button_link": "https:\/\/kanasan-okinawa.myshopify.com\/pages\/contact"
+        "button_link": "shopify:\/\/pages\/contact"
       }
     },
     "top-section-search": {

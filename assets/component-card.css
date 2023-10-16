@@ -105,25 +105,46 @@
 }
 
 .card-information.product__card{
-  width: 264px;
-  height: 29px;
+  width: 26.4rem;
+  height: 2.9rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .product__card.button_cart{
   float: right;
-  width: 30px;
-  height: 29px;
 }
 .product__card.producer_text{
   color: #595757;
   font-family: Noto Sans JP;
-  font-size: 1.25rem;
+  font-size: 1.8rem;
   font-style: normal;
   font-weight: 300;
-  line-height: 32px;
-
+  line-height: calc(32/18);
+}
+@media screen and (max-width: 480px) {
+  .card-information.product__card{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .product__card.button_cart{
+    float: right;
+    width: 3rem;
+    height: 2.9rem;
+  }
+  .product__card.producer_text{
+    color: #595757;
+    font-family: Noto Sans JP;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: calc(32/12);
+  
+  }
 }
 .card__media,
 .card .media {
@@ -148,7 +169,9 @@
 .card__inner {
   width: 100%;
 }
-
+.card__inner.image_card{
+ height: 70%;
+}
 .card--media .card__inner .card__content {
   position: relative;
   padding: calc(var(--image-padding) + 1rem);
@@ -161,11 +184,49 @@
   width: 100%;
   flex-grow: 1;
 }
-
-.card__content--auto-margins {
-  grid-template-rows: minmax(0, auto) max-content minmax(0, auto);
+.card__content.image_car{
+  height: 30%;
 }
 
+@media screen and (max-width: 480px) {
+  .card__inner.image_card{
+    height: 70%;
+   }
+  .card__content.image_car{
+    height: 30%;
+  }
+}
+.card__information {
+  grid-template-rows: 2;
+  padding: 1.3rem 1rem;
+}
+@media screen and (max-width: 750px) {
+  .card__inner.image_card{
+    height: 100%;
+    max-height: 177px;
+  }
+  .product__card .producer_text{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .product__card.button_cart{
+    display: flex;
+    margin: auto;
+    margin-left: 2px;
+  }
+  .card__content.image_car .card__information {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-bottom: 0;
+  }
+
+  .card__content.image_car .card__information .quick-add {
+    margin-bottom: 0;
+  }
+}
 .card__information {
   grid-row-start: 2;
   padding: 1.3rem 1rem;

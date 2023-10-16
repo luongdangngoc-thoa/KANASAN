@@ -216,8 +216,8 @@ quick-add-modal .product-form__buttons {
 }
 .quick_add__submit.button_cart{
   border: 0.5px solid #595757;
-  width: 340px;
-  height: 58px;
+  width: 34rem;
+  height: 5.8rem;
   z-index: 10;
 }
 .quick_add__submit.button_cart:hover{
@@ -232,5 +232,18 @@ quick-add-modal .product-media-container.constrain-height {
 @media screen and (min-width: 750px) {
   quick-add-modal .product-media-container.constrain-height {
     --constrained-min-height: 400px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .quick_add__submit.button_cart{
+    border: 0.5px solid #595757;
+    width: 17.6rem;
+    height: 5.8rem;
+    z-index: 10;
+    white-space: nowrap;
+  }
+  .quick_add__submit.button_cart:hover{
+    background-color: #595757;
+    color: #fff;
   }
 }

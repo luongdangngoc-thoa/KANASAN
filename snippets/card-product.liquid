@@ -49,7 +49,7 @@
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
     >
       <div
-        class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
+        class="card__inner image_card {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
         style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
       >
         {%- if card_product.featured_media -%}
@@ -101,7 +101,7 @@
             </div>
           </div>
         {%- endif -%}
-        <div class="card__content">
+        <div class="card__content image_car">
           <div class="card__information">
             <h3
               class="card__heading"
@@ -138,7 +138,7 @@
           </div>
         </div>
       </div>
-      <div class="card__content">
+      <div class="card__content image_car">
         <div class="card__information">
           <h3
             class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
@@ -207,7 +207,10 @@
             {%- endif -%}
           </div>         
           <div class="card-information product__card">
-            <h3 class="product__card producer_text"> 生産者 : {{- card_product.metafields.custom.producer.value}}</h3>
+            <h3 class="product__card producer_text"> 
+              <span>生産者 :</span> 
+              <span>{{- card_product.metafields.custom.producer.value}}</span>
+            </h3>
             <!-- Swym Wishlist Plus EPI Button-->
             <div class="product__card button_cart">
               
@@ -375,7 +378,7 @@
           </div>
         </div>
       </div>
-      <div class="card__content">
+      <div class="card__content image_car">
         <div class="card__information">
           <h3 class="card__heading card__heading--placeholder{% if settings.card_style == 'standard' %} h5{% endif %}">
             <a role="link" aria-disabled="true" class="full-unstyled-link">

@@ -16,8 +16,7 @@
     overflow-y: hidden;
     position: relative;
     white-space: nowrap;
-    display: flex;
-    justify-content: center;
+    text-align: center;
   }
   @media screen and (max-width: 859px) {
     div.category-link-wrapper {
@@ -40,16 +39,21 @@
     min-width: 15rem;
     text-align: center;
   }
+
+   @media screen and (max-width: 60px) {
+    .collection-link a {
+      padding: 1.4 2rem;
+    }
+  }
+
   .collection-link a:hover {
     font-weight: 500;
     cursor: pointer;
     opacity: 0.7;
     background-color: rgb(231, 224, 224);
   }
-</style>
 
-<style>
-
+ /* custom scrollbar */
   /* width */
   .category-link-wrapper::-webkit-scrollbar {
     height: 4px;

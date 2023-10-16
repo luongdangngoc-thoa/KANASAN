@@ -1,185 +1,226 @@
 <div class="section-faq">
-    <div class="page-width">
-        <div class="section-faq-header">
-            <h1>よくある質問</h1>
-        </div>
-        <div class="section-faq-body">
-            {% for block in section.blocks %}
-            {% if block.type == 'category' %}
-            <h2 class="section-faq-category">{{ block.settings.title }}</h2>
-            {% else %}
-            <div class="section-faq-question">
-                <header class="section-faq-question-header">
-                    <h3>{{ block.settings.title }}</h3>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="22">
-                        <path d="M480-345 240-585l43-43 197 198 197-197 43 43-240 239Z" />
-                    </svg>
-                </header>
-                <div class="section-faq-question-body">
-                    <div class="section-faq-question-body-inner">
-                        {{ block.settings.body }}
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-            {% endfor %}
-        </div>
-
+  <div class="page-width">
+    <div class="section-faq-header">
+      <h1>よくある質問</h1>
     </div>
+    <div class="section-faq-body">
+      {% for block in section.blocks %}
+        {% if block.type == 'category' %}
+          <h2 class="section-faq-category">{{ block.settings.title }}について</h2>
+        {% else %}
+          <div class="section-faq-question">
+            <header class="section-faq-question-header">
+              <h3>{{ block.settings.title }}</h3>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 -960 960 960"
+                width="22">
+                <path d="M480-345 240-585l43-43 197 198 197-197 43 43-240 239Z" />
+              </svg>
+            </header>
+            <div class="section-faq-question-body">
+              <div class="section-faq-question-body-inner">
+                {{ block.settings.body }}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+  </div>
 </div>
 
 <style>
-    /*
+  /*
   FAQ page
 */
 
+  .section-faq {
+    padding: 14rem 0;
+  }
+
+  .section-faq-body {
+    max-width: 76rem;
+    margin: 0 auto;
+  }
+
+
+  .section-faq-header h1 {
+    color: #595757;
+    text-align: center;
+    font-family: Noto Sans JP;
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(34 / 24);
+  }
+
+  .section-faq-category {
+    color: #333;
+    text-align: center;
+    font-family: Noto Sans JP;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 11rem;
+    margin-bottom: 2.6rem;
+  }
+
+  .section-faq-question {
+    border-bottom: rgb(208 208 208) solid 1px;
+    border-left: rgb(208 208 208) solid 1px;
+    border-right: rgb(208 208 208) solid 1px;
+  }
+
+  h2 + .section-faq-question {
+    border-top: rgb(208 208 208) solid 1px;
+  }
+
+  .section-faq-question-header {
+    padding: 1rem 4rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+  }
+
+  .section-faq-question-header h3 {
+    flex: 1;
+    color: #333;
+    font-family: Noto Sans JP;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 350;
+    line-height: normal;
+  }
+
+  .section-faq-question-header h3:hover {
+    font-weight: 400;
+  }
+
+  .section-faq-question-header svg {
+    width: 2.2rem;
+    transition: 0.2s transform;
+  }
+
+
+  .section-faq-question-header svg:hover {
+    padding: 0.4rem;
+    background-color: #ededed;
+    border-radius: 50%;
+  }
+
+  .section-faq-question.active .section-faq-question-header svg {
+    transform: rotate(180deg);
+  }
+
+  .section-faq-question-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s all ease-in;
+  }
+
+  .section-faq-question.active .section-faq-question-body {
+    max-height: 40rem;
+  }
+
+  .section-faq-question-body-inner > * + * {
+    margin-top: 2rem;
+  }
+
+  .section-faq-question-body-inner {
+    padding-bottom: 2rem;
+  }
+
+  .section-faq-question-body-inner p {
+    color: #595757;
+    font-family: Poppins;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: calc(34 / 16);
+    letter-spacing: 1px;
+    padding: 0 4rem;
+  }
+
+
+  @media screen and (max-width: 800px) {
     .section-faq {
-        margin-top: 5.5rem;
-        padding: 12rem 0;
-    }
-
-    .section-faq-body {
-        max-width: 76rem;
-        margin: 0 auto;
-    }
-
-    .section-faq-header {
-        padding-bottom: 3rem;
+      padding: 4.3rem 0 13rem;
     }
 
     .section-faq-header h1 {
-        color: #595757;
-        text-align: center;
-        font-family: Noto Sans JP;
-        font-size: 2.4rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: calc(34 /24);
-        /* 141.667% */
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: calc(34 / 20);
     }
 
     .section-faq-category {
-        color: #333;
-        text-align: left;
-        font-family: Noto Sans JP;
-        font-size: 2rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-    }
-
-    .section-faq-question+.section-faq-category {
-        margin-top: 6rem;
-    }
-
-    .section-faq-question {
-        border-bottom: rgb(208 208 208) solid 1px;
+      font-size: 1.8rem;
+      margin-top: 8rem;
+      margin-bottom: 2.2rem;
     }
 
     .section-faq-question-header {
-        padding: 0;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        justify-content: space-between;
-
+      padding: 0.4rem 2rem;
     }
-
     .section-faq-question-header h3 {
-        flex: 1;
-        color: #333;
-        font-family: Noto Sans JP;
-        font-size: 1.8rem;
-        font-style: normal;
-        font-weight: 350;
-        line-height: normal;
-    }
-
-    .section-faq-question-header h3:hover {
-        font-weight: 400;
-    }
-
-    .section-faq-question-header svg {
-        width: 2.2rem;
-        transition: 0.2s transform;
-    }
-
-    .section-faq-question.active .section-faq-question-header svg {
-        transform: rotate(180deg);
-    }
-
-    .section-faq-question-body {
-        max-height: 0;
-        overflow: hidden;
-        transition: 0.3s all ease-in;
-    }
-
-    .section-faq-question.active .section-faq-question-body {
-        max-height: 40rem;
-    }
-
-    .section-faq-question-body-inner>*+* {
-        margin-top: 2rem;
-    }
-
-    .section-faq-question-body-inner {
-        padding-bottom: 2rem;
+      font-size: 1.6rem;
     }
 
     .section-faq-question-body-inner p {
-        color: #595757;
-        font-family: Poppins;
-        font-size: 1.6rem;
-        font-style: normal;
-        font-weight: 300;
-        line-height: calc(34 / 16);
-        /* 212.5% */
-        letter-spacing: 1px;
+      font-size: 1.4rem;
+      line-height: calc(30 / 14);
+      letter-spacing: 1px;
+      padding: 0 2rem;
     }
+  }
 </style>
 
 
 <script>
-    const questionHeaders = document.querySelectorAll(".section-faq-question-header");
-    questionHeaders.forEach((header) => {
-        header.addEventListener("click", () => {
-            header.parentElement.classList.toggle("active");
-        });
+  const questionHeaders = document.querySelectorAll(".section-faq-question-header");
+  questionHeaders.forEach((header) => {
+    header.addEventListener("click", () => {
+      header.parentElement.classList.toggle("active");
     });
+  });
 </script>
 
 
 
 {% schema %}
-{
-"name": "FAQ",
-"settings": [],
-"blocks": [
-{
-"type": "category",
-"name": "Category",
-"settings": [
-{
-"type": "text",
-"id": "title",
-"label": "Category title"
-}
-]
-}, {
-"type": "question",
-"name": "Question",
-"settings": [
-{
-"type": "text",
-"id": "title",
-"label": "Question title"
-}, {
-"type": "richtext",
-"id": "body",
-"label": "Question body"
-}
-]
-}
-]
-}
+  {
+    "name": "FAQ",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "category",
+        "name": "Category",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Category title"
+          }
+        ]
+      }, {
+        "type": "question",
+        "name": "Question",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Question title"
+          }, {
+            "type": "richtext",
+            "id": "body",
+            "label": "Question body"
+          }
+        ]
+      }
+    ]
+  }
 {% endschema %}
