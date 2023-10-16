@@ -1749,7 +1749,7 @@ a.product__text {
     top: -4.5rem;
   } */
   .add-to-cart__button .swym-button {
-    position: absolute;
+    position: absolute !important;
     top: -3.5rem;
     right: -1rem;
   }
@@ -1757,4 +1757,11 @@ a.product__text {
 
 .add-to-cart__button .swym-button {
   padding: 2rem 3.5rem;
+}
+.swym-button.swym-add-to-wishlist-view-product {
+  right: -2.5rem;
+}
+
+.page-width {
+  overflow: hidden;
 }
