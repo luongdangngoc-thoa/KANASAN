@@ -20,6 +20,7 @@
   {% render 'card-product', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
 
+
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
 
@@ -205,32 +206,51 @@
                 <span class="caption">{{ 'products.product.volume_pricing.note' | t }}</span>
               </div>
             {%- endif -%}
-          </div>         
+          </div>
           <div class="card-information product__card">
-            <h3 class="product__card producer_text"> 
-              <span>生産者 :</span> 
-              <span>{{- card_product.metafields.custom.producer.value}}</span>
+            <h3 class="product__card producer_text">
+              <span>生産者 :</span>
+              <span>{{- card_product.metafields.custom.producer.value }}</span>
             </h3>
-            <!-- Swym Wishlist Plus EPI Button-->
-            <div class="product__card button_cart">
-             <!-- Swym Wishlist Plus EPI Button-->
-             <button class="swym-button swym-add-to-wishlist-view-product product_{{card_product.id}}" data-with-epi="true"
-                data-swaction="addToWishlist" data-product-id="{{card_product.id | json}}"
-                data-variant-id="{{card_product.variants[0].id}}" data-product-url="{{ shop.url }}{{ card_product.url }}">
-                <svg class= "active" aria-hidden="true" width="33" height="33" xmlns="http://www.w3.org/2000/svg" fill="#ff4500"
-                    viewBox="0 0 21 19">
-                    <path  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                        d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
-                </svg>
-                <svg class="unactive" id="unactive" aria-hidden="true" width="33" height="33" xmlns="http://www.w3.org/2000/svg"
-                    fill="#ffffff" viewBox="0 0 21 19">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                        d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
-                </svg>
-              </button>
-             
-            <!-- Swym Wishlist Plus EPI Button-->
-          </div>           
+
+            <!-- Swym Wishlist Plus EPI Button -->
+            <button
+              class="swym-button swym-add-to-wishlist-view-product product_{{card_product.id}}"
+              data-with-epi="true"
+              data-swaction="addToWishlist"
+              data-product-id="{{card_product.id | json}}"
+              data-variant-id="{{card_product.variants[0].id}}"
+              data-product-url="{{ shop.url }}{{ card_product.url }}"
+            >
+              <svg
+                class="active"
+                aria-hidden="true"
+                width="33"
+                height="33"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#ff4500"
+                viewBox="0 0 21 19"
+              >
+                <path  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                    d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
+              </svg>
+              <svg
+                class="unactive"
+                id="unactive"
+                aria-hidden="true"
+                width="33"
+                height="33"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#ffffff"
+                viewBox="0 0 21 19"
+              >
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                    d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
+              </svg>
+            </button>
+
+            <!-- Swym Wishlist Plus EPI Button -->
+          </div>
         </div>
         {%- if show_quick_add -%}
           <div class="quick-add no-js-hidden">
@@ -404,9 +424,42 @@
               <div class="caption-with-letter-spacing light">{{ 'products.product.vendor' | t }}</div>
             {%- endif -%}
             {% render 'price', show_compare_at_price: true %}
-              <!-- Swym Wishlist Plus EPI Button-->
-            <button data-with-epi="true" class="swym-button swym-add-to-wishlist-view-product product_{{card_product.id}}" data-swaction="addToWishlist" data-product-id="{{card_product.id | json}}" data-variant-id="{{card_product.variants[0].id}}" data-product-url="{{ shop.url }}{{ card_product.url | within: collection }}"></button>
-            <!-- Swym Wishlist Plus EPI Button-->
+            <!-- Swym Wishlist Plus EPI Button -->
+            <button
+              class="swym-button swym-add-to-wishlist-view-product product_{{product.id }}"
+              data-with-epi="true"
+              data-swaction="addToWishlist"
+              data-product-id="{{product.id | json}}"
+              data-variant-id="{{product.variants[0].id}}"
+              data-product-url="{{ shop.url }}{{ product.url }}"
+            >
+              <svg
+                class="active"
+                aria-hidden="true"
+                width="33"
+                height="33"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#ff4500"
+                viewBox="0 0 21 19"
+              >
+                <path  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                    d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
+              </svg>
+              <svg
+                class="unactive"
+                id="unactive"
+                aria-hidden="true"
+                width="33"
+                height="33"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#ffffff"
+                viewBox="0 0 21 19"
+              >
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                    d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
+              </svg>
+            </button>
+            <!-- Swym Wishlist Plus EPI Button -->
           </div>
         </div>
       </div>
@@ -414,20 +467,12 @@
   </div>
 {%- endif -%}
 
-
 <style>
-.swym-button.swym-add-to-wishlist-view-product {
-        z-index: 5;
-        opacity: unset;
-    }
 
-    .swym-button.swym-add-to-wishlist-view-product.swym-added {
-        opacity: unset;
-    }
-    .button.swym-button.disabled {
-         opacity: unset;
-    }
-    /* hide defaut icon */
+.swym-button.swym-add-to-wishlist-view-product:not(.swym-loaded)  {
+   
+}
+  /* hide defaut icon */
   .swym-button.swym-add-to-wishlist-view-product.swym-heart.swym-added:after {
         display: none !important;
     }
@@ -445,9 +490,9 @@
     opacity: unset;
   }
      /* style custom icon */
-  .swym-button.swym-add-to-wishlist-view-product {
+     .swym-button.swym-add-to-wishlist-view-product {
     position: relative;
-    z-index: 5;
+     z-index: 5;
     width: 22px;
     height: 22px;
     opacity: unset;
