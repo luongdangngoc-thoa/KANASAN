@@ -1,0 +1,68 @@
+<section
+  id="MainProduct-{{ section.id }}"
+  class="page-width section-{{ section.id }}-padding"
+  data-section="{{ section.id }}">
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+{{ 'section-item-main-product.css' | asset_url | stylesheet_tag }}
+
+{% if product.metafields.custom.company.value != null %}
+{% comment %} Nhà sản xuất {% endcomment %}
+<div class="product-author">
+  <p class="product-author__title">
+    {{ 'products.product.author.title' | t }}
+  </p>
+  <div class="product-author__detail">
+    <div class="product-author__detail--info">
+      {% if product.metafields.custom.company.value.avatar == null %}
+        {% render 'icon-ellipse-avatar' %}
+      {% else %}
+        {{ product.metafields.custom.company.value.avatar | img_tag }}
+      {% endif %}
+      {% comment %} {% render 'icon-ellipse-avatar' %} {% endcomment %}
+      <p>{{ product.metafields.custom.company.value.name }}</p>
+    </div>
+    <p class="product-author__detail--description">
+      {{ product.metafields.custom.company.value.description }}
+    </p>
+  </div>
+</div>
+{% endif %}
+
+  </section>
+
+  {%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}
+      px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}
+      px;
+    }
+
+    @media screen and (min-width: 75rem) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}
+        px;
+        padding-bottom: {{ section.settings.padding_bottom }}
+        px;
+      }
+    }
+  {%- endstyle -%}
+  {% schema %}
+    {
+      "name": "Author Product",
+      "tag": "section",
+      "class": "section",
+      "settings": [
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Author"
+        }
+      ]
+    }
+  {% endschema %}

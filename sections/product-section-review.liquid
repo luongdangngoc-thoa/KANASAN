@@ -1,0 +1,121 @@
+<section
+  id="MainProduct-{{ section.id }}"
+  class="page-width section-{{ section.id }}-padding"
+  data-section="{{ section.id }}">
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+{{ 'section-item-main-product.css' | asset_url | stylesheet_tag }}
+ 
+ {% comment %} Review {% endcomment %}
+
+ {% if product.metafields.custom.rating.value == null %}
+    <div class="product-review">
+      <p class="product-review__title">
+        {{ 'products.product.review.title' | t }}
+      </p>
+      <div class="product-review__rating">
+        <p class="product-review__rating--number">
+          0.0
+        </p>
+
+        <ul class="product-review__rating--list-star">
+          <li>
+            {% render 'icon-star-empty' %}
+          </li>
+          <li>
+            {% render 'icon-star-empty' %}
+          </li>
+          <li>
+            {% render 'icon-star-empty' %}
+          </li>
+          <li>
+            {% render 'icon-star-empty' %}
+          </li>
+          <li>
+            {% render 'icon-star-empty' %}
+          </li>
+        </ul>
+      </div>
+      <div class="product-review__rating--btn">
+        <a class="btn-1">
+            {{ 'products.product.review.button.comment' | t }}
+        </a>
+        <a class="btn-2">
+            {{ 'products.product.review.button.question' | t }}
+        </a>
+      </div>
+    </div>
+  {% else %}
+    <div class="product-review">
+      <p class="product-review__title">
+        {{ 'products.product.review.title' | t }}
+      </p>
+      <div class="product-review__rating">
+        <p class="product-review__rating--number">
+          {{ product.metafields.custom.rating.value }}
+        </p>
+        {% assign reviews = product.metafields.custom.rating.value %}
+        {% if reviews %}
+          {% assign rating = reviews.rating | round %}
+          {% assign max = reviews.scale_max | round %}
+          <ul class="product-review__rating--list-star">
+            {% for iteration in (1..max) %}
+              <li>
+                {% if iteration <= rating %}
+                  {% render 'icon-star-full' %}
+                {% else %}
+                  {% render 'icon-star-empty' %}
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+      <div class="product-review__rating--btn">
+        <a class="btn-1">
+            {{ 'products.product.review.button.comment' | t }}
+        </a>
+        <a class="btn-2">
+            {{ 'products.product.review.button.question' | t }}
+        </a>
+      </div>
+    </div>
+  {% endif %}
+
+  </section>
+
+  {%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}
+      px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}
+      px;
+    }
+
+    @media screen and (min-width: 75rem) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}
+        px;
+        padding-bottom: {{ section.settings.padding_bottom }}
+        px;
+      }
+    }
+  {%- endstyle -%}
+  {% schema %}
+    {
+      "name": "Review Product",
+      "tag": "section",
+      "class": "section",
+      "settings": [
+        {
+          "type": "text",
+          "id": "Review",
+          "label": "Review"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Review"
+        }
+      ]
+    }
+  {% endschema %}

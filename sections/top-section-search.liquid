@@ -10,7 +10,7 @@ Usage:
 
 <div class="top-section-search">
     <div class="page-width">
-        <div class="search-form-wrapper">
+        <div class="search-form-wrapper {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
             {%- if settings.predictive_search_enabled -%}
             <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
                 {%- else -%}

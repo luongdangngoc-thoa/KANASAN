@@ -504,7 +504,7 @@ h6:empty {
   background-color: transparent;
   font-size: 1.4rem;
   font-family: inherit;
-  font-family: Noto Sans JP;
+   font-family: Noto Sans JP;
 }
 
 .link--text {
@@ -1205,6 +1205,18 @@ deferred-media {
 .button--secondary.top_button{
   width: 34rem;
   height: 5.8rem;
+
+}
+@media screen and (max-width: 480px) {
+  .button--secondary.top_button{
+    width: 30rem;
+    height: 5.6rem;  
+  }
+}
+.button--secondary.top_button:hover{
+  color: #FFF;
+  background-color:#595757;
+  border: #595757 1px solid;
 }
 .button--tertiary {
   --alpha-button-background: 0;
@@ -2146,7 +2158,7 @@ product-info .loading-overlay:not(.hidden) ~ *,
   justify-content: center;
   align-items: center;
   font-size: 0.9rem;
-  top: 0.3rem;
+  top: 0.8rem;
   left: 2.2rem;
   line-height: unset;
   background-color: rgb(219, 40, 40);
@@ -3144,10 +3156,15 @@ details-disclosure > details {
   .product-grid .grid__item {
     padding-bottom: var(--grid-mobile-vertical-spacing);
   }
-
+  .product-grid-wrap {
+    display: grid;
+    align-items: flex-start;
+    gap: 4rem;
+  }
   @media screen and (min-width: 750px) {
     .product-grid .grid__item {
       padding-bottom: var(--grid-desktop-vertical-spacing);
+      gap: 4rem;
     }
   }
 }
@@ -3157,7 +3174,9 @@ details-disclosure > details {
     width: 100%;
   }
   .product-grid-wrap {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* gap: 4rem; */
   }
 }
 .font-body-bold {
@@ -3614,10 +3633,10 @@ details-disclosure > details {
    height: 5.8rem;
    text-decoration: none;
    font-size: 1.6rem;
-   font-family: Noto Sans JP;
    cursor: pointer;
    align-items: center;
    justify-content: center;
+   font-family: Noto Sans JP;
 }
 
 .page-button:hover {
@@ -3695,4 +3714,3 @@ details-disclosure > details {
   .section-template--21243532345622__product-grid-padding {
   padding-top: 0;
 }
-
