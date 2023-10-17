@@ -216,7 +216,7 @@ quick-add-modal .product-form__buttons {
 }
 .quick_add__submit.button_cart{
   border: 0.5px solid #595757;
-  width: 34rem;
+  width: 100%;
   height: 5.8rem;
   z-index: 10;
 }
@@ -237,10 +237,11 @@ quick-add-modal .product-media-container.constrain-height {
 @media screen and (max-width: 480px) {
   .quick_add__submit.button_cart{
     border: 0.5px solid #595757;
-    width: 17.6rem;
+    width: 100%;
     height: 5.8rem;
     z-index: 10;
     white-space: nowrap;
+    padding: unset !important;
   }
   .quick_add__submit.button_cart:hover{
     background-color: #595757;

@@ -125,7 +125,7 @@
   font-size: 1.8rem;
   font-style: normal;
   font-weight: 300;
-  line-height: 1;
+  line-height: 1.2;
   margin: 0 !important;
 }
 
@@ -146,10 +146,10 @@
   .product__card.producer_text{
     color: #595757;
     font-family: Noto Sans JP;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-style: normal;
     font-weight: 300;
-    line-height: calc(32/12);
+    line-height: 1.2;
   
   }
 }
@@ -202,6 +202,10 @@
   .card__content.image_car{
     height: 30%;
   }
+
+  .card__information .card__heading {
+    font-size: 1.6rem;
+  }
 }
 .card__information {
   grid-template-rows: 2;
@@ -212,22 +216,30 @@
     height: 100%;
     max-height: 177px;
   }
-  .product__card .producer_text{
+
+  .card-information.product__card {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    justify-content: unset !important ;
+    align-items: unset !important ;
+    gap: 1rem
+  }
+  .product__card .producer_text{
+    /* display: flex;
+    flex-direction: column;
+    width: 100%; */
   }
   .product__card.button_cart{
-    display: flex;
+    /* display: flex;
     margin: auto;
-    margin-left: 2px;
+    margin-left: 2px; */
   }
   .card__content.image_car .card__information {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    padding-bottom: 0;
+    padding-bottom: 0; */
   }
 
   .card__content.image_car .card__information .quick-add {
@@ -249,7 +261,7 @@
   color: rgba(var(--color-foreground), 0.75);
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 751px) {
   .card__information {
     padding-bottom: 1.7rem;
     padding-top: 1.7rem;
@@ -294,7 +306,7 @@ font-family: Noto Sans JP;
 font-size: 2rem;
 font-style: normal;
 font-weight: 300;
-line-height: 1;
+line-height: 1.2;
 display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
@@ -493,7 +505,7 @@ display: -webkit-box;
 }
 
 .card-information > *:not(.visually-hidden:first-child) + *:not(.rating):not(.card__information-volume-pricing-note) {
-  margin-top: 0.7rem;
+  /* margin-top: 0.7rem; */
 }
 
 .card-information .caption {
