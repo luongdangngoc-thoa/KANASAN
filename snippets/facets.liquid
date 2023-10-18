@@ -120,7 +120,7 @@
                         </span>
                         {% render 'icon-caret' %}
                       </div>
-                      <div class="facets__header arrow-down-icon">
+                      <div id="arrow" class="facets__header arrow-down-icon">
                         <div class="collection-arrow-down-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none">
                         <path opacity="0.9" d="M1 1.00028L7 7.85742L13 1.00028" stroke="#595757"/>
@@ -128,6 +128,7 @@
                         </div>
                       </div>
                     </div>
+                    <div  class="facets_list_test">
                             <ul
                               class="{% if filter_type != 'vertical' %} facets__list{% endif %} list-unstyled no-js-hidden"
                               role="list"
@@ -149,8 +150,7 @@
                                       {% if value.count == 0 and value.active == false %}
                                         disabled
                                       {% endif %}
-                                    >
-    
+                                    >  
                                     <svg
                                       width="1.6rem"
                                       height="1.6rem"
@@ -181,9 +181,9 @@
                                     <span class="visually-hidden">
                                       {{- value.label | escape }} (
                                       {%- if value.count == 1 -%}
-                                        {{- 'products.facets.product_count_simple.one' | t: count: value.count -}}
+                                        {{- 'products.facets.product_count_simple_list.one' | t: count: value.count -}}
                                       {%- else -%}
-                                        {{- 'products.facets.product_count_simple.other' | t: count: value.count -}}
+                                        {{- 'products.facets.product_count_simple_list.other' | t: count: value.count -}}
                                       {%- endif -%}
                                       )</span
                                     >
@@ -191,8 +191,9 @@
                                 </li>
                               {%- endfor -%}
                             </ul>
+                            </div>
                             {% comment %} No show more for no JS {% endcomment %}
-                            <ul
+                            {% comment %} <ul
                               class="{% if filter_type != 'vertical' %} facets__list{% endif %} no-js-list list-unstyled no-js"
                               role="list"
                             >
@@ -254,7 +255,7 @@
                                   </label>
                                 </li>
                               {%- endfor -%}
-                            </ul>
+                            </ul> {% endcomment %}
                           </fieldset>
                           {%- if filter.values.size > 10 and filter_type == 'vertical' -%}
                             <show-more-button>
@@ -393,7 +394,7 @@
   </h2> {% endcomment %}
 <div class="button_filter">
   <div class="button_filter button_clear">
-  <facet-remove class="active-facets__button-wrapper">
+  <facet-remove >
     <a >
       <span>{{ 'products.facets.clear' | t }}</span>
     </a>
@@ -405,10 +406,10 @@
         {%- if results.results_count -%}
           {{ 'templates.search.results_with_count' | t: terms: results.terms, count: results.results_count }}
         {%- elsif results.products_count == results.all_products_count -%}
-          {{ 'products.facets.product_count_simple' | t: count: results.products_count }}
+          {{ 'products.facets.product_count_simple_list' | t: count: results.products_count }}
         {%- else -%}
           {{
-            'products.facets.product_count'
+            'products.facets.product_count_list'
             | t: product_count: results.products_count, count: results.all_products_count
           }}
         {%- endif -%}
@@ -678,10 +679,10 @@
                   {%- if results.results_count -%}
                     {{ 'templates.search.results_with_count' | t: terms: results.terms, count: results.results_count }}
                   {%- elsif results.products_count == results.all_products_count -%}
-                    {{ 'products.facets.product_count_simple' | t: count: results.products_count }}
+                    {{ 'products.facets.product_count_simple_list' | t: count: results.products_count }}
                   {%- else -%}
                     {{
-                      'products.facets.product_count'
+                      'products.facets.product_count_list'
                       | t: product_count: results.products_count, count: results.all_products_count
                     }}
                   {%- endif -%}
@@ -766,9 +767,9 @@
                                   <span class="visually-hidden">
                                     {{- value.label | escape }} (
                                     {%- if value.count == '1' -%}
-                                      {{- 'products.facets.product_count_simple.one' | t: count: value.count -}}
+                                      {{- 'products.facets.product_count_simple_list.one' | t: count: value.count -}}
                                     {%- else -%}
-                                      {{- 'products.facets.product_count_simple.other' | t: count: value.count -}}
+                                      {{- 'products.facets.product_count_simple_list.other' | t: count: value.count -}}
                                     {%- endif -%}
                                     )</span
                                   >

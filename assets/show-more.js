@@ -52,15 +52,36 @@ const handleSelectOption = () => {
 
 handleSelectOption()
 
-// const questionHeaders = document.querySelectorAll(".facets__header");
 
-// questionHeaders.forEach((header) => {
-//   console.log('header', header)
-//   header.addEventListener("click", () => {
-//     console.log('click me')
-//     header.classList.add("active");
-//   });
+//  const arrow = document.getElementById('arrow');
+
+// const facets_disclosure = document.querySelectorAll('.facets__disclosure');
+
+// facets_disclosure.forEach((faq) => {
+//  const facets_header = faq.querySelector(".facets__header");
+//  facets_header.addEventListener("click", () => {
+//    const fecets_list = faq.querySelector('.facets_list_test')
+//    console.log('fecets_list', fecets_list)
+//    fecets_list.classList.toggle('hidden')
+//  });
 // });
+const facets_disclosure = document.querySelectorAll('.facets__disclosure');
 
+facets_disclosure.forEach((faq) => {
+ const facets_header = faq.querySelector(".facets__header");
+ facets_header.addEventListener("click", () => {
+   const fecets_list = faq.querySelector('.facets_list_test');
+   if(fecets_list) {
+    fecets_list.classList.toggle('hidden')
+   }
+ });
 
-
+ const checkboxes = faq.querySelectorAll('input[type="checkbox"]');
+ console.log('checkboxes', checkboxes)
+ checkboxes.forEach((checkbox) => {
+   checkbox.addEventListener("click", (e) => {
+    // console.log('e.target.value', e.target.value)
+     e.stopPropagation()
+   });
+ });
+});
