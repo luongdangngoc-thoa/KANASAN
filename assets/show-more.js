@@ -66,22 +66,31 @@ handleSelectOption()
 //  });
 // });
 const facets_disclosure = document.querySelectorAll('.facets__disclosure');
-
 facets_disclosure.forEach((faq) => {
  const facets_header = faq.querySelector(".facets__header");
  facets_header.addEventListener("click", () => {
-   const fecets_list = faq.querySelector('.facets_list_test');
-   if(fecets_list) {
-    fecets_list.classList.toggle('hidden')
+   const facets_list_filter = faq.querySelector('.facets_list_test');
+   if(facets_list_filter) {
+    facets_list_filter.classList.toggle('hidden')
    }
+   
  });
 
- const checkboxes = faq.querySelectorAll('input[type="checkbox"]');
- console.log('checkboxes', checkboxes)
- checkboxes.forEach((checkbox) => {
-   checkbox.addEventListener("click", (e) => {
-    // console.log('e.target.value', e.target.value)
-     e.stopPropagation()
-   });
- });
+ const ul = faq.querySelector('ul')
+ let selected = []; 
+ ul.addEventListener('click', event => {
+   if (event.target.type === 'checkbox') {
+     const checked = faq.querySelectorAll('input[type="checkbox"]:checked')
+     selected = Array.from(checked).map(x => x.value)
+   }
+ })
+ 
+
+//  const checkboxes = faq.querySelectorAll('input[type="checkbox"]');
+//  checkboxes.forEach((checkbox) => {
+//    checkbox.addEventListener("change", (e) => {
+//        e.stopPropagation()
+//    });
+//  });
+
 });
