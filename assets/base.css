@@ -504,6 +504,7 @@ h6:empty {
   background-color: transparent;
   font-size: 1.4rem;
   font-family: inherit;
+   font-family: Noto Sans JP;
 }
 
 .link--text {
@@ -924,6 +925,7 @@ summary::-webkit-details-marker {
   max-width: calc(50% - var(--grid-mobile-horizontal-spacing) / 2);
   flex-grow: 1;
   flex-shrink: 0;
+  padding: 5rem 1rem;
 }
 
 @media screen and (min-width: 750px) {
@@ -3632,10 +3634,10 @@ details-disclosure > details {
    height: 5.8rem;
    text-decoration: none;
    font-size: 1.6rem;
-   font-family: Poppins;
    cursor: pointer;
    align-items: center;
    justify-content: center;
+   font-family: Noto Sans JP;
 }
 
 .page-button:hover {

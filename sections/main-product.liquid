@@ -39,12 +39,12 @@
     <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
 
-  {% if section.settings.image_zoom == 'hover' %}
+  {% comment %} {% if section.settings.image_zoom == 'hover' %}
     <script
       id="EnableZoomOnHover-main"
       src="{{ 'magnify.js' | asset_url }}"
       defer="defer"></script>
-  {% endif %}
+  {% endif %} {% endcomment %}
   {%- if request.design_mode -%}
     <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
@@ -240,13 +240,6 @@
                 {%- endif -%}
               {%- endif -%}
             </p>
-            {% comment %} {%- when 'description' -%}
-            {%- if product.description != blank -%}
-            <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-            {{ product.description }}
-            </div>
-            {%- endif -%}
-            {%- when 'sku' -%} {% endcomment %}
             <p
               class="product__sku no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
               id="Sku-{{ section.id }}"
@@ -693,150 +686,6 @@
     </script>
     <script src="{{ 'product-model.js' | asset_url }}" defer></script>
   {%- endif -%}
-
-  {% comment %} description {% endcomment %}
-  <div class="product__description">
-    <div class="description-detail">
-      {{ product.description }}
-    </div>
-    <a href="https://kanasan.okinawa.jp" target="_blank">
-      <button class="product-description__btn">関連記事はこちら</button>
-    </a>
-  </div>
-
-  {% if product.metafields.custom.company.value != null %}
-    {% comment %} Nhà sản xuất {% endcomment %}
-    <div class="product-author">
-      <p class="product-author__title">
-        {{ 'products.product.author.title' | t }}
-      </p>
-      <div class="product-author__detail">
-        <div class="product-author__detail--info">
-          {% if product.metafields.custom.company.value.avatar == null %}
-            {% render 'icon-ellipse-avatar' %}
-          {% else %}
-            {{ product.metafields.custom.company.value.avatar | img_tag }}
-          {% endif %}
-          {% comment %} {% render 'icon-ellipse-avatar' %} {% endcomment %}
-          <p>{{ product.metafields.custom.company.value.name }}</p>
-        </div>
-        <p class="product-author__detail--description">
-          {{ product.metafields.custom.company.value.description }}
-        </p>
-      </div>
-    </div>
-  {% endif %}
-
-
-  {% comment %} ingredient - detail description {% endcomment %}
-  <div class="product-ingredient">
-    <p class="product-ingredient__title">
-      {{ 'products.product.ingredient.title' | t }}
-    </p>
-    <div class="product-ingredient__list">
-      <div class="product-ingredient__list--detail">
-        <p class="product-ingredient__list--detail-title">
-          {{ 'products.product.ingredient.instruction' | t }}
-        </p>
-        <p class="product-ingredient__list--detail-content">
-          {{ product.metafields.custom.description }}
-        </p>
-      </div>
-      <div class="product-ingredient__list--detail">
-        <p class="product-ingredient__list--detail-title">
-          {{ 'products.product.ingredient.weight' | t }}
-        </p>
-        <p class="product-ingredient__list--detail-content">
-          {% for variant in product.variants %}
-            {{ variant.weight }}g{% endfor %}
-        </p>
-      </div>
-      <div class="product-ingredient__list--detail">
-        <p class="product-ingredient__list--detail-title">
-          {{ 'products.product.ingredient.component' | t }}
-        </p>
-        <p class="product-ingredient__list--detail-content">
-          {{ product.metafields.custom.description2 }}
-        </p>
-      </div>
-    </div>
-  </div>
-
-  {% comment %} Review {% endcomment %}
-
-  {% if product.metafields.custom.rating.value == null %}
-    <div class="product-review">
-      <p class="product-review__title">
-        {{ 'products.product.review.title' | t }}
-      </p>
-      <div class="product-review__rating">
-        <p class="product-review__rating--number">
-          0.0
-        </p>
-
-        <ul class="product-review__rating--list-star">
-          <li>
-            {% render 'icon-star-empty' %}
-          </li>
-          <li>
-            {% render 'icon-star-empty' %}
-          </li>
-          <li>
-            {% render 'icon-star-empty' %}
-          </li>
-          <li>
-            {% render 'icon-star-empty' %}
-          </li>
-          <li>
-            {% render 'icon-star-empty' %}
-          </li>
-        </ul>
-      </div>
-      <div class="product-review__rating--btn">
-        <a class="btn-1">
-            {{ 'products.product.review.button.comment' | t }}
-        </a>
-        <a class="btn-2">
-            {{ 'products.product.review.button.question' | t }}
-        </a>
-      </div>
-    </div>
-  {% else %}
-    <div class="product-review">
-      <p class="product-review__title">
-        {{ 'products.product.review.title' | t }}
-      </p>
-      <div class="product-review__rating">
-        <p class="product-review__rating--number">
-          {{ product.metafields.custom.rating.value }}
-        </p>
-        {% assign reviews = product.metafields.custom.rating.value %}
-        {% if reviews %}
-          {% assign rating = reviews.rating | round %}
-          {% assign max = reviews.scale_max | round %}
-          <ul class="product-review__rating--list-star">
-            {% for iteration in (1..max) %}
-              <li>
-                {% if iteration <= rating %}
-                  {% render 'icon-star-full' %}
-                {% else %}
-                  {% render 'icon-star-empty' %}
-                {% endif %}
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      </div>
-      <div class="product-review__rating--btn">
-        <a class="btn-1">
-            {{ 'products.product.review.button.comment' | t }}
-        </a>
-        <a class="btn-2">
-            {{ 'products.product.review.button.question' | t }}
-        </a>
-      </div>
-    </div>
-  {% endif %}
   <script>
 
     document.addEventListener('DOMContentLoaded', function() {

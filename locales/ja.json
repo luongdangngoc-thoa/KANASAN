@@ -202,6 +202,7 @@
       "apply": "適用",
       "clear": "クリア",
       "clear_all": "すべてを削除する",
+      "close":"閉じる",
       "from": "から",
       "filter_and_sort": "絞り込みと並び替え",
       "filter_by_label": "絞り込み:",
@@ -219,10 +220,15 @@
         "one": "{{ count }}個の商品",
         "other": "{{ count }}個の商品"
       },
-      "reset": "ブランド",
-      "product_category": "製品カテゴリー",
-      "material": "素材",
-      "producer": "生産者",
+      "product_count_list": {
+        "one": "製品を見る({{ product_count }})",
+        "other": "製品を見る({{ product_count }})"
+      },
+      "product_count_simple_list": {
+        "one": "製品を見る",
+        "other": "製品を見る"
+      },
+      "reset": "リセット",
       "sort_button": "並び替え",
       "sort_by_label": "並び替え: ",
       "to": "まで",

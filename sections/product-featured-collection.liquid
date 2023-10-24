@@ -1,7 +1,3 @@
-<script>
-  document.dispatchEvent(new CustomEvent("swym:collections-loaded"));
-</script>
-
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 
@@ -32,7 +28,7 @@
 <div class="color-{{ section.settings.color_scheme }} isolate gradient">
   <div class="collection section-{{ section.id }}-padding page-width">
     <h2 class="feature-collection-title inline-richtext scroll-trigger animate--slide-in">
-      {{'products.product.featured.title' | t}}
+      {{ 'products.product.featured.title' | t }}
     </h2>
 
     <slider-component class="slider-mobile-gutter slider-component-full-width{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %} scroll-trigger animate--slide-in">
@@ -47,7 +43,7 @@
             class="grid__item slider__slide scroll-trigger animate--slide-in"
             data-cascade
             style="--animation-order: {{ forloop.index }};">
-            {% render 'top-card-product'
+            {% render 'top-card-product' 
              , card_product: product,
              section_id: section.id %}
           </li>
@@ -76,7 +72,7 @@
   </div>
 </div>
 <div class="featured__button">
-  <a href="/">
+  <a href="/collections/all">
     <button class="btn-featured">
       {{ 'products.product.featured.button' | t }}
     </button>
@@ -252,7 +248,50 @@
   .collection .slider::-webkit-scrollbar-thumb {
     color: #595757 !important;
   }
-  .swym-tooltip-text{
+  .swym-tooltip-text {
     color: transparent;
+  }
+
+  /* hide defaut icon */
+  .swym-button.swym-add-to-wishlist-view-product.swym-heart.swym-added:after {
+    display: none !important;
+  }
+
+  .swym-button.swym-add-to-wishlist-view-product.swym-heart:after {
+    display: none !important;
+  }
+
+  /* remove opacity of defaut icon */
+  .swym-button.swym-add-to-wishlist-view-product.swym-added {
+    opacity: unset;
+  }
+
+  .button.swym-button.disabled {
+    opacity: unset;
+  }
+  /* style custom icon */
+  .swym-button.swym-add-to-wishlist-view-product {
+    position: relative;
+    z-index: 5;
+    width: 47px;
+    height: 22px;
+    opacity: unset;
+  }
+
+  .swym-button.swym-add-to-wishlist-view-product svg {
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .swym-button.swym-add-to-wishlist-view-product:not(.swym-added) svg.active {
+    opacity: 0;
+  }
+
+  .swym-button.swym-add-to-wishlist-view-product.swym-added svg.unactive {
+    opacity: 0;
   }
 </style>

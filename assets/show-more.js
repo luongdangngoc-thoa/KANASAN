@@ -52,14 +52,24 @@ const handleSelectOption = () => {
 
 handleSelectOption()
 
-const questionHeaders = document.querySelectorAll(".facets__header");
-
-questionHeaders.forEach((header) => {
-  console.log('header', header)
-  header.addEventListener("click", () => {
-    console.log('click me')
-    header.classList.add("active");
+const facets_disclosure = document.querySelectorAll(".facets__disclosure");
+facets_disclosure.forEach((faq) => {
+    faq.addEventListener("click", () => {
+      const facets_list_filter = faq.querySelector('.facets_list_test');
+      if(facets_list_filter) {
+          facets_list_filter.classList.toggle('hidden')
+      }
+    });
   });
-});
+function init() {
+  const checkboxes = faq.querySelectorAll('.facets_list_test');
 
-
+  if (checkboxArray.length > 0) {
+      checkboxes.forEach((checkbox, i) => {
+          const isChecked = checkboxArray[i].toString();
+          if (isChecked === 'true') {
+            checkbox.setAttribute('checked' , isChecked);
+           }
+      });
+  } 
+}
