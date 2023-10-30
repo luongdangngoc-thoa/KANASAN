@@ -3684,6 +3684,15 @@ details-disclosure > details {
       }
 }
 
+@media screen and (max-width: 370px) { 
+    a.page-button {
+         width: 80% !important;
+         max-width: 80%!important;
+         height: 5rem;
+         font-size: 1.4rem;
+      }
+}
+
 
 /*common button end*/
 
