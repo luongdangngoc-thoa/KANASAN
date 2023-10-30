@@ -86,6 +86,16 @@ class FacetFiltersForm extends HTMLElement {
       .forEach((element) => {
         element.classList.add('scroll-trigger--cancel');
       });
+
+    if(window._swat){
+        window._swat.initializeActionButtons("#ProductGridContainer");
+      }else{
+        window.SwymCallbacks = window.SwymCallbacks || [];
+    
+        window.SwymCallbacks.push(function(){
+          window._swat.initializeActionButtons("#ProductGridContainer");
+        });
+      }
   }
 
   static renderProductCount(html) {
@@ -281,3 +291,5 @@ class FacetRemove extends HTMLElement {
 }
 
 customElements.define('facet-remove', FacetRemove);
+
+
