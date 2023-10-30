@@ -1408,7 +1408,7 @@ input.mobile-facets__checkbox {
   .collection-arrow-down-icon.active .collection-arrow-down-icon svg {
     transform: rotate(180deg);
   }
-  .facets_list_test.hidden{
+  .facets_list_test.fiter-hidden{
     display: none;
   }
   .facets_list_test{
