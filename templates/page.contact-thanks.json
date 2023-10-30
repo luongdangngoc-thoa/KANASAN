@@ -1,41 +1,5 @@
 {
   "sections": {
-    "f31c9a14-d75e-430a-a6b2-4afb73199ae5": {
-      "type": "rich-text",
-      "blocks": {
-        "template--16825565151460__f31c9a14-d75e-430a-a6b2-4afb73199ae5-heading-1": {
-          "type": "heading",
-          "settings": {
-            "heading": "CONTACT",
-            "heading_size": "h1"
-          }
-        },
-        "bf8133f3-1dd1-49ef-82f5-5c0091380fc8": {
-          "type": "caption",
-          "settings": {
-            "caption": "コンタクト",
-            "text_style": "subtitle",
-            "text_size": "small"
-          }
-        }
-      },
-      "block_order": [
-        "template--16825565151460__f31c9a14-d75e-430a-a6b2-4afb73199ae5-heading-1",
-        "bf8133f3-1dd1-49ef-82f5-5c0091380fc8"
-      ],
-      "custom_css": [
-        ".rich-text__blocks {display: flex; align-items: center; justify-content: center; gap: 1em;}",
-        ".rich-text__caption {margin: 0;}"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -50,14 +14,14 @@
         "template--16825565151460__ad58b0f0-17ca-4a54-baec-0344b1615c5d-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>お問い合わせ受け付け完了メールを送信しました。</p>\n<p>ご回答までの目安は2,3営業日となります。迅速な対応を心がけておりますが、<br>お問い合わせが集中した場合、約一週間ほどお時間がかかる場合がございます。</p>\n<p>また、大型連休期間は翌営業日以降の対応となります。</p>\n<p>迷惑メール設定、キャリアメール等、ドメイン指定を行っている場合、<br>返信メールが受信できない場合がございます。</p>"
+            "text": "<p>お問い合わせ受け付け完了メールを送信しました。<\/p><p>ご回答までの目安は2,3営業日となります。迅速な対応を心がけておりますが、<br\/>お問い合わせが集中した場合、約一週間ほどお時間がかかる場合がございます。<\/p><p>また、大型連休期間は翌営業日以降の対応となります。<\/p><p>迷惑メール設定、キャリアメール等、ドメイン指定を行っている場合、<br\/>返信メールが受信できない場合がございます。<\/p>"
           }
         },
         "template--16825565151460__ad58b0f0-17ca-4a54-baec-0344b1615c5d-button-1": {
           "type": "button",
           "settings": {
             "button_label": "TOPページに戻る",
-            "button_link": "https://rm-partners.myshopify.com/",
+            "button_link": "https:\/\/rm-partners.myshopify.com\/",
             "button_style_secondary": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -80,7 +44,6 @@
     }
   },
   "order": [
-    "f31c9a14-d75e-430a-a6b2-4afb73199ae5",
     "main",
     "ad58b0f0-17ca-4a54-baec-0344b1615c5d"
   ]

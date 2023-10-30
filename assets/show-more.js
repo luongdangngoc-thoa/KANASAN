@@ -77,11 +77,18 @@ handleSelectOption()
 const facets_disclosure = document.querySelectorAll(".facets__disclosure");
 facets_disclosure.forEach((faq) => {
   faq.addEventListener("click", (event) => {
-    const facets_list_filter = faq.querySelector('.facets_list_test');
-    if (facets_list_filter) {
-      facets_list_filter.classList.toggle('hidden');
-      facets_list_filter.style.display = facets_list_filter.classList.contains("hidden") ? "none" : "block";
+    const facets_list = faq.querySelector('.facets_list_test');
+    if(facets_list){
+      facets_list.style.display != 'block'
+      facets_list.classList.toggle('hidden');
     }
+    else{
+      facets_list.style.display != 'none';
+      facets_list.classList.toggle('hidden');
+    }
+
+    
+    
   });
 });
 

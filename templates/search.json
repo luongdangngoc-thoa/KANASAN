@@ -2,6 +2,10 @@
   "sections": {
     "main": {
       "type": "main-search",
+      "custom_css": [
+        ".template-search__header h1 {color: #595757; text-align: center; font-family: Noto Sans JP; font-size: 2.4rem; font-style: normal; font-weight: 400; line-height: calc(34 \/ 24);}",
+        ".template-search__header p {color: #595757; text-align: center; font-family: Noto Sans JP; font-size: 1.6rem; font-style: normal; font-weight: 400; line-height: calc(28 \/ 16);}"
+      ],
       "settings": {
         "columns_desktop": 4,
         "image_ratio": "adapt",
