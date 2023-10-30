@@ -123,7 +123,7 @@
                         </div>
                       </div>
                     </div>
-                    <div  class="facets_list_test">
+                    <div  class="facets_list_test hidden">
                             <ul 
                               class="{% if filter_type != 'vertical' %} facets__list{% endif %} list-unstyled no-js-hidden"
                               role="list"
@@ -188,7 +188,7 @@
                             </ul>
                             </div>
                             {% comment %} No show more for no JS {% endcomment %}
-                             <ul
+                             {% comment %} <ul
                               class="{% if filter_type != 'vertical' %} facets__list{% endif %} no-js-list list-unstyled no-js"
                               role="list"
                             >
@@ -250,7 +250,7 @@
                                   </label>
                                 </li>
                               {%- endfor -%}
-                            </ul> 
+                            </ul>  {% endcomment %}
                           </fieldset>
                           {%- if filter.values.size > 10 and filter_type == 'vertical' -%}
                             <show-more-button>

@@ -6,6 +6,15 @@
   text-align: center;
 }
 
+
+.customer:not(.account):not(.order).register {
+  margin: 0 auto;
+  max-width: 50rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  text-align: center;
+}
+
 @media screen and (min-width: 750px) {
   .customer:not(.account):not(.order) {
     max-width: 47.8rem;
@@ -25,10 +34,16 @@
 .customer button {
   margin-top: 6rem;
   margin-bottom: 1rem;
-  border: #595757 1px solid;
+  color: #fff;
+  background-color: #595757;
   padding: unset;
   width: 20rem !important;
   font-family: Noto Sans JP;
+  transition: all 0.2s;
+}
+
+.customer button:hover{
+  opacity: 0.7;
 }
 .customer ul {
   line-height: calc(1 + 0.6 / var(--font-body-scale));
@@ -48,6 +63,19 @@
 
 .customer h2.form__message {
   font-size: calc(var(--font-heading-scale) * 1.8rem);
+  font-family: Noto Sans JP;
+}
+
+.customer h2.form__message:focus-visible {
+ outline: unset!important;
+ outline-offset: unset!important;
+ box-shadow: unset!important;
+}
+
+.customer .errors {
+  font-size: calc(var(--font-heading-scale) * 1.8rem);
+  font-family: Noto Sans JP;
+  color: rgb(235, 0, 27) ;
 }
 
 @media only screen and (min-width: 750px) {
@@ -759,3 +787,4 @@ li[data-address] > h2 {
 .addresses form > div:nth-of-type(7) + div[id] {
   margin-top: 1.5rem;
 }
+

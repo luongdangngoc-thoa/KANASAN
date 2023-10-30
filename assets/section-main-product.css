@@ -1761,7 +1761,6 @@ a.product__text {
 .swym-button.swym-add-to-wishlist-view-product {
   right: -2.5rem;
 }
-
-.page-width {
+.content-for-layout.focus-none {
   overflow: hidden;
 }

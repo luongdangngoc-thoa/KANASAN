@@ -3,45 +3,45 @@
     {%- for block in section.blocks -%}
       {%- case block.type -%}
         {%- when 'heading' -%}
-        <h2
-          class="section-concept__heading inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          {{ block.shopify_attributes }}
-          {% if settings.animations_reveal_on_scroll %}
-          data-cascade
-          style="--animation-order: {{ forloop.index }};"
-          {% endif %}>
-          {{ block.settings.heading }}
-        </h2>
-        {%- when 'text' -%}
-        <div
-          class="section-concept__text {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          {{ block.shopify_attributes }}
-          {% if settings.animations_reveal_on_scroll %}
-          data-cascade
-          style="--animation-order: {{ forloop.index }};"
-          {% endif %}>
-          {{ block.settings.text }}
-        </div>
-        {%- when 'button' -%}
-        <div
-          class="section-concept__button {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          {{ block.shopify_attributes }}
-          {% if settings.animations_reveal_on_scroll %}
-          data-cascade
-          style="--animation-order: {{ forloop.index }};"
-          {% endif %}>
-          <a
-            class="page-button btn-primary"
-            target="_blank"
-            {% if block.settings.button_link == blank %}
-            role="link"
-            aria-disabled="true"
-            {% else %}
-            href="{{ block.settings.button_link }}"
+          <h2
+            class="section-concept__heading inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {{ block.shopify_attributes }}
+            {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+            style="--animation-order: {{ forloop.index }};"
             {% endif %}>
-            {{- block.settings.button_label | escape -}}
-          </a>
-        </div>
+            {{ block.settings.heading }}
+          </h2>
+        {%- when 'text' -%}
+          <div
+            class="section-concept__text {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {{ block.shopify_attributes }}
+            {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+            style="--animation-order: {{ forloop.index }};"
+            {% endif %}>
+            {{ block.settings.text }}
+          </div>
+        {%- when 'button' -%}
+          <div
+            class="section-concept__button {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {{ block.shopify_attributes }}
+            {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+            style="--animation-order: {{ forloop.index }};"
+            {% endif %}>
+            <a
+              class="page-button btn-primary"
+              target="_blank"
+              {% if block.settings.button_link == blank %}
+              role="link"
+              aria-disabled="true"
+              {% else %}
+              href="{{ block.settings.button_link }}"
+              {% endif %}>
+              {{- block.settings.button_label | escape -}}
+            </a>
+          </div>
       {%- endcase -%}
     {%- endfor -%}
   </div>
@@ -74,7 +74,8 @@
     font-size: 2rem;
     font-style: normal;
     font-weight: 400;
-    line-height: calc(44 / 22); /* 154.545% */
+    line-height: calc(44 / 22);
+    /* 154.545% */
   }
 
   .section-concept__text {
@@ -148,6 +149,7 @@
   }
 
   .section-concept__button {
+    width: 100%;
     margin-top: 7rem;
   }
 
@@ -173,17 +175,20 @@
           {
             "value": "left",
             "label": "content_alignment.options__1.label"
-          }, {
+          },
+          {
             "value": "center",
             "label": "content_alignment.options__2.label"
-          }, {
+          },
+          {
             "value": "right",
             "label": "content_alignment.options__3.label"
           }
         ],
         "default": "center",
         "label": "content_alignment.label"
-      }, {
+      },
+      {
         "type": "color_scheme",
         "id": "color_scheme",
         "label": "t:sections.all.colors.label",
@@ -201,20 +206,24 @@
             "id": "heading",
             "default": "Talk about your brand",
             "label": "top-section-concept.blocks.heading.settings.heading.label"
-          }, {
+          },
+          {
             "type": "select",
             "id": "heading_size",
             "options": [
               {
                 "value": "h2",
                 "label": "t:sections.all.heading_size.options__1.label"
-              }, {
+              },
+              {
                 "value": "h1",
                 "label": "t:sections.all.heading_size.options__2.label"
-              }, {
+              },
+              {
                 "value": "h0",
                 "label": "t:sections.all.heading_size.options__3.label"
-              }, {
+              },
+              {
                 "value": "hxl",
                 "label": "t:sections.all.heading_size.options__4.label"
               }
@@ -223,7 +232,8 @@
             "label": "t:sections.all.heading_size.label"
           }
         ]
-      }, {
+      },
+      {
         "type": "text",
         "name": "t:sections.rich-text.blocks.text.name",
         "limit": 3,
@@ -235,7 +245,8 @@
             "label": "t:sections.rich-text.blocks.text.settings.text.label"
           }
         ]
-      }, {
+      },
+      {
         "type": "button",
         "name": "t:sections.rich-text.blocks.buttons.name",
         "limit": 2,
@@ -246,7 +257,8 @@
             "default": "Button label",
             "label": "t:sections.rich-text.blocks.buttons.settings.button_label_1.label",
             "info": "t:sections.rich-text.blocks.buttons.settings.button_label_1.info"
-          }, {
+          },
+          {
             "type": "url",
             "id": "button_link",
             "label": "t:sections.rich-text.blocks.buttons.settings.button_link_1.label"
@@ -260,9 +272,11 @@
         "blocks": [
           {
             "type": "heading"
-          }, {
+          },
+          {
             "type": "text"
-          }, {
+          },
+          {
             "type": "button"
           }
         ]

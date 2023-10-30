@@ -54,22 +54,11 @@ handleSelectOption()
 
 const facets_disclosure = document.querySelectorAll(".facets__disclosure");
 facets_disclosure.forEach((faq) => {
-    faq.addEventListener("click", () => {
+    faq.addEventListener("click", (event) => {
       const facets_list_filter = faq.querySelector('.facets_list_test');
       if(facets_list_filter) {
           facets_list_filter.classList.toggle('hidden')
+          facets__list__filter.style.display = facets__list__filter.classList.contains("hidden") ? "none" : "block";
       }
     });
   });
-function init() {
-  const checkboxes = faq.querySelectorAll('.facets_list_test');
-
-  if (checkboxArray.length > 0) {
-      checkboxes.forEach((checkbox, i) => {
-          const isChecked = checkboxArray[i].toString();
-          if (isChecked === 'true') {
-            checkbox.setAttribute('checked' , isChecked);
-           }
-      });
-  } 
-}
