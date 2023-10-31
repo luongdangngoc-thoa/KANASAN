@@ -4,9 +4,8 @@
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   text-align: center;
-  font-family: Noto Sans JP;
-  color: #595757;
 }
+
 
 .customer:not(.account):not(.order).register {
   margin: 0 auto;
@@ -26,8 +25,6 @@
 .customer__title {
   margin-top: 0;
   font-family: Noto Sans JP;
-  font-weight: 400;
-  color: #595757;
 }
 
 .customer form {
@@ -53,7 +50,6 @@
   padding-left: 4.4rem;
   text-align: left;
   margin-bottom: 4rem;
-  font-family: Noto Sans JP;
 }
 
 .customer ul a {
@@ -370,9 +366,6 @@
   display: block;
   margin: 0 auto;
   width: fit-content;
-  font-family: Noto Sans JP;
-  font-weight: 400;
-   color: #595757;
 }
 
 .login a[href='#recover'] {
@@ -381,10 +374,8 @@
 }
 
 .login .field + a {
-  color: #595757;
   margin-top: 1rem;
   font-family: Noto Sans JP;
-  font-weight: 400;
 }
 
 .login p {
@@ -488,15 +479,11 @@
 
 :is(.account, .order) h1 {
   margin-bottom: 1rem;
-  font-family: Noto Sans JP;
-  color: #595757;
 }
 
 :is(.account, .order) h2 {
   margin-top: 4rem;
   margin-bottom: 1rem;
-  font-family: Noto Sans JP;
-  color: #595757;
 }
 
 @media screen and (min-width: 990px) {

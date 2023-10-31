@@ -1,8 +1,8 @@
 <div class=" section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
   <div class="section-faq-wrapper page-width">
-    <h2 class="section-faq-title">
+    <h2 class="section-faq-title scroll-trigger animate--slide-in">
       {{ section.settings.title }}</h2>
-    <ul class="section-faq-list">
+    <ul class="section-faq-list  scroll-trigger animate--slide-in">
       {%- for block in section.blocks -%}
         <li>
           <p class="faq-text faq-question">
@@ -12,7 +12,7 @@
         </li>
       {%- endfor -%}
     </ul>
-    <div class="section-faq-button">
+    <div class="section-faq-button scroll-trigger animate--slide-in">
       <a class="page-button btn-primary" href="{{section.settings.button_link}}">
         {{ section.settings.button_lable }}</a>
     </div>
@@ -101,17 +101,20 @@
         "id": "section_color_scheme",
         "label": "t:sections.all.colors.label",
         "default": "background-1"
-      }, {
+      },
+      {
         "type": "text",
         "id": "title",
         "label": "Section title",
         "default": "よくある質問"
-      }, {
+      },
+      {
         "type": "text",
         "id": "button_lable",
         "label": "Button lable",
         "default": "その他のご質問"
-      }, {
+      },
+      {
         "type": "url",
         "id": "button_link",
         "label": "Button link"
@@ -127,7 +130,8 @@
             "id": "faq-question",
             "default": "Question",
             "label": "Question"
-          }, {
+          },
+          {
             "type": "inline_richtext",
             "id": "faq-answer",
             "default": "Answer",
@@ -142,9 +146,11 @@
         "blocks": [
           {
             "type": "Block"
-          }, {
+          },
+          {
             "type": "Block"
-          }, {
+          },
+          {
             "type": "Block"
           }
         ]
