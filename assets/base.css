@@ -1792,6 +1792,7 @@ details[open] > .share-button__fallback {
   color: rgba(var(--color-foreground), 0.75);
   letter-spacing: 0.1rem;
   line-height: 1.5;
+  font-family: Noto Sans JP;
 }
 
 .field__input:focus ~ .field__label,
@@ -3727,3 +3728,47 @@ details-disclosure > details {
   .section-template--21243532345622__product-grid-padding {
   padding-top: 0;
 }
+
+
+
+/* css for robot check */
+.shopify-challenge__message {
+    color: #595757;
+    font-family: Noto Sans JP;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.rc-anchor-center-item.rc-anchor-checkbox-label {
+    font-family: Noto Sans JP !important;
+}
+
+.shopify-challenge__button.btn {
+    margin-top: 3rem;
+    color:  #fff;
+    background-color: #595757;
+    transition: all 0.2s;
+}
+
+.shopify-challenge__button.btn :hover{
+    opacity: 0.7;
+}
+
+/* css for robot check end */
+
+
+/*custom for contact-thank page */ 
+
+#shopify-section-template--21418329866518__ad58b0f0-17ca-4a54-baec-0344b1615c5d {
+    margin-top: 9rem;
+}
+
+#shopify-section-template--21418329866518__ad58b0f0-17ca-4a54-baec-0344b1615c5d {
+    font-family: Noto Sans JP;
+}
+
+#shopify-section-template--21418329866518__ad58b0f0-17ca-4a54-baec-0344b1615c5d .rich-text__buttons {
+    padding: 8rem 0;
+}
+
+/*custom for contact-thank page end */ 

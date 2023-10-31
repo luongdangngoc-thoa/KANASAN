@@ -1,13 +1,5 @@
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "disabled": true,
-      "settings": {
-        "padding_top": 36,
-        "padding_bottom": 0
-      }
-    },
     "ad58b0f0-17ca-4a54-baec-0344b1615c5d": {
       "type": "rich-text",
       "blocks": {
@@ -44,7 +36,6 @@
     }
   },
   "order": [
-    "main",
     "ad58b0f0-17ca-4a54-baec-0344b1615c5d"
   ]
 }
