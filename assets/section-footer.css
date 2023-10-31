@@ -444,7 +444,16 @@
     justify-content: flex-end;
     margin-left: -1.3rem;
     margin-right: -1.3rem;
+    position: relative;
+    top: -7rem;
 }
+@media screen and (max-width: 749px) {
+   
+.footer-block__brand-info .footer__list-social.list-social {
+    position: unset;
+}
+}
+
 
 .footer-block__details-content .placeholder-svg {
     max-width: 20rem;
@@ -559,6 +568,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: calc(40 / 15);
+    font-size: 1.5rem;
 }
 
 /*responsive for menu */
@@ -604,7 +614,7 @@
     }
 
     .footer-block__brand-info .footer__list-social.list-social {
-        margin-top: 6rem;
+        margin-top: 8rem;
         justify-content: center;
     }
 }

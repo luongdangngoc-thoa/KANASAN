@@ -1,5 +1,5 @@
 <div class="category-link-wrapper page-width">
-  <div class="collection-link-list">
+  <div class="collection-link-list scroll-trigger animate--slide-in">
     {% for type in shop.types %}
       <span class="collection-link">
         {{- type | link_to_type }}
@@ -40,7 +40,7 @@
     text-align: center;
   }
 
-   @media screen and (max-width: 60px) {
+  @media screen and (max-width: 60px) {
     .collection-link a {
       padding: 1.4 2rem;
     }
@@ -53,9 +53,8 @@
     background-color: rgb(231, 224, 224);
   }
 
- /* custom scrollbar */
-  /* width */
-  .category-link-wrapper::-webkit-scrollbar {
+  /* custom scrollbar */
+  /* width */.category-link-wrapper::-webkit-scrollbar {
     height: 4px;
   }
 

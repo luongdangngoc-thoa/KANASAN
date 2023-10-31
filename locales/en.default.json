@@ -202,6 +202,14 @@
         "one": "{{ count }} product",
         "other": "{{ count }} products"
       },
+      "product_count_list": {
+        "one": "({{ product_count }})  View products",
+        "other": "({{ product_count }})  View products"
+      },
+      "product_count_simple_list": {
+        "one": " View products",
+        "other": " View products"
+      },
       "reset": "Reset",
       "sort_button": "Sort",
       "sort_by_label": "Sort by:",

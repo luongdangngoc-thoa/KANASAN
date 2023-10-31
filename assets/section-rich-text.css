@@ -66,7 +66,7 @@
   width: 100%;
   max-width: 45rem;
   word-break: break-word;
-  padding: 24rem 0 29.9rem 0;
+  padding: 15rem 0 20rem 0;
   text-align: center;
 }
 @media screen and (max-width: 480px) {
@@ -97,4 +97,19 @@
 
 .rich-text__blocks.right .rich-text__buttons {
   justify-content: flex-end;
+}
+
+
+/*custom for contact-thank page */ 
+
+#shopify-section-template--21418329866518__ad58b0f0-17ca-4a54-baec-0344b1615c5d {
+    margin-top: 9rem;
+}
+
+#shopify-section-template--21418329866518__ad58b0f0-17ca-4a54-baec-0344b1615c5d {
+    font-family: Noto Sans JP;
+}
+
+#shopify-section-template--21418329866518__ad58b0f0-17ca-4a54-baec-0344b1615c5d .rich-text__buttons {
+    padding: 8rem 0;
 }

@@ -1,6 +1,7 @@
 <script>
-  document.dispatchEvent(new CustomEvent("swym:collections-loaded"));
-</script>
+    document.dispatchEvent(new CustomEvent("swym:collections-loaded"));
+  </script>
+
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
