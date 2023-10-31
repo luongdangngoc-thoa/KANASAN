@@ -54,11 +54,10 @@ handleSelectOption()
 
 const facets_disclosure = document.querySelectorAll(".facets__disclosure");
 facets_disclosure.forEach((faq) => {
-    faq.addEventListener("click", (event) => {
+    faq.addEventListener("click", () => {
       const facets_list_filter = faq.querySelector('.facets_list_test');
       if(facets_list_filter) {
-          facets_list_filter.classList.toggle('fiter-hidden')
-          facets__list__filter.style.display = facets__list__filter.classList.contains("hidden") ? "none" : "block";
+          facets_list_filter.classList.toggle('fiter-hidden');
       }
     });
   });

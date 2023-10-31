@@ -568,6 +568,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: calc(40 / 15);
+    font-size: 1.5rem;
 }
 
 /*responsive for menu */
