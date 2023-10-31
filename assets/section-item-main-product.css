@@ -117,7 +117,7 @@
 }
 
 .product-description__btn {
-  padding: 0.875rem 5.875rem;
+  padding: 1.3rem 5.875rem;
   border: 0.5px solid #595757;
   background: #ffff;
   cursor: pointer;
@@ -126,10 +126,14 @@
   font-size: 1.8rem;
   font-weight: 400;
   white-space: nowrap;
+  font-family: Noto Sans JP;
 }
 .product-description__btn:hover {
   color: #fff;
   background-color: #595757;
+}
+.product__delivery {
+  font-family: Noto Sans JP;
 }
 
 /* Media Query for screens up to 768px wide */

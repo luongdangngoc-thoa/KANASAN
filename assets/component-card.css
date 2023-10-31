@@ -225,21 +225,21 @@
     gap: 1rem
   }
   .product__card .producer_text{
-    /* display: flex;
+    display: flex;
     flex-direction: column;
-    width: 100%; */
+    width: 100%;
   }
   .product__card.button_cart{
-    /* display: flex;
+    display: flex;
     margin: auto;
-    margin-left: 2px; */
+    margin-left: 2px;
   }
   .card__content.image_car .card__information {
-    /* display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    padding-bottom: 0; */
+    padding-bottom: 0;
   }
 
   .card__content.image_car .card__information .quick-add {

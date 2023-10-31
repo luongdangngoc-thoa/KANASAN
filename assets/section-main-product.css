@@ -1764,3 +1764,9 @@ a.product__text {
 .content-for-layout.focus-none {
   overflow: hidden;
 }
+.add-to-cart__button span {
+  font-family: Noto Sans JP;
+}
+.shopify-payment-button__button {
+  font-family: Noto Sans JP;
+}
