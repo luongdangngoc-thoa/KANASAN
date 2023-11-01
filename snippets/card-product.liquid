@@ -222,33 +222,9 @@
               data-variant-id="{{card_product.variants[0].id}}"
               data-product-url="{{ shop.url }}{{ card_product.url }}"
             >
-              <svg
-                class="active"
-                aria-hidden="true"
-                width="33"
-                height="33"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="#ff4500"
-                viewBox="0 0 21 19"
-              >
-                <path  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                    d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
-              </svg>
-              <svg
-                class="unactive"
-                id="unactive"
-                aria-hidden="true"
-                width="33"
-                height="33"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="#ffffff"
-                viewBox="0 0 21 19"
-              >
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                    d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
-              </svg>
+            {% render 'icon-wishlist' %}
+            {% render 'icon-wishlist-active' %}
             </button>
-
             <!-- Swym Wishlist Plus EPI Button -->
           </div>
         </div>
