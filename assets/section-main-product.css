@@ -1764,9 +1764,59 @@ a.product__text {
 .content-for-layout.focus-none {
   overflow: hidden;
 }
-.add-to-cart__button span {
-  font-family: Noto Sans JP;
-}
+.add-to-cart__button span,
 .shopify-payment-button__button {
   font-family: Noto Sans JP;
+}
+
+.swym-button.swym-add-to-wishlist-view-product.swym-heart.swym-added:after {
+  display: none !important;
+}
+
+.swym-button.swym-add-to-wishlist-view-product.swym-heart:after {
+  display: none !important;
+}
+
+/* remove opacity of defaut icon */
+.swym-button.swym-add-to-wishlist-view-product.swym-added {
+  opacity: unset;
+}
+
+.button.swym-button.disabled {
+  opacity: unset;
+}
+/* style custom icon */
+.swym-button.swym-add-to-wishlist-view-product {
+  position: relative;
+  z-index: 5;
+  width: 22px;
+  height: 22px;
+  opacity: unset;
+}
+
+.swym-button.swym-add-to-wishlist-view-product svg {
+  transition: all 0.3s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.swym-button.swym-add-to-wishlist-view-product:not(.swym-added) svg.active {
+  opacity: 0;
+}
+
+.swym-button.swym-add-to-wishlist-view-product.swym-added svg.unactive {
+  opacity: 0;
+}
+.product__button .swym-button.swym-add-to-wishlist-view-product svg {
+  transition: all 0.2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 33px;
+  height: 33px;
 }

@@ -1,23 +1,28 @@
 <div class="page-width">
-    <div class="title-recently">
+  <div class="title-recently">
     <h2 class="product-recommendations__heading h2">閲覧履歴</h2>
-    </div>
-    <ul class="recently-viewed grid product-grid grid--4-col-desktop grid--2-col-tablet-down" role="list"">
+  </div>
+  <ul class="recently-viewed grid product-grid grid--4-col-desktop grid--2-col-tablet-down" role="list">
     <!-- Recently viewed products will appear here -->
-    </ul>
+  </ul>
 </div>
 
 <script>
-function setRecentlyViewedProducts() {
+  function setRecentlyViewedProducts() {
   const productData = {
     productTitle: "{{ product.title }}",
+    productId: "{{ product.id }}",
+    productVariants: "{{ product.variants[0].id }}",
     productImg: "{{ product.featured_media | image_url: width: 533 }}",
     imgWidth:"{{ product.featured_media.width }}",
     imgHeight:"{{ product.featured_media.height }}",
     productPrice: "{{ product.price | money }}",
+    productProducer: "{{- product.metafields.custom.producer.value }}",
     productUrl: "{{ product.url }}",
     productImageAltText: "{{product.featured_media.alt | escape }}"
   };
+  
+  console.log(productData);
   const productList = [];
   let jsonResp, jsonRespArr, jsonRespArrStr;
   const numberOfProducts = 6;
@@ -25,7 +30,7 @@ function setRecentlyViewedProducts() {
   const currProductPageTitle = productData.productTitle;
   const productDataString = JSON.stringify(productList);
   const localData = localStorage.getItem("recentlyViewedProduct");
-
+  
   if (localData === null) {
     localStorage.setItem("recentlyViewedProduct", productDataString);
   } else if (localData) {
@@ -45,14 +50,15 @@ function setRecentlyViewedProducts() {
       localStorage.setItem("recentlyViewedProduct", jsonRespArr);
     }
   }
-}
-
-setRecentlyViewedProducts();
-const localViewed = localStorage.recentlyViewedProduct;
-function getRecentlyViewedProducts() {
+  }
+  
+  setRecentlyViewedProducts();
+  const localViewed = localStorage.recentlyViewedProduct;
+  function getRecentlyViewedProducts() {
   const productData = JSON.parse(localStorage.getItem("recentlyViewedProduct"));
   const recentlyViewedHtml = [];
   productData.map(item => {
+    console.log(item) ;
     recentlyViewedHtml.unshift(`
     <li class="grid__item">
      <div class="card-wrapper underline-links-hover">
@@ -70,7 +76,7 @@ function getRecentlyViewedProducts() {
        <div class="card__information">
         <p class="card__producer">
             生産者:&ensp;
-            {{- product.metafields.custom.producer.value }}
+            ${item.productProducer}
           </p>
        <h3 class="card__heading h5">
        <a class="full-unstyled-link" href="${item.productUrl}">${item.productTitle}</a></h3>
@@ -80,6 +86,16 @@ function getRecentlyViewedProducts() {
                    ${item.productPrice} (税込)
                </div>
            </div>
+           <button
+              class="swym-button swym-add-to-wishlist-view-product product_${item.productId}"
+              data-with-epi="true"
+              data-swaction="addToWishlist"
+              data-product-id="${item.productId}"
+              data-variant-id="${item.productVariants}"
+              data-product-url="{{ shop.url }}${item.productUrl}">
+              {% render 'icon-wishlist' %}
+              {% render 'icon-wishlist-active' %}
+            </button>
          </div>
        </div>
        </div>
@@ -91,194 +107,278 @@ function getRecentlyViewedProducts() {
   const newProductData = `${recentlyViewedHtml.join("")}`;
   const fullContent = document.getElementsByClassName("recently-viewed");
   fullContent[0].innerHTML = newProductData;
-}
-
-document.addEventListener("DOMContentLoaded", function (event) {
+  }
+  
+  document.addEventListener("DOMContentLoaded", function (event) {
   getRecentlyViewedProducts();
-});
-
+  });
 </script>
 
+<div class="featured__button">
+  <a href="/collections/all">
+    <button class="btn-featured">
+      {{ 'products.product.featured.button' | t }}
+    </button>
+  </a>
+</div>
 
 {% schema %}
   {
     "name": "Recent Products",
     "settings": [
       {
-      "type": "text",
-      "id": "heading",
-      "default": "Recently Viewed",
-      "label": "Title"
-    }
+        "type": "text",
+        "id": "heading",
+        "default": "Recently Viewed",
+        "label": "Title"
+      }
     ]
   }
 {% endschema %}
 <style>
-    /* .shopify-section .page-width {
-        padding-top: 135px;
-    } */
-    .recently-viewed{
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 1.1rem;
-    }
-    .recently-viewed .card.card--standard.card--media{
-        width: 26rem;
-        height: 42rem;
-    } 
-    .recently-viewed .grid__item {
-        max-width: 27.2rem !important;
-        padding: 0px;
-    }
-    .recently-viewed .card__information, .card__heading.h5 {
-        color: #595757;
-        font-family: Noto Sans JP;
-        font-size: 1.5rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: calc(32/15); /* 213.333% */
-    }
-    .recently-viewed .card__producer{
-        margin-bottom: 0.5rem !important;
-    }
-    .recently-viewed .card__heading.h5 {
-        margin: 0 0 0.5rem 0;
-    }
-    .product-recommendations__heading {
-        padding-top: 13.5rem;
-    }
-    .product-recommendations__heading.h2 {
-        color: #595757;
-        font-family: Noto Sans JP;
-        font-size: 2rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        margin: 0px;
-    }
-    .recently-viewed .card__heading.h5 a {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    .title-recently {
-        padding-bottom: 2.6rem;
-        margin-bottom: 4.9rem;
-        border-bottom: rgb(208 208 208) solid 1px;
-    }
-    .recently-viewed .image {
-        position: relative !important;
-        background-color: white;
-    }
-    .recently-viewed .image img{
-        width: 26rem;
-        height: 26rem;
-    }
-    @media screen and (max-width: 768px) {
-        .recently-viewed .grid__item {
-            max-width: 17.8rem !important;
-            padding: 0px;
-        }
-        .recently-viewed .card.card--standard.card--media {
-            height: 42rem;
-            width: auto;
-        }
-        .recently-viewed .image img {
-            width: 18rem;
-            height: 20rem;
-        }
-    }
 
-    @media screen and (max-width: 550px) { 
-    .recently-viewed {
-        display: flex;
-        justify-content: center;
-        padding: 1.6rem 0;
-        gap: 0.8rem;
-        padding-bottom: 0px;
-      }
 
-      .recently-viewed {
-        overflow: auto;
-        display: flex;
-        justify-content: unset;
-        margin-bottom: 3rem;
-      }
-      .recently-viewed p:first-child { 
-        margin-left: 0px;
-    }
-    
-    .recently-viewed p:last-child { 
-        margin-right: 0px;
-    }
-    
-      /* width */
-      .recently-viewed::-webkit-scrollbar {
-        height: 0.4rem;
-      }
-    
-      /* Track */
-      .recently-viewed::-webkit-scrollbar-track {
-        background: #f1f1f1;
-      }
-    
-      /* Handle */
-      ::-webkit-scrollbar-thumb {
-        background: #c1c1c1;
-      }
-    
-      /* Handle on hover */
-      ::-webkit-scrollbar-thumb:hover {
-        background: #888;
-      }
-    
-      /* end style for scroll  */
-    
+  /*
+
+   .shopify-section .page-width { 
+   padding-top: 135px; 
+   } 
+*/
+  .recently-viewed {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.1rem;
+    padding-bottom: 3rem !important;
+  }
+  .recently-viewed .card.card--standard.card--media {
+    max-width: 26rem;
+    max-height: 42rem;
+  }
+
+  .recently-viewed .card.card--standard .card__media {
+    width: 100%;
+  }
+  .recently-viewed .grid__item {
+    max-width: 26.5rem !important;
+    padding: 1rem;
+  }
+
+  .recently-viewed .card__information,
+  .card__heading.h5 {
+    color: #595757;
+    font-family: Noto Sans JP;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(32 / 15);
+    /* 213.333% */
+  }
+  .recently-viewed .card__producer {
+    margin-bottom: 0.5rem !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .recently-viewed .card__heading.h5 {
+    margin: 0 0 0.5rem;
+  }
+  .product-recommendations__heading {
+    padding-top: 13.5rem;
+  }
+  .product-recommendations__heading.h2 {
+    color: #595757;
+    font-family: Noto Sans JP;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+  }
+  .recently-viewed .card__heading.h5 a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .title-recently {
+    padding-bottom: 2.6rem;
+    margin-bottom: 4.9rem;
+    border-bottom: rgb(208 208 208) solid 1px;
+  }
+  .recently-viewed .image {
+    position: relative !important;
+    background-color: white;
+    width: 100%;
+    height: 50%;
+  }
+  .recently-viewed .image img {
+  ;
+  width: 100%;
+  height: 100%;
+}
+
+.recently-viewed .card-information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recently-viewed .card-information button {
+  padding-right: 1rem;
+  margin-top: unset !important;
+}
+
+/* hide defaut icon */
+.swym-button.swym-add-to-wishlist-view-product.swym-heart.swym-added:after {
+  display: none !important;
+}
+
+.swym-button.swym-add-to-wishlist-view-product.swym-heart:after {
+  display: none !important;
+}
+
+/* remove opacity of defaut icon */
+.swym-button.swym-add-to-wishlist-view-product.swym-added {
+  opacity: unset;
+}
+
+.button.swym-button.disabled {
+  opacity: unset;
+}
+/* style custom icon */
+.swym-button.swym-add-to-wishlist-view-product {
+  position: relative;
+  z-index: 5;
+  width: 60px;
+  height: 30px;
+  opacity: unset;
+}
+
+.swym-button.swym-add-to-wishlist-view-product svg {
+  transition: all 0.2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.swym-button.swym-add-to-wishlist-view-product:not(.swym-added) svg.active {
+  opacity: 0;
+}
+
+.swym-button.swym-add-to-wishlist-view-product.swym-added svg.unactive {
+  opacity: 0;
+}
+
+
+@media screen and (max-width: 768px) {
+  .recently-viewed .grid__item {
+    max-width: 20rem !important;
+  }
+  .recently-viewed .card.card--standard.card--media {
+    /* height: 42rem; */
+    width: auto;
+    padding: 2rem 0;
+  }
+  .recently-viewed .image img {
+    width: 18rem;
+    height: 20rem;
+  }
+
+  .recently-viewed .swym-button.swym-add-to-wishlist-view-product svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .recently-viewed {
+    display: flex;
+    justify-content: center;
+    padding: 1.6rem 0 0;
+    gap: 0.8rem;
+  }
+  .recently-viewed {
+    overflow: auto;
+    display: flex;
+    justify-content: unset;
+    margin-bottom: 3rem;
+  }
+  .recently-viewed p:first-child {
+    margin-left: 0;
+  }
+
+  .recently-viewed p:last-child {
+    margin-right: 0;
+  }
+
+  /* width */
+  .recently-viewed::-webkit-scrollbar {
+    height: 0.4rem;
+  }
+
+  /* Track */
+  .recently-viewed::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #888;
+  };
+
+  /* end style for scroll  */
+
 }
 
 .recently-viewed {
-        display: flex;
-        justify-content: center;
-        padding: 1.6rem 0;
-        gap: 0.8rem;
-        padding-bottom: 0px;
-      }
+  display: flex;
+  justify-content: center;
+  padding: 1.6rem 0 0;
+  gap: 0.8rem;
+}
 
-      .recently-viewed {
-        overflow: auto;
-        display: flex;
-        justify-content: unset;
-        margin-bottom: 3rem;
-      }
-      .recently-viewed p:first-child { 
-        margin-left: 0px;
-    }
-    
-    .recently-viewed p:last-child { 
-        margin-right: 0px;
-    }
-    
-      /* width */
-      .recently-viewed::-webkit-scrollbar {
-        height: 0.4rem;
-      }
-    
-      /* Track */
-      .recently-viewed::-webkit-scrollbar-track {
-        background: #f1f1f1;
-      }
-    
-      /* Handle */
-      ::-webkit-scrollbar-thumb {
-        background: #c1c1c1;
-      }
-    
-      /* Handle on hover */
-      ::-webkit-scrollbar-thumb:hover {
-        background: #888;
-      }
-    
-      /* end style for scroll  */
-    
+.recently-viewed {
+  overflow: auto;
+  display: flex;
+  justify-content: unset;
+  margin-bottom: 3rem;
+}
+.recently-viewed p:first-child {
+  margin-left: 0;
+}
+
+.recently-viewed p:last-child {
+  margin-right: 0;
+}
+
+/* width */
+.recently-viewed::-webkit-scrollbar {
+  height: 0.4rem;
+}
+
+/* Track */
+.recently-viewed::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* end style for scroll  */
+
 
 </style>

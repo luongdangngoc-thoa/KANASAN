@@ -191,9 +191,6 @@
   width: 100%;
   flex-grow: 1;
 }
-.card__content.image_car{
-  /* height: 30%; */
-}
 
 @media screen and (max-width: 480px) {
   .card__inner.image_card{
@@ -204,13 +201,13 @@
   }
 
   .card__information .card__heading {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 }
-.card__information {
+/* .card__information {
   grid-template-rows: 2;
   padding: 1.3rem 1rem;
-}
+} */
 @media screen and (max-width: 750px) {
   .card__inner.image_card{
     height: 100%;
@@ -299,18 +296,17 @@
 }
 
 .card__heading {
-  margin-top: 0;
-  margin-bottom: 0;
   color: #595757;
-font-family: Noto Sans JP;
-font-size: 2rem;
-font-style: normal;
-font-weight: 300;
-line-height: 1.2;
-display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  font-family: Noto Sans JP;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  
+  
 }
 
 .card__heading:last-child {

@@ -1,23 +1,23 @@
 {% comment %} 
-    Renders a product card 
-    Accepts:
-    - card_product: {Object} Product Liquid object (optional)
-    - media_aspect_ratio: {String} Size of the product image card. Values are "square" and "portrait". Default is "square" 
-    (optional)
-    - image_shape: {String} Image mask to apply to the product image card. Values are "arch", "blob", "chevronleft", 
-    "chevronright", "diamond", "parallelogram", and "round". (optional)
-    - show_vendor: {Boolean} Show the product vendor. Default: false
-    - show_rating: {Boolean} Show the product rating. Default: false
-    - extend_height: {Boolean} Card height extends to available container space. Default: true (optional)
-    - lazy_load: {Boolean} Image should be lazy loaded. Default: true (optional)
-    - show_quick_add: {Boolean} Show the quick add button.
-    - section_id: {String} The ID of the section that contains this card.
-    - horizontal_class: {Boolean} Add a card--horizontal class if set to true. Default: false (optional)
-    - horizontal_quick_add: {Boolean} Changes the quick add button styles when set to true. Default: false (optional)
-    - placeholder_image: {String} The placeholder image to use when no product exists. Default: 'product-apparel-2' 
-    (optional) 
-    Usage: 
-    {% render 'top-card-product', show_vendor: section.settings.show_vendor %}
+      Renders a product card 
+      Accepts:
+      - card_product: {Object} Product Liquid object (optional)
+      - media_aspect_ratio: {String} Size of the product image card. Values are "square" and "portrait". Default is "square" 
+      (optional)
+      - image_shape: {String} Image mask to apply to the product image card. Values are "arch", "blob", "chevronleft", 
+      "chevronright", "diamond", "parallelogram", and "round". (optional)
+      - show_vendor: {Boolean} Show the product vendor. Default: false
+      - show_rating: {Boolean} Show the product rating. Default: false
+      - extend_height: {Boolean} Card height extends to available container space. Default: true (optional)
+      - lazy_load: {Boolean} Image should be lazy loaded. Default: true (optional)
+      - show_quick_add: {Boolean} Show the quick add button.
+      - section_id: {String} The ID of the section that contains this card.
+      - horizontal_class: {Boolean} Add a card--horizontal class if set to true. Default: false (optional)
+      - horizontal_quick_add: {Boolean} Changes the quick add button styles when set to true. Default: false (optional)
+      - placeholder_image: {String} The placeholder image to use when no product exists. Default: 'product-apparel-2' 
+      (optional) 
+      Usage: 
+      {% render 'top-card-product', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
 
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
@@ -29,14 +29,14 @@
   -%}
   <div class="top-card-product card-wrapper product-card-wrapper underline-links-hover">
     <div class="
-                                        card card--{{ settings.card_style }}
-                                        {% if card_product.featured_media %} card--media{% else %} card--text{% endif %}
-                                        {% if settings.card_style == 'card' %} color-{{ settings.card_color_scheme }} gradient{% endif %}
-                                        {% if image_shape and image_shape != 'default' %} card--shape{% endif %}
-                                        {% if extend_height %} card--extend-height{% endif %}
-                                        {% if card_product.featured_media == nil and settings.card_style == 'card' %} ratio{% endif %}
-                                        {% if horizontal_class %} card--horizontal{% endif %}
-                                      " style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
+        card card--{{ settings.card_style }}
+        {% if card_product.featured_media %} card--media{% else %} card--text{% endif %}
+        {% if settings.card_style == 'card' %} color-{{ settings.card_color_scheme }} gradient{% endif %}
+        {% if image_shape and image_shape != 'default' %} card--shape{% endif %}
+        {% if extend_height %} card--extend-height{% endif %}
+        {% if card_product.featured_media == nil and settings.card_style == 'card' %} ratio{% endif %}
+        {% if horizontal_class %} card--horizontal{% endif %}
+      " style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
       <div class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
         {%- if card_product.featured_media -%}
           <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
@@ -154,15 +154,6 @@
               , price_class: ''
               , show_compare_at_price: true %}
             <!-- Swym Wishlist Plus EPI Button -->
-            {% comment %} <button
-                                          data-with-epi="true"
-                                          class="swym-button swym-add-to-wishlist-view-product product_{{card_product.id}}"
-                                          data-swaction="addToWishlist"
-                                          data-product-id="{{card_product.id | json}}"
-                                          data-variant-id="{{card_product.variants[0].id}}"
-                                      data-product-url="{{ shop.url }}{{ card_product.url }}"></button> {% endcomment %}
-            <!-- Swym Wishlist Plus EPI Button -->
-
             <button
               class="swym-button swym-add-to-wishlist-view-product product_{{card_product.id}}"
               data-with-epi="true"
@@ -170,39 +161,10 @@
               data-product-id="{{card_product.id | json}}"
               data-variant-id="{{card_product.variants[0].id}}"
               data-product-url="{{ shop.url }}{{ card_product.url }}">
-              <svg
-                class="active"
-                id="active"
-                aria-hidden="true"
-                width="22"
-                height="22"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="#ff4500"
-                viewBox="0 0 21 19">
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1"
-                  d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
-              </svg>
-              <svg
-                class="unactive"
-                id="unactive"
-                aria-hidden="true"
-                width="22"
-                height="22"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="#ffffff"
-                viewBox="0 0 21 19">
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1"
-                  d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
-              </svg>
+              {% render 'icon-wishlist' %}
+              {% render 'icon-wishlist-active' %}
             </button>
+          <!-- Swym Wishlist Plus EPI Button -->
           </div>
         </div>
       </div>
@@ -244,14 +206,6 @@
             {% render 'price'
               , show_compare_at_price: true %}
             <!-- Swym Wishlist Plus EPI Button -->
-            {% comment %} <button
-                                          data-with-epi="true"
-                                          class="swym-button swym-add-to-wishlist-view-product product_{{card_product.id}}"
-                                          data-swaction="addToWishlist"
-                                          data-product-id="{{card_product.id | json}}"
-                                          data-variant-id="{{card_product.variants[0].id}}"
-                                      data-product-url="{{ shop.url }}{{ card_product.url }}"></button> {% endcomment %}
-            <!-- Swym Wishlist Plus EPI Button -->
 
             <button
               class="swym-button swym-add-to-wishlist-view-product product_{{card_product.id}}"
@@ -260,37 +214,10 @@
               data-product-id="{{card_product.id | json}}"
               data-variant-id="{{card_product.variants[0].id}}"
               data-product-url="{{ shop.url }}{{ card_product.url }}">
-              <svg
-                class="active"
-                aria-hidden="true"
-                width="22"
-                height="22"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="#ff4500"
-                viewBox="0 0 21 19">
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1"
-                  d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
-              </svg>
-              <svg
-                class="unactive"
-                aria-hidden="true"
-                width="22"
-                height="22"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="#ffffff"
-                viewBox="0 0 21 19">
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1"
-                  d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
-              </svg>
+              {% render 'icon-wishlist' %}
+              {% render 'icon-wishlist-active' %}
             </button>
+          <!-- Swym Wishlist Plus EPI Button -->
 
           </div>
         </div>
@@ -328,11 +255,15 @@
   }
 
   .top-card-product .card-information {
-    margin-top: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .top-card-product .card-information > .price {
+    line-height: 1;
+    margin: 0 !important;
   }
 
   .top-card-product .card-information .price__container {
@@ -370,13 +301,13 @@
   .swym-button.swym-add-to-wishlist-view-product {
     position: relative;
     z-index: 5;
-    width: 22px;
-    height: 22px;
+    width: 30px;
+    height: 30px;
     opacity: unset;
   }
 
   .swym-button.swym-add-to-wishlist-view-product svg {
-    transition: all 0.3s;
+    transition: all 0.2s;
     position: absolute;
     top: 0;
     left: 0;
@@ -391,4 +322,23 @@
   .swym-button.swym-add-to-wishlist-view-product.swym-added svg.unactive {
     opacity: 0;
   }
+
+
+  @media screen and (max-width: 749px) {
+
+    .top-card-product .swym-button.swym-add-to-wishlist-view-product {
+      position: relative;
+      z-index: 5;
+      width: 24px;
+      height: 24px;
+      opacity: unset;
+    }
+
+    .top-card-product .swym-button.swym-add-to-wishlist-view-product svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+
 </style>
