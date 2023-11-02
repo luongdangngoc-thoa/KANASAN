@@ -1,6 +1,6 @@
 <div class="common-button-wrapper">
   <div class="page-width">
-    <a class="page-button btn-primary" href="{{section.settings.button_link}} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    <a class="page-button btn-primary {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" href="{{section.settings.button_link}}">
       {{ section.settings.button_lable }}
     </a>
   </div>
@@ -41,7 +41,8 @@
         "type": "url",
         "id": "button_link",
         "label": "Button link"
-      }, {
+      },
+      {
         "type": "text",
         "id": "button_lable",
         "label": "Button lable"

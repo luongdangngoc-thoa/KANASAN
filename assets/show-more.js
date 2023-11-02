@@ -58,6 +58,19 @@ facets_disclosure.forEach((faq) => {
       const facets_list_filter = faq.querySelector('.facets_list_test');
       if(facets_list_filter) {
           facets_list_filter.classList.toggle('fiter-hidden');
+          // facets_list_filter.style.display = facets_list_filter.classList.contains("hidden") ? "none" : "block";
       }
     });
   });
+  function init() {
+    const checkboxes = faq.querySelectorAll('.facets_list_test');
+  
+    if (checkboxArray.length > 0) {
+        checkboxes.forEach((checkbox, i) => {
+            const isChecked = checkboxArray[i].toString();
+            if (isChecked === 'true') {
+              checkbox.setAttribute('checked' , isChecked);
+             }
+        });
+    } 
+  }
