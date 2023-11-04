@@ -11,6 +11,8 @@
 
 .totals > h2 {
   font-size: calc(var(--font-heading-scale) * 1.6rem);
+  color: #595757;
+  font-family: Noto Sans JP;
 }
 
 .totals * {

@@ -873,6 +873,8 @@ summary::-webkit-details-marker {
 .title-wrapper-with-link a {
   margin-top: 0;
   flex-shrink: 0;
+  color: #595757;
+  font-family: Noto Sans JP;
 }
 
 .title-wrapper--no-top-margin {
@@ -1369,6 +1371,7 @@ button.shopify-payment-button__button--unbranded {
   font-size: 1.5rem;
   letter-spacing: 0.1rem;
   line-height: calc(1 + 0.2 / var(--font-body-scale));
+  font-family: Noto Sans JP;
 }
 
 .button--tertiary {
@@ -2163,7 +2166,7 @@ product-info .loading-overlay:not(.hidden) ~ *,
   justify-content: center;
   align-items: center;
   font-size: 0.9rem;
-  top: 0.8rem;
+  top: 0.3rem;
   left: 2.2rem;
   line-height: unset;
   background-color: rgb(219, 40, 40);
@@ -3755,3 +3758,10 @@ details-disclosure > details {
 }
 
 /* css for robot check end */
+
+/* css for wishlist bottom btn */
+.swym-anchor-badge.show-badge {
+        background-color: rgb(219, 40, 40) !important
+}
+
+/* css for wishlist bottom btn  end*/

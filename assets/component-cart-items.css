@@ -75,6 +75,8 @@
 .cart-item__name {
   text-decoration: none;
   display: block;
+  color: #595757;
+  font-family: Noto Sans JP;
 }
 
 .cart-item__name:hover {
@@ -207,6 +209,8 @@ cart-remove-button .icon-remove {
 
 .cart-items thead th {
   text-transform: uppercase;
+  color: #595757;
+  font-family: Noto Sans JP;
 }
 
 @media screen and (max-width: 749px) {

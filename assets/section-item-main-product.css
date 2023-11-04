@@ -90,7 +90,8 @@
 }
 @media (max-width: 750px) {
   .product-right {
-    padding-right: 0px; /* Remove left padding for smaller screens */
+    padding-right: 0px;
+    padding-top: 0px;
   }
 }
 

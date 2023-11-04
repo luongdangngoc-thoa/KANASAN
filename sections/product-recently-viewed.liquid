@@ -19,7 +19,8 @@
     productPrice: "{{ product.price | money }}",
     productProducer: "{{- product.metafields.custom.producer.value }}",
     productUrl: "{{ product.url }}",
-    productImageAltText: "{{product.featured_media.alt | escape }}"
+    productImageAltText: "{{product.featured_media.alt | escape }}",
+    productSoldOut: "{{- product.available }}"
   };
   
   console.log(productData);
@@ -58,20 +59,76 @@
   const productData = JSON.parse(localStorage.getItem("recentlyViewedProduct"));
   const recentlyViewedHtml = [];
   productData.map(item => {
-    console.log(item) ;
+    console.log(item);
+    if (item.productSoldOut === 'false') {
+      recentlyViewedHtml.unshift(`
+      <li class="grid__item">
+      <div class="card-wrapper underline-links-hover">
+        <div class="card card--standard card--media " style="--ratio-percent: 100%;">
+        <a href="${item.productUrl}">
+          <div class="card__inner color-background-2 gradient ratio" style="--ratio-percent: 100%;">
+            <div style="position:static" class="card__media">
+            <div class="media media--transparent media--hover-effect">
+            <div class="image">
+                <img class="motion-reduce" src="${item.productImg}" loading="lazy" alt="${item.productImageAltText}"/>
+              </div>
+            </div>
+            <div class="card__badge {{ settings.badge_position }}">
+            <span id="NoMediaStandardBadge-{{ section_id }}-${item.productId}" class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}">
+                  売り切れ
+              </span>
+              </div>
+            </div>         
+          </div>
+        </a>
+        <div class="card__content">
+        <div class="card__information">
+          <p class="card__producer">
+              生産者:&ensp;
+              ${item.productProducer}
+            </p>
+        <h3 class="card__heading h5">
+        <a class="full-unstyled-link" href="${item.productUrl}">${item.productTitle}</a></h3>
+          <div class="card-information">
+            <div class="price">
+                <div class="product-price">
+                    ${item.productPrice} (税込)
+                </div>
+            </div>
+            
+            <button
+                class="swym-button swym-add-to-wishlist-view-product product_${item.productId}"
+                data-with-epi="true"
+                data-swaction="addToWishlist"
+                data-product-id="${item.productId}"
+                data-variant-id="${item.productVariants}"
+                data-product-url="{{ shop.url }}${item.productUrl}">
+                {% render 'icon-wishlist' %}
+                {% render 'icon-wishlist-active' %}
+              </button>
+          </div>
+        </div>
+        </div>
+        </div>
+        </div>
+      </li>
+    `);
+   } else {
     recentlyViewedHtml.unshift(`
     <li class="grid__item">
      <div class="card-wrapper underline-links-hover">
       <div class="card card--standard card--media " style="--ratio-percent: 100%;">
+      <a href="${item.productUrl}">
         <div class="card__inner color-background-2 gradient ratio" style="--ratio-percent: 100%;">
-         <div style="position:static" class="card__media">
-         <div class="media media--transparent media--hover-effect">
-         <div class="image">
-            <img class="motion-reduce" src="${item.productImg}" loading="lazy" alt="${item.productImageAltText}"/>
+          <div style="position:static" class="card__media">
+          <div class="media media--transparent media--hover-effect">
+          <div class="image">
+              <img class="motion-reduce" src="${item.productImg}" loading="lazy" alt="${item.productImageAltText}"/>
+            </div>
           </div>
-         </div>
-         </div>         
-       </div>
+          </div>         
+        </div>
+       </a>
        <div class="card__content">
        <div class="card__information">
         <p class="card__producer">
@@ -86,6 +143,7 @@
                    ${item.productPrice} (税込)
                </div>
            </div>
+
            <button
               class="swym-button swym-add-to-wishlist-view-product product_${item.productId}"
               data-with-epi="true"
@@ -103,7 +161,8 @@
        </div>
     </li>
    `);
-  });
+  }
+});
   const newProductData = `${recentlyViewedHtml.join("")}`;
   const fullContent = document.getElementsByClassName("recently-viewed");
   fullContent[0].innerHTML = newProductData;
@@ -209,96 +268,156 @@
     position: relative !important;
     background-color: white;
     width: 100%;
-    height: 50%;
+    min-height: 25.5rem;
   }
   .recently-viewed .image img {
-  ;
-  width: 100%;
-  height: 100%;
-}
-
-.recently-viewed .card-information {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.recently-viewed .card-information button {
-  padding-right: 1rem;
-  margin-top: unset !important;
-}
-
-/* hide defaut icon */
-.swym-button.swym-add-to-wishlist-view-product.swym-heart.swym-added:after {
-  display: none !important;
-}
-
-.swym-button.swym-add-to-wishlist-view-product.swym-heart:after {
-  display: none !important;
-}
-
-/* remove opacity of defaut icon */
-.swym-button.swym-add-to-wishlist-view-product.swym-added {
-  opacity: unset;
-}
-
-.button.swym-button.disabled {
-  opacity: unset;
-}
-/* style custom icon */
-.swym-button.swym-add-to-wishlist-view-product {
-  position: relative;
-  z-index: 5;
-  width: 60px;
-  height: 30px;
-  opacity: unset;
-}
-
-.swym-button.swym-add-to-wishlist-view-product svg {
-  transition: all 0.2s;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.swym-button.swym-add-to-wishlist-view-product:not(.swym-added) svg.active {
-  opacity: 0;
-}
-
-.swym-button.swym-add-to-wishlist-view-product.swym-added svg.unactive {
-  opacity: 0;
-}
-
-
-@media screen and (max-width: 768px) {
-  .recently-viewed .grid__item {
-    max-width: 20rem !important;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
-  .recently-viewed .card.card--standard.card--media {
-    /* height: 42rem; */
-    width: auto;
-    padding: 2rem 0;
+
+  .recently-viewed .card-information {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-  .recently-viewed .image img {
-    width: 18rem;
-    height: 20rem;
+
+  .recently-viewed .card-information button {
+    padding-right: 1rem;
+    margin-top: unset !important;
+  }
+
+  /* hide defaut icon */
+  .swym-button.swym-add-to-wishlist-view-product.swym-heart.swym-added:after {
+    display: none !important;
+  }
+
+  .swym-button.swym-add-to-wishlist-view-product.swym-heart:after {
+    display: none !important;
+  }
+
+  /* remove opacity of defaut icon */
+  .swym-button.swym-add-to-wishlist-view-product.swym-added {
+    opacity: unset;
+  }
+
+  .button.swym-button.disabled {
+    opacity: unset;
+  }
+  /* style custom icon */
+  .recently-viewed .swym-button.swym-add-to-wishlist-view-product {
+    position: relative;
+    inset: 0;
+    z-index: 5;
+    width: 30px;
+    height: 30px;
+    opacity: unset;
   }
 
   .recently-viewed .swym-button.swym-add-to-wishlist-view-product svg {
-    width: 24px;
-    height: 24px;
+    transition: all 0.2s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
-}
 
-@media screen and (max-width: 550px) {
+  .swym-button.swym-add-to-wishlist-view-product:not(.swym-added) svg.active {
+    opacity: 0;
+  }
+
+  .swym-button.swym-add-to-wishlist-view-product.swym-added svg.unactive {
+    opacity: 0;
+  }
+  .recently-viewed .card__badge {
+    position: absolute;
+    top: 207px;
+    right: 136px;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .recently-viewed .grid__item {
+      max-width: 20rem !important;
+    }
+    .recently-viewed .card.card--standard.card--media {
+      /* height: 42rem; */
+      width: auto;
+      padding: 2rem 0;
+    }
+    .recently-viewed .image {
+      width: 18rem;
+      min-height: 19rem;
+    }
+
+
+    .recently-viewed .swym-button.swym-add-to-wishlist-view-product {
+      height: 24px;
+    }
+
+    .recently-viewed .swym-button.swym-add-to-wishlist-view-product svg {
+      width: 24px;
+      height: 24px;
+    }
+    .recently-viewed .card__badge {
+    top: 144px;
+    right: 75px;
+}
+  }
+
+  @media screen and (max-width: 550px) {
+    .recently-viewed {
+      display: flex;
+      justify-content: center;
+      padding: 1.6rem 0 0;
+      gap: 0.8rem;
+    }
+    .recently-viewed {
+      overflow: auto;
+      display: flex;
+      justify-content: unset;
+      margin-bottom: 3rem;
+    }
+    .recently-viewed p:first-child {
+      margin-left: 0;
+    }
+
+    .recently-viewed p:last-child {
+      margin-right: 0;
+    }
+
+    /* width */
+    .recently-viewed::-webkit-scrollbar {
+      height: 0.4rem;
+    }
+
+    /* Track */
+    .recently-viewed::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #888;
+    };
+
+    /* end style for scroll  */
+
+  }
+
   .recently-viewed {
     display: flex;
     justify-content: center;
     padding: 1.6rem 0 0;
     gap: 0.8rem;
   }
+
   .recently-viewed {
     overflow: auto;
     display: flex;
@@ -331,54 +450,9 @@
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #888;
-  };
+  }
 
   /* end style for scroll  */
-
-}
-
-.recently-viewed {
-  display: flex;
-  justify-content: center;
-  padding: 1.6rem 0 0;
-  gap: 0.8rem;
-}
-
-.recently-viewed {
-  overflow: auto;
-  display: flex;
-  justify-content: unset;
-  margin-bottom: 3rem;
-}
-.recently-viewed p:first-child {
-  margin-left: 0;
-}
-
-.recently-viewed p:last-child {
-  margin-right: 0;
-}
-
-/* width */
-.recently-viewed::-webkit-scrollbar {
-  height: 0.4rem;
-}
-
-/* Track */
-.recently-viewed::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #888;
-}
-
-/* end style for scroll  */
 
 
 </style>
