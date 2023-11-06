@@ -54,23 +54,14 @@ handleSelectOption()
 
 const facets_disclosure = document.querySelectorAll(".facets__disclosure");
 facets_disclosure.forEach((faq) => {
-    faq.addEventListener("click", () => {
-      const facets_list_filter = faq.querySelector('.facets_list_test');
-      if(facets_list_filter) {
-          facets_list_filter.classList.toggle('fiter-hidden');
-          // facets_list_filter.style.display = facets_list_filter.classList.contains("hidden") ? "none" : "block";
+    faq.addEventListener("click", (event) => {
+      if (window.innerWidth < 750) {  
+        console.log('window.innerWidth', window.innerWidth)
+        const facets_list_filter = faq.querySelector('.facets_list_test');
+        if(facets_list_filter) {
+            facets_list_filter.classList.toggle('filter-hidden');
+            // facets_list_filter.style.display = facets_list_filter.classList.contains("fiter-hidden") ? "none" : "block";
+        }
       }
     });
   });
-  function init() {
-    const checkboxes = faq.querySelectorAll('.facets_list_test');
-  
-    if (checkboxArray.length > 0) {
-        checkboxes.forEach((checkbox, i) => {
-            const isChecked = checkboxArray[i].toString();
-            if (isChecked === 'true') {
-              checkbox.setAttribute('checked' , isChecked);
-             }
-        });
-    } 
-  }

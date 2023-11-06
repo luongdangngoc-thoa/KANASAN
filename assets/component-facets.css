@@ -243,7 +243,32 @@
     background-color: #595757;
     color: white;
 }
-  
+.facets__header.arrow-down-icon {
+  display: block;
+  border-bottom: none;
+}
+.collection-arrow-down-icon{
+  /* padding: 1rem 4rem; */
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+}
+.collection-arrow-down-icon svg {
+  width: 2.2rem;
+  transition: 0.2s transform;
+}
+.collection-arrow-down-icon svg:hover {
+  padding: 0.4rem;
+  background-color: #ededed;
+  border-radius: 50%;
+}
+.collection-arrow-down-icon.active .collection-arrow-down-icon svg {
+  transform: rotate(180deg);
+}
+.facets_list_test.filter-hidden{
+  display: none;
+}
 }
 
 @media screen and (max-width: 480px) {
@@ -254,13 +279,13 @@
     padding: 0 0 3rem 0;
 
   }
-  /* .button_filter{
+  .button_filter{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
     padding: 2rem 0 0 0 ;
-  }   */
+  }  
 }
  @media screen and (min-width: 750px) {
   .facets__wrapper.filter_wapper{
@@ -478,7 +503,6 @@ div.category-link-list a:hover {
 
 .facets__header {
   border-bottom: 1px solid rgba(var(--color-foreground), 0.2);
-  padding: 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
   font-size: 1.4rem;
@@ -486,6 +510,7 @@ div.category-link-list a:hover {
   top: 0;
   background-color: rgb(var(--color-background));
   z-index: 1;
+  margin: 1.5rem 3rem;
 }
 
 .facets_details_wrap {
@@ -509,7 +534,7 @@ div.category-link-list a:hover {
 }
 
 .facets__list {
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 3rem;
 }
 
 .facets__item {
@@ -1367,7 +1392,6 @@ input.mobile-facets__checkbox {
   .facets__header.arrow-down-icon {
     display: none;
   }
-
   .facets-vertical .active-facets__button-remove {
     padding: 0 1rem 1rem;
   }
@@ -1408,11 +1432,11 @@ input.mobile-facets__checkbox {
   .collection-arrow-down-icon.active .collection-arrow-down-icon svg {
     transform: rotate(180deg);
   }
-  .facets_list_test.fiter-hidden{
+  .facets_list_test.filter-hidden{
     display: none;
   }
   .facets_list_test{
     display: block;
-    
   }
+  
 }

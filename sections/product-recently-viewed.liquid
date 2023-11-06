@@ -19,10 +19,10 @@
     productPrice: "{{ product.price | money }}",
     productProducer: "{{- product.metafields.custom.producer.value }}",
     productUrl: "{{ product.url }}",
-    productImageAltText: "{{product.featured_media.alt | escape }}"
+    productImageAltText: "{{product.featured_media.alt | escape }}",
+    productSoldOut: "{{- product.available }}"
   };
   
-  console.log(productData);
   const productList = [];
   let jsonResp, jsonRespArr, jsonRespArrStr;
   const numberOfProducts = 6;
@@ -58,20 +58,75 @@
   const productData = JSON.parse(localStorage.getItem("recentlyViewedProduct"));
   const recentlyViewedHtml = [];
   productData.map(item => {
-    console.log(item) ;
+    if (item.productSoldOut === 'false') {
+      recentlyViewedHtml.unshift(`
+      <li class="grid__item">
+      <div class="card-wrapper underline-links-hover">
+        <div class="card card--standard card--media " style="--ratio-percent: 100%;">
+        <a href="${item.productUrl}">
+          <div class="card__inner color-background-2 gradient ratio" style="--ratio-percent: 100%;">
+            <div style="position:static" class="card__media">
+            <div class="media media--transparent media--hover-effect">
+            <div class="image">
+                <img class="motion-reduce" src="${item.productImg}" loading="lazy" alt="${item.productImageAltText}"/>
+              </div>
+            </div>
+            <div class="card__badge {{ settings.badge_position }}">
+            <span id="NoMediaStandardBadge-{{ section_id }}-${item.productId}" class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}">
+                  売り切れ
+              </span>
+              </div>
+            </div>         
+          </div>
+        </a>
+        <div class="card__content">
+        <div class="card__information">
+          <p class="card__producer">
+              生産者:&ensp;
+              ${item.productProducer}
+            </p>
+        <h3 class="card__heading h5">
+        <a class="full-unstyled-link" href="${item.productUrl}">${item.productTitle}</a></h3>
+          <div class="card-information">
+            <div class="price">
+                <div class="product-price">
+                    ${item.productPrice} (税込)
+                </div>
+            </div>
+            
+            <button
+                class="swym-button swym-add-to-wishlist-view-product product_${item.productId}"
+                data-with-epi="true"
+                data-swaction="addToWishlist"
+                data-product-id="${item.productId}"
+                data-variant-id="${item.productVariants}"
+                data-product-url="{{ shop.url }}${item.productUrl}">
+                {% render 'icon-wishlist' %}
+                {% render 'icon-wishlist-active' %}
+              </button>
+          </div>
+        </div>
+        </div>
+        </div>
+        </div>
+      </li>
+    `);
+   } else {
     recentlyViewedHtml.unshift(`
     <li class="grid__item">
      <div class="card-wrapper underline-links-hover">
       <div class="card card--standard card--media " style="--ratio-percent: 100%;">
+      <a href="${item.productUrl}">
         <div class="card__inner color-background-2 gradient ratio" style="--ratio-percent: 100%;">
-         <div style="position:static" class="card__media">
-         <div class="media media--transparent media--hover-effect">
-         <div class="image">
-            <img class="motion-reduce" src="${item.productImg}" loading="lazy" alt="${item.productImageAltText}"/>
+          <div style="position:static" class="card__media">
+          <div class="media media--transparent media--hover-effect">
+          <div class="image">
+              <img class="motion-reduce" src="${item.productImg}" loading="lazy" alt="${item.productImageAltText}"/>
+            </div>
           </div>
-         </div>
-         </div>         
-       </div>
+          </div>         
+        </div>
+       </a>
        <div class="card__content">
        <div class="card__information">
         <p class="card__producer">
@@ -86,6 +141,7 @@
                    ${item.productPrice} (税込)
                </div>
            </div>
+
            <button
               class="swym-button swym-add-to-wishlist-view-product product_${item.productId}"
               data-with-epi="true"
@@ -103,7 +159,8 @@
        </div>
     </li>
    `);
-  });
+  }
+});
   const newProductData = `${recentlyViewedHtml.join("")}`;
   const fullContent = document.getElementsByClassName("recently-viewed");
   fullContent[0].innerHTML = newProductData;
@@ -271,6 +328,11 @@
   .swym-button.swym-add-to-wishlist-view-product.swym-added svg.unactive {
     opacity: 0;
   }
+  .recently-viewed .card__badge {
+    position: absolute;
+    top: 207px;
+    right: 136px;
+  }
 
 
   @media screen and (max-width: 768px) {
@@ -296,6 +358,10 @@
       width: 24px;
       height: 24px;
     }
+    .recently-viewed .card__badge {
+    top: 144px;
+    right: 75px;
+}
   }
 
   @media screen and (max-width: 550px) {
