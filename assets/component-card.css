@@ -196,9 +196,9 @@
 }
 
 @media screen and (max-width: 480px) {
-  .card__inner.image_card{
+  /* .card__inner.image_card{
     height: 70%;
-   }
+   } */
   .card__content.image_car{
     height: 30%;
   }
@@ -213,7 +213,8 @@
 }
 @media screen and (max-width: 750px) {
   .card__inner.image_card{
-    height: 70%;
+  
+    max-height: 158px;
    }
   .card__content.image_car{
     height: 30%;
