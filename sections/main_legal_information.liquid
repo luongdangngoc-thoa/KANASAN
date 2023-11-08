@@ -54,7 +54,7 @@
     padding: 8.5rem;
     border: 1px solid #eee;
   }
-  .legal_notice {
+  p {
     padding-bottom: 7.9rem;
     color: #595757;
     font-family: Poppins;
@@ -104,13 +104,12 @@
     background-color: #595757;
     color: #fff;
 }
-
+.section-template--21296398303510__main-padding{
+  padding: 2rem;
+ }
 @media screen and (max-width: 750px) {
  .policy__form {
     padding: 3.5rem;
- }
- .section-template--21296398303510__main-padding{
-  padding: 2rem;
  }
   }
 {%- endstyle -%}
@@ -119,7 +118,7 @@
     <h3 class="title">特定商取引法に基づく表記</h3>
     <div class="policy__container">
         <div class="policy__form">            
-          <p class="legal_notice">{{ shop.legal_notice }}</p>            
+                <p>{{ shop.legal_notice }}</p>            
         </div>
     </div>
    

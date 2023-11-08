@@ -182,6 +182,98 @@
 .facets__form .open-modal > div > div{
   width: 100%;
 }
+@media screen and (max-width: 970px) {
+  .facets-container .facets .facets__form .facets__summary.facest_details {
+    margin: auto;
+    margin-top: 2rem;
+  }
+  .collection-link-wrapper {
+    margin-left: 15rem;
+  }
+  .facets__form .open-modal{
+    grid-template-columns: none;
+    
+  }
+  .button_filter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    background-color: white;
+    /* padding: 2rem 0 0 0;  */
+    margin-top: 2rem;
+    text-align: center;
+  }
+  .button_filter.button_clear{
+    display: flex;
+    width: 15rem;
+    height:5rem ;
+    justify-content: center;
+    align-items: center;
+    border: 0.5px solid #595757;
+    font-family: Poppins;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3rem; 
+    color: #595757;
+    
+  }
+  .button_filter.button_clear:hover{
+      background-color: #595757;
+      color: white;
+    
+  }
+  
+  .button_filter.button_close{
+    display: flex;
+    width: 15rem;
+    height:5rem ;
+    justify-content: center;
+    align-items: center;
+    border: 0.5px solid #595757;
+    font-family: Poppins;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3rem; 
+    color: #595757;
+    
+  }
+  .button_filter.button_close:hover{
+    background-color: #595757;
+    color: white;
+}
+.facets__header.arrow-down-icon {
+  display: block;
+  border-bottom: none;
+}
+.collection-arrow-down-icon{
+  /* padding: 1rem 4rem; */
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+}
+.collection-arrow-down-icon svg {
+  width: 2.2rem;
+  transition: 0.2s transform;
+}
+.collection-arrow-down-icon svg:hover {
+  padding: 0.4rem;
+  background-color: #ededed;
+  border-radius: 50%;
+}
+.collection-arrow-down-icon.active .collection-arrow-down-icon svg {
+  transform: rotate(180deg);
+}
+.facets_list_test.filter-hidden{
+  display: none;
+}
+.facets_list_test{
+  display: block;
+}
+}
 @media screen and (max-width: 750px) {
   .facets-container .facets .facets__form .facets__summary.facest_details {
     margin: auto;
@@ -275,7 +367,7 @@
 }
 }
 .clear{
-  cursor:none;
+  cursor:default;
 }
 @media screen and (max-width: 480px) {
   .facets__form .open-modal{
@@ -435,7 +527,8 @@ div.category-link-list a:hover {
   cursor: pointer;
   gap: 2rem;
   padding: 0;
-   /* margin-top: 3rem;  */
+  margin-top: 2rem; 
+  margin: auto;
 }
 .facets-container .facets__summary.facest_details:hover {
   color: #fff;
@@ -1394,7 +1487,7 @@ input.mobile-facets__checkbox {
   padding: 0;
   margin: 0 auto;
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 970px) {
   .facets__header.arrow-down-icon {
     display: none;
   }

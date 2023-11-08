@@ -177,7 +177,7 @@
   width: 100%;
 }
 .card__inner.image_card{
- height: 34rem;
+ height: 40rem;
 }
 .card--media .card__inner .card__content {
   position: relative;
@@ -196,9 +196,10 @@
 }
 
 @media screen and (max-width: 480px) {
-  /* .card__inner.image_card{
-    height: 70%;
-   } */
+  .card__inner.image_card{
+    /* height: 70%; */
+    max-height: 177px;
+   }
   .card__content.image_car{
     height: 30%;
   }
@@ -213,8 +214,7 @@
 }
 @media screen and (max-width: 750px) {
   .card__inner.image_card{
-  
-    max-height: 158px;
+    height: 34rem;
    }
   .card__content.image_car{
     height: 30%;

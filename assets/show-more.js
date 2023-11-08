@@ -60,7 +60,7 @@ facets_disclosure.forEach((faq) => {
         const facets_list_filter = faq.querySelector('.facets_list_test');
         if(facets_list_filter) {
             facets_list_filter.classList.toggle('filter-hidden');
-            facets_list_filter.style.display = facets_list_filter.classList.contains("fiter-hidden") ? "none" : "block";
+            // facets_list_filter.style.display = facets_list_filter.classList.contains("fiter-hidden") ? "none" : "block";
         }
       }
     });

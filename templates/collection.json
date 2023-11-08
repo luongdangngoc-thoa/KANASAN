@@ -34,6 +34,7 @@
       "custom_css": [],
       "settings": {
         "image": "shopify:\/\/shop_images\/12936_3.png",
+        "image_2": "shopify:\/\/shop_images\/12936_3_3_886817b7-6724-47f4-9591-210c98e160f9.png",
         "image_overlay_opacity": 0,
         "image_height": "small",
         "desktop_content_position": "middle-left",
@@ -49,7 +50,6 @@
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
-        "products_per_page": 6,
         "columns_desktop": 3,
         "image_ratio": "adapt",
         "image_shape": "default",
