@@ -38,7 +38,7 @@
     text-align: center;
     color: #595757;
     font-family: Noto Sans JP;
-    font-size: 24px;
+    font-size: 2.2rem;
     font-style: normal;
     font-weight: 400;
     line-height: calc(34/24); /* 141.667% */
@@ -54,11 +54,11 @@
     padding: 8.5rem;
     border: 1px solid #eee;
   }
-  p {
+  .legal_notice {
     padding-bottom: 7.9rem;
     color: #595757;
     font-family: Poppins;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-style: normal;
     font-weight: 300;
     line-height: calc(34/16); /* 212.5% */
@@ -109,6 +109,9 @@
  .policy__form {
     padding: 3.5rem;
  }
+ .section-template--21296398303510__main-padding{
+  padding: 2rem;
+ }
   }
 {%- endstyle -%}
 
@@ -116,7 +119,7 @@
     <h3 class="title">特定商取引法に基づく表記</h3>
     <div class="policy__container">
         <div class="policy__form">            
-                <p>{{ shop.legal_notice }}</p>            
+          <p class="legal_notice">{{ shop.legal_notice }}</p>            
         </div>
     </div>
    
