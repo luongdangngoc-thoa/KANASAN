@@ -259,7 +259,8 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   font-size: 1.5rem;
   letter-spacing: 0.06rem;
   line-height: calc(1 + 0.8 / var(--font-body-scale));
-  font-family: var(--font-body-family);
+  /* font-family: var(--font-body-family); */
+  font-family: Noto Sans JP;
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
 }
@@ -873,6 +874,8 @@ summary::-webkit-details-marker {
 .title-wrapper-with-link a {
   margin-top: 0;
   flex-shrink: 0;
+  color: #595757;
+  font-family: Noto Sans JP;
 }
 
 .title-wrapper--no-top-margin {
@@ -1369,6 +1372,7 @@ button.shopify-payment-button__button--unbranded {
   font-size: 1.5rem;
   letter-spacing: 0.1rem;
   line-height: calc(1 + 0.2 / var(--font-body-scale));
+  font-family: Noto Sans JP;
 }
 
 .button--tertiary {
@@ -1680,7 +1684,8 @@ details[open] > .share-button__fallback {
 }
 
 .select__select {
-  font-family: var(--font-body-family);
+  /* font-family: var(--font-body-family); */
+  font-family: Noto Sans JP;
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
   font-size: 1.2rem;
@@ -1859,7 +1864,8 @@ details[open] > .share-button__fallback {
 /* Text area */
 
 .text-area {
-  font-family: var(--font-body-family);
+  /* font-family: var(--font-body-family); */
+  font-family: Noto Sans JP;
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
   min-height: 10rem;
@@ -2163,7 +2169,7 @@ product-info .loading-overlay:not(.hidden) ~ *,
   justify-content: center;
   align-items: center;
   font-size: 0.9rem;
-  top: 0.8rem;
+  top: 0.3rem;
   left: 2.2rem;
   line-height: unset;
   background-color: rgb(219, 40, 40);
@@ -3756,19 +3762,9 @@ details-disclosure > details {
 
 /* css for robot check end */
 
-
-/*custom for contact-thank page */ 
-
-#shopify-section-template--21418329866518__ad58b0f0-17ca-4a54-baec-0344b1615c5d {
-    margin-top: 9rem;
+/* css for wishlist bottom btn */
+.swym-anchor-badge.show-badge {
+        background-color: rgb(219, 40, 40) !important
 }
 
-#shopify-section-template--21418329866518__ad58b0f0-17ca-4a54-baec-0344b1615c5d {
-    font-family: Noto Sans JP;
-}
-
-#shopify-section-template--21418329866518__ad58b0f0-17ca-4a54-baec-0344b1615c5d .rich-text__buttons {
-    padding: 8rem 0;
-}
-
-/*custom for contact-thank page end */ 
+/* css for wishlist bottom btn */

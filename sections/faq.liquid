@@ -13,12 +13,6 @@
               <h3>{{ block.settings.title }}</h3>
               <span class="faq-icon-group">
                 {% render 'icon-plus' %}{% render 'icon-minus' %}</span>
-            {% comment %} <svg
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        viewBox="0 -960 960 960"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        width="22">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <path d="M480-345 240-585l43-43 197 198 197-197 43 43-240 239Z" />
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              </svg> {% endcomment %}
             </header>
             <div class="section-faq-question-body">
               <div class="section-faq-question-body-inner">
@@ -95,6 +89,10 @@
     background-color: #f1f1f1;
   }
 
+  .section-faq-question.active .section-faq-question-header {
+    background-color: #f1f1f1;
+  }
+
   .section-faq-question-header h3 {
     flex: 1;
     color: #333;
@@ -167,8 +165,8 @@
   }
 
   .section-faq-question-body-inner p {
-    color: #595757;
-    font-family: Poppins;
+    color: #333;
+    font-family: Noto Sans JP;
     font-size: 1.6rem;
     font-style: normal;
     font-weight: 300;

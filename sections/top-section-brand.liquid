@@ -2,10 +2,10 @@
   <div class="brand-list-container page-width">
     {%- for block in section.blocks -%}
       <div class="brand">
-        <div class="brand-img">
+        <div class="brand-img scroll-trigger animate--slide-in">
           <img src="{{ block.settings.brand-image | img_url: 'large'}}" alt="{{ block.settings.brand-name }}">
         </div>
-        <div class="brand-info-wrapper">
+        <div class="brand-info-wrapper scroll-trigger animate--slide-in">
           <h2 class="brand-title">{{ block.settings.brand-name }}</h2>
           <p class="brand-des">{{ block.settings.brand-des }}</p>
         </div>
@@ -44,8 +44,10 @@
   }
 
   .brand-img img:hover {
-    -ms-transform: scale(1.05); /* IE 9 */
-    -webkit-transform: scale(1.05); /* Safari 3-8 */
+    -ms-transform: scale(1.05);
+    /* IE 9 */
+    -webkit-transform: scale(1.05);
+    /* Safari 3-8 */
     transform: scale(1.05);
     transition: all 1s;
   }
@@ -172,7 +174,8 @@
             "id": "button-lable",
             "default": "Button lable",
             "label": "Button lable"
-          }, {
+          },
+          {
             "type": "url",
             "id": "brand-url",
             "label": "URL"
@@ -186,9 +189,11 @@
         "blocks": [
           {
             "type": "Block"
-          }, {
+          },
+          {
             "type": "Block"
-          }, {
+          },
+          {
             "type": "Block"
           }
         ]

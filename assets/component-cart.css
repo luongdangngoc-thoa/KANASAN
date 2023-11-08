@@ -23,6 +23,23 @@ cart-items.is-empty .title-wrapper-with-link,
 
 .cart__empty-text {
   margin: 4.5rem 0 2rem;
+  font-family: Noto Sans JP;
+  font-weight: 400;
+}
+
+.cart__warnings .button {
+     font-family: Noto Sans JP;
+     letter-spacing: 1px;
+     background-color: #595757;
+     color: #fff;
+     padding: 2rem;
+     margin-bottom: 9rem;
+     transition: all 0.2s;
+}
+
+
+.cart__warnings .button:hover {
+    opacity: 0.8;
 }
 
 .cart__contents > * + * {
@@ -188,10 +205,20 @@ cart-items {
   margin: 2.2rem 0 1.6rem auto;
   text-align: center;
   display: block;
+  color: #595757;
+  font-family: Noto Sans JP;
 }
 
 .cart__checkout-button {
   max-width: 36rem;
+  color: #fff;
+  background-color: #595757;
+  font-family: Noto Sans JP;
+  transition: all 0.2s;
+}
+
+.cart__checkout-button:hover{
+    opacity: 0.8;
 }
 
 .cart__ctas {

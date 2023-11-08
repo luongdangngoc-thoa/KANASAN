@@ -1,0 +1,458 @@
+<div class="page-width">
+  <div class="title-recently">
+    <h2 class="product-recommendations__heading h2">閲覧履歴</h2>
+  </div>
+  <ul class="recently-viewed grid product-grid grid--4-col-desktop grid--2-col-tablet-down" role="list">
+    <!-- Recently viewed products will appear here -->
+  </ul>
+</div>
+
+<script>
+  function setRecentlyViewedProducts() {
+  const productData = {
+    productTitle: "{{ product.title }}",
+    productId: "{{ product.id }}",
+    productVariants: "{{ product.variants[0].id }}",
+    productImg: "{{ product.featured_media | image_url: width: 533 }}",
+    imgWidth:"{{ product.featured_media.width }}",
+    imgHeight:"{{ product.featured_media.height }}",
+    productPrice: "{{ product.price | money }}",
+    productProducer: "{{- product.metafields.custom.producer.value }}",
+    productUrl: "{{ product.url }}",
+    productImageAltText: "{{product.featured_media.alt | escape }}",
+    productSoldOut: "{{- product.available }}"
+  };
+  
+  console.log(productData);
+  const productList = [];
+  let jsonResp, jsonRespArr, jsonRespArrStr;
+  const numberOfProducts = 6;
+  productList.push(productData);
+  const currProductPageTitle = productData.productTitle;
+  const productDataString = JSON.stringify(productList);
+  const localData = localStorage.getItem("recentlyViewedProduct");
+  
+  if (localData === null) {
+    localStorage.setItem("recentlyViewedProduct", productDataString);
+  } else if (localData) {
+    const oldProductData = localStorage.getItem("recentlyViewedProduct");
+    const countProductData = (oldProductData.match(/productTitle/g) || []).length;
+    const sameProduct = oldProductData.includes(currProductPageTitle);
+    if (countProductData < numberOfProducts && sameProduct == false) {
+      jsonResp = JSON.parse(oldProductData);
+      jsonRespArr = jsonResp.concat(productList);
+      jsonRespArrStr = JSON.stringify(jsonRespArr);
+      localStorage.setItem("recentlyViewedProduct", jsonRespArrStr);
+    } else if (countProductData >= numberOfProducts && sameProduct == false) {
+      jsonResp = JSON.parse(oldProductData);
+      jsonResp.shift();
+      jsonRespArr = jsonResp.concat(productList);
+      jsonRespArr = JSON.stringify(jsonRespArr);
+      localStorage.setItem("recentlyViewedProduct", jsonRespArr);
+    }
+  }
+  }
+  
+  setRecentlyViewedProducts();
+  const localViewed = localStorage.recentlyViewedProduct;
+  function getRecentlyViewedProducts() {
+  const productData = JSON.parse(localStorage.getItem("recentlyViewedProduct"));
+  const recentlyViewedHtml = [];
+  productData.map(item => {
+    console.log(item);
+    if (item.productSoldOut === 'false') {
+      recentlyViewedHtml.unshift(`
+      <li class="grid__item">
+      <div class="card-wrapper underline-links-hover">
+        <div class="card card--standard card--media " style="--ratio-percent: 100%;">
+        <a href="${item.productUrl}">
+          <div class="card__inner color-background-2 gradient ratio" style="--ratio-percent: 100%;">
+            <div style="position:static" class="card__media">
+            <div class="media media--transparent media--hover-effect">
+            <div class="image">
+                <img class="motion-reduce" src="${item.productImg}" loading="lazy" alt="${item.productImageAltText}"/>
+              </div>
+            </div>
+            <div class="card__badge {{ settings.badge_position }}">
+            <span id="NoMediaStandardBadge-{{ section_id }}-${item.productId}" class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}">
+                  売り切れ
+              </span>
+              </div>
+            </div>         
+          </div>
+        </a>
+        <div class="card__content">
+        <div class="card__information">
+          <p class="card__producer">
+              生産者:&ensp;
+              ${item.productProducer}
+            </p>
+        <h3 class="card__heading h5">
+        <a class="full-unstyled-link" href="${item.productUrl}">${item.productTitle}</a></h3>
+          <div class="card-information">
+            <div class="price">
+                <div class="product-price">
+                    ${item.productPrice} (税込)
+                </div>
+            </div>
+            
+            <button
+                class="swym-button swym-add-to-wishlist-view-product product_${item.productId}"
+                data-with-epi="true"
+                data-swaction="addToWishlist"
+                data-product-id="${item.productId}"
+                data-variant-id="${item.productVariants}"
+                data-product-url="{{ shop.url }}${item.productUrl}">
+                {% render 'icon-wishlist' %}
+                {% render 'icon-wishlist-active' %}
+              </button>
+          </div>
+        </div>
+        </div>
+        </div>
+        </div>
+      </li>
+    `);
+   } else {
+    recentlyViewedHtml.unshift(`
+    <li class="grid__item">
+     <div class="card-wrapper underline-links-hover">
+      <div class="card card--standard card--media " style="--ratio-percent: 100%;">
+      <a href="${item.productUrl}">
+        <div class="card__inner color-background-2 gradient ratio" style="--ratio-percent: 100%;">
+          <div style="position:static" class="card__media">
+          <div class="media media--transparent media--hover-effect">
+          <div class="image">
+              <img class="motion-reduce" src="${item.productImg}" loading="lazy" alt="${item.productImageAltText}"/>
+            </div>
+          </div>
+          </div>         
+        </div>
+       </a>
+       <div class="card__content">
+       <div class="card__information">
+        <p class="card__producer">
+            生産者:&ensp;
+            ${item.productProducer}
+          </p>
+       <h3 class="card__heading h5">
+       <a class="full-unstyled-link" href="${item.productUrl}">${item.productTitle}</a></h3>
+         <div class="card-information">
+           <div class="price">
+              <div class="product-price">
+                   ${item.productPrice} (税込)
+               </div>
+           </div>
+
+           <button
+              class="swym-button swym-add-to-wishlist-view-product product_${item.productId}"
+              data-with-epi="true"
+              data-swaction="addToWishlist"
+              data-product-id="${item.productId}"
+              data-variant-id="${item.productVariants}"
+              data-product-url="{{ shop.url }}${item.productUrl}">
+              {% render 'icon-wishlist' %}
+              {% render 'icon-wishlist-active' %}
+            </button>
+         </div>
+       </div>
+       </div>
+       </div>
+       </div>
+    </li>
+   `);
+  }
+});
+  const newProductData = `${recentlyViewedHtml.join("")}`;
+  const fullContent = document.getElementsByClassName("recently-viewed");
+  fullContent[0].innerHTML = newProductData;
+  }
+  
+  document.addEventListener("DOMContentLoaded", function (event) {
+  getRecentlyViewedProducts();
+  });
+</script>
+
+<div class="featured__button">
+  <a href="/collections/all">
+    <button class="btn-featured">
+      {{ 'products.product.featured.button' | t }}
+    </button>
+  </a>
+</div>
+
+{% schema %}
+  {
+    "name": "Recent Products",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "default": "Recently Viewed",
+        "label": "Title"
+      }
+    ]
+  }
+{% endschema %}
+<style>
+
+
+  /*
+
+   .shopify-section .page-width { 
+   padding-top: 135px; 
+   } 
+*/
+  .recently-viewed {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.1rem;
+    padding-bottom: 3rem !important;
+  }
+  .recently-viewed .card.card--standard.card--media {
+    max-width: 26rem;
+    max-height: 42rem;
+  }
+
+  .recently-viewed .card.card--standard .card__media {
+    width: 100%;
+  }
+  .recently-viewed .grid__item {
+    max-width: 26.5rem !important;
+    padding: 1rem;
+  }
+
+  .recently-viewed .card__information,
+  .card__heading.h5 {
+    color: #595757;
+    font-family: Noto Sans JP;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(32 / 15);
+    /* 213.333% */
+  }
+  .recently-viewed .card__producer {
+    margin-bottom: 0.5rem !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .recently-viewed .card__heading.h5 {
+    margin: 0 0 0.5rem;
+  }
+  .product-recommendations__heading {
+    padding-top: 13.5rem;
+  }
+  .product-recommendations__heading.h2 {
+    color: #595757;
+    font-family: Noto Sans JP;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+  }
+  .recently-viewed .card__heading.h5 a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .title-recently {
+    padding-bottom: 2.6rem;
+    margin-bottom: 4.9rem;
+    border-bottom: rgb(208 208 208) solid 1px;
+  }
+  .recently-viewed .image {
+    position: relative !important;
+    background-color: white;
+    width: 100%;
+    min-height: 25.5rem;
+  }
+  .recently-viewed .image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .recently-viewed .card-information {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .recently-viewed .card-information button {
+    padding-right: 1rem;
+    margin-top: unset !important;
+  }
+
+  /* hide defaut icon */
+  .swym-button.swym-add-to-wishlist-view-product.swym-heart.swym-added:after {
+    display: none !important;
+  }
+
+  .swym-button.swym-add-to-wishlist-view-product.swym-heart:after {
+    display: none !important;
+  }
+
+  /* remove opacity of defaut icon */
+  .swym-button.swym-add-to-wishlist-view-product.swym-added {
+    opacity: unset;
+  }
+
+  .button.swym-button.disabled {
+    opacity: unset;
+  }
+  /* style custom icon */
+  .recently-viewed .swym-button.swym-add-to-wishlist-view-product {
+    position: relative;
+    inset: 0;
+    z-index: 5;
+    width: 30px;
+    height: 30px;
+    opacity: unset;
+  }
+
+  .recently-viewed .swym-button.swym-add-to-wishlist-view-product svg {
+    transition: all 0.2s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .swym-button.swym-add-to-wishlist-view-product:not(.swym-added) svg.active {
+    opacity: 0;
+  }
+
+  .swym-button.swym-add-to-wishlist-view-product.swym-added svg.unactive {
+    opacity: 0;
+  }
+  .recently-viewed .card__badge {
+    position: absolute;
+    top: 207px;
+    right: 136px;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .recently-viewed .grid__item {
+      max-width: 20rem !important;
+    }
+    .recently-viewed .card.card--standard.card--media {
+      /* height: 42rem; */
+      width: auto;
+      padding: 2rem 0;
+    }
+    .recently-viewed .image {
+      width: 18rem;
+      min-height: 19rem;
+    }
+
+
+    .recently-viewed .swym-button.swym-add-to-wishlist-view-product {
+      height: 24px;
+    }
+
+    .recently-viewed .swym-button.swym-add-to-wishlist-view-product svg {
+      width: 24px;
+      height: 24px;
+    }
+    .recently-viewed .card__badge {
+    top: 144px;
+    right: 75px;
+}
+  }
+
+  @media screen and (max-width: 550px) {
+    .recently-viewed {
+      display: flex;
+      justify-content: center;
+      padding: 1.6rem 0 0;
+      gap: 0.8rem;
+    }
+    .recently-viewed {
+      overflow: auto;
+      display: flex;
+      justify-content: unset;
+      margin-bottom: 3rem;
+    }
+    .recently-viewed p:first-child {
+      margin-left: 0;
+    }
+
+    .recently-viewed p:last-child {
+      margin-right: 0;
+    }
+
+    /* width */
+    .recently-viewed::-webkit-scrollbar {
+      height: 0.4rem;
+    }
+
+    /* Track */
+    .recently-viewed::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #888;
+    };
+
+    /* end style for scroll  */
+
+  }
+
+  .recently-viewed {
+    display: flex;
+    justify-content: center;
+    padding: 1.6rem 0 0;
+    gap: 0.8rem;
+  }
+
+  .recently-viewed {
+    overflow: auto;
+    display: flex;
+    justify-content: unset;
+    margin-bottom: 3rem;
+  }
+  .recently-viewed p:first-child {
+    margin-left: 0;
+  }
+
+  .recently-viewed p:last-child {
+    margin-right: 0;
+  }
+
+  /* width */
+  .recently-viewed::-webkit-scrollbar {
+    height: 0.4rem;
+  }
+
+  /* Track */
+  .recently-viewed::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #888;
+  }
+
+  /* end style for scroll  */
+
+
+</style>

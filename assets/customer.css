@@ -475,6 +475,8 @@
 :is(.account, .order) p {
   margin: 0 0 2rem;
   font-size: 1.6rem;
+  color: #595757;
+  font-family: Noto Sans JP;
 }
 
 :is(.account, .order) h1 {
@@ -484,17 +486,22 @@
 :is(.account, .order) h2 {
   margin-top: 4rem;
   margin-bottom: 1rem;
+  color: #595757;
+  font-family: Noto Sans JP;
 }
 
 @media screen and (min-width: 990px) {
   :is(.account, .order) h2 {
     margin-top: 0;
+    
   }
 }
 
 .account h1 + a {
   display: inline-flex;
   align-items: center;
+  color: #595757;
+  font-family: Noto Sans JP;
 }
 
 .account a svg {
