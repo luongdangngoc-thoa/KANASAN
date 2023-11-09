@@ -2,13 +2,18 @@
   "sections": {
     "main": {
       "type": "main-policy",
+      "settings": {}
+    },
+    "403b4926-86d0-4fa7-8b67-1ea8b16075e8": {
+      "type": "common-button",
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "button_link": "\/",
+        "button_lable": "TOPへ戻る"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "403b4926-86d0-4fa7-8b67-1ea8b16075e8"
   ]
 }

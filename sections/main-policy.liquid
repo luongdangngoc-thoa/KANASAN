@@ -1,177 +1,109 @@
-{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
-
 {%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-
-  @media screen and (min-width: 990px){
-    .page-width--narrow {
-    max-width: 79.6rem !important;
+  #shopify-section-template--21294450573590__main .page-width {
+    max-width: 80rem !important;
     padding: 0;
-    }
   }
 
-  @media screen and (max-width: 990px){
-    .page-width--narrow {
-    max-width: 79.6rem !important;
-    padding: 0;
-    }
-  }
-
-  @media screen and (max-width: 480px){
-    .policy__container {
-        width: 100%;
-        padding: 0 2.5rem
-    }
-    /* .page-width.page-width--narrow.section-template--21294450573590__main-padding{
-      padding: 0px !important;
-    } */
-  }
-
-
-.title {
+   .page__title {
     text-align: center;
     color: #595757;
     font-family: Noto Sans JP;
-    font-size: 24px;
+    font-size: 2.4rem;
     font-style: normal;
     font-weight: 400;
-    line-height: calc(34/24); /* 141.667% */
-    padding-top: 8rem;
+    line-height: calc(34 / 24);
+    margin-top: 14rem;
+    margin-bottom: 4rem;
   }
   .policy__container {
     width: 100%;
   }
   .policy__form {
-    margin-top: 4.2rem;
     width: 100%;
     height: 100%;
     padding: 8.5rem;
     border: 1px solid #eee;
   }
-  p {
-    padding-bottom: 7.9rem;
+  .policy__form p {
     color: #595757;
-    font-family: Poppins;
+    font-family: Poppins , Noto Sans JP;
     font-size: 1.6rem;
     font-style: normal;
     font-weight: 300;
-    line-height: calc(34/16); /* 212.5% */
-    letter-spacing: 1.6px;
-    margin: 0px;
+    line-height: calc(34 / 16);
+    letter-spacing: 1px;
+    margin: 0;
   }
-.policy__form h3 {
+  .policy__form h3 {
     padding: 3.2rem 0;
     color: #595757;
     font-family: Noto Sans JP;
-    font-size: 24px;
+    font-size: 2.4rem;
     font-style: normal;
     font-weight: 400;
-    line-height: calc(34/24); /* 141.667% */
-}
-.ddict_btn {
+    line-height: calc(34 / 24);
+  }
+
+  .ddict_btn {
     display: none
-}
+  }
 
-.policy_btn_top {
-    text-align: center;
-    padding: 24.6rem 0 29.9rem 0;
-}
+  @media screen and (min-width: 750px) and (max-width: 900px) {
+    #shopify-section-template--21294450573590__main .page-width--narrow {
+      padding: 0 5rem !important;
+    }
 
-.policy_btn_top button {
-    padding: 1.4rem 9.4rem;
-    background: white;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border: 0.5px solid #595757;
-    color: #595757;
-    font-family: Poppins;
-    font-size: 1.8rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: calc(30 / 18);
-    letter-spacing: 1.8px;
-    cursor: pointer;
-}
+    .page__title {
+    margin-top: 10rem;
+    }
 
-.policy_btn_top button:hover{
-    background-color: #595757;
-    color: #fff;
-}
+    .policy__form {
+      padding: 5rem;
+    }
+  }
 
-@media screen and (max-width: 750px) {
- .policy__form {
-    padding: 3.5rem;
- }
- .policy_btn_top{
-  padding: 7.1rem 0 22.3rem 0;
- }
- p {
+
+  @media screen and (max-width: 749px) {
+    .page__title {
+    margin-top: 4.5rem;
+    font-size: 2rem
+    }
+
+    .policy__container {
+      width: 100%;
+      padding: 0 2.5rem
+    }
+    .policy__form {
+      padding: 3.5rem 3rem;
+    }
+
+    .policy__form h3 {
+     font-size: 2rem;
+    }
+    .policy__form p {
       font-size: 1.4rem
     }
   }
-  @media screen and (max-width: 880px) and (min-width: 480px) {
-    .page-width.page-width--narrow.section-template--21294450573590__main-padding{
-      padding: 0 4.5rem;
-    }
-}
+
+
 {%- endstyle -%}
 
-<div class="page-width page-width--narrow section-{{ section.id }}-padding">
-    <h3 class="title">{{ 'policy.title' | t }}</h3>
-    <div class="policy__container">
-        <div class="policy__form">
-                <p>{{ shop.privacy_policy }}</p>
-        </div>
+<div class="page-width page-width--narrow">
+  <h3 class="page__title">{{ 'policy.title' | t }}</h3>
+  <div class="policy__container">
+    <div class="policy__form">
+      {{ shop.privacy_policy }}
     </div>
-   
-    <div class="policy_btn_top">
-        <a href="/">
-            <button>TOPへ戻る</button>
-        </a>
-    </div>
+  </div>
 </div>
 
 {% schema %}
-{
-  "name": "t:sections.main-page.name",
-  "tag": "section",
-  "class": "section",
-  "settings": [
-    {
-      "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
-    }
-  ]
-}
+  {
+    "name": "Policy",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+
+    ]
+  }
 {% endschema %}

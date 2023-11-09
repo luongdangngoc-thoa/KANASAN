@@ -48,6 +48,9 @@
         "placeholder-1",
         "placeholder-2"
       ],
+      "custom_css": [
+        ".slideshow__text-wrapper .banner__box {padding-bottom: 7rem;}"
+      ],
       "settings": {
         "slide_height": "large",
         "slider_visual": "dots",

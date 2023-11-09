@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-terms-of-service",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "1b8fe4dd-0269-4af2-aceb-d0d490068280": {
+      "type": "common-button",
+      "settings": {
+        "button_link": "\/",
+        "button_lable": "TOPへ戻る"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1b8fe4dd-0269-4af2-aceb-d0d490068280"
+  ]
+}

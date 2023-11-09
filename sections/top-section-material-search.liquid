@@ -19,10 +19,10 @@
         </a>
       {%- endfor -%}
     </div>
-    <div class="material-search-button">
-      <a class="page-button btn-primary" href="{{section.settings.button_link}}">
-        {{ section.settings.button_lable }}</a>
-    </div>
+  {% comment %} <div class="material-search-button">
+              <a class="page-button btn-primary" href="{{section.settings.button_link}}">
+                {{ section.settings.button_lable }}</a>
+        </div> {% endcomment %}
   </div>
 </div>
 
@@ -145,17 +145,20 @@
         "id": "section_color_scheme",
         "label": "t:sections.all.colors.label",
         "default": "background-1"
-      }, {
+      },
+      {
         "type": "text",
         "id": "title",
         "label": "Section title",
         "default": "カテゴリーから探す"
-      }, {
+      },
+      {
         "type": "text",
         "id": "button_lable",
         "label": "Button lable",
         "default": "口コミランキングはこちら"
-      }, {
+      },
+      {
         "type": "url",
         "id": "button_link",
         "label": "Button link"
@@ -170,17 +173,20 @@
             "type": "image_picker",
             "id": "image",
             "label": "Image"
-          }, {
+          },
+          {
             "type": "text",
             "id": "material-name",
             "default": "Material name",
             "label": "Material name"
-          }, {
+          },
+          {
             "type": "text",
             "id": "material-name-en",
             "default": "Material name-English",
             "label": "Material name-English"
-          }, {
+          },
+          {
             "type": "url",
             "id": "url",
             "label": "URL"
@@ -194,9 +200,11 @@
         "blocks": [
           {
             "type": "Block"
-          }, {
+          },
+          {
             "type": "Block"
-          }, {
+          },
+          {
             "type": "Block"
           }
         ]

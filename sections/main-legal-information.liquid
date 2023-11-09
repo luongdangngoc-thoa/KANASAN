@@ -1,0 +1,108 @@
+{%- style -%}
+  #shopify-section-template--21296398303510__main .page-width {
+    max-width: 80rem !important;
+    padding: 0;
+  }
+
+   .page__title {
+    text-align: center;
+    color: #595757;
+    font-family: Noto Sans JP;
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(34 / 24);
+    margin-top: 14rem;
+    margin-bottom: 4rem;
+  }
+  .legalInfo__container {
+    width: 100%;
+  }
+  .legalInfo__form {
+    width: 100%;
+    height: 100%;
+    padding: 8.5rem;
+    border: 1px solid #eee;
+  }
+  .legalInfo__form p {
+    color: #595757;
+    font-family: Poppins , Noto Sans JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: calc(34 / 16);
+    letter-spacing: 1px;
+    margin: 0;
+  }
+  .legalInfo__form h3 {
+    padding: 3.2rem 0;
+    color: #595757;
+    font-family: Noto Sans JP;
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(34 / 24);
+  }
+
+  .ddict_btn {
+    display: none
+  }
+
+  @media screen and (min-width: 750px) and (max-width: 900px) {
+    #shopify-section-template--21296398303510__main .page-width--narrow {
+      padding: 0 5rem !important;
+    }
+
+    .page__title {
+    margin-top: 10rem;
+    }
+
+    .legalInfo__form {
+      padding: 5rem;
+    }
+  }
+
+
+  @media screen and (max-width: 749px) {
+    .page__title {
+    margin-top: 4.5rem;
+    font-size: 2rem;
+    }
+
+    .legalInfo__container {
+      width: 100%;
+      padding: 0 2.5rem
+    }
+    .legalInfo__form {
+      padding: 3.5rem 3rem;
+    }
+    .legalInfo__form h3 {
+     font-size: 2rem;
+    }
+    .legalInfo__form p {
+      font-size: 1.4rem
+    }
+  }
+
+
+{%- endstyle -%}
+
+<div class="page-width page-width--narrow">
+  <h3 class="page__title">特定商取引法に基づく表記</h3>
+  <div class="legalInfo__container">
+    <div class="legalInfo__form">
+      {{ shop.legal_notice }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Legal Information",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+
+    ]
+  }
+{% endschema %}
