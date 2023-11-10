@@ -105,7 +105,7 @@
   align-items: center;
   gap: 6rem;
   color: #595757;
-  font-family: Noto Sans JP;
+  font-family: Poppins, Noto Sans JP;
   font-size: 1.7rem;
   font-style: normal;
   font-weight: 300;
@@ -126,7 +126,7 @@
   width: 27.6rem;
   font-size: 1.8rem;
   font-weight: 400;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   font-family: Noto Sans JP;
 }
 .product-description__btn:hover {
@@ -136,14 +136,37 @@
 .product__delivery {
   font-family: Noto Sans JP;
 }
+.description-detail h1 {
+  color: #595757;
+  font-family: Inter;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.product-author .product-author__title {
+  color: #595757;
+  font-family: Inter;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
 
 /* Media Query for screens up to 768px wide */
 @media screen and (max-width: 920px) {
   .product__description {
-    padding: 4rem;
+    padding: 3rem;
+    padding-bottom: 9rem;
   }
   .product__description img {
     object-fit: cover;
+  }
+  .product-author {
+    padding: 3rem !important;
+  }
+  .product-ingredient {
+    padding: 3rem !important;
   }
 }
 
@@ -151,8 +174,15 @@
 @media screen and (max-width: 480px) {
   .product__description {
     padding: 2rem;
+    padding-bottom: 9rem;
     font-size: 1.6rem;
     line-height: calc(28 / 16);
+  }
+  .product-author {
+    padding: 2rem !important;
+  }
+  .product-ingredient {
+    padding: 2rem !important;
   }
 }
 @media screen and (max-width: 320px) {
@@ -180,7 +210,7 @@
 }
 .product-author__detail {
   display: flex;
-  gap: 6.25rem;
+  gap: 8.5rem;
   color: #595757;
   font-family: Inter;
   font-style: normal;
@@ -207,9 +237,22 @@
   object-fit: cover;
 }
 .product-author__detail .product-author__detail--info p {
-  width: 12.75rem;
+  width: 14rem;
+  white-space: nowrap;
 }
 
+.product-author__detail .product-author__name {
+  color: #595757;
+  font-family: Poppins, Noto Sans JP;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: calc(34 / 18); /* 188.889% */
+  letter-spacing: 1.8;
+}
+.product-author__detail span {
+  font-size: 1.2rem;
+}
 .product-author__detail p {
   margin: 0px;
   color: #595757;
@@ -219,11 +262,10 @@
   font-weight: 300;
   letter-spacing: 0.16rem;
 }
-
 /* Media Query for screens up to 768px wide */
 @media screen and (max-width: 768px) {
   .product-author {
-    padding: 1rem;
+    padding: 2rem;
   }
   .product-author__detail {
     flex-direction: column;
@@ -235,9 +277,6 @@
   .product-author__detail .product-author__detail--info img {
     width: 12rem;
     height: 12rem;
-  }
-  .product-author__detail p {
-    text-align: center;
   }
 }
 
@@ -273,10 +312,10 @@
 
 .product-ingredient__title {
   color: #595757;
-  font-family: Noto Sans JP;
+  font-family: Inter;
   font-size: 2rem;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   line-height: calc(34 / 18);
   letter-spacing: 1.8px;
   white-space: nowrap;
@@ -284,7 +323,7 @@
 }
 .product-ingredient__list--detail-title {
   color: #595757;
-  font-family: Noto Sans JP;
+  font-family: Poppins, Noto Sans JP;
   font-size: 1.8rem;
   font-style: normal;
   font-weight: 300;
@@ -295,7 +334,7 @@
 }
 .product-ingredient__list--detail-content {
   color: #595757;
-  font-family: Noto Sans JP;
+  font-family: Poppins, Noto Sans JP;
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 300;

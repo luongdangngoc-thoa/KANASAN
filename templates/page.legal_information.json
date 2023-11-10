@@ -1,14 +1,19 @@
 {
   "sections": {
     "main": {
-      "type": "main_legal_information",
+      "type": "main-legal-information",
+      "settings": {}
+    },
+    "4122275d-c65e-47c1-bc43-9ac384168fda": {
+      "type": "common-button",
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "button_link": "\/",
+        "button_lable": "TOPへ戻る"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "4122275d-c65e-47c1-bc43-9ac384168fda"
   ]
 }

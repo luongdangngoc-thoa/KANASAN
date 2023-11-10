@@ -1,23 +1,23 @@
 {% comment %} 
-      Renders a product card 
-      Accepts:
-      - card_product: {Object} Product Liquid object (optional)
-      - media_aspect_ratio: {String} Size of the product image card. Values are "square" and "portrait". Default is "square" 
-      (optional)
-      - image_shape: {String} Image mask to apply to the product image card. Values are "arch", "blob", "chevronleft", 
-      "chevronright", "diamond", "parallelogram", and "round". (optional)
-      - show_vendor: {Boolean} Show the product vendor. Default: false
-      - show_rating: {Boolean} Show the product rating. Default: false
-      - extend_height: {Boolean} Card height extends to available container space. Default: true (optional)
-      - lazy_load: {Boolean} Image should be lazy loaded. Default: true (optional)
-      - show_quick_add: {Boolean} Show the quick add button.
-      - section_id: {String} The ID of the section that contains this card.
-      - horizontal_class: {Boolean} Add a card--horizontal class if set to true. Default: false (optional)
-      - horizontal_quick_add: {Boolean} Changes the quick add button styles when set to true. Default: false (optional)
-      - placeholder_image: {String} The placeholder image to use when no product exists. Default: 'product-apparel-2' 
-      (optional) 
-      Usage: 
-      {% render 'top-card-product', show_vendor: section.settings.show_vendor %}
+          Renders a product card 
+          Accepts:
+          - card_product: {Object} Product Liquid object (optional)
+          - media_aspect_ratio: {String} Size of the product image card. Values are "square" and "portrait". Default is "square" 
+          (optional)
+          - image_shape: {String} Image mask to apply to the product image card. Values are "arch", "blob", "chevronleft", 
+          "chevronright", "diamond", "parallelogram", and "round". (optional)
+          - show_vendor: {Boolean} Show the product vendor. Default: false
+          - show_rating: {Boolean} Show the product rating. Default: false
+          - extend_height: {Boolean} Card height extends to available container space. Default: true (optional)
+          - lazy_load: {Boolean} Image should be lazy loaded. Default: true (optional)
+          - show_quick_add: {Boolean} Show the quick add button.
+          - section_id: {String} The ID of the section that contains this card.
+          - horizontal_class: {Boolean} Add a card--horizontal class if set to true. Default: false (optional)
+          - horizontal_quick_add: {Boolean} Changes the quick add button styles when set to true. Default: false (optional)
+          - placeholder_image: {String} The placeholder image to use when no product exists. Default: 'product-apparel-2' 
+          (optional) 
+          Usage: 
+          {% render 'top-card-product', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
 
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
@@ -132,9 +132,7 @@
       <div class="card__content">
         <div class="card__information">
           <p class="card__producer">
-            生産者:
-            {{- card_product.metafields.custom.producer.value }}
-          </p>
+            生産者:&nbsp;{{- card_product.metafields.custom.producer.value }}</p>
           <h3
             class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
             {% if card_product.featured_media or settings.card_style == 'card' %}
@@ -193,7 +191,7 @@
       </div>
       <div class="card__content">
         <div class="card__information">
-          <p class="card__producer">生産者: {{ card_product.metafields.custom.company.value.name }}</p>
+          <p class="card__producer">生産者:&nbsp;{{ card_product.metafields.custom.company.value.name }}</p>
           <h3 class="card__heading card__heading--placeholder{% if settings.card_style == 'standard' %} h5{% endif %}">
             <a
               role="link"

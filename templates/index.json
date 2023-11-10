@@ -48,6 +48,9 @@
         "placeholder-1",
         "placeholder-2"
       ],
+      "custom_css": [
+        ".slideshow__text-wrapper .banner__box {padding-bottom: 7rem;}"
+      ],
       "settings": {
         "slide_height": "large",
         "slider_visual": "dots",
@@ -141,7 +144,7 @@
       "type": "top-featured-collection",
       "settings": {
         "title": "新着商品",
-        "collection": "all",
+        "collection": "kanasan-resort",
         "products_to_show": 8,
         "columns_desktop": 4,
         "enable_desktop_slider": true,

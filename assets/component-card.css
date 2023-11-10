@@ -1,6 +1,6 @@
 .card-wrapper {
   color: inherit;
-  height: 100%;
+  /* height: 100%; */
   position: relative;
   text-decoration: none;
 }
@@ -177,7 +177,7 @@
   width: 100%;
 }
 .card__inner.image_card{
- height: 34rem;
+ height: 40rem;
 }
 .card--media .card__inner .card__content {
   position: relative;
@@ -191,10 +191,14 @@
   width: 100%;
   flex-grow: 1;
 }
+.card__content.image_car{
+  height: 30%;
+}
 
 @media screen and (max-width: 480px) {
   .card__inner.image_card{
-    height: 70%;
+    /* height: 70%; */
+    max-height: 177px;
    }
   .card__content.image_car{
     height: 30%;
@@ -204,14 +208,16 @@
     font-size: 1.4rem;
   }
 }
-/* .card__information {
+.card__information {
   grid-template-rows: 2;
   padding: 1.3rem 1rem;
-} */
+}
 @media screen and (max-width: 750px) {
   .card__inner.image_card{
-    height: 100%;
-    max-height: 177px;
+    /* height: 20rem; */
+   }
+  .card__content.image_car{
+    height: 30%;
   }
 
   .card-information.product__card {
@@ -220,6 +226,9 @@
     justify-content: unset !important ;
     align-items: unset !important ;
     gap: 1rem
+  }
+  .card__information .card__heading {
+    font-size: 1.4rem;
   }
   .product__card .producer_text{
     display: flex;

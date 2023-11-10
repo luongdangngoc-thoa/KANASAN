@@ -1,5 +1,5 @@
 {%- style -%}
-  #shopify-section-template--21294450573590__main .page-width {
+  #shopify-section-template--21296398303510__main .page-width {
     max-width: 80rem !important;
     padding: 0;
   }
@@ -15,16 +15,16 @@
     margin-top: 14rem;
     margin-bottom: 4rem;
   }
-  .policy__container {
+  .legalInfo__container {
     width: 100%;
   }
-  .policy__form {
+  .legalInfo__form {
     width: 100%;
     height: 100%;
     padding: 8.5rem;
     border: 1px solid #eee;
   }
-  .policy__form p {
+  .legalInfo__form p {
     color: #595757;
     font-family: Poppins , Noto Sans JP;
     font-size: 1.6rem;
@@ -34,7 +34,7 @@
     letter-spacing: 1px;
     margin: 0;
   }
-  .policy__form h3 {
+  .legalInfo__form h3 {
     padding: 3.2rem 0;
     color: #595757;
     font-family: Noto Sans JP;
@@ -49,7 +49,7 @@
   }
 
   @media screen and (min-width: 750px) and (max-width: 900px) {
-    #shopify-section-template--21294450573590__main .page-width--narrow {
+    #shopify-section-template--21296398303510__main .page-width--narrow {
       padding: 0 5rem !important;
     }
 
@@ -57,7 +57,7 @@
     margin-top: 10rem;
     }
 
-    .policy__form {
+    .legalInfo__form {
       padding: 5rem;
     }
   }
@@ -66,21 +66,20 @@
   @media screen and (max-width: 749px) {
     .page__title {
     margin-top: 4.5rem;
-    font-size: 2rem
+    font-size: 2rem;
     }
 
-    .policy__container {
+    .legalInfo__container {
       width: 100%;
       padding: 0 2.5rem
     }
-    .policy__form {
+    .legalInfo__form {
       padding: 3.5rem 3rem;
     }
-
-    .policy__form h3 {
+    .legalInfo__form h3 {
      font-size: 2rem;
     }
-    .policy__form p {
+    .legalInfo__form p {
       font-size: 1.4rem
     }
   }
@@ -89,17 +88,17 @@
 {%- endstyle -%}
 
 <div class="page-width page-width--narrow">
-  <h3 class="page__title">{{ 'policy.title' | t }}</h3>
-  <div class="policy__container">
-    <div class="policy__form">
-      {{ shop.privacy_policy }}
+  <h3 class="page__title">特定商取引法に基づく表記</h3>
+  <div class="legalInfo__container">
+    <div class="legalInfo__form">
+      {{ shop.legal_notice }}
     </div>
   </div>
 </div>
 
 {% schema %}
   {
-    "name": "Policy",
+    "name": "Legal Information",
     "tag": "section",
     "class": "section",
     "settings": [
