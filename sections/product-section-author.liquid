@@ -19,7 +19,7 @@
         {{ product.metafields.custom.company.value.avatar | img_tag }}
       {% endif %}
       {% comment %} {% render 'icon-ellipse-avatar' %} {% endcomment %}
-      <p>{{ product.metafields.custom.company.value.name }}</p>
+      <p class="product-author__name">{{ product.metafields.custom.company.value.name }}<span class="name">さん</span></p>
     </div>
     <p class="product-author__detail--description">
       {{ product.metafields.custom.company.value.description }}

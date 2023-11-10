@@ -85,7 +85,7 @@
   .banner_product .banner__content {
       position: absolute;
       top: 86px;
-      left: 10px;
+      /* left: 10px; */
   }
 
   .banner--medium.banner--mobile-bottom:not(.banner--adapt) .banner__media,

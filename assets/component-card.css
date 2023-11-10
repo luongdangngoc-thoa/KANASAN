@@ -214,7 +214,7 @@
 }
 @media screen and (max-width: 750px) {
   .card__inner.image_card{
-    height: 34rem;
+    /* height: 20rem; */
    }
   .card__content.image_car{
     height: 30%;

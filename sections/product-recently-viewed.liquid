@@ -63,7 +63,7 @@
       <li class="grid__item">
       <div class="card-wrapper underline-links-hover">
         <div class="card card--standard card--media " style="--ratio-percent: 100%;">
-        <a href="${item.productUrl}">
+        <a class="full-unstyled-link" href="${item.productUrl}">
           <div class="card__inner color-background-2 gradient ratio" style="--ratio-percent: 100%;">
             <div style="position:static" class="card__media">
             <div class="media media--transparent media--hover-effect">
@@ -82,15 +82,19 @@
         <div class="card__content">
         <div class="card__information">
           <p class="card__producer">
+          <a class="full-unstyled-link" href="${item.productUrl}">
               生産者:&ensp;
               ${item.productProducer}
             </p>
+          </a>
         <h3 class="card__heading h5">
         <a class="full-unstyled-link" href="${item.productUrl}">${item.productTitle}</a></h3>
           <div class="card-information">
             <div class="price">
                 <div class="product-price">
+                <a class="full-unstyled-link" href="${item.productUrl}">
                     ${item.productPrice} (税込)
+                </a>
                 </div>
             </div>
             
@@ -116,7 +120,7 @@
     <li class="grid__item">
      <div class="card-wrapper underline-links-hover">
       <div class="card card--standard card--media " style="--ratio-percent: 100%;">
-      <a href="${item.productUrl}">
+      <a class="full-unstyled-link" href="${item.productUrl}">
         <div class="card__inner color-background-2 gradient ratio" style="--ratio-percent: 100%;">
           <div style="position:static" class="card__media">
           <div class="media media--transparent media--hover-effect">
@@ -130,18 +134,18 @@
        <div class="card__content">
        <div class="card__information">
         <p class="card__producer">
-            生産者:&ensp;
+           <a class="full-unstyled-link" href="${item.productUrl}"> 生産者:&ensp;
             ${item.productProducer}
+            </a>
           </p>
        <h3 class="card__heading h5">
        <a class="full-unstyled-link" href="${item.productUrl}">${item.productTitle}</a></h3>
          <div class="card-information">
            <div class="price">
               <div class="product-price">
-                   ${item.productPrice} (税込)
+                   <a class="full-unstyled-link" href="${item.productUrl}">${item.productPrice} (税込)</a>
                </div>
            </div>
-
            <button
               class="swym-button swym-add-to-wishlist-view-product product_${item.productId}"
               data-with-epi="true"

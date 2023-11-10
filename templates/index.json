@@ -140,15 +140,15 @@
         "section_color_scheme": ""
       }
     },
-    "top-featured-collection": {
+    "67550b69-2ba6-444a-afc2-1d09259cff5a": {
       "type": "top-featured-collection",
       "settings": {
         "title": "新着商品",
-        "collection": "all",
+        "collection": "新着商品",
         "products_to_show": 8,
         "columns_desktop": 4,
         "enable_desktop_slider": true,
-        "color_scheme": "background-1",
+        "color_scheme": "",
         "columns_mobile": "2",
         "swipe_on_mobile": true
       }
@@ -372,7 +372,7 @@
     "top-section-category-link",
     "top-section-concept",
     "38bb6c77-9b15-4402-90e6-d8a01881d8f5",
-    "top-featured-collection",
+    "67550b69-2ba6-444a-afc2-1d09259cff5a",
     "top-section-category-search",
     "top-section-material-search",
     "169661211538385504",
