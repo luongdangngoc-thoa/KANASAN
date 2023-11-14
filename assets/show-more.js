@@ -36,8 +36,8 @@ const handleSelectOption = () => {
   const selectContainer = document.querySelector('.open-modal');	
 
   button.addEventListener('click', (event) => {	
-      if (openSelect) {	
-        arrow_down_icon.style.display = 'none';	
+      if (!openSelect) {	
+        arrow_down_icon.style.display = 'none';
         minus_icon.style.display = 'block';
         selectContainer.style.display = 'grid';	
       } else {	
@@ -61,6 +61,7 @@ facets_disclosure.forEach((faq) => {
         // console.log('window.innerWidth', window.innerWidth)
         if (facets_list_filter && !isIncludeCheckbox) {
           facets_list_filter.classList.toggle("filter-hidden");
+          facets_list_filter.parentNode.classList.toggle("active-filter-name");
         }
       }
     });

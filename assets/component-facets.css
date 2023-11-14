@@ -264,22 +264,20 @@
     transition: 0.2s transform;
   }
 
-  /* .collection-arrow-down-icon svg:hover {
-    padding: 0.4rem;
-    background-color: #ededed;
-    border-radius: 50%;
-  } */
-
-  .collection-arrow-down-icon.active .collection-arrow-down-icon svg {
+  .facets-wrap.active-filter-name .facets__header .collection-arrow-down-icon svg {
     transform: rotate(180deg);
   }
 
   .facets_list_test.filter-hidden {
-    display: none;
+    /* display: none; */
+    max-height: 0rem;
   }
 
   .facets_list_test {
-    display: block;
+    /* display: block; */
+    overflow: hidden;
+    max-height: 80rem;
+    transition: 0.2s all ease-in;
   }
 }
 
