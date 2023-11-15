@@ -108,7 +108,12 @@
           <a
             class="breadcrumbs__link breadcrumbs__link_1"
             href="{{ product.url }}"
-            aria-current="page">{{ product.title }}</a>
+            aria-current="page"><span>
+                {{ product.metafields.custom.name_en.value }}
+              </span>
+              <span>
+                {{ product.title | escape }}
+              </span></a>
         </li>
         {%- when 'collection' and collection.handle -%}
         {%- if current_tags -%}
