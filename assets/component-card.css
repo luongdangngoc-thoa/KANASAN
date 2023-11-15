@@ -248,14 +248,14 @@
 
 @media screen and (min-width: 751px) {
   .card__information {
-    padding-bottom: 1.7rem;
-    padding-top: 1.7rem;
+    padding-bottom: 1.8rem;
+    padding-top: 1.8rem;
   }
 }
 
 .card__badge {
-  align-self: flex-end;
-  grid-row-start: 3;
+  /* align-self: flex-end; */
+  /* grid-row-start: 3; */
   justify-self: flex-start;
 }
 
@@ -396,8 +396,8 @@
   }
 
   .underline-links-hover:hover a {
-    text-decoration: underline;
-    text-underline-offset: 0.3rem;
+    /* text-decoration: underline;
+    text-underline-offset: 0.3rem; */
   }
 }
 
