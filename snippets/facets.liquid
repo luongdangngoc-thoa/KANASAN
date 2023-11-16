@@ -64,25 +64,25 @@
             {%- endif -%}
             <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
             {% comment %} Filters for both horizontal and vertical filter {% endcomment %}
-            <div class="category-link-list page-width">
-              <div class="collection-link-wrapper">
-                {% assign product_category_array = shop.types | sort_natural | reverse %}
+            <div class="category-link-wrapper page-width">
+              <div class="category-link-list">
+                {% assign product_category_array = shop.types %}
                 
                  {%- if product_category_array contains "その他雑貨" -%}
                     {% for type in product_category_array %}
                         {%- if type != blank and type !="その他雑貨"-%}
-                            <span class="collection-link">
+                            <span class="category-link">
                                 {{- type | link_to_type}}
                             </span>
                         {%- endif -%}
                     {% endfor %}
-                        <span class="collection-link">
+                        <span class="category-link">
                             {{- "その他雑貨" | link_to_type}}
                         </span>
                 {%- else -%}
                     {% for type in shop.types %}
                         {%- if type != blank -%}
-                            <span class="collection-link">
+                            <span class="category-link">
                                 {{- type | link_to_type}}
                             </span>
                         {%- endif -%}
@@ -144,7 +144,7 @@
                             <ul 
                               class="{% if filter_type != 'vertical' %} facets__list{% endif %} list-unstyled no-js-hidden"
                               role="list"
-                            >
+                            > 
                               {%- for value in filter.values -%}
                                 <li class="list-menu__item facets__item facets__item_filter{% if forloop.index > 10 and filter_type == 'vertical' %} show-more-item hidden{% endif %}">
                                   <label
