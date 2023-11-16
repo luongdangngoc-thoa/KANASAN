@@ -119,6 +119,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .product__card.producer_text {
   color: #595757;
   font-family: Noto Sans JP;
@@ -199,11 +200,13 @@
     align-items: unset !important ;
     gap: 1.8rem
   }
-  .card__information .card__heading {
+
+ .card__information .card__heading a {
     font-size: 1.6rem;
     line-height: 1.4;
-    min-height: 3.8375rem;
   }
+ }
+
   .product__card.producer_text {
     display: flex;
     flex-direction: column;
@@ -230,7 +233,7 @@
   .card-information > .price {
   margin: 1.8rem 0 !important; 
   }
-}
+
 .card__information {
   grid-row-start: 2;
   padding: 1.3rem 1rem;
@@ -251,6 +254,12 @@
     padding-bottom: 1.8rem;
     padding-top: 1.8rem;
   }
+
+  .product__card.producer_text {
+    display: flex;
+    flex-direction: unset;
+    font-size: 1.8rem;
+}
 }
 
 .card__badge {
@@ -286,7 +295,7 @@
 .card__heading {
   margin: 0;
   width: 100%; 
-  display: inline-block; 
+  display: block; 
 }
 
 
@@ -305,6 +314,10 @@
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
+    position           : relative;
+    text-overflow      : ellipsis;
+    line-height: var(--line-height,1.4) !important;
+    height             : calc(1em * var(--line-height, 1.4) * 1);
   }
  
 

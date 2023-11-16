@@ -1750,7 +1750,7 @@ a.product__text {
   } */
   .add-to-cart__button .swym-button {
     position: absolute !important;
-    top: -8.5rem;
+    top: 0.5rem;
     right: -1rem;
   }
 }

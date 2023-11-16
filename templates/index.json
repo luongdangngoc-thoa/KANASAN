@@ -113,7 +113,7 @@
         "template--21243532411158__38bb6c77-9b15-4402-90e6-d8a01881d8f5-Block-2": {
           "type": "Block",
           "settings": {
-            "brand-image": "shopify:\/\/shop_images\/Maskgroup_1.png",
+            "brand-image": "shopify:\/\/shop_images\/kanasan-style.png",
             "brand-name": "KANASAN STYLE",
             "brand-des": "コンセプト説明が入ります。コンセプト説明が入ります。コンセプト説明が入ります。コンセプト説明が入ります。",
             "button-lable": "製品を見る",
@@ -192,8 +192,8 @@
           "type": "Block",
           "settings": {
             "image": "shopify:\/\/shop_images\/000000004369-01-l_1_4a1926c0-663b-4d9c-a52d-7a331d52b629.png",
-            "category-name": "アメニティ",
-            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%82%A2%E3%83%A1%E3%83%8B%E3%83%86%E3%82%A3"
+            "category-name": "その他雑貨",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%81%9D%E3%81%AE%E4%BB%96%E9%9B%91%E8%B2%A8"
           }
         }
       },

@@ -52,7 +52,7 @@
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
     >
       <div
-        class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
+        class="card__inner  {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
         style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
       >
         {%- if card_product.featured_media -%}
@@ -274,9 +274,9 @@
 {%- endif -%}
 
 <style>
-  .top-card-product {
+  /* .top-card-product {
     padding: 0 0.8rem;
-  }
+  } */
   
   .top-card-product .card__producer {
     overflow: hidden;
@@ -292,7 +292,7 @@
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1.4;
     letter-spacing: 1px;
     margin: 0;
   }

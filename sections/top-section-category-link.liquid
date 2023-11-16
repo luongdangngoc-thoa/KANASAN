@@ -1,10 +1,28 @@
 <div class="category-link-wrapper page-width">
   <div class="collection-link-list scroll-trigger animate--slide-in">
-    {% for type in shop.types %}
-      <span class="collection-link">
-        {{- type | link_to_type }}
-      </span>
-    {% endfor %}
+    {% assign product_category_array = shop.types | sort_natural |  reverse %}
+    
+    {%- if product_category_array contains "その他雑貨" -%}
+            {% for type in product_category_array %}
+                {%- if type != blank and type !="その他雑貨"-%}
+                    <span class="collection-link">
+                        {{- type | link_to_type}}
+                    </span>
+                {%- endif -%}
+            {% endfor %}
+
+            <span class="collection-link">
+                {{- "その他雑貨" | link_to_type}}
+            </span>
+    {%- else -%}
+            {% for type in shop.types %}
+                    {%- if type != blank -%}
+                            <span class="collection-link">
+                                {{- type | link_to_type}}
+                            </span>
+                    {%- endif -%}
+            {% endfor %}
+    {%- endif -%}
   </div>
 </div>
 
