@@ -135,6 +135,9 @@
                           {%- endif -%}
 
                           <a href="{{ item.url }}" class="cart-item__name h4 break">
+                            <span>
+                            {{ item.product.metafields.custom.name_en.value }}
+                            </span>
                             {{- item.product.title | escape -}}
                           </a>
 

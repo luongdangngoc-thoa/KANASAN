@@ -11,6 +11,7 @@
   function setRecentlyViewedProducts() {
   const productData = {
     productTitle: "{{ product.title }}",
+    productNameEN: "{{ product.metafields.custom.name_en }}",
     productId: "{{ product.id }}",
     productVariants: "{{ product.variants[0].id }}",
     productImg: "{{ product.featured_media | image_url: width: 533 }}",
@@ -72,7 +73,7 @@
               </div>
             </div>
             <div class="card__badge {{ settings.badge_position }}">
-            <span id="NoMediaStandardBadge-{{ section_id }}-${item.productId}" class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}">
+            <span id="NoMediaStandardBadge-{{ section_id }}-${item.productId}" class="badge color-{{ settings.sold_out_badge_color_scheme }}">
                   売り切れ
               </span>
               </div>
@@ -88,7 +89,11 @@
             </p>
           </a>
         <h3 class="card__heading h5">
-        <a class="full-unstyled-link" href="${item.productUrl}">${item.productTitle}</a></h3>
+        <a class="full-unstyled-link" href="${item.productUrl}"> 
+            <span>${item.productNameEN} </span> <br>
+            <span>${item.productTitle}</span>
+        </a>
+        </h3>
           <div class="card-information">
             <div class="price">
                 <div class="product-price">
@@ -139,7 +144,11 @@
             </a>
           </p>
        <h3 class="card__heading h5">
-       <a class="full-unstyled-link" href="${item.productUrl}">${item.productTitle}</a></h3>
+       <a class="full-unstyled-link" href="${item.productUrl}">
+        <span>${item.productNameEN} </span> <br>
+        <span>${item.productTitle}</span>
+       </a>
+       </h3>
          <div class="card-information">
            <div class="price">
               <div class="product-price">
@@ -213,7 +222,7 @@
   }
   .recently-viewed .card.card--standard.card--media {
     max-width: 26rem;
-    max-height: 42rem;
+    /*max-height: 42rem; */
   }
 
   .recently-viewed .card.card--standard .card__media {
@@ -334,9 +343,8 @@
   }
   .recently-viewed .card__badge {
     position: absolute;
-    top: 207px;
-    /* right: 136px; */
-    left: 30px;
+    top: 1rem;
+    left: 1rem;
   }
 
 
@@ -363,10 +371,6 @@
       width: 24px;
       height: 24px;
     }
-    .recently-viewed .card__badge {
-    top: 120px;
-    left: 21px;
-}
   }
 
   @media screen and (max-width: 550px) {

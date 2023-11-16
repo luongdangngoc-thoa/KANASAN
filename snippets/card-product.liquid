@@ -116,7 +116,12 @@
                 class="full-unstyled-link"
                 aria-labelledby="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }} NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
               >
+              <span>
+                {{ card_product.metafields.custom.name_en.value }}
+              </span>
+              <span>
                 {{ card_product.title | escape }}
+              </span>
               </a>
             </h3>
           </div>
@@ -153,7 +158,12 @@
               class="full-unstyled-link"
               aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
             >
-              {{ card_product.title | escape }}
+             <span>
+                {{ card_product.metafields.custom.name_en.value }}
+              </span>
+              <span>
+                {{ card_product.title | escape }}
+              </span>
             </a>
           </h3>
           <div class="card-information">
@@ -391,7 +401,13 @@
         <div class="card__information">
           <h3 class="card__heading card__heading--placeholder{% if settings.card_style == 'standard' %} h5{% endif %}">
             <a role="link" aria-disabled="true" class="full-unstyled-link">
-              {{ 'onboarding.product_title' | t }}
+
+                <span>
+                    {{ card_product.metafields.custom.name_en.value }}
+                  </span>
+                <span>
+                    {{ 'onboarding.product_title' | t | escape }}
+                  </span>
             </a>
           </h3>
           <div class="card-information">
@@ -446,10 +462,10 @@
   .swym-button.swym-add-to-wishlist-view-product {
     position: relative;
     z-index: 5;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     opacity: unset;
-    margin: 2rem;
+    /* margin: 2rem; */
   }
 
   .swym-button.swym-add-to-wishlist-view-product svg {
@@ -469,10 +485,15 @@
     opacity: 0;
   }
 
-  @media screen and (max-width: 480px) { 
+  @media screen and (max-width: 749px) { 
+
+    .swym-button.swym-add-to-wishlist-view-product {
+      width: 20px;
+      height: 20px;
+   }
     .swym-button.swym-add-to-wishlist-view-product svg{
-        width: 20px;
-        height: 20px;
-      }
+      width: 20px;
+      height: 20px;
+    }
   }
 </style>

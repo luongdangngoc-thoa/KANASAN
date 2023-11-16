@@ -1,9 +1,12 @@
 <div class="category-link-wrapper page-width">
   <div class="collection-link-list scroll-trigger animate--slide-in">
-    {% for type in shop.types %}
-      <span class="collection-link">
-        {{- type | link_to_type }}
-      </span>
+    {% assign product_category_array = shop.types | sort_natural |  reverse | remove: "その他雑貨"%}
+    {% for type in product_category_array %}
+        {%- if type != blank -%}
+            <span class="collection-link">
+                {{- type |  link_to_type}}
+            </span>
+        {%- endif -%}
     {% endfor %}
   </div>
 </div>

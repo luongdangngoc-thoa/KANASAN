@@ -36,7 +36,7 @@
   font-size: 2.4rem;
   font-style: normal;
   font-weight: 350;
-  line-height: calc(28 / 24);
+  line-height: calc(32 / 24);
 }
 
 .product-prices {
@@ -619,11 +619,22 @@
 
 @media (max-width: 768px) {
   .btn-featured {
-    font-size: 1.4rem;
     height: 5rem;
     width: 29rem;
   }
+  .product.product-container.product--large {
+    padding-top: 0px !important;
+  }
+  .product__title {
+    margin-top: 4rem;
+  }
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (min-width: 768px) {
+  .pmslider-slide--inner {
+    margin-top: -125px;
+  }
+}
+.product-left.grid__item.product__media-wrapper {
+  padding-top: 0px;
 }

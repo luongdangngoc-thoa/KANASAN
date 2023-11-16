@@ -36,8 +36,8 @@ const handleSelectOption = () => {
   const selectContainer = document.querySelector('.open-modal');	
 
   button.addEventListener('click', (event) => {	
-      if (openSelect) {	
-        arrow_down_icon.style.display = 'none';	
+      if (!openSelect) {	
+        arrow_down_icon.style.display = 'none';
         minus_icon.style.display = 'block';
         selectContainer.style.display = 'grid';	
       } else {	
@@ -55,11 +55,13 @@ handleSelectOption()
 const facets_disclosure = document.querySelectorAll(".facets__disclosure");
 facets_disclosure.forEach((faq) => {
     faq.addEventListener("click", (event) => {
+        const facets_list_filter = faq.querySelector(".facets_list_test");
+        let isIncludeCheckbox = facets_list_filter.contains(event.target);
       if (window.innerWidth < 750) {  
-        console.log('window.innerWidth', window.innerWidth)
-        const facets_list_filter = faq.querySelector('.facets_list_test');
-        if(facets_list_filter) {
-            facets_list_filter.classList.toggle('filter-hidden');
+        // console.log('window.innerWidth', window.innerWidth)
+        if (facets_list_filter && !isIncludeCheckbox) {
+          facets_list_filter.classList.toggle("filter-hidden");
+          facets_list_filter.parentNode.classList.toggle("active-filter-name");
         }
       }
     });

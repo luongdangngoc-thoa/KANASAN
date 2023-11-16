@@ -104,7 +104,7 @@
                       <div class="facets__header"
                       aria-label="{{ filter.label }} ({{ 'products.facets.filters_selected.one' | t: count: filter.active_values.size }})"
                     >
-                      <div>
+                      <div class="fillter__name">
                         <span>
                           {{- filter.label | escape }}
                           {%- if filter_type == 'vertical' -%}
@@ -373,7 +373,7 @@
                 <div class="product-count light{% if filter_type == 'vertical' or filter_type == 'horizontal' %} medium-hide large-up-hide{% endif %}"
     role="status"
   >
-            <div class="button_filter">
+            <div class="button_filter_group">
               <div class="button_filter button_clear">
               <facet-remove>
                 <a >
