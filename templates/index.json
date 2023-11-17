@@ -6,33 +6,7 @@
         "placeholder-0": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/background.png",
-            "heading": "素朴で身近で <br> “愛おしい”<br> 沖縄の <br> たからさがし",
-            "box_align": "middle-left",
-            "show_text_box": true,
-            "text_alignment": "left",
-            "image_overlay_opacity": 0,
-            "color_scheme": "main-text",
-            "text_alignment_mobile": "left"
-          }
-        },
-        "placeholder-1": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/background.png",
-            "heading": "素朴で身近で <br> “愛おしい”<br> 沖縄の <br> たからさがし",
-            "box_align": "middle-left",
-            "show_text_box": true,
-            "text_alignment": "left",
-            "image_overlay_opacity": 0,
-            "color_scheme": "main-text",
-            "text_alignment_mobile": "left"
-          }
-        },
-        "placeholder-2": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/background.png",
+            "image": "shopify:\/\/shop_images\/banner.webp",
             "heading": "素朴で身近で <br> “愛おしい”<br> 沖縄の <br> たからさがし",
             "box_align": "middle-left",
             "show_text_box": true,
@@ -44,9 +18,7 @@
         }
       },
       "block_order": [
-        "placeholder-0",
-        "placeholder-1",
-        "placeholder-2"
+        "placeholder-0"
       ],
       "custom_css": [
         ".slideshow__text-wrapper .banner__box {padding-bottom: 7rem;}"
