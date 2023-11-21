@@ -9,47 +9,76 @@
         "color_scheme": "background-1"
       }
     },
-    "06c75edb-d296-45e3-8755-8972b42e21a4": {
-      "type": "image-banner",
-      "blocks": {
-        "template--21243532345622__06c75edb-d296-45e3-8755-8972b42e21a4-heading-1": {
-          "type": "heading",
-          "settings": {
-            "heading": "KANASAN RESORT",
-            "heading_size": "h1"
-          }
-        },
-        "template--21243532345622__06c75edb-d296-45e3-8755-8972b42e21a4-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "沖縄の恵みを感じて",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "template--21243532345622__06c75edb-d296-45e3-8755-8972b42e21a4-heading-1",
-        "template--21243532345622__06c75edb-d296-45e3-8755-8972b42e21a4-text-1"
-      ],
-      "custom_css": [],
+    "a9e9ddab-7b86-4d1d-a2f4-bba89d5ce5fb": {
+      "type": "page-banner",
       "settings": {
-        "image": "shopify:\/\/shop_images\/12936_3.png",
-        "image_2": "shopify:\/\/shop_images\/12936_3_3_886817b7-6724-47f4-9591-210c98e160f9.png",
-        "image_overlay_opacity": 0,
-        "image_height": "small",
-        "desktop_content_position": "middle-left",
-        "show_text_box": true,
-        "desktop_content_alignment": "center",
-        "color_scheme": "main-text",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
+        "image_resort": "shopify:\/\/shop_images\/banner.webp",
+        "image_style": "shopify:\/\/shop_images\/line_oa_chat_231120_181725_group_1.jpg",
+        "image_nature": "shopify:\/\/shop_images\/line_oa_chat_231120_181725_group_0.jpg",
+        "heading_resort": "KANASAN RESORT",
+        "sub_heading_resort": "沖縄の恵みを感じて",
+        "heading_style": "KANASAN STYLE",
+        "sub_heading_style": "沖縄の恵みを感じて",
+        "heading_nature": "KANASAN NATURE",
+        "sub_heading_nature": "沖縄の恵みを感じて"
       }
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "blocks": {
+        "4da14d08-3fb1-4242-86e0-dd53cb1d455c": {
+          "type": "Block",
+          "settings": {
+            "category-name": "ヘアケア",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%83%98%E3%82%A2%E3%82%B1%E3%82%A2"
+          }
+        },
+        "78dd1fa5-5738-441c-8ec2-8863735e455f": {
+          "type": "Block",
+          "settings": {
+            "category-name": "ボディケア",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%83%9C%E3%83%87%E3%82%A3%E3%82%B1%E3%82%A2"
+          }
+        },
+        "d44428af-1292-4693-aa14-9288610c9feb": {
+          "type": "Block",
+          "settings": {
+            "category-name": "フェイスケア",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%B1%E3%82%A2"
+          }
+        },
+        "d8ccd658-011b-401a-b666-8ba19896ec92": {
+          "type": "Block",
+          "settings": {
+            "category-name": "ホテルアメニティ",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%83%9B%E3%83%86%E3%83%AB%E3%82%A2%E3%83%A1%E3%83%8B%E3%83%86%E3%82%A3"
+          }
+        },
+        "ec412918-8e36-4e63-b588-f187728f7e85": {
+          "type": "Block",
+          "settings": {
+            "category-name": "食品・飲料",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E9%A3%9F%E5%93%81%E3%83%BB%E9%A3%B2%E6%96%99"
+          }
+        },
+        "e81740df-f35a-4f54-93b4-95c66dfb937c": {
+          "type": "Block",
+          "settings": {
+            "category-name": "その他雑貨",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%81%9D%E3%81%AE%E4%BB%96%E9%9B%91%E8%B2%A8"
+          }
+        }
+      },
+      "block_order": [
+        "4da14d08-3fb1-4242-86e0-dd53cb1d455c",
+        "78dd1fa5-5738-441c-8ec2-8863735e455f",
+        "d44428af-1292-4693-aa14-9288610c9feb",
+        "d8ccd658-011b-401a-b666-8ba19896ec92",
+        "ec412918-8e36-4e63-b588-f187728f7e85",
+        "e81740df-f35a-4f54-93b4-95c66dfb937c"
+      ],
       "settings": {
+        "products_per_page": 16,
         "columns_desktop": 3,
         "image_ratio": "adapt",
         "image_shape": "default",
@@ -95,7 +124,7 @@
   },
   "order": [
     "banner",
-    "06c75edb-d296-45e3-8755-8972b42e21a4",
+    "a9e9ddab-7b86-4d1d-a2f4-bba89d5ce5fb",
     "product-grid",
     "8eb54896-a171-44b5-a83d-d7bd1c57a3a8"
   ]

@@ -33,6 +33,58 @@
     },
     "top-section-category-link": {
       "type": "top-section-category-link",
+      "blocks": {
+        "3a976793-e4e1-48cc-94f9-0d7d0fb92ce6": {
+          "type": "Block",
+          "settings": {
+            "category-name": "ヘアケア",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%83%98%E3%82%A2%E3%82%B1%E3%82%A2"
+          }
+        },
+        "99c7f726-0aaf-4e3f-b80e-68f6904e8eda": {
+          "type": "Block",
+          "settings": {
+            "category-name": "ボディケア",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%83%9C%E3%83%87%E3%82%A3%E3%82%B1%E3%82%A2"
+          }
+        },
+        "6d26d703-3b61-4b09-8600-dd340d60dd69": {
+          "type": "Block",
+          "settings": {
+            "category-name": "フェイスケア",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%B1%E3%82%A2"
+          }
+        },
+        "1fcee024-544f-4656-a248-bf50c757c739": {
+          "type": "Block",
+          "settings": {
+            "category-name": "ホテルアメニティ",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%83%9B%E3%83%86%E3%83%AB%E3%82%A2%E3%83%A1%E3%83%8B%E3%83%86%E3%82%A3"
+          }
+        },
+        "fa95ae4b-e408-4abc-9192-2aa225e9cdbb": {
+          "type": "Block",
+          "settings": {
+            "category-name": "食品・飲料",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E9%A3%9F%E5%93%81%E3%83%BB%E9%A3%B2%E6%96%99"
+          }
+        },
+        "7cf13269-567b-42d8-a265-76812acea78a": {
+          "type": "Block",
+          "settings": {
+            "category-name": "その他雑貨",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%81%9D%E3%81%AE%E4%BB%96%E9%9B%91%E8%B2%A8"
+          }
+        }
+      },
+      "block_order": [
+        "3a976793-e4e1-48cc-94f9-0d7d0fb92ce6",
+        "99c7f726-0aaf-4e3f-b80e-68f6904e8eda",
+        "6d26d703-3b61-4b09-8600-dd340d60dd69",
+        "1fcee024-544f-4656-a248-bf50c757c739",
+        "fa95ae4b-e408-4abc-9192-2aa225e9cdbb",
+        "7cf13269-567b-42d8-a265-76812acea78a"
+      ],
       "settings": {}
     },
     "top-section-concept": {
@@ -48,7 +100,7 @@
         "top-section-concept-text": {
           "type": "text",
           "settings": {
-            "text": "<p>豊かな自然に恵まれた島、沖縄。<br\/>そこには、次の世代にもその景色を残すために、<br\/>環境に配慮したものづくりを行う人たちが沢山います。<br\/><br\/>KANASANプロジェクトでは、自然を守る取り組みや、<br\/>そこから生まれた製品の普及を支援しております。<br\/>人にも環境にも優しい、作り手の想いの詰まった製品は、<br\/>沖縄各地のホテルのアメニティにも採用され、<br\/>島を訪れた人々の滞在時間に彩りを添えてくれます。<br\/><br\/>このサイトでは、そんなこだわりの品々をストーリーと共にご紹介しています。<br\/>大切な人へのギフトや自分へのご褒美に、<br\/>沖縄が育んだ“たからもの”を届けてみませんか？<\/p>"
+            "text": "<p>豊かな自然に恵まれた島、沖縄。<br\/>そこには、次の世代にもその景色を残すために、<br\/>環境に配慮したものづくりを行う人たちが沢山います。<br\/><br\/>KANASANプロジェクトでは、自然を守る取り組みや、<br\/>そこから生まれた製品の普及を支援しております。<br\/>人にも環境にも優しい、作り手の想いの詰まった製品は、<br\/>ホテル用品などを通じて沖縄の地で出会い、<br\/>そして旅先のみならず普段の生活にも彩りを添えてくれます。　<br\/><br\/>このサイトでは、そんなこだわりの品々をストーリーと共にご紹介しています。<br\/>大切な人へのギフトや自分へのご褒美に、<br\/>沖縄が育んだ“たからもの”を届けてみませんか？<\/p>"
           }
         },
         "top-section-concept-button": {
@@ -75,9 +127,9 @@
         "template--21243532411158__38bb6c77-9b15-4402-90e6-d8a01881d8f5-Block-1": {
           "type": "Block",
           "settings": {
-            "brand-image": "shopify:\/\/shop_images\/12936_4.png",
+            "brand-image": "shopify:\/\/shop_images\/RESORT01.jpg",
             "brand-name": "KANASAN RESORT",
-            "brand-des": "コンセプト説明が入ります。コンセプト説明が入ります。コンセプト説明が入ります。コンセプト説明が入ります。",
+            "brand-des": "自然に優しい特別処方に沖縄のたからものタマヌオイル、月桃エキスを配合しました。",
             "button-lable": "製品を見る",
             "brand-url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.m.custom.brands=KANASAN+RESORT"
           }
@@ -85,19 +137,19 @@
         "template--21243532411158__38bb6c77-9b15-4402-90e6-d8a01881d8f5-Block-2": {
           "type": "Block",
           "settings": {
-            "brand-image": "shopify:\/\/shop_images\/kanasan-style.png",
+            "brand-image": "shopify:\/\/shop_images\/style.jpg",
             "brand-name": "KANASAN STYLE",
-            "brand-des": "コンセプト説明が入ります。コンセプト説明が入ります。コンセプト説明が入ります。コンセプト説明が入ります。",
+            "brand-des": "Coming soon <br>\n2024年2月発売予定",
             "button-lable": "製品を見る",
-            "brand-url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.m.custom.brands=KANASAN+STYLE+"
+            "brand-url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.m.custom.brands=KANASAN+STYLE"
           }
         },
         "template--21243532411158__38bb6c77-9b15-4402-90e6-d8a01881d8f5-Block-3": {
           "type": "Block",
           "settings": {
-            "brand-image": "shopify:\/\/shop_images\/kana.png",
+            "brand-image": "shopify:\/\/shop_images\/nature.jpg",
             "brand-name": "KANASAN NATURE",
-            "brand-des": "コンセプト説明が入ります。コンセプト説明が入ります。コンセプト説明が入ります。コンセプト説明が入ります。",
+            "brand-des": "Coming soon <br>\n2024年2月発売予定",
             "button-lable": "製品を見る",
             "brand-url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.m.custom.brands=KANASAN+NATURE"
           }
@@ -136,6 +188,14 @@
             "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%83%98%E3%82%A2%E3%82%B1%E3%82%A2"
           }
         },
+        "69d42f6b-4bf1-4e5d-a824-cd6ca7c66b81": {
+          "type": "Block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/a02296885d3734f75686db99b8252051_1_8088a9ac-f3e7-4187-b65f-1aa1d3b36ffb.png",
+            "category-name": "ボディケア",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%83%9C%E3%83%87%E3%82%A3%E3%82%B1%E3%82%A2"
+          }
+        },
         "5910751f-bbfd-4387-a939-faf81061d262": {
           "type": "Block",
           "settings": {
@@ -152,12 +212,11 @@
             "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%83%9B%E3%83%86%E3%83%AB%E3%82%A2%E3%83%A1%E3%83%8B%E3%83%86%E3%82%A3"
           }
         },
-        "69d42f6b-4bf1-4e5d-a824-cd6ca7c66b81": {
+        "58199185-ad8d-43ec-a701-17527a61833d": {
           "type": "Block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/a02296885d3734f75686db99b8252051_1_8088a9ac-f3e7-4187-b65f-1aa1d3b36ffb.png",
-            "category-name": "ボディケア",
-            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%83%9C%E3%83%87%E3%82%A3%E3%82%B1%E3%82%A2"
+            "category-name": "食品・飲料",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E9%A3%9F%E5%93%81%E3%83%BB%E9%A3%B2%E6%96%99"
           }
         },
         "039eb889-6e05-4208-965d-1bacc5335840": {
@@ -171,9 +230,10 @@
       },
       "block_order": [
         "99ceb155-4048-4b39-80da-504273daaa39",
+        "69d42f6b-4bf1-4e5d-a824-cd6ca7c66b81",
         "5910751f-bbfd-4387-a939-faf81061d262",
         "4a3d31e8-189b-4522-aef1-cdc4de24e7e6",
-        "69d42f6b-4bf1-4e5d-a824-cd6ca7c66b81",
+        "58199185-ad8d-43ec-a701-17527a61833d",
         "039eb889-6e05-4208-965d-1bacc5335840"
       ],
       "settings": {

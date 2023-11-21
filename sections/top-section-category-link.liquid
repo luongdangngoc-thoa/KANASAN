@@ -1,97 +1,128 @@
 <div class="category-link-wrapper page-width">
-    <div class="category-link-list scroll-trigger animate--slide-in">
-        {% assign product_category_array = shop.types %}
-
-        {%- if product_category_array contains "その他雑貨" -%}
-        {% for type in product_category_array %}
-        {%- if type != blank and type !="その他雑貨"-%}
-        <span class="category-link">
-            {{- type | link_to_type}}
-        </span>
-        {%- endif -%}
-        {% endfor %}
-
-        <span class="category-link">
-            {{- "その他雑貨" | link_to_type}}
-        </span>
-        {%- else -%}
-        {% for type in shop.types %}
-        {%- if type != blank -%}
-        <span class="category-link">
-            {{- type | link_to_type}}
-        </span>
-        {%- endif -%}
-        {% endfor %}
-        {%- endif -%}
-    </div>
+  <div class="category-link-list scroll-trigger animate--slide-in">
+    {%- for block in section.blocks -%}
+      <span class="category-link">
+        <a href="{{ block.settings.url }}">
+          {{ block.settings.category-name }}
+        </a>
+      </span>
+    {% endfor %}
+  </div>
 </div>
 
 <style>
+  div.category-link-wrapper {
+    margin-top: 6rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    white-space: nowrap;
+    text-align: center;
+    height: 6rem;
+  }
+
+  @media screen and (max-width: 859px) {
     div.category-link-wrapper {
-        margin-top: 6rem;
-        overflow-x: auto;
-        overflow-y: hidden;
-        position: relative;
-        white-space: nowrap;
-        text-align: center;
-        height: 6rem;
+      margin-top: unset;
     }
 
-    @media screen and (max-width: 859px) {
-        div.category-link-wrapper {
-            margin-top: unset;
-        }
+  }
 
-    }
+  .category-link a {
+    display: inline-block;
+    color: #595757;
+    font-family: Noto Sans JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    /* font-weight: 500; */
+    line-height: normal;
+    letter-spacing: 1.6px;
+    padding: 1.6rem 2rem;
+    text-decoration: none;
+    min-width: 15rem;
+    text-align: center;
+    transition: all 0.2s;
+  }
 
-    .category-link a {
-        display: inline-block;
-        color: #595757;
-        font-family: Noto Sans JP;
-        font-size: 1.6rem;
-        font-style: normal;
-        /* font-weight: 500; */
-        line-height: normal;
-        letter-spacing: 1.6px;
-        padding: 1.6rem 2rem;
-        text-decoration: none;
-        min-width: 15rem;
-        text-align: center;
-        transition: all 0.2s;
-    }
 
-    /* @media screen and (max-width: 600px) {
-    .category-link a {
-      padding: 1.4 2rem;
-    }
-  } */
+  /*
 
-    .category-link a:hover {
-        font-weight: 600;
-        cursor: pointer;
-        background-color: #f1f1f1;
-    }
+   @media screen and (max-width: 600px) { 
+   .category-link a { 
+   padding: 1.4 2rem; 
+   } 
+   } 
+*/
 
-    /* custom scrollbar */
-    /* width */
-    .category-link-wrapper::-webkit-scrollbar {
-        height: 4px;
-    }
+  .category-link a:hover {
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #f1f1f1;
+  }
 
-    /* Track */
-    .category-link-wrapper::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        height: 2px;
-    }
+  /* custom scrollbar */
+  /* width */.category-link-wrapper::-webkit-scrollbar {
+    height: 4px;
+  }
 
-    /* Handle */
-    .category-link-wrapper::-webkit-scrollbar-thumb {
-        background: #595757;
-        height: 2px;
-    }
+  /* Track */
+  .category-link-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    height: 2px;
+  }
 
-    /* Handle on hover */
-    .category-link-wrapper::-webkit-scrollbar-thumb:hover {
-        background: #555;
-    }
+  /* Handle */
+  .category-link-wrapper::-webkit-scrollbar-thumb {
+    background: #595757;
+    height: 2px;
+  }
+
+  /* Handle on hover */
+  .category-link-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 </style>
+
+{% schema %}
+  {
+    "name": "Category link",
+    "tag": "section",
+    "class": "section",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "Block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "category-name",
+            "default": "Category name",
+            "label": "Category name"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "URL"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Category link",
+        "blocks": [
+          {
+            "type": "Block"
+          },
+          {
+            "type": "Block"
+          },
+          {
+            "type": "Block"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
