@@ -13,6 +13,7 @@
   -%}{% capture finalurl %}https://{{ pageUrl }}{% endcapture %}
 
 <div class="page-banner-block">
+     {% comment %} {{ finalurl }}  {% endcomment %}
   {%- if finalurl contains "RESORT" -%}
     <div class="page-banner-block_image">
       {%- if section.settings.image_resort -%}
@@ -44,7 +45,6 @@
     </div>
 
    {%- elsif  finalurl contains "NATURE" -%}
-    
   <div class="page-banner-block_image">
       {%- if section.settings.image_nature -%}
         {{ section.settings.image_nature | image_url: width: 3840 | image_tag: loading: 'lazy' }}
@@ -58,19 +58,109 @@
           {{ section.settings.sub_heading_nature }}</h3>
       </div>
     </div>
-    {%- else  -%}
 
+    {%- elsif  finalurl contains "%E3%83%98%E3%82%A2%E3%82%B1%E3%82%A2" -%}
+        <div class="page-banner-block_image">
+            {%- if section.settings.image_hairCare -%}
+              {{ section.settings.image_hairCare | image_url: width: 3840 | image_tag: loading: 'lazy' }}
+            {%- endif -%}
+          </div>
+          <div class="banner__text-wrapper banner__content banner__content--middle-left banner--desktop-transparent scroll-trigger animate--slide-in page-width-sp">
+            <div class="banner__text banner__box content-container content-container--full-width-mobile color-inverse gradient banner__text--left banner__text-mobile--center">
+              <h2 class="banner__heading medium text-gray text-jp">
+                {{ section.settings.heading_hairCare }}</h2>
+              <h3 class="sub__banner__heading text-gray">
+                {{ section.settings.sub_heading_hairCare }}</h3>
+            </div>
+          </div>
+
+    {%- elsif  finalurl contains "%E3%83%9C%E3%83%87%E3%82%A3%E3%82%B1%E3%82%A2" -%}
+        <div class="page-banner-block_image">
+            {%- if section.settings.image_bodyCare -%}
+              {{ section.settings.image_bodyCare | image_url: width: 3840 | image_tag: loading: 'lazy' }}
+            {%- endif -%}
+          </div>
+          <div class="banner__text-wrapper banner__content banner__content--middle-left banner--desktop-transparent scroll-trigger animate--slide-in page-width-sp">
+            <div class="banner__text banner__box content-container content-container--full-width-mobile color-inverse gradient banner__text--left banner__text-mobile--center">
+              <h2 class="banner__heading medium text-jp">
+                {{ section.settings.heading_bodyCare }}</h2>
+              <h3 class="sub__banner__heading">
+                {{ section.settings.sub_heading_bodyCare }}</h3>
+            </div>
+          </div>
+
+    {%- elsif  finalurl contains "%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%B1%E3%82%A2" -%}
+        <div class="page-banner-block_image">
+            {%- if section.settings.image_faceCare -%}
+              {{ section.settings.image_faceCare | image_url: width: 3840 | image_tag: loading: 'lazy' }}
+            {%- endif -%}
+          </div>
+          <div class="banner__text-wrapper banner__content banner__content--middle-left banner--desktop-transparent scroll-trigger animate--slide-in page-width-sp">
+            <div class="banner__text banner__box content-container content-container--full-width-mobile color-inverse gradient banner__text--left banner__text-mobile--center">
+              <h2 class="banner__heading medium text-jp">
+                {{ section.settings.heading_faceCare }}</h2>
+              <h3 class="sub__banner__heading">
+                {{ section.settings.sub_heading_faceCare }}</h3>
+            </div>
+          </div>
+
+    {%- elsif  finalurl contains "%E3%83%9B%E3%83%86%E3%83%AB%E3%82%A2%E3%83%A1%E3%83%8B%E3%83%86%E3%82%A3" -%}
+        <div class="page-banner-block_image">
+            {%- if section.settings.image_hotelAmenity -%}
+              {{ section.settings.image_hotelAmenity | image_url: width: 3840 | image_tag: loading: 'lazy' }}
+            {%- endif -%}
+          </div>
+          <div class="banner__text-wrapper banner__content banner__content--middle-left banner--desktop-transparent scroll-trigger animate--slide-in page-width-sp">
+            <div class="banner__text banner__box content-container content-container--full-width-mobile color-inverse gradient banner__text--left banner__text-mobile--center">
+              <h2 class="banner__heading medium text-gray text-jp">
+                {{ section.settings.heading_hotelAmenity }}</h2>
+              <h3 class="sub__banner__heading text-gray">
+                {{ section.settings.sub_heading_hotelAmenity }}</h3>
+            </div>
+          </div>
+
+    {%- elsif  finalurl contains "%E9%A3%9F%E5%93%81%E3%83%BB%E9%A3%B2%E6%96%99" -%}
+        <div class="page-banner-block_image">
+            {%- if section.settings.image_foodAndBeverage -%}
+              {{ section.settings.image_foodAndBeverage | image_url: width: 3840 | image_tag: loading: 'lazy' }}
+            {%- endif -%}
+          </div>
+          <div class="banner__text-wrapper banner__content banner__content--middle-left banner--desktop-transparent scroll-trigger animate--slide-in page-width-sp">
+            <div class="banner__text banner__box content-container content-container--full-width-mobile color-inverse gradient banner__text--left banner__text-mobile--center">
+              <h2 class="banner__heading medium text-gray text-jp">
+                {{ section.settings.heading_foodAndBeverage }}</h2>
+              <h3 class="sub__banner__heading text-gray">
+                {{ section.settings.sub_heading_foodAndBeverage }}</h3>
+            </div>
+          </div>
+    
+    {%- elsif  finalurl contains "%E3%81%9D%E3%81%AE%E4%BB%96%E9%9B%91%E8%B2%A8" -%}
+        <div class="page-banner-block_image">
+            {%- if section.settings.image_otherGoods -%}
+              {{ section.settings.image_otherGoods | image_url: width: 3840 | image_tag: loading: 'lazy' }}
+            {%- endif -%}
+          </div>
+          <div class="banner__text-wrapper banner__content banner__content--middle-left banner--desktop-transparent scroll-trigger animate--slide-in page-width-sp">
+            <div class="banner__text banner__box content-container content-container--full-width-mobile color-inverse gradient banner__text--left banner__text-mobile--center">
+              <h2 class="banner__heading medium text-gray text-jp">
+                {{ section.settings.heading_otherGoods }}</h2>
+              <h3 class="sub__banner__heading text-gray">
+                {{ section.settings.sub_heading_otherGoods }}</h3>
+            </div>
+          </div>
+
+    {%- else  -%}
     <div class="page-banner-block_image">
-      {%- if section.settings.image_nature -%}
-        {{ section.settings.image_nature | image_url: width: 3840 | image_tag: loading: 'lazy' }}
+      {%- if section.settings.image_default -%}
+        {{ section.settings.image_default | image_url: width: 3840 | image_tag: loading: 'lazy' }}
       {%- endif -%}
     </div>
     <div class="banner__text-wrapper banner__content banner__content--middle-left banner--desktop-transparent scroll-trigger animate--slide-in page-width-sp">
       <div class="banner__text banner__box content-container content-container--full-width-mobile color-inverse gradient banner__text--left banner__text-mobile--center">
-        <h2 class="banner__heading medium">
-          {{ section.settings.heading_nature }}</h2>
-        <h3 class="sub__banner__heading">
-          {{ section.settings.sub_heading_nature }}</h3>
+        <h2 class="banner__heading medium text-gray">
+          {{ section.settings.heading_default }}</h2>
+        <h3 class="sub__banner__heading text-gray">
+          {{ section.settings.sub_heading_default }}</h3>
       </div>
     </div>
   {%- endif -%}
@@ -132,7 +222,6 @@
   }
 
   .banner__content.banner__content--middle-left {
-    margin-left: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -140,8 +229,16 @@
     text-align: center;
  }
 
+ .banner__text-wrapper .banner__text {
+      margin-left: 0;
+ }
+
  .text-gray {
     color: #595757 !important;
+ }
+
+ .text-jp {
+     font-family: Noto Sans JP !important;
  }
 
 
@@ -152,16 +249,21 @@
 
     .banner__content.banner__content--middle-left {
       justify-content: flex-start;
-      margin-left: 5rem;
       text-align: left;
     }
+    .banner__text-wrapper .banner__text {
+      margin-left: 5rem;
+   }
   }
 
   @media screen and (min-width: 990px) {
     .banner__content.banner__content--middle-left {
       justify-content: flex-start;
-      margin-left: 10rem;
     }
+
+    .banner__text-wrapper .banner__text {
+      margin-left: 5rem;
+   }
     .banner--desktop-transparent .banner__box {
       max-width: 89rem;
       border: none;
@@ -205,17 +307,7 @@
         "label": "banner image resort",
         "id": "image_resort"
       },
-      {
-        "type": "image_picker",
-        "label": "banner image style",
-        "id": "image_style"
-      },
-      {
-        "type": "image_picker",
-        "label": "banner image nature",
-        "id": "image_nature"
-      },
-      {
+       {
         "type": "textarea",
         "id": "heading_resort",
         "label": "Banner heading resort",
@@ -226,6 +318,11 @@
         "id": "sub_heading_resort",
         "label": "Banner sub heading resort",
         "default": "沖縄の恵みを感じて"
+      },
+      {
+        "type": "image_picker",
+        "label": "banner image style",
+        "id": "image_style"
       },
       {
         "type": "textarea",
@@ -240,6 +337,11 @@
         "default": "沖縄の恵みを感じて"
       },
       {
+        "type": "image_picker",
+        "label": "banner image nature",
+        "id": "image_nature"
+      },
+      {
         "type": "textarea",
         "id": "heading_nature",
         "label": "Banner heading nature",
@@ -249,6 +351,125 @@
         "type": "textarea",
         "id": "sub_heading_nature",
         "label": "Banner sub heading nature",
+        "default": "沖縄の恵みを感じて"
+      },
+      {
+        "type": "image_picker",
+        "label": "banner image hair care",
+        "id": "image_hairCare"
+      },
+      {
+        "type": "textarea",
+        "id": "heading_hairCare",
+        "label": "Banner heading hair care",
+        "default": "ヘアケア"
+      },
+      {
+        "type": "textarea",
+        "id": "sub_heading_hairCare",
+        "label": "Banner sub heading hair care",
+        "default": "沖縄の恵みを感じて"
+      },
+        {
+        "type": "image_picker",
+        "label": "banner image body care",
+        "id": "image_bodyCare"
+      },
+       {
+        "type": "textarea",
+        "id": "heading_bodyCare",
+        "label": "Banner heading body care",
+        "default": "ボディケア"
+      },
+      {
+        "type": "textarea",
+        "id": "sub_heading_bodyCare",
+        "label": "Banner sub heading body care",
+        "default": "沖縄の恵みを感じて"
+      },
+        {
+        "type": "image_picker",
+        "label": "banner image face care",
+        "id": "image_faceCare"
+      },
+       {
+        "type": "textarea",
+        "id": "heading_faceCare",
+        "label": "Banner heading face care",
+        "default": "フェイスケア"
+      },
+      {
+        "type": "textarea",
+        "id": "sub_heading_faceCare",
+        "label": "Banner sub heading face care",
+        "default": "沖縄の恵みを感じて"
+      },
+        {
+        "type": "image_picker",
+        "label": "banner image hotel amenity",
+        "id": "image_hotelAmenity"
+      },
+       {
+        "type": "textarea",
+        "id": "heading_hotelAmenity",
+        "label": "Banner heading hotel amenity",
+        "default": "ホテルアメニティ"
+      },
+      {
+        "type": "textarea",
+        "id": "sub_heading_hotelAmenity",
+        "label": "Banner sub heading hotel amenity",
+        "default": "沖縄の恵みを感じて"
+      },
+        {
+        "type": "image_picker",
+        "label": "banner image food and beverage",
+        "id": "image_foodAndBeverage"
+      },
+       {
+        "type": "textarea",
+        "id": "heading_foodAndBeverage",
+        "label": "Banner heading food and beverage",
+        "default": "ホテルアメニティ"
+      },
+      {
+        "type": "textarea",
+        "id": "sub_heading_foodAndBeverage",
+        "label": "Banner sub heading food and beverage",
+        "default": "沖縄の恵みを感じて"
+      },
+        {
+        "type": "image_picker",
+        "label": "banner image other goods",
+        "id": "image_otherGoods"
+      },
+      {
+        "type": "textarea",
+        "id": "heading_otherGoods",
+        "label": "Banner heading other goods",
+        "default": "食品・飲料"
+      },
+      {
+        "type": "textarea",
+        "id": "sub_heading_otherGoods",
+        "label": "Banner sub heading other goods",
+        "default": "沖縄の恵みを感じて"
+      },
+        {
+        "type": "image_picker",
+        "label": "banner image default",
+        "id": "image_default"
+      },
+      {
+        "type": "textarea",
+        "id": "heading_default",
+        "label": "Banner heading default",
+        "default": "沖縄の恵みを感じて"
+      },
+      {
+        "type": "textarea",
+        "id": "sub_heading_default",
+        "label": "Banner sub heading default",
         "default": "沖縄の恵みを感じて"
       }
     ],

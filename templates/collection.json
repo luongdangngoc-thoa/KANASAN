@@ -13,14 +13,35 @@
       "type": "page-banner",
       "settings": {
         "image_resort": "shopify:\/\/shop_images\/banner.webp",
-        "image_style": "shopify:\/\/shop_images\/line_oa_chat_231120_181725_group_1.jpg",
-        "image_nature": "shopify:\/\/shop_images\/line_oa_chat_231120_181725_group_0.jpg",
         "heading_resort": "KANASAN RESORT",
         "sub_heading_resort": "沖縄の恵みを感じて",
+        "image_style": "shopify:\/\/shop_images\/line_oa_chat_231120_181725_group_1.jpg",
         "heading_style": "KANASAN STYLE",
         "sub_heading_style": "沖縄の恵みを感じて",
+        "image_nature": "shopify:\/\/shop_images\/line_oa_chat_231120_181725_group_0.jpg",
         "heading_nature": "KANASAN NATURE",
-        "sub_heading_nature": "沖縄の恵みを感じて"
+        "sub_heading_nature": "沖縄の恵みを感じて",
+        "image_hairCare": "shopify:\/\/shop_images\/cc8e21fa691625590dc3a45bafaaf985.jpg",
+        "heading_hairCare": "ヘアケア",
+        "sub_heading_hairCare": "沖縄の恵みを感じて",
+        "image_bodyCare": "shopify:\/\/shop_images\/afd98e21d49d906ffef2636e84e9bc5d.jpg",
+        "heading_bodyCare": "ボディケア",
+        "sub_heading_bodyCare": "沖縄の恵みを感じて",
+        "image_faceCare": "shopify:\/\/shop_images\/652ec47b0bc2ea5c15a984290e01eb23.jpg",
+        "heading_faceCare": "フェイスケア",
+        "sub_heading_faceCare": "沖縄の恵みを感じて",
+        "image_hotelAmenity": "shopify:\/\/shop_images\/5af7fe444557e6fbc6b6055652ff60c5.jpg",
+        "heading_hotelAmenity": "ホテルアメニティ",
+        "sub_heading_hotelAmenity": "沖縄の恵みを感じて",
+        "image_foodAndBeverage": "shopify:\/\/shop_images\/436b80a9f22b68341b58d7b5ae003feb.jpg",
+        "heading_foodAndBeverage": "食品・飲料",
+        "sub_heading_foodAndBeverage": "沖縄の恵みを感じて",
+        "image_otherGoods": "shopify:\/\/shop_images\/f126c5197f5e6ed8da664986065ab8c2.jpg",
+        "heading_otherGoods": "その他雑貨",
+        "sub_heading_otherGoods": "沖縄の恵みを感じて",
+        "image_default": "shopify:\/\/shop_images\/12936_3_2.png",
+        "heading_default": "KANASAN OKINAWA",
+        "sub_heading_default": "沖縄の恵みを感じて"
       }
     },
     "product-grid": {
@@ -30,7 +51,7 @@
           "type": "Block",
           "settings": {
             "category-name": "ヘアケア",
-            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%83%98%E3%82%A2%E3%82%B1%E3%82%A2"
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=ヘアケア"
           }
         },
         "78dd1fa5-5738-441c-8ec2-8863735e455f": {

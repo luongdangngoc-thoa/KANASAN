@@ -183,7 +183,7 @@
         "99ceb155-4048-4b39-80da-504273daaa39": {
           "type": "Block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/shopping_1.png",
+            "image": "shopify:\/\/shop_images\/f86a1a47211791bf40c80148cacda89d.svg",
             "category-name": "ヘアケア",
             "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%83%98%E3%82%A2%E3%82%B1%E3%82%A2"
           }
@@ -191,7 +191,7 @@
         "69d42f6b-4bf1-4e5d-a824-cd6ca7c66b81": {
           "type": "Block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/a02296885d3734f75686db99b8252051_1_8088a9ac-f3e7-4187-b65f-1aa1d3b36ffb.png",
+            "image": "shopify:\/\/shop_images\/f4763604d9b20b2b4130c03735d65f52.svg",
             "category-name": "ボディケア",
             "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%83%9C%E3%83%87%E3%82%A3%E3%82%B1%E3%82%A2"
           }
@@ -199,7 +199,7 @@
         "5910751f-bbfd-4387-a939-faf81061d262": {
           "type": "Block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/i-drwu-vcm001_1.png",
+            "image": "shopify:\/\/shop_images\/b6ae9c9485fbf9c84b61c51b21ff0361.svg",
             "category-name": "フェイスケア",
             "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%B1%E3%82%A2"
           }
@@ -207,7 +207,7 @@
         "4a3d31e8-189b-4522-aef1-cdc4de24e7e6": {
           "type": "Block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/161285399_1.png",
+            "image": "shopify:\/\/shop_images\/764ff5215e30599618d05e1c7c7bf039.svg",
             "category-name": "ホテルアメニティ",
             "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%83%9B%E3%83%86%E3%83%AB%E3%82%A2%E3%83%A1%E3%83%8B%E3%83%86%E3%82%A3"
           }
@@ -215,6 +215,7 @@
         "58199185-ad8d-43ec-a701-17527a61833d": {
           "type": "Block",
           "settings": {
+            "image": "shopify:\/\/shop_images\/d6426b345df402bd9200e831539afcb6.svg",
             "category-name": "食品・飲料",
             "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E9%A3%9F%E5%93%81%E3%83%BB%E9%A3%B2%E6%96%99"
           }
@@ -222,7 +223,7 @@
         "039eb889-6e05-4208-965d-1bacc5335840": {
           "type": "Block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/000000004369-01-l_1_4a1926c0-663b-4d9c-a52d-7a331d52b629.png",
+            "image": "shopify:\/\/shop_images\/5583349bb0717c55e46628475d9fe8de.svg",
             "category-name": "その他雑貨",
             "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%81%9D%E3%81%AE%E4%BB%96%E9%9B%91%E8%B2%A8"
           }
@@ -250,7 +251,7 @@
             "image": "shopify:\/\/shop_images\/material1.png",
             "material-name": "月桃",
             "material-name-en": "SHELL GINGER",
-            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.m.custom.product_material=%E6%9C%88%E6%A1%83"
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.tag=%E6%9C%88%E6%A1%83"
           }
         },
         "6f663857-c14a-4a6b-b422-478cdc0aee16": {
@@ -259,7 +260,7 @@
             "image": "shopify:\/\/shop_images\/material2.png",
             "material-name": "アセロラ",
             "material-name-en": "ACEROLA",
-            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.m.custom.product_material=%E3%82%A2%E3%82%BB%E3%83%AD%E3%83%A9"
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.tag=%E3%82%A2%E3%82%BB%E3%83%AD%E3%83%A9"
           }
         },
         "69bf6b51-3d3d-4b09-a080-00f0b7dd7d88": {
@@ -268,7 +269,7 @@
             "image": "shopify:\/\/shop_images\/material3.png",
             "material-name": "タマヌ",
             "material-name-en": "TAMANU",
-            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.m.custom.product_material=%E3%82%BF%E3%83%9E%E3%83%8C"
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.tag=%E3%82%BF%E3%83%9E%E3%83%8C"
           }
         },
         "1820e4ea-0888-433b-b990-3c2595f29133": {
@@ -277,7 +278,7 @@
             "image": "shopify:\/\/shop_images\/material4.png",
             "material-name": "シークワーサー",
             "material-name-en": "SHIKUWASA",
-            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.m.custom.product_material=%E3%82%B7%E3%83%BC%E3%82%AF%E3%83%AF%E3%83%BC%E3%82%B5%E3%83%BC"
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.tag=%E3%82%B7%E3%83%BC%E3%82%AF%E3%83%AF%E3%83%BC%E3%82%B5%E3%83%BC"
           }
         },
         "09693eec-8338-4c35-a862-7270cb12b437": {
@@ -286,7 +287,7 @@
             "image": "shopify:\/\/shop_images\/material5.png",
             "material-name": "長命草",
             "material-name-en": "PEUCEDANUM JAPONICUM",
-            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.m.custom.product_material=%E9%95%B7%E5%91%BD%E8%8D%89"
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.tag=%E9%95%B7%E5%91%BD%E8%8D%89"
           }
         },
         "4989f4ed-109c-4fd9-89c6-6c650a59c133": {
@@ -295,7 +296,7 @@
             "image": "shopify:\/\/shop_images\/material6.png",
             "material-name": "海ぶどう",
             "material-name-en": "SEA GRAPES",
-            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.m.custom.product_material=%E6%B5%B7%E3%81%B6%E3%81%A9%E3%81%86"
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.tag=%E6%B5%B7%E3%81%B6%E3%81%A9%E3%81%86"
           }
         },
         "ce8fe1c9-a7f2-47ce-9b7b-c210e4aea8cf": {
@@ -304,7 +305,7 @@
             "image": "shopify:\/\/shop_images\/material7.png",
             "material-name": "沖縄もずく",
             "material-name-en": "MOZUKU",
-            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.m.custom.product_material=%E6%B5%B7%E3%81%B6%E3%81%A9%E3%81%86"
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.tag=%E6%B2%96%E7%B8%84%E3%82%82%E3%81%9A%E3%81%8F"
           }
         },
         "174593f9-d066-49de-92b9-d15534330302": {
@@ -313,7 +314,7 @@
             "image": "shopify:\/\/shop_images\/material8.png",
             "material-name": "久米島海洋深層水",
             "material-name-en": "SEA WATER",
-            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.m.custom.product_material=%E4%B9%85%E7%B1%B3%E5%B3%B6%E6%B5%B7%E6%B4%8B%E6%B7%B1%E5%B1%A4%E6%B0%B4"
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.tag=%E4%B9%85%E7%B1%B3%E5%B3%B6%E6%B5%B7%E6%B4%8B%E6%B7%B1%E5%B1%A4%E6%B0%B4"
           }
         }
       },
@@ -357,43 +358,6 @@
         "instagram_link": "https:\/\/www.instagram.com\/kanasan_project\/"
       }
     },
-    "21a8804e-4072-4fbf-934e-bc42e6e5b243": {
-      "type": "top-section-faq",
-      "blocks": {
-        "template--21243532411158__21a8804e-4072-4fbf-934e-bc42e6e5b243-Block-1": {
-          "type": "Block",
-          "settings": {
-            "faq-question": "返品したいのですが、返品受付票が見当たりません。",
-            "faq-answer": "「返品受付票」は、商品と一緒にお届けしております「納品書・お支払い明細書」の右下にございます。 「納品書・お支払い明細書」をお確かめいただき、右下の「返品受付票」を切り離してお使いください。 返品受付票がお手元にない場合は、お手数ですがメモに下記をご記入いただき、商品と一緒にご返送ください。"
-          }
-        },
-        "template--21243532411158__21a8804e-4072-4fbf-934e-bc42e6e5b243-Block-2": {
-          "type": "Block",
-          "settings": {
-            "faq-question": "ポイントの有効期限は？",
-            "faq-answer": "お買い物で貯まるオルビスポイントの有効期限は、通信販売・店舗での最終購入日から180日間です。 ※期間限定ポイントの有効期限はお買い物によって更新はされませんのでご注意ください。 保有ポイントの詳細はマイページよりご確認いただけます。"
-          }
-        },
-        "template--21243532411158__21a8804e-4072-4fbf-934e-bc42e6e5b243-Block-3": {
-          "type": "Block",
-          "settings": {
-            "faq-question": "店舗でサンプルはもらえますか？",
-            "faq-answer": "ご購入点数を上限にサンプルをご用意しております。 お試しになりたいサンプルがございましたら、お気軽にショップスタッフまでお声がけください。 ※製法、その他の都合により、ご用意できないサンプルもございます。"
-          }
-        }
-      },
-      "block_order": [
-        "template--21243532411158__21a8804e-4072-4fbf-934e-bc42e6e5b243-Block-1",
-        "template--21243532411158__21a8804e-4072-4fbf-934e-bc42e6e5b243-Block-2",
-        "template--21243532411158__21a8804e-4072-4fbf-934e-bc42e6e5b243-Block-3"
-      ],
-      "settings": {
-        "section_color_scheme": "",
-        "title": "よくある質問",
-        "button_lable": "その他のご質問",
-        "button_link": "shopify:\/\/pages\/faq"
-      }
-    },
     "top-section-search": {
       "type": "top-section-search",
       "settings": {}
@@ -409,7 +373,6 @@
     "top-section-material-search",
     "169661211538385504",
     "ac018362-c8e8-4f53-8d3b-16b62be7afff",
-    "21a8804e-4072-4fbf-934e-bc42e6e5b243",
     "top-section-search"
   ]
 }
