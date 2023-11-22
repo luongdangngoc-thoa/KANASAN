@@ -37,7 +37,11 @@
         class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop{% if section.settings.collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
         role="list"
         aria-label="{{ 'general.slider.name' | t }}">
+
+        {% assign amount = 0 %}
         {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
+            {%- if product.metafields.custom.brands.value contains "KANASAN RESORT" %}
+            {% assign amount = amount | plus:1 %}
           <li
             id="Slide-{{ section.id }}-{{ forloop.index }}"
             class="grid__item slider__slide {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -47,10 +51,38 @@
               , card_product: product
               , section_id: section.id %}
           </li>
+        {% endif %}
         {%- endfor -%}
+        <li
+            id="Slide-{{ section.id }}-100"
+            class="grid__item slider__slide {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            data-cascade
+            style="--animation-order: 100;">
+            <div class="top-card-product card-wrapper product-card-wrapper underline-links-hover">
+                <div
+                class="
+                    card card--{{ settings.card_style }}
+                    {% if extend_height %} card--extend-height{% endif %}
+                    {% if settings.card_style == 'card' %} color-{{ settings.card_color_scheme }} gradient{% endif %}
+                "
+                style="--ratio-percent: 100%;"
+                >
+                <div
+                    class="card__inner{% if settings.card_style == 'standard' %} color-{{ settings.card_color_scheme }} gradient{% endif %} ratio"
+                    style="--ratio-percent: 100%;"
+                >
+                    <div class="card__media">
+                    <div class="media media--transparent commingSoon-prod-wrapper">
+                        <span class="commingSoon-prod">Coming soon</span>
+                    </div>
+                    </div>
+                </div>
+                </div>
+             </div>
+        </li> 
       </ul>
 
-      <div class="top-feature-collection-btn slider-buttons no-js-hidden">
+      <div class="top-feature-collection-btn slider-buttons no-js-hidden {% if amount <= 3 %} lq-hide-arrow-btn {% endif %}">
         <button
           type="button"
           class="slider-button slider-button--prev"
@@ -248,5 +280,28 @@
 
   .collection .slider::-webkit-scrollbar-thumb {
     color: #595757 !important;
+  }
+
+  .commingSoon-prod-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .commingSoon-prod-wrapper  .commingSoon-prod {
+    color: #595757;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 2.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2px;
+    position: unset !important;
+    height: unset !important;
+  }
+
+  .lq-hide-arrow-btn {
+    display: none !important;
   }
 </style>

@@ -19,12 +19,46 @@
         </a>
       {%- endfor -%}
     </div>
-  {% comment %} <div class="material-search-button">
-              <a class="page-button btn-primary" href="{{section.settings.button_link}}">
-                {{ section.settings.button_lable }}</a>
-        </div> {% endcomment %}
+     <div class="material-search-button" id="view-more">
+            <span class="page-button btn-primary">
+                もっと見る
+            </span>
+    </div> 
   </div>
 </div>
+
+<script>
+  // Get list
+  const listElement = document.querySelectorAll('.material-link');
+  const buttonViewMoreElement = document.getElementById('view-more');
+  let defaultDisplay = 8;
+
+  function renderData(count) {
+    for (let i = 0; i <= listElement.length; i++) {
+      if (i > count - 1 && listElement[i]) {
+        listElement[i].style.display = 'none';
+      } else if (listElement[i]) {
+        listElement[i].style.display = 'inline-block';
+      }
+    }
+  }
+
+  renderData(defaultDisplay);
+
+// Button view more
+
+  if (defaultDisplay >= listElement.length) {
+    buttonViewMoreElement.style.display = 'none';
+  }
+  buttonViewMoreElement.addEventListener('click', () => {
+    renderData(defaultDisplay += 8);
+    if (defaultDisplay >= listElement.length) {
+      buttonViewMoreElement.style.display = "none";
+    }
+    return;
+  })
+
+</script>
 
 <style>
   .material-search-wrapper {

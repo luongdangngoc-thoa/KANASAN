@@ -7,7 +7,7 @@
         </div>
         <div class="brand-info-wrapper scroll-trigger animate--slide-in">
           <h2 class="brand-title">{{ block.settings.brand-name }}</h2>
-          <p class="brand-des">{{ block.settings.brand-des }}</p>
+          <p class="brand-des {%- if block.settings.brand-des contains "soon" %} text-center {% endif %}">{{ block.settings.brand-des }}</p>
         </div>
         <div class="brand-button scroll-trigger animate--slide-in">
           <a
@@ -23,17 +23,23 @@
 </div>
 
 <style>
+
+   .text-center {
+    text-align: center;
+   }
   .top-brand-list {
     padding-top: 12rem;
     padding-bottom: 16rem;
     background: rgba(89, 87, 87, 0.05);
   }
   .brand-list-container {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 4rem;
+    /* flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 4rem;
+    gap: 4rem; */
   }
 
   .brand-img img {
@@ -78,6 +84,7 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    min-height: 9rem;
   }
 
   .brand-button {
@@ -98,7 +105,8 @@
       padding-bottom: 10rem;
     }
     .brand-list-container {
-      gap: 2.5rem;
+      /* gap: 2.5rem; */
+      grid-gap: 2rem;
     }
     .brand-info-wrapper .brand-title {
       font-size: 1.8rem;
@@ -114,18 +122,29 @@
       margin-top: 2.4rem;
     }
 
-
     @media screen and (max-width: 650px) {
       .brand-list-container {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 6.7rem;
+        /* flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 6.7rem;
+        gap: 6.7rem; */
       }
+       .brand {
+        padding: 0 2rem;
+    }
+
+      .brand-info-wrapper .brand-des {
+        min-height: unset;
+       }
     }
 
     @media screen and (max-width: 500px) {
+
+      .brand {
+        padding: 0;
       .brand-button a {
         width: 30rem;
         height: 5.6rem;
@@ -164,7 +183,7 @@
             "label": "Brand name"
           },
           {
-            "type": "text",
+            "type": "textarea",
             "id": "brand-des",
             "default": "brand description",
             "label": "brand description"

@@ -393,6 +393,37 @@
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
     }
-  ]
+  ],
+  "blocks": [
+      {
+        "type": "Block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "category-name",
+            "default": "Category name",
+            "label": "Category name"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "URL"
+          }
+        ]
+      }
+    ],
+     "presets": [
+      {
+        "name": "t:sections.main-collection-product-grid.name",
+        "blocks": [
+          {
+            "type": "Block"
+          }
+        ]
+      }
+    ]
 }
 {% endschema %}
+
+
