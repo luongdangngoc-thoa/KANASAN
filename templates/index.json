@@ -139,7 +139,7 @@
           "settings": {
             "brand-image": "shopify:\/\/shop_images\/style.jpg",
             "brand-name": "KANASAN STYLE",
-            "brand-des": "Coming soon <br>\n2024年2月発売予定",
+            "brand-des": "COMING SOON <br>\n2024年2月発売予定",
             "button-lable": "製品を見る",
             "brand-url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.m.custom.brands=KANASAN+STYLE"
           }
@@ -149,7 +149,7 @@
           "settings": {
             "brand-image": "shopify:\/\/shop_images\/nature.jpg",
             "brand-name": "KANASAN NATURE",
-            "brand-des": "Coming soon <br>\n2024年2月発売予定",
+            "brand-des": "COMING SOON <br>\n2024年2月発売予定",
             "button-lable": "製品を見る",
             "brand-url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.m.custom.brands=KANASAN+NATURE"
           }
@@ -330,9 +330,7 @@
       ],
       "settings": {
         "section_color_scheme": "",
-        "title": "素材から探す",
-        "button_lable": "口コミランキングはこちら",
-        "button_link": "shopify:\/\/collections\/kanasan-nature"
+        "title": "素材から探す"
       }
     },
     "169661211538385504": {
