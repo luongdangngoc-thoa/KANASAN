@@ -12,9 +12,6 @@
     "a9e9ddab-7b86-4d1d-a2f4-bba89d5ce5fb": {
       "type": "page-banner",
       "settings": {
-        "image_default": "shopify:\/\/shop_images\/12936_3_2.png",
-        "heading_default": "KANASAN OKINAWA",
-        "sub_heading_default": "沖縄の恵みを感じて",
         "image_resort": "shopify:\/\/shop_images\/banner.webp",
         "heading_resort": "KANASAN RESORT",
         "sub_heading_resort": "沖縄の恵みを感じて",
@@ -42,30 +39,9 @@
         "image_otherGoods": "shopify:\/\/shop_images\/f126c5197f5e6ed8da664986065ab8c2.jpg",
         "heading_otherGoods": "その他雑貨",
         "sub_heading_otherGoods": "沖縄の恵みを感じて",
-        "image_shellGinger": "shopify:\/\/shop_images\/0d1dbaaba06632d440373b3aea958380.jpg",
-        "heading_shellGinger": "月桃",
-        "sub_heading_shellGinger": "沖縄の恵みを感じて",
-        "image_acerola": "shopify:\/\/shop_images\/ad8a1226ff4978dd15f1a37a60ac949e.jpg",
-        "heading_acerola": "アセロラ",
-        "sub_heading_acerola": "沖縄の恵みを感じて",
-        "image_tamanu": "shopify:\/\/shop_images\/5a1dff21206eb88b7febf6227e272f9b.jpg",
-        "heading_tamanu": "タマヌ",
-        "sub_heading_tamanu": "沖縄の恵みを感じて",
-        "image_shikuwasa": "shopify:\/\/shop_images\/0b44444f3ce530d0ec540dfd4a76ea31.jpg",
-        "heading_shikuwasa": "シークワーサー",
-        "sub_heading_shikuwasa": "沖縄の恵みを感じて",
-        "image_peucedanumJaponicum": "shopify:\/\/shop_images\/4966d2d85dff5c0acffe05b88184ba9b.jpg",
-        "heading_peucedanumJaponicum": "長命草",
-        "sub_heading_peucedanumJaponicum": "沖縄の恵みを感じて",
-        "image_seaGrapes": "shopify:\/\/shop_images\/87b4ff7b54ddf9d61bbb219673557544.jpg",
-        "heading_seaGrapes": "沖縄もずく",
-        "sub_heading_seaGrapes": "沖縄の恵みを感じて",
-        "image_mozuku": "shopify:\/\/shop_images\/96f01c1a9ba53b7b0a2ec9d23ca8abcd.jpg",
-        "heading_mozuku": "海ぶどう",
-        "sub_heading_mozuku": "沖縄の恵みを感じて",
-        "image_seaWater": "shopify:\/\/shop_images\/5a89a7d361570ebe2651ba64135b112c.jpg",
-        "heading_seaWater": "久米島海洋深層水",
-        "sub_heading_seaWater": "沖縄の恵みを感じて"
+        "image_default": "shopify:\/\/shop_images\/12936_3_2.png",
+        "heading_default": "KANASAN OKINAWA",
+        "sub_heading_default": "沖縄の恵みを感じて"
       }
     },
     "product-grid": {

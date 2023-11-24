@@ -316,6 +316,42 @@
             "material-name-en": "SEA WATER",
             "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.tag=%E4%B9%85%E7%B1%B3%E5%B3%B6%E6%B5%B7%E6%B4%8B%E6%B7%B1%E5%B1%A4%E6%B0%B4"
           }
+        },
+        "f80dc6c8-7222-4932-908a-2200fb494e5c": {
+          "type": "Block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/line_oa_chat_231120_125242.jpg",
+            "material-name": "",
+            "material-name-en": "",
+            "url": ""
+          }
+        },
+        "39f12dc6-8c48-44db-bb63-bc0748e97bd2": {
+          "type": "Block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/line_oa_chat_231120_125242.jpg",
+            "material-name": "",
+            "material-name-en": "",
+            "url": ""
+          }
+        },
+        "54cf6a6a-c6fd-4205-842c-ab7e019fe174": {
+          "type": "Block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/line_oa_chat_231120_125242.jpg",
+            "material-name": "",
+            "material-name-en": "",
+            "url": ""
+          }
+        },
+        "7d063d8e-8838-463d-b449-6e5501db503b": {
+          "type": "Block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/line_oa_chat_231120_125242.jpg",
+            "material-name": "",
+            "material-name-en": "",
+            "url": ""
+          }
         }
       },
       "block_order": [
@@ -326,7 +362,11 @@
         "09693eec-8338-4c35-a862-7270cb12b437",
         "4989f4ed-109c-4fd9-89c6-6c650a59c133",
         "ce8fe1c9-a7f2-47ce-9b7b-c210e4aea8cf",
-        "174593f9-d066-49de-92b9-d15534330302"
+        "174593f9-d066-49de-92b9-d15534330302",
+        "f80dc6c8-7222-4932-908a-2200fb494e5c",
+        "39f12dc6-8c48-44db-bb63-bc0748e97bd2",
+        "54cf6a6a-c6fd-4205-842c-ab7e019fe174",
+        "7d063d8e-8838-463d-b449-6e5501db503b"
       ],
       "settings": {
         "section_color_scheme": "",

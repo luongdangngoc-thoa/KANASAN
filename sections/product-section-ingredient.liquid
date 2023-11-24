@@ -25,7 +25,7 @@
         </p>
         <p class="product-ingredient__list--detail-content">
           {% for variant in product.variants %}
-            {{ variant.weight }}&ensp;ml
+            {{ variant.weight }}&ensp;{{ product.metafields.custom.unit }}
           {% endfor %}
         </p>
       </div>

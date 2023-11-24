@@ -489,7 +489,7 @@
             , block: block,
             share_link: share_url %} {% endcomment %}
             <div class="product__delivery">
-              <p>{{ product.metafields.custom.delivery }}</p>
+              {% comment %} <p>お届け予定日{{ product.metafields.custom.delivery }}</p> {% endcomment %}
             </div>
 
             {%- when 'variant_picker' -%}

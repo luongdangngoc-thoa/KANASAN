@@ -5,7 +5,7 @@
 {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
 {{ 'section-item-main-product.css' | asset_url | stylesheet_tag }}
 
-{% if product.metafields.custom.company.value != null %}
+{% if product.metafields.custom.message_from_producer.value != null %}
 {% comment %} Nhà sản xuất {% endcomment %}
 <div class="product-author">
   <p class="product-author__title">
@@ -13,16 +13,16 @@
   </p>
   <div class="product-author__detail">
     <div class="product-author__detail--info">
-      {% if product.metafields.custom.company.value.avatar == null %}
+      {% if product.metafields.custom.message_from_producer.value.avatar == null %}
         {% render 'icon-ellipse-avatar' %}
       {% else %}
-        {{ product.metafields.custom.company.value.avatar | img_tag }}
+        {{ product.metafields.custom.message_from_producer.value.avatar | img_tag }}
       {% endif %}
       {% comment %} {% render 'icon-ellipse-avatar' %} {% endcomment %}
-      <p class="product-author__name">{{ product.metafields.custom.company.value.name }}<span class="name">さん</span></p>
+      <p class="product-author__name">{{ product.metafields.custom.message_from_producer.value.name }}<span class="name">さん</span></p>
     </div>
     <p class="product-author__detail--description">
-      {{ product.metafields.custom.company.value.description }}
+      {{ product.metafields.custom.message_from_producer.value.message }}
     </p>
   </div>
 </div>

@@ -75,8 +75,8 @@
       "type": "product-section-description",
       "settings": {}
     },
-    "product-section-author": {
-      "type": "product-section-author",
+    "product-section-message-from-producer": {
+      "type": "product-section-message-from-producer",
       "settings": {}
     },
     "product-section-ingredient": {
@@ -93,7 +93,7 @@
   "order": [
     "main",
     "product-section-description",
-    "product-section-author",
+    "product-section-message-from-producer",
     "product-section-ingredient",
     "product-recently-viewed"
   ]

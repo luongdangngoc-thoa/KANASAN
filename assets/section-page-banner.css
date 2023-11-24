@@ -1,0 +1,134 @@
+ .page-banner-block {
+    position: relative;
+  }
+
+  .page-banner-block {
+    max-width: calc(var(--page-width) - 100px);
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .page-banner-block_image {
+    position: relative;
+    margin: 0;
+    margin-top: 5.3rem;
+    padding: 0;
+    height: 30rem;
+    background-color: #fff;
+  }
+
+    @media screen and (max-width: 1116px) {
+    .page-banner-block_image {
+       margin-top: 0;
+    }
+  }
+
+
+  .page-banner-block_image img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .banner__text-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+  .banner__text.banner__box {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .banner__content.banner__content--middle-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+ }
+
+  @media screen and (max-width: 750px) {
+   .banner__content .banner__text-mobile--center .banner__heading { 
+        text-align: center;
+   }
+  }
+
+ .banner__text-wrapper .banner__text {
+      margin-left: 0;
+ }
+
+ .text-gray {
+    color: #595757 !important;
+ }
+
+ .text-jp {
+     font-family: Noto Sans JP !important;
+ }
+
+
+  @media screen and (min-width: 750px) {
+    .page-banner-block_image {
+       /* margin-top: 5.3rem; */
+    }
+
+    .banner__content.banner__content--middle-left {
+      justify-content: flex-start;
+      text-align: left;
+    }
+    .banner__text-wrapper .banner__text {
+      margin-left: 5rem;
+   }
+  }
+
+  @media screen and (min-width: 990px) {
+    .banner__content.banner__content--middle-left {
+      justify-content: flex-start;
+    }
+
+    .banner__text-wrapper .banner__text {
+      margin-left: 5rem;
+   }
+    .banner--desktop-transparent .banner__box {
+      max-width: 89rem;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+  }
+  .banner__heading {
+    margin-bottom: 0;
+    color: #fff;
+    font-family: Poppins;
+    font-size: 2.2rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: calc(32 / 22);
+    letter-spacing: 3.3px;
+    text-align: left;
+     text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.2), 
+               1px 1px 1px rgba(0, 0, 0, 0.6);
+  }
+
+  .sub__banner__heading {
+    margin-bottom: 0;
+    color: #fff;
+    font-family: Noto Sans JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 1.6px;
+    text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.2), 
+               1px 1px 1px rgba(0, 0, 0, 0.6);
+  }
