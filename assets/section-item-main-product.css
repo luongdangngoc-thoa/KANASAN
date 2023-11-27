@@ -144,7 +144,7 @@
   font-weight: 400;
   line-height: normal;
 }
-.product-author .product-author__title {
+.producerMessage .producerMessage__title {
   color: #595757;
   font-family: Inter;
   font-size: 2rem;
@@ -162,7 +162,7 @@
   .product__description img {
     object-fit: cover;
   }
-  .product-author {
+  .producerMessage {
     padding: 3rem !important;
   }
   .product-ingredient {
@@ -178,7 +178,7 @@
     font-size: 1.6rem;
     line-height: calc(28 / 16);
   }
-  .product-author {
+  .producerMessage {
     padding: 2rem !important;
   }
   .product-ingredient {
@@ -198,7 +198,7 @@
   }
 }
 
-.product-author {
+.producerMessage {
   margin-top: 2.188rem;
   display: flex;
   flex-direction: column;
@@ -208,7 +208,7 @@
   gap: 4.8rem;
   width: 100%;
 }
-.product-author__detail {
+.producerMessage__detail {
   display: flex;
   gap: 8.5rem;
   color: #595757;
@@ -221,7 +221,7 @@
   line-height: calc(34 / 16);
   letter-spacing: 1.6px;
 }
-.product-author__detail .product-author__detail--info {
+.producerMessage__detail .producerMessage__detail--info {
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
@@ -232,16 +232,17 @@
   font-weight: 300;
 }
 
-.product-author__detail .product-author__detail--info img {
+.producerMessage__detail .producerMessage__detail--info img {
   border-radius: 50%;
   object-fit: cover;
 }
-.product-author__detail .product-author__detail--info p {
+.producerMessage__detail .producerMessage__detail--info p {
   width: 14rem;
   white-space: nowrap;
+  text-align: center;
 }
 
-.product-author__detail .product-author__name {
+.producerMessage__detail .producerMessage__name {
   color: #595757;
   font-family: Poppins, Noto Sans JP;
   font-size: 1.8rem;
@@ -250,10 +251,10 @@
   line-height: calc(34 / 18); /* 188.889% */
   letter-spacing: 1.8;
 }
-.product-author__detail span {
+.producerMessage__detail span {
   font-size: 1.2rem;
 }
-.product-author__detail p {
+.producerMessage__detail p {
   margin: 0px;
   color: #595757;
   font-family: Noto Sans JP;
@@ -264,17 +265,17 @@
 }
 /* Media Query for screens up to 768px wide */
 @media screen and (max-width: 768px) {
-  .product-author {
+  .producerMessage {
     padding: 2rem;
   }
-  .product-author__detail {
+  .producerMessage__detail {
     flex-direction: column;
     gap: 1rem;
   }
-  .product-author__detail .product-author__detail--info {
+  .producerMessage__detail .producerMessage__detail--info {
     align-items: center;
   }
-  .product-author__detail .product-author__detail--info img {
+  .producerMessage__detail .producerMessage__detail--info img {
     width: 12rem;
     height: 12rem;
   }

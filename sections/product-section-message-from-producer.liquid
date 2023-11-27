@@ -7,21 +7,21 @@
 
 {% if product.metafields.custom.message_from_producer.value != null %}
 {% comment %} Nhà sản xuất {% endcomment %}
-<div class="product-author">
-  <p class="product-author__title">
-    {{ 'products.product.author.title' | t }}
+<div class="producerMessage">
+  <p class="producerMessage__title">
+    生産者からのメッセージ
   </p>
-  <div class="product-author__detail">
-    <div class="product-author__detail--info">
+  <div class="producerMessage__detail">
+    <div class="producerMessage__detail--info">
       {% if product.metafields.custom.message_from_producer.value.avatar == null %}
         {% render 'icon-ellipse-avatar' %}
       {% else %}
         {{ product.metafields.custom.message_from_producer.value.avatar | img_tag }}
       {% endif %}
       {% comment %} {% render 'icon-ellipse-avatar' %} {% endcomment %}
-      <p class="product-author__name">{{ product.metafields.custom.message_from_producer.value.name }}<span class="name">さん</span></p>
+      <p class="producerMessage__name">{{ product.metafields.custom.message_from_producer.value.name }}<span class="name">さん</span></p>
     </div>
-    <p class="product-author__detail--description">
+    <p class="producerMessage__detail--description">
       {{ product.metafields.custom.message_from_producer.value.message }}
     </p>
   </div>
@@ -49,7 +49,7 @@
   {%- endstyle -%}
   {% schema %}
     {
-      "name": "Author Product",
+      "name": "Message from producer",
       "tag": "section",
       "class": "section",
       "settings": [
@@ -61,7 +61,7 @@
       ],
       "presets": [
         {
-          "name": "Author"
+          "name": "Message from producer"
         }
       ]
     }
