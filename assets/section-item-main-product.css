@@ -550,11 +550,15 @@
 }
 
 .checkout-btn {
-  background-color: #595757;
+  /* background-color: #595757; */
   color: #fff;
   text-align: center;
   width: 30rem;
-  padding: 0.4rem;
+  /* padding: 0.4rem; */
+}
+
+.shopify-cleanslate .jjzYeefyWpPZLH9pIgyw {
+    min-height: 5.4rem !important;
 }
 
 .product__button {

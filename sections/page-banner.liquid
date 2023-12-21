@@ -11,64 +11,64 @@
     | replace: '\/', '/'
     | replace: '%20', ' '
     | replace: '\u0026', '&'
-  -%}{% capture finalurl %}https://{{ pageUrl }}{% endcapture %}
+  -%}{% capture urlParameter %}https://{{ pageUrl }}{% endcapture %}
+    {% comment %} {{ urlParameter }}  {% endcomment %}
 
-     {% comment %} {{ finalurl }}  {% endcomment %}
    {% comment %} banner for brand  {% endcomment %}
-  {%- if finalurl contains "RESORT" -%}
-    <div class="page-banner-block">
-        <div class="page-banner-block_image">
-          {%- if section.settings.image_resort -%}
-            {{ section.settings.image_resort | image_url: width: 3840 | image_tag: loading: 'lazy' }}
-          {%- endif -%}
+    {%- if urlParameter contains "RESORT" -%}
+        <div class="page-banner-block">
+            <div class="page-banner-block_image">
+            {%- if section.settings.image_resort -%}
+                {{ section.settings.image_resort | image_url: width: 3840 | image_tag: loading: 'lazy' }}
+            {%- endif -%}
+            </div>
+            <div class="banner__text-wrapper banner__content banner__content--middle-left banner--desktop-transparent scroll-trigger animate--slide-in page-width-sp">
+            <div class="banner__text banner__box content-container content-container--full-width-mobile color-inverse gradient banner__text--left banner__text-mobile--center">
+                <h2 class="banner__heading medium text-gray">
+                {{ section.settings.heading_resort }}</h2>
+                <h3 class="sub__banner__heading text-gray">
+                {{ section.settings.sub_heading_resort }}</h3>
+            </div>
+            </div>
         </div>
-        <div class="banner__text-wrapper banner__content banner__content--middle-left banner--desktop-transparent scroll-trigger animate--slide-in page-width-sp">
-          <div class="banner__text banner__box content-container content-container--full-width-mobile color-inverse gradient banner__text--left banner__text-mobile--center">
-            <h2 class="banner__heading medium text-gray">
-              {{ section.settings.heading_resort }}</h2>
-            <h3 class="sub__banner__heading text-gray">
-              {{ section.settings.sub_heading_resort }}</h3>
-          </div>
-        </div>
-    </div>
 
-  {%- elsif  finalurl contains "STYLE" -%}
-    <div  class="page-banner-block">
-        <div class="page-banner-block_image">
-          {%- if section.settings.image_style -%}
-            {{ section.settings.image_style | image_url: width: 3840 | image_tag: loading: 'lazy' }}
-          {%- endif -%}
+    {%- elsif  urlParameter contains "STYLE" -%}
+        <div  class="page-banner-block">
+            <div class="page-banner-block_image">
+            {%- if section.settings.image_style -%}
+                {{ section.settings.image_style | image_url: width: 3840 | image_tag: loading: 'lazy' }}
+            {%- endif -%}
+            </div>
+            <div class="banner__text-wrapper banner__content banner__content--middle-left banner--desktop-transparent scroll-trigger animate--slide-in page-width-sp">
+            <div class="banner__text banner__box content-container content-container--full-width-mobile color-inverse gradient banner__text--left banner__text-mobile--center">
+                <h2 class="banner__heading medium">
+                {{ section.settings.heading_style }}</h2>
+                <h3 class="sub__banner__heading">
+                {{ section.settings.sub_heading_style }}</h3>
+            </div>
+            </div>
         </div>
-        <div class="banner__text-wrapper banner__content banner__content--middle-left banner--desktop-transparent scroll-trigger animate--slide-in page-width-sp">
-          <div class="banner__text banner__box content-container content-container--full-width-mobile color-inverse gradient banner__text--left banner__text-mobile--center">
-            <h2 class="banner__heading medium">
-              {{ section.settings.heading_style }}</h2>
-            <h3 class="sub__banner__heading">
-              {{ section.settings.sub_heading_style }}</h3>
-          </div>
+    {%- elsif  urlParameter contains "NATURE" -%}
+        <div class="page-banner-block">
+            <div class="page-banner-block_image">
+            {%- if section.settings.image_nature -%}
+                {{ section.settings.image_nature | image_url: width: 3840 | image_tag: loading: 'lazy' }}
+            {%- endif -%}
+            </div>
+            <div class="banner__text-wrapper banner__content banner__content--middle-left banner--desktop-transparent scroll-trigger animate--slide-in page-width-sp">
+            <div class="banner__text banner__box content-container content-container--full-width-mobile color-inverse gradient banner__text--left banner__text-mobile--center">
+                <h2 class="banner__heading medium">
+                {{ section.settings.heading_nature }}</h2>
+                <h3 class="sub__banner__heading">
+                {{ section.settings.sub_heading_nature }}</h3>
+            </div>
+            </div>
         </div>
-    </div>
-   {%- elsif  finalurl contains "NATURE" -%}
-    <div class="page-banner-block">
-         <div class="page-banner-block_image">
-          {%- if section.settings.image_nature -%}
-            {{ section.settings.image_nature | image_url: width: 3840 | image_tag: loading: 'lazy' }}
-          {%- endif -%}
-        </div>
-        <div class="banner__text-wrapper banner__content banner__content--middle-left banner--desktop-transparent scroll-trigger animate--slide-in page-width-sp">
-          <div class="banner__text banner__box content-container content-container--full-width-mobile color-inverse gradient banner__text--left banner__text-mobile--center">
-            <h2 class="banner__heading medium">
-              {{ section.settings.heading_nature }}</h2>
-            <h3 class="sub__banner__heading">
-              {{ section.settings.sub_heading_nature }}</h3>
-          </div>
-        </div>
-    </div>
     {% comment %} banner for brand end  {% endcomment %}
  
     {% comment %} banner for category  {% endcomment %}
     {% comment %} ヘアケア  {% endcomment %}
-    {%- elsif  finalurl contains "%E3%83%98%E3%82%A2%E3%82%B1%E3%82%A2" -%}
+    {%- elsif  urlParameter contains "%E3%83%98%E3%82%A2%E3%82%B1%E3%82%A2" -%}
        <div class="page-banner-block">
             <div class="page-banner-block_image">
                 {%- if section.settings.image_hairCare -%}
@@ -85,7 +85,7 @@
               </div>
        </div>
     {% comment %} ボディケア  {% endcomment %}
-    {%- elsif  finalurl contains "%E3%83%9C%E3%83%87%E3%82%A3%E3%82%B1%E3%82%A2" -%}
+    {%- elsif  urlParameter contains "%E3%83%9C%E3%83%87%E3%82%A3%E3%82%B1%E3%82%A2" -%}
         <div class="page-banner-block">
             <div class="page-banner-block_image">
                 {%- if section.settings.image_bodyCare -%}
@@ -102,7 +102,7 @@
               </div>
         </div>
     {% comment %} フェイスケア  {% endcomment %}
-    {%- elsif  finalurl contains "%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%B1%E3%82%A2" -%}
+    {%- elsif  urlParameter contains "%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%B1%E3%82%A2" -%}
        <div class="page-banner-block">
             <div class="page-banner-block_image">
                 {%- if section.settings.image_faceCare -%}
@@ -119,7 +119,7 @@
               </div>
        </div>
     {% comment %} ホテルアメニティ  {% endcomment %}
-    {%- elsif  finalurl contains "%E3%83%9B%E3%83%86%E3%83%AB%E3%82%A2%E3%83%A1%E3%83%8B%E3%83%86%E3%82%A3" -%}
+    {%- elsif  urlParameter contains "%E3%83%9B%E3%83%86%E3%83%AB%E3%82%A2%E3%83%A1%E3%83%8B%E3%83%86%E3%82%A3" -%}
         <div class="page-banner-block">
             <div class="page-banner-block_image">
                 {%- if section.settings.image_hotelAmenity -%}
@@ -136,7 +136,7 @@
               </div>
         </div>
     {% comment %} 食品・飲料  {% endcomment %}
-    {%- elsif  finalurl contains "%E9%A3%9F%E5%93%81%E3%83%BB%E9%A3%B2%E6%96%99" -%}
+    {%- elsif  urlParameter contains "%E9%A3%9F%E5%93%81%E3%83%BB%E9%A3%B2%E6%96%99" -%}
         <div class="page-banner-block">
             <div class="page-banner-block_image">
                 {%- if section.settings.image_foodAndBeverage -%}
@@ -153,7 +153,7 @@
               </div>
         </div>
     {% comment %} その他雑貨  {% endcomment %}
-    {%- elsif  finalurl contains "%E3%81%9D%E3%81%AE%E4%BB%96%E9%9B%91%E8%B2%A8" -%}
+    {%- elsif  urlParameter contains "%E3%81%9D%E3%81%AE%E4%BB%96%E9%9B%91%E8%B2%A8" -%}
         <div class="page-banner-block">
             <div class="page-banner-block_image">
                 {%- if section.settings.image_otherGoods -%}
@@ -173,7 +173,7 @@
 
     {% comment %} banner for material  {% endcomment %}
     {% comment %} 月桃  {% endcomment %}
-    {%- elsif  finalurl contains "%E6%9C%88%E6%A1%83" -%}
+    {%- elsif  urlParameter contains "%E6%9C%88%E6%A1%83" -%}
        <div class="page-banner-block">
             <div class="page-banner-block_image">
                 {%- if section.settings.image_shellGinger -%}
@@ -190,7 +190,7 @@
               </div>
        </div>
     {% comment %} アセロラ  {% endcomment %}
-    {%- elsif  finalurl contains "%E3%82%A2%E3%82%BB%E3%83%AD%E3%83%A9" -%}
+    {%- elsif  urlParameter contains "%E3%82%A2%E3%82%BB%E3%83%AD%E3%83%A9" -%}
         <div class="page-banner-block">
             <div class="page-banner-block_image">
                 {%- if section.settings.image_acerola -%}
@@ -207,7 +207,7 @@
               </div>
         </div>
     {% comment %} タマヌ  {% endcomment %}
-    {%- elsif  finalurl contains "%E3%82%BF%E3%83%9E%E3%83%8C" -%}
+    {%- elsif  urlParameter contains "%E3%82%BF%E3%83%9E%E3%83%8C" -%}
        <div class="page-banner-block">
             <div class="page-banner-block_image">
                 {%- if section.settings.image_tamanu -%}
@@ -224,7 +224,7 @@
               </div>
        </div>
     {% comment %} シークワーサー  {% endcomment %}
-    {%- elsif  finalurl contains "%E3%82%B7%E3%83%BC%E3%82%AF%E3%83%AF%E3%83%BC%E3%82%B5%E3%83%BC" -%}
+    {%- elsif  urlParameter contains "%E3%82%B7%E3%83%BC%E3%82%AF%E3%83%AF%E3%83%BC%E3%82%B5%E3%83%BC" -%}
         <div class="page-banner-block">
             <div class="page-banner-block_image">
                 {%- if section.settings.image_shikuwasa -%}
@@ -241,7 +241,7 @@
               </div>
         </div>
     {% comment %} 長命草  {% endcomment %}
-    {%- elsif  finalurl contains "%E9%95%B7%E5%91%BD%E8%8D%89" -%}
+    {%- elsif  urlParameter contains "%E9%95%B7%E5%91%BD%E8%8D%89" -%}
         <div class="page-banner-block">
             <div class="page-banner-block_image">
                 {%- if section.settings.image_peucedanumJaponicum -%}
@@ -258,7 +258,7 @@
               </div>
         </div>
     {% comment %} 海ぶどう  {% endcomment %}
-    {%- elsif  finalurl contains "%E6%B5%B7%E3%81%B6%E3%81%A9%E3%81%86" -%}
+    {%- elsif  urlParameter contains "%E6%B5%B7%E3%81%B6%E3%81%A9%E3%81%86" -%}
         <div class="page-banner-block">
             <div class="page-banner-block_image">
                 {%- if section.settings.image_seaGrapes -%}
@@ -275,7 +275,7 @@
               </div>
         </div>
     {% comment %} 沖縄もずく  {% endcomment %}
-    {%- elsif  finalurl contains "%E6%B2%96%E7%B8%84%E3%82%82%E3%81%9A%E3%81%8F" -%}
+    {%- elsif  urlParameter contains "%E6%B2%96%E7%B8%84%E3%82%82%E3%81%9A%E3%81%8F" -%}
         <div class="page-banner-block">
             <div class="page-banner-block_image">
                 {%- if section.settings.image_mozuku -%}
@@ -292,7 +292,7 @@
               </div>
         </div>
     {% comment %} 久米島海洋深層水  {% endcomment %}
-    {%- elsif  finalurl contains "%E4%B9%85%E7%B1%B3%E5%B3%B6%E6%B5%B7%E6%B4%8B%E6%B7%B1%E5%B1%A4%E6%B0%B4" -%}
+    {%- elsif  urlParameter contains "%E4%B9%85%E7%B1%B3%E5%B3%B6%E6%B5%B7%E6%B4%8B%E6%B7%B1%E5%B1%A4%E6%B0%B4" -%}
         <div class="page-banner-block">
             <div class="page-banner-block_image">
                 {%- if section.settings.image_seaWater -%}

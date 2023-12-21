@@ -92,10 +92,15 @@
         "d4a878aa-413b-41bb-b2d9-c7d5eb4b9944",
         "6c57f13c-9ee5-4dc4-b94c-1477011b64af"
       ],
+      "disabled": true,
       "settings": {}
     },
     "form": {
       "type": "contact-form",
+      "custom_css": [
+        ".contact-wrapper {padding-top: 14rem;}",
+        " @media screen and (max-width: 800px) {.contact-wrapper {padding-top: 4.3rem; } }"
+      ],
       "settings": {
         "heading": "その他のお問い合わせ",
         "color_scheme": "background-1"
