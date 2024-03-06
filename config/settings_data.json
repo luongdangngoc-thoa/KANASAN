@@ -422,12 +422,12 @@
       },
       "accent-3": {
         "settings": {
-          "background": "#7ebad1",
+          "background": "rgba(0,0,0,0)",
           "background_gradient": "",
           "text": "#ffffff",
-          "button": "#ffffff",
-          "button_label": "#7ebad1",
-          "secondary_button_label": "#ffffff",
+          "button": "rgba(0,0,0,0)",
+          "button_label": "rgba(0,0,0,0)",
+          "secondary_button_label": "rgba(0,0,0,0)",
           "shadow": "#595757"
         }
       }

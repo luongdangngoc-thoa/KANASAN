@@ -24,9 +24,9 @@
             </div>
             <div class="banner__text-wrapper banner__content banner__content--middle-left banner--desktop-transparent scroll-trigger animate--slide-in page-width-sp">
             <div class="banner__text banner__box content-container content-container--full-width-mobile color-inverse gradient banner__text--left banner__text-mobile--center">
-                <h2 class="banner__heading medium text-gray">
+                <h2 class="banner__heading medium">
                 {{ section.settings.heading_resort }}</h2>
-                <h3 class="sub__banner__heading text-gray">
+                <h3 class="sub__banner__heading">
                 {{ section.settings.sub_heading_resort }}</h3>
             </div>
             </div>
@@ -121,7 +121,7 @@
     {% comment %} ホテルアメニティ  {% endcomment %}
     {%- elsif  urlParameter contains "%E3%83%9B%E3%83%86%E3%83%AB%E3%82%A2%E3%83%A1%E3%83%8B%E3%83%86%E3%82%A3" -%}
         <div class="page-banner-block">
-            <div class="page-banner-block_image">
+            <div class="page-banner-block_image object-position-right">
                 {%- if section.settings.image_hotelAmenity -%}
                   {{ section.settings.image_hotelAmenity | image_url: width: 3840 | image_tag: loading: 'lazy' }}
                 {%- endif -%}

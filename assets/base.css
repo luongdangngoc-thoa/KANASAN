@@ -3730,7 +3730,7 @@ details-disclosure > details {
   padding-bottom: 2.6rem;
   margin-bottom: 6rem !important;
   border-bottom: rgb(208 208 208) solid 1px;
-  text-align: left;
+  text-align: left !important;
 }
 
 .shopify-section.section

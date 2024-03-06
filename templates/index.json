@@ -6,7 +6,7 @@
         "placeholder-0": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/banner.webp",
+            "image": "shopify:\/\/shop_images\/top-kv.webp",
             "heading": "素朴で身近で <br> “愛おしい”<br> 沖縄の <br> たからさがし",
             "box_align": "middle-left",
             "show_text_box": true,
@@ -127,7 +127,7 @@
         "template--21243532411158__38bb6c77-9b15-4402-90e6-d8a01881d8f5-Block-1": {
           "type": "Block",
           "settings": {
-            "brand-image": "shopify:\/\/shop_images\/RESORT01.jpg",
+            "brand-image": "shopify:\/\/shop_images\/top-resort.jpg",
             "brand-name": "KANASAN RESORT",
             "brand-des": "人と環境に優しい高生分解性処方に、太陽と大地の恵み、沖縄産のタマヌオイルと月桃エキスを配合しました。",
             "button-lable": "製品を見る",
@@ -379,6 +379,9 @@
         "9cbd7020-fbb3-403f-8cf3-adf787f549fd": {
           "type": "shopify:\/\/apps\/instafeed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
           "settings": {
+            "title": "",
+            "title_color": "",
+            "alignment": "center",
             "html_area": ""
           }
         }

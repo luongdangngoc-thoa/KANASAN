@@ -73,15 +73,22 @@
     },
     "product-section-description": {
       "type": "product-section-description",
-      "settings": {}
+      "disabled": true,
+      "settings": {
+        "description": ""
+      }
     },
     "product-section-message-from-producer": {
       "type": "product-section-message-from-producer",
-      "settings": {}
+      "settings": {
+        "author": ""
+      }
     },
     "product-section-ingredient": {
       "type": "product-section-ingredient",
-      "settings": {}
+      "settings": {
+        "ingredient": ""
+      }
     },
     "product-recently-viewed": {
       "type": "product-recently-viewed",
