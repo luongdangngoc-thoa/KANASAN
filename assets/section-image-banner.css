@@ -118,6 +118,7 @@
   }
 }
 
+
 @media screen and (min-width: 750px) {
   .banner {
     flex-direction: row;
@@ -181,6 +182,28 @@
   }
 }
 
+@media screen and (min-width: 1300px) {
+  .banner--large:not(.banner--adapt) {
+    min-height: 66rem;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .banner--large:not(.banner--adapt) {
+    min-height: 68rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .banner--large:not(.banner--adapt) {
+    min-height: 70rem;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .banner--large:not(.banner--adapt) {
+    min-height: 76rem;
+  }
+}
 @media screen and (max-width: 749px) {
   .banner:not(.banner--stacked) {
     flex-direction: row;

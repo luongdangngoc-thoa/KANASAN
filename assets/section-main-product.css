@@ -1806,3 +1806,8 @@ a.product__text {
   width: 33px;
   height: 33px;
 }
+
+.pmslider-arrows_container .pmslider-arrows_area {
+    padding: 5px 20px !important;
+}
+

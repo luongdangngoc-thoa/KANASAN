@@ -633,9 +633,9 @@
 }
 
 @media screen and (min-width: 768px) {
-  .pmslider-slide--inner {
-    margin-top: -6rem;
-  }
+.pmslider-own--slides-track .pmslider-slide .pmslider-slide--inner {
+     height: 96% !important;
+  } 
 }
 .product-left.grid__item.product__media-wrapper {
   padding-top: 0px;

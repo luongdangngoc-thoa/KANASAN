@@ -154,7 +154,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 
   .page-width-desktop {
     max-width: var(--page-width);
-    padding: 0 5rem;
+    /* padding: 0 5rem; */
   }
 }
 
@@ -3366,15 +3366,15 @@ details-disclosure > details {
 @media (prefers-reduced-motion: no-preference) {
   .animate--ambient > img,
   .animate--ambient > svg {
-    animation: animateAmbient 30s linear infinite;
+    animation: animateAmbient 25s linear infinite;
   }
 
   @keyframes animateAmbient {
     0% {
-      transform: rotate(0deg) translateX(1em) rotate(0deg) scale(1.2);
+      transform: rotate(0deg) translateX(1em) rotate(0deg) scale(1.05);
     }
     100% {
-      transform: rotate(360deg) translateX(1em) rotate(-360deg) scale(1.2);
+      transform: rotate(360deg) translateX(1em) rotate(-360deg) scale(1.05);
     }
   }
 

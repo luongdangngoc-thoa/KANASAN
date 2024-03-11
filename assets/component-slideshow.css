@@ -33,7 +33,7 @@ slideshow-component .slideshow.banner {
   } */
   
   .slideshow__media.banner__media.media img {
-      object-position: 75% 10%;
+      object-position: 65% 10%;
   }
   .slideshow__slide.grid__item {
      height: 53rem;
@@ -45,12 +45,12 @@ slideshow-component .slideshow.banner {
     height: 62rem;
   } */
 
-  .slideshow__slide.grid__item {
+  /* .slideshow__slide.grid__item {
     height: 62rem;
-  }
+  } */
 
     .slideshow__slide.grid__item .slideshow__media.banner__media img {
-    object-position: 100% 35% ;
+    object-position: center center;
   }
 }
 
