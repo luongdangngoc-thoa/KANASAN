@@ -23,12 +23,12 @@ cart-items.is-empty .title-wrapper-with-link,
 
 .cart__empty-text {
   margin: 4.5rem 0 2rem;
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
   font-weight: 400;
 }
 
 .cart__warnings .button {
-     font-family: Noto Sans JP;
+     font-family: Inter, Noto Sans JP;
      letter-spacing: 1px;
      background-color: #595757;
      color: #fff;
@@ -206,14 +206,14 @@ cart-items {
   text-align: center;
   display: block;
   color: #595757;
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
 }
 
 .cart__checkout-button {
   max-width: 36rem;
   color: #fff;
   background-color: #595757;
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
   transition: all 0.2s;
 }
 

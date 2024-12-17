@@ -426,7 +426,7 @@ div.category-link-list a:hover {
 
 .category-link a {
     color: #595757;
-    font-family: Noto Sans JP;
+    font-family: Inter, Noto Sans JP;
     font-size: 1.6rem;
     font-style: normal;
     font-weight: 400;
@@ -602,7 +602,7 @@ div.category-link-list a:hover {
 
 .facets__header .fillter__name {
     color: #595757;
-    font-family: Noto Sans JP;
+    font-family: Inter, Noto Sans JP;
     font-size: 1.4rem;
     font-style: normal;
     font-weight: 400;
@@ -670,7 +670,7 @@ div.category-link-list a:hover {
 
 .facets__item.facets__item_filter span {
     color: #595757;
-    font-family: Noto Sans JP;
+    font-family: Inter, Noto Sans JP;
     font-size: 1.4rem;
     font-style: normal;
     font-weight: 350;

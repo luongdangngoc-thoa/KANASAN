@@ -563,7 +563,7 @@
 
 .footer-block__heading {
     color: #595757;
-    font-family: Noto Sans JP;
+    font-family: Inter, Noto Sans JP;
     font-style: normal;
     font-weight: 700;
     line-height: calc(40 / 15);
@@ -571,7 +571,7 @@
 
 .footer-block__details-content .list-menu__item--link {
     color: #595757;
-    font-family: Noto Sans JP;
+    font-family: Inter, Noto Sans JP;
     font-style: normal;
     font-weight: 400;
     line-height: calc(40 / 15);

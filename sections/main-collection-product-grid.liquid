@@ -22,6 +22,10 @@
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
+  .com {
+    font-family: Poppins;
+    padding-top: 3em;
+  }
 
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
@@ -50,7 +54,7 @@
                   id="SortBy"
                   aria-describedby="a11y-refresh-page-message"
                 >
-                  {%- for option in collection.sort_options -%}
+                 {%- for option in collection.sort_options -%}
                     <option
                       value="{{ option.value | escape }}"
                       {% if option.value == sort_by %}
@@ -59,7 +63,13 @@
                     >
                       {{ option.name | escape }}
                     </option>
-                  {%- endfor -%}
+                    <option value="created-descending">
+                        新着順
+                    </option>
+                  {%- endfor -%} 
+                   {% comment %} <option value="created-descending" selected="selected">
+                        新着順
+                    </option> {% endcomment %}
                 </select>
                 {% render 'icon-caret' %}
               </div>
@@ -136,14 +146,17 @@
           <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
             <div class="loading-overlay gradient"></div>
             <div class="title-wrapper center">
-              <h2 class="title title--primary">
+              <h2 class="title title--primary com">
+                COMING SOON
+              </h2>
+              {% comment %} <h2 class="title title--primary">
                 {{ 'sections.collection_template.empty' | t -}}
                 <br>
                 {{
                   'sections.collection_template.use_fewer_filters_html'
                   | t: link: collection.url, class: 'underlined-link link'
                 }}
-              </h2>
+              </h2> {% endcomment %}
             </div>
           </div>
         {%- else -%}

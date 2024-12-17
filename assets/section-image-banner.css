@@ -13,7 +13,7 @@
 .banner__box.banner__box_text .banner__text {
   text-align: left;
   color: #595757;
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 300;
@@ -596,7 +596,7 @@
   .banner__box.banner__box_text .banner__text {
     text-align: center;
     color: #595757;
-    font-family: Noto Sans JP;
+    font-family: Inter, Noto Sans JP;
     font-size: 1.6rem;
     font-style: normal;
     font-weight: 300;

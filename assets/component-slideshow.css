@@ -131,7 +131,7 @@ slideshow-component .slideshow.banner {
   font-size: 2rem;
   font-weight: 500;
   line-height: 1.6;
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
   letter-spacing: 3px;
   color: #FFFF;
   text-shadow: -1px -1px 1px rgba(250, 250, 250, 0.986), 1px 1px 1px rgba(88, 87, 87, 0.6);

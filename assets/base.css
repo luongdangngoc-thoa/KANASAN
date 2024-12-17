@@ -260,7 +260,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   letter-spacing: 0.06rem;
   line-height: calc(1 + 0.8 / var(--font-body-scale));
   /* font-family: var(--font-body-family); */
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
 }
@@ -418,7 +418,7 @@ blockquote {
   font-size: 1.3rem;
   line-height: calc(1 + 0.5 / var(--font-body-scale));
   letter-spacing: 0.04rem;
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
 }
 
 .color-foreground {
@@ -506,7 +506,7 @@ h6:empty {
   background-color: transparent;
   font-size: 1.4rem;
   font-family: inherit;
-   font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
 }
 
 .link--text {
@@ -569,7 +569,7 @@ hr {
   background-color: rgba(var(--color-foreground), 0.04);
   color: rgba(var(--color-foreground), 0.55);
   fill: rgba(var(--color-foreground), 0.55);
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
 }
 
 details > * {
@@ -821,7 +821,7 @@ summary::-webkit-details-marker {
 
 .title--primary {
   margin: 4rem 0;
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
 }
 
 .title-wrapper--self-padded-tablet-down,
@@ -876,7 +876,7 @@ summary::-webkit-details-marker {
   margin-top: 0;
   flex-shrink: 0;
   color: #595757;
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
 }
 
 .title-wrapper--no-top-margin {
@@ -1375,7 +1375,7 @@ button.shopify-payment-button__button--unbranded {
   font-size: 1.5rem;
   letter-spacing: 0.1rem;
   line-height: calc(1 + 0.2 / var(--font-body-scale));
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
 }
 
 .button--tertiary {
@@ -1688,7 +1688,7 @@ details[open] > .share-button__fallback {
 
 .select__select {
   /* font-family: var(--font-body-family); */
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
   font-size: 1.2rem;
@@ -1800,7 +1800,7 @@ details[open] > .share-button__fallback {
   color: rgba(var(--color-foreground), 0.75);
   letter-spacing: 0.1rem;
   line-height: 1.5;
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
 }
 
 .field__input:focus ~ .field__label,
@@ -1813,7 +1813,7 @@ details[open] > .share-button__fallback {
   top: calc(var(--inputs-border-width) + 0.5rem);
   left: calc(var(--inputs-border-width) + 2rem);
   letter-spacing: 0.04rem;
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
 }
 
 .field__input:focus,
@@ -1868,7 +1868,7 @@ details[open] > .share-button__fallback {
 
 .text-area {
   /* font-family: var(--font-body-family); */
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
   min-height: 10rem;
@@ -3650,7 +3650,7 @@ details-disclosure > details {
    cursor: pointer;
    align-items: center;
    justify-content: center;
-   font-family: Noto Sans JP;
+   font-family: Inter, Noto Sans JP;
 }
 
 .page-button:hover {
@@ -3723,7 +3723,7 @@ details-disclosure > details {
 }
 #shopify-block-9cbd7020-fbb3-403f-8cf3-adf787f549fd h2 {
   color: #595757;
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
   font-size: 2rem !important;
   font-style: normal;
   font-weight: 400;
@@ -3743,7 +3743,7 @@ details-disclosure > details {
 /* css for robot check */
 .shopify-challenge__message {
     color: #595757;
-    font-family: Noto Sans JP;
+    font-family: Inter, Noto Sans JP;
     font-size: 2rem;
     font-weight: 400;
 }

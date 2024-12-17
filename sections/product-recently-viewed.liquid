@@ -1,8 +1,8 @@
 <div class="page-width">
-  <div class="title-recently">
+  <div class="title-recently {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
     <h2 class="product-recommendations__heading h2">閲覧履歴</h2>
   </div>
-  <ul class="recently-viewed grid product-grid grid--4-col-desktop grid--2-col-tablet-down" role="list">
+  <ul class="recently-viewed grid product-grid grid--4-col-desktop grid--2-col-tablet-down {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"  role="list">
     <!-- Recently viewed products will appear here -->
   </ul>
 </div>
@@ -184,7 +184,7 @@
   });
 </script>
 
-<div class="featured__button">
+<div class="featured__button {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
   <a href="/collections/all">
     <button class="btn-featured">
       {{ 'products.product.featured.button' | t }}
@@ -236,7 +236,7 @@
   .recently-viewed .card__information,
   .card__heading.h5 {
     color: #595757;
-    font-family: Noto Sans JP;
+    font-family: Inter, Noto Sans JP;
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 400;
@@ -259,7 +259,7 @@
   }
   .product-recommendations__heading.h2 {
     color: #595757;
-    font-family: Noto Sans JP;
+    font-family: Inter, Noto Sans JP;
     font-size: 2rem;
     font-style: normal;
     font-weight: 400;

@@ -523,7 +523,10 @@
               >
                 {{ option.name | escape }}
               </option>
-            {%- endfor -%}
+            {%- endfor -%} 
+             {% comment %} <option value="created-descending" selected="selected">
+                新着順
+            </option> {% endcomment %}
           </select>
           {% render 'icon-caret' %}
         </div>
@@ -570,7 +573,7 @@
                   id="SortBy"
                   aria-describedby="a11y-refresh-page-message"
                 >
-                  {%- for option in results.sort_options -%}
+                {%- for option in results.sort_options -%}
                     <option
                       value="{{ option.value | escape }}"
                       {% if option.value == sort_by %}
@@ -579,7 +582,10 @@
                     >
                       {{ option.name | escape }}
                     </option>
-                  {%- endfor -%}
+                  {%- endfor -%} 
+                   {% comment %} <option value="created-descending" selected="selected">
+                        新着順
+                    </option> {% endcomment %}
                 </select>
                 {% render 'icon-caret' %}
               </div>
@@ -906,7 +912,10 @@
                             >
                               {{ option.name | escape }}
                             </option>
-                          {%- endfor -%}
+                          {%- endfor -%} 
+                            {% comment %} <option value="created-descending" selected="selected">
+                                新着順
+                            </option> {% endcomment %}
                         </select>
                         {% render 'icon-caret' %}
                       </div>
@@ -998,7 +1007,10 @@
                   >
                     {{ option.name | escape }}
                   </option>
-                {%- endfor -%}
+                {%- endfor -%} 
+                {% comment %} <option value="created-descending" selected="selected">
+                        新着順
+                </option> {% endcomment %}
               </select>
               {% render 'icon-caret' %}
             </div>
@@ -1020,3 +1032,9 @@
     </facet-filters-form>
   {%- endif -%}
   
+
+<style>
+    .facet-filters.sorting.caption {
+        display: none !important;
+    }
+</style>

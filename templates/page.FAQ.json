@@ -99,7 +99,7 @@
       "type": "contact-form",
       "custom_css": [
         ".contact-wrapper {padding-top: 14rem;}",
-        " @media screen and (max-width: 800px) {.contact-wrapper {padding-top: 4.3rem; } }"
+        "@media screen and (max-width: 800px) {.contact-wrapper {padding-top: 4.3rem; }}"
       ],
       "settings": {
         "heading": "その他のお問い合わせ",

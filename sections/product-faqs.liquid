@@ -1,0 +1,360 @@
+
+
+<div class="product-faq gradient {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="page-width">
+    <div class="product-faq-contanier">
+        <div class="product-faq-header {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          <h1>よくある質問</h1>
+        </div>
+         <hr class="line-break {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <div class="product-faq-body">
+            {% if product.metafields.custom.product_faqs.value.question_1 != blank and product.metafields.custom.product_faqs.value.answer_1 != blank %}
+              <div class="product-faq-question active {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                    <header class="product-faq-question-header">
+                    Q: {{ product.metafields.custom.product_faqs.value.question_1| metafield_text }}
+                    <span class="faq-icon-group">
+                        {% render 'icon-plus' %}{% render 'icon-minus' %}</span>
+                    </header>
+                    <div class="product-faq-question-body">
+                    <div class="product-faq-question-body-inner">
+                    A: {{ product.metafields.custom.product_faqs.value.answer_1| metafield_text }}
+                    </div>
+                    </div>
+              </div>
+            {% endif %}
+    
+            {% if product.metafields.custom.product_faqs.value.question_2 != blank and product.metafields.custom.product_faqs.value.answer_2 != blank %}
+              <div class="product-faq-question active {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                    <header class="product-faq-question-header">
+                    Q: {{ product.metafields.custom.product_faqs.value.question_2| metafield_text }}
+                    <span class="faq-icon-group">
+                        {% render 'icon-plus' %}{% render 'icon-minus' %}</span>
+                    </header>
+                    <div class="product-faq-question-body">
+                    <div class="product-faq-question-body-inner">
+                    A: {{ product.metafields.custom.product_faqs.value.answer_2| metafield_text }}
+                    </div>
+                    </div>
+              </div>
+            {% endif %}
+    
+            {% if product.metafields.custom.product_faqs.value.question_3 != blank and product.metafields.custom.product_faqs.value.answer_3 != blank %}
+              <div class="product-faq-question active {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                    <header class="product-faq-question-header">
+                    Q: {{ product.metafields.custom.product_faqs.value.question_3| metafield_text }}
+                    <span class="faq-icon-group">
+                        {% render 'icon-plus' %}{% render 'icon-minus' %}</span>
+                    </header>
+                    <div class="product-faq-question-body">
+                    <div class="product-faq-question-body-inner">
+                    A: {{ product.metafields.custom.product_faqs.value.answer_3| metafield_text }}
+                    </div>
+                    </div>
+              </div>
+            {% endif %}
+    
+            {% if product.metafields.custom.product_faqs.value.question_4 != blank and product.metafields.custom.product_faqs.value.answer_4 != blank %}
+              <div class="product-faq-question active {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                    <header class="product-faq-question-header">
+                    Q: {{ product.metafields.custom.product_faqs.value.question_4| metafield_text }}
+                    <span class="faq-icon-group">
+                        {% render 'icon-plus' %}{% render 'icon-minus' %}</span>
+                    </header>
+                    <div class="product-faq-question-body">
+                    <div class="product-faq-question-body-inner">
+                    A: {{ product.metafields.custom.product_faqs.value.answer_4| metafield_text }}
+                    </div>
+                    </div>
+              </div>
+            {% endif %}
+    
+            {% if product.metafields.custom.product_faqs.value.question_5 != blank and product.metafields.custom.product_faqs.value.answer_5 != blank %}
+              <div class="product-faq-question active {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                    <header class="product-faq-question-header">
+                    Q: {{ product.metafields.custom.product_faqs.value.question_5| metafield_text }}
+                    <span class="faq-icon-group">
+                        {% render 'icon-plus' %}{% render 'icon-minus' %}</span>
+                    </header>
+                    <div class="product-faq-question-body">
+                    <div class="product-faq-question-body-inner">
+                    A: {{ product.metafields.custom.product_faqs.value.answer_5| metafield_text }}
+                    </div>
+                    </div>
+              </div>
+            {% endif %}
+    
+            {% if product.metafields.custom.product_faqs.value.question_6 != blank and product.metafields.custom.product_faqs.value.answer_6 != blank %}
+              <div class="product-faq-question active {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                    <header class="product-faq-question-header">
+                    Q: {{ product.metafields.custom.product_faqs.value.question_6| metafield_text }}
+                    <span class="faq-icon-group">
+                        {% render 'icon-plus' %}{% render 'icon-minus' %}</span>
+                    </header>
+                    <div class="product-faq-question-body">
+                    <div class="product-faq-question-body-inner">
+                    A: {{ product.metafields.custom.product_faqs.value.answer_6| metafield_text }}
+                    </div>
+                    </div>
+              </div>
+            {% endif %}
+    
+            {% if product.metafields.custom.product_faqs.value.question_7 != blank and product.metafields.custom.product_faqs.value.answer_7 != blank %}
+              <div class="product-faq-question active {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                    <header class="product-faq-question-header">
+                    Q: {{ product.metafields.custom.product_faqs.value.question_7| metafield_text }}
+                    <span class="faq-icon-group">
+                        {% render 'icon-plus' %}{% render 'icon-minus' %}</span>
+                    </header>
+                    <div class="product-faq-question-body">
+                    <div class="product-faq-question-body-inner">
+                    A: {{ product.metafields.custom.product_faqs.value.answer_7| metafield_text }}
+                    </div>
+                    </div>
+              </div>
+            {% endif %}
+    
+            {% if product.metafields.custom.product_faqs.value.question_8 != blank and product.metafields.custom.product_faqs.value.answer_8 != blank %}
+              <div class="product-faq-question active {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                    <header class="product-faq-question-header">
+                    Q: {{ product.metafields.custom.product_faqs.value.question_8| metafield_text }}
+                    <span class="faq-icon-group">
+                        {% render 'icon-plus' %}{% render 'icon-minus' %}</span>
+                    </header>
+                    <div class="product-faq-question-body">
+                    <div class="product-faq-question-body-inner">
+                    A: {{ product.metafields.custom.product_faqs.value.answer_8| metafield_text }}
+                    </div>
+                    </div>
+              </div>
+            {% endif %}
+    
+            {% if product.metafields.custom.product_faqs.value.question_9 != blank and product.metafields.custom.product_faqs.value.answer_9 != blank %}
+              <div class="product-faq-question active {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                    <header class="product-faq-question-header">
+                    Q: {{ product.metafields.custom.product_faqs.value.question_9| metafield_text }}
+                    <span class="faq-icon-group">
+                        {% render 'icon-plus' %}{% render 'icon-minus' %}</span>
+                    </header>
+                    <div class="product-faq-question-body">
+                    <div class="product-faq-question-body-inner">
+                    A: {{ product.metafields.custom.product_faqs.value.answer_9| metafield_text }}
+                    </div>
+                    </div>
+              </div>
+            {% endif %}
+    
+            {% if product.metafields.custom.product_faqs.value.question_10 != blank and product.metafields.custom.product_faqs.value.answer_10 != blank %}
+              <div class="product-faq-question active {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                    <header class="product-faq-question-header">
+                    Q: {{ product.metafields.custom.product_faqs.value.question_10| metafield_text }}
+                    <span class="faq-icon-group">
+                        {% render 'icon-plus' %}{% render 'icon-minus' %}</span>
+                    </header>
+                    <div class="product-faq-question-body">
+                    <div class="product-faq-question-body-inner">
+                    A: {{ product.metafields.custom.product_faqs.value.answer_10| metafield_text }}
+                    </div>
+                    </div>
+              </div>
+            {% endif %}
+        </div>
+    </div>
+  </div>
+</div>
+
+<style>
+
+  .product-faq .product-faq-contanier {
+    background-color: #efefef ;
+    padding: 14rem 0;
+    margin-top: 14rem;
+  }
+
+  .line-break  {
+    width: 90%;
+    margin: 6rem auto !important;
+  }
+
+  .product-faq-body {
+    max-width: 71rem;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+
+  .product-faq-question {
+    margin-bottom: 4rem;
+  }
+  .product-faq-question:last-child {
+    margin-bottom: 0;
+  }
+
+
+
+  .product-faq-header h1 {
+    color: #595757; 
+    text-align: center;
+    font-family: Inter, Noto Sans JP;
+    font-size: 2.6rem;
+    font-style: normal;
+    font-weight: 600;
+    margin: 0 !important;
+  }
+
+  .product-faq-question-header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    flex: 1;
+    color: #333;
+    background-color: #D9D9D9;
+    font-family: Inter, Noto Sans JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding: 1.2rem 4rem;
+    margin: 0;
+    transition: all 0.2s;
+  }
+
+  .product-faq-question-header:hover {
+    font-weight: 400;
+  }
+
+  .product-faq-question-header .faq-icon-group {
+    position: relative;
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-left: 0.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-faq-question-header .faq-icon-group svg {
+    display: block;
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    transition: 0.2s all;
+    width: 1.6rem;
+    height: 1.6rem;
+    margin: 0.3rem;
+  }
+
+
+  .product-faq-question-header .faq-icon-group:hover {
+    background-color: #ededed;
+    border-radius: 50%;
+  }
+
+  .product-faq-question .faq-icon-group .icon-minus {
+    opacity: 0;
+    transform: rotateZ(0deg);
+  }
+  .product-faq-question.active .faq-icon-group .icon-plus {
+    opacity: 0 !important;
+    transition: 0.2s all;
+  }
+
+  .product-faq-question.active .faq-icon-group .icon-minus {
+    opacity: 1 !important;
+    transform: rotateZ(180deg);
+  }
+  .product-faq-question-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.2s all ease-in;
+    background-color:#FFFFFF;
+  }
+
+  .product-faq-question.active .product-faq-question-body {
+    max-height: 80rem;
+  }
+
+  .product-faq-question-body-inner > * + * {
+    margin-top: 2rem;
+  }
+
+
+  .product-faq-question-body-inner {
+    color: #333;
+    font-family: Inter, Noto Sans JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 2;
+    letter-spacing: 1px;
+    padding: 2rem 4rem;
+  }
+
+
+  @media screen and (max-width: 740px) {
+
+    .product-faq .page-width {
+        padding: 0;
+    }
+
+    .product-faq .product-faq-contanier {
+    background-color: #efefef ;
+    margin-top: 8rem;
+    padding: 6rem 0rem;
+   }
+
+    .product-faq-header h1 {
+      font-size: 2.2rem;
+    }
+
+    .line-break  {
+    width: 80%;
+    margin: 3rem auto !important;
+    }
+
+    .product-faq-body {
+    padding: 0 1.6rem;
+  }
+
+    .product-faq-question {
+    margin-bottom: 2rem;
+    }
+
+    .product-faq-question-header {
+      padding: 1.4rem 2rem;
+      font-size: 1.6rem;
+    }
+
+    .product-faq-question-body-inner {
+      font-size: 1.4rem;
+      line-height: calc(30 / 14);
+      letter-spacing: 1px;
+      padding: 2rem;
+    }
+  }
+</style>
+
+
+<script>
+  const questionHeaders = document.querySelectorAll(".product-faq-question-header");
+  questionHeaders.forEach((header) => {
+    header.addEventListener("click", () => {
+      header.parentElement.classList.toggle("active");
+    });
+  });
+</script>
+
+
+{% schema %}
+{
+  "name": "Product FAQS",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+  ],
+  "presets": [
+    {
+      "name": "Product FAQS"
+    }
+  ]
+}
+{% endschema %}

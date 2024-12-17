@@ -1752,7 +1752,7 @@ a.product__text {
 }
 .add-to-cart__button span,
 .shopify-payment-button__button {
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
 }
 
 .swym-button.swym-add-to-wishlist-view-product.swym-heart.swym-added:after {

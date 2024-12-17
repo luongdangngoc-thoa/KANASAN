@@ -6,12 +6,12 @@
 {{ 'section-item-main-product.css' | asset_url | stylesheet_tag }}
 
  {% comment %} ingredient - detail description {% endcomment %}
- <div class="product-ingredient">
-    <p class="product-ingredient__title">
+ <div class="product-ingredient {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    {% comment %} <p class="product-ingredient__title">
       {{ 'products.product.ingredient.title' | t }}
-    </p>
+    </p> {% endcomment %}
     <div class="product-ingredient__list">
-      <div class="product-ingredient__list--detail">
+      <div class="product-ingredient__list--detail {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <p class="product-ingredient__list--detail-title">
           {{ 'products.product.ingredient.instruction' | t }}
         </p>
@@ -19,7 +19,7 @@
           {{ product.metafields.custom.description }}
         </p>
       </div>
-      <div class="product-ingredient__list--detail">
+      <div class="product-ingredient__list--detail {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <p class="product-ingredient__list--detail-title">
           {{ 'products.product.ingredient.weight' | t }}
         </p>
@@ -29,7 +29,7 @@
           {% endfor %}
         </p>
       </div>
-      <div class="product-ingredient__list--detail">
+      <div class="product-ingredient__list--detail {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <p class="product-ingredient__list--detail-title">
           {{ 'products.product.ingredient.component' | t }}
         </p>

@@ -24,7 +24,7 @@
 .customer > h1,
 .customer__title {
   margin-top: 0;
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
 }
 
 .customer form {
@@ -38,7 +38,7 @@
   background-color: #595757;
   padding: unset;
   width: 20rem !important;
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
   transition: all 0.2s;
 }
 
@@ -50,7 +50,7 @@
   padding-left: 4.4rem;
   text-align: left;
   margin-bottom: 4rem;
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
 }
 
 .customer ul a {
@@ -64,7 +64,7 @@
 
 .customer h2.form__message {
   font-size: calc(var(--font-heading-scale) * 1.8rem);
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
 }
 
 .customer h2.form__message:focus-visible {
@@ -75,7 +75,7 @@
 
 .customer .errors {
   font-size: calc(var(--font-heading-scale) * 1.8rem);
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
   color: rgb(235, 0, 27) ;
 }
 
@@ -376,7 +376,7 @@
 
 .login .field + a {
   margin-top: 1rem;
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
 }
 
 .login p {
@@ -477,7 +477,7 @@
   margin: 0 0 2rem;
   font-size: 1.6rem;
   color: #595757;
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
 }
 
 :is(.account, .order) h1 {
@@ -488,7 +488,7 @@
   margin-top: 4rem;
   margin-bottom: 1rem;
   color: #595757;
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
 }
 
 @media screen and (min-width: 990px) {
@@ -502,7 +502,7 @@
   display: inline-flex;
   align-items: center;
   color: #595757;
-  font-family: Noto Sans JP;
+  font-family: Inter, Noto Sans JP;
 }
 
 .account a svg {
