@@ -1,4 +1,4 @@
-
+{% if product.metafields.custom.introduction != blank %}
 
 <div class="product-faq gradient {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
   <div class="page-width">
@@ -161,7 +161,9 @@
     </div>
   </div>
 </div>
+{% else %}
 
+{% endif %}
 <style>
 
   .product-faq .product-faq-contanier {

@@ -1,4 +1,4 @@
-
+{% if product.metafields.custom.uses != blank %}
 
 <div class="product-uses gradient {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
   <div class="page-width">
@@ -81,7 +81,9 @@
     </div>
   </div>
 </div>
+{% else %}
 
+{% endif %}
 <style>
     .product-uses {
         margin-top: 10rem;

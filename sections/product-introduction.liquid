@@ -1,57 +1,60 @@
-<div class="product-introduction gradient {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-  <div class="page-width">
-    <div class="product-introduction-contanier">
-      <h1 class="product-introduction-heading">{{ product.metafields.custom.name_en }}</h1>
-      <h3 class="product-introduction-heading-small">製品紹介</h3>
+{% if product.metafields.custom.introduction != blank %}
+  <div class="product-introduction gradient {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    <div class="page-width">
+      <div class="product-introduction-contanier">
+        <h1 class="product-introduction-heading">{{ product.metafields.custom.name_en }}</h1>
+        <h3 class="product-introduction-heading-small">製品紹介</h3>
 
-      <div class="product-introduction-text {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        {% if product.metafields.custom.introduction.value.paragraph_1 != blank %}
-          {{ product.metafields.custom.introduction.value.paragraph_1 | metafield_tag }}
-        {% endif %}
-      </div>
-      <div class="product-introduction-image {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        {% if product.metafields.custom.introduction.value.image_1 != blank %}
-        {{ product.metafields.custom.introduction.value.image_1 | img_tag: '', '', '680x400' }}
-        {% endif %}
-      </div>
-      <div class="product-introduction-image {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        {% if product.metafields.custom.introduction.value.image_2 != blank %}
-        {{ product.metafields.custom.introduction.value.image_2 | img_tag: '', '', '680x400' }}
-        {% endif %}
-      </div>
-      <div class="product-introduction-text {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        {% if product.metafields.custom.introduction.value.paragraph_2 != blank %}
-          {{ product.metafields.custom.introduction.value.paragraph_2 | metafield_tag }}
-        {% endif %}
-      </div>
-      <div class="product-introduction-image {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        {% if product.metafields.custom.introduction.value.image_3 != blank %}
-        {{ product.metafields.custom.introduction.value.image_3 | img_tag: '', '', '680x400' }}
-        {% endif %}
-      </div>
-      <div class="product-introduction-text {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        {% if product.metafields.custom.introduction.value.paragraph_3 != blank %}
-          {{ product.metafields.custom.introduction.value.paragraph_3 | metafield_tag }}
-        {% endif %}
-      </div>
+        <div class="product-introduction-text {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {% if product.metafields.custom.introduction.value.paragraph_1 != blank %}
+            {{ product.metafields.custom.introduction.value.paragraph_1 | metafield_tag }}
+          {% endif %}
+        </div>
+        <div class="product-introduction-image {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {% if product.metafields.custom.introduction.value.image_1 != blank %}
+            {{ product.metafields.custom.introduction.value.image_1 | img_tag: '', '', '680x400' }}
+          {% endif %}
+        </div>
+        <div class="product-introduction-image {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {% if product.metafields.custom.introduction.value.image_2 != blank %}
+            {{ product.metafields.custom.introduction.value.image_2 | img_tag: '', '', '680x400' }}
+          {% endif %}
+        </div>
+        <div class="product-introduction-text {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {% if product.metafields.custom.introduction.value.paragraph_2 != blank %}
+            {{ product.metafields.custom.introduction.value.paragraph_2 | metafield_tag }}
+          {% endif %}
+        </div>
+        <div class="product-introduction-image {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {% if product.metafields.custom.introduction.value.image_3 != blank %}
+            {{ product.metafields.custom.introduction.value.image_3 | img_tag: '', '', '680x400' }}
+          {% endif %}
+        </div>
+        <div class="product-introduction-text {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {% if product.metafields.custom.introduction.value.paragraph_3 != blank %}
+            {{ product.metafields.custom.introduction.value.paragraph_3 | metafield_tag }}
+          {% endif %}
+        </div>
 
-      <div class="custom-add-to-cart-btn {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        {%- for block in section.blocks -%}
-          {%- case block.type -%}
-            {%- when 'buy_buttons' -%}
-              {%- render 'buy-buttons'
-                , block: block
-                , product: product
-                , product_form_id: product_form_id
-                , section_id: section.id
-              -%}
-          {%- endcase -%}
-        {%- endfor -%}
+        <div class="custom-add-to-cart-btn {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'buy_buttons' -%}
+                {%- render 'buy-buttons',
+                  block: block,
+                  product: product,
+                  product_form_id: product_form_id,
+                  section_id: section.id
+                -%}
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
       </div>
     </div>
   </div>
-</div>
+{% else %}
 
+{% endif %}
 <style>
   .product-introduction {
     margin-top: 10rem;
@@ -93,7 +96,8 @@
     line-height: 2;
   }
 
-  .product-introduction-image,   .product-introduction-image img {
+  .product-introduction-image,
+  .product-introduction-image img {
     width: 100%;
   }
 
@@ -108,62 +112,61 @@
     display: none !important;
   }
 
-  @media screen and (max-width: 749px) { 
+  @media screen and (max-width: 749px) {
     .product-introduction {
-    margin-top: 8rem;
-   }
+      margin-top: 8rem;
+    }
 
-  .product-introduction-heading {
-    font-size: 2.2rem;
-    font-style: normal;
-    font-weight: 600;
-  }
+    .product-introduction-heading {
+      font-size: 2.2rem;
+      font-style: normal;
+      font-weight: 600;
+    }
 
-  .product-introduction-heading-small {
-    font-size: 1.4rem;
-    font-style: normal;
-  }
+    .product-introduction-heading-small {
+      font-size: 1.4rem;
+      font-style: normal;
+    }
 
-  .product-introduction > div > div > div:nth-child(4) {
-    margin-bottom: 4rem;
+    .product-introduction > div > div > div:nth-child(4) {
+      margin-bottom: 4rem;
+    }
   }
-  }
-
 </style>
 
 {% schema %}
-  {
-    "name": "Product introduction",
-    "tag": "section",
-    "class": "section",
-    "blocks": [
-      {
-        "type": "buy_buttons",
-        "name": "t:sections.main-product.blocks.buy_buttons.name",
-        "limit": 1,
-        "settings": [
-          {
-            "type": "checkbox",
-            "id": "show_dynamic_checkout",
-            "default": false,
-            "label": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.label",
-            "info": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.info"
-          },
-          {
-            "type": "checkbox",
-            "id": "show_gift_card_recipient",
-            "default": false,
-            "label": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.label",
-            "info": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.info"
-          }
-        ]
-      }
-    ],
-    "settings": [],
-    "presets": [
-      {
-        "name": "Product introduction"
-      }
-    ]
-  }
+{
+  "name": "Product introduction",
+  "tag": "section",
+  "class": "section",
+  "blocks": [
+    {
+      "type": "buy_buttons",
+      "name": "t:sections.main-product.blocks.buy_buttons.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_dynamic_checkout",
+          "default": false,
+          "label": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.label",
+          "info": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.info"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_gift_card_recipient",
+          "default": false,
+          "label": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.label",
+          "info": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.info"
+        }
+      ]
+    }
+  ],
+  "settings": [],
+  "presets": [
+    {
+      "name": "Product introduction"
+    }
+  ]
+}
 {% endschema %}

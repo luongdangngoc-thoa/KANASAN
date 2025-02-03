@@ -1,52 +1,55 @@
-<div class="product-problem-solution gradient {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-  <div class="page-width">
-    <div class="product-problem-solution-contanier">
-        <div class="product-problem {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-          <h1 class="product-problem-heading">
-            {% if product.metafields.custom.problem_solution.value.problem_heading != blank  %}
-             {{ product.metafields.custom.problem_solution.value.problem_heading | metafield_tag }}
-            {% endif %}
-          </h1>
-          <div class="product-problem-image">
-            {% if product.metafields.custom.problem_solution.value.problem_image != blank  %}
-            {{ product.metafields.custom.problem_solution.value.problem_image | img_tag: '', '', '680x400' }}
-            {% endif %}
+{% if product.metafields.custom.problem_solution != blank %}
+  <div class="product-problem-solution gradient {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    <div class="page-width">
+      <div class="product-problem-solution-contanier">
+          <div class="product-problem {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+            <h1 class="product-problem-heading">
+              {% if product.metafields.custom.problem_solution.value.problem_heading != blank  %}
+              {{ product.metafields.custom.problem_solution.value.problem_heading | metafield_tag }}
+              {% endif %}
+            </h1>
+            <div class="product-problem-image">
+              {% if product.metafields.custom.problem_solution.value.problem_image != blank  %}
+              {{ product.metafields.custom.problem_solution.value.problem_image | img_tag: '', '', '680x400' }}
+              {% endif %}
+            </div>
+            <div class="product-problem-list">
+              {% if product.metafields.custom.problem_solution.value.problem_list != blank  %}
+              {{ product.metafields.custom.problem_solution.value.problem_list | metafield_tag }}
+              {% endif %}
+            </div>
           </div>
-          <div class="product-problem-list">
-            {% if product.metafields.custom.problem_solution.value.problem_list != blank  %}
-            {{ product.metafields.custom.problem_solution.value.problem_list | metafield_tag }}
-            {% endif %}
+          <div class="product-solution {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+            <h1 class="product-solution-heading">
+              {% if product.metafields.custom.problem_solution.value.solution_heading != blank  %}
+              {{ product.metafields.custom.problem_solution.value.solution_heading | metafield_tag  }}
+              {% endif %}
+            </h1>
+            <div class="product-solution-image">
+              {% if product.metafields.custom.problem_solution.value.solution_image != blank  %}
+              {{ product.metafields.custom.problem_solution.value.solution_image | img_tag: '', '', '680x400' }}
+              {% endif %}
+            </div>
           </div>
-        </div>
-        <div class="product-solution {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-          <h1 class="product-solution-heading">
-            {% if product.metafields.custom.problem_solution.value.solution_heading != blank  %}
-            {{ product.metafields.custom.problem_solution.value.solution_heading | metafield_tag  }}
-            {% endif %}
-          </h1>
-          <div class="product-solution-image">
-            {% if product.metafields.custom.problem_solution.value.solution_image != blank  %}
-            {{ product.metafields.custom.problem_solution.value.solution_image | img_tag: '', '', '680x400' }}
-            {% endif %}
+          <div class="custom-add-to-cart-btn {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+              {%- for block in section.blocks -%}
+              {%- case block.type -%}
+              {%- when 'buy_buttons' -%}
+                      {%- render 'buy-buttons',
+                      block: block,
+                      product: product,
+                      product_form_id: product_form_id,
+                      section_id: section.id
+                      -%}
+                  {%- endcase -%}
+              {%- endfor -%}
           </div>
-        </div>
-        <div class="custom-add-to-cart-btn {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-            {%- for block in section.blocks -%}
-            {%- case block.type -%}
-            {%- when 'buy_buttons' -%}
-                    {%- render 'buy-buttons',
-                    block: block,
-                    product: product,
-                    product_form_id: product_form_id,
-                    section_id: section.id
-                    -%}
-                {%- endcase -%}
-            {%- endfor -%}
-        </div>
+      </div>
     </div>
   </div>
-</div>
+{% else %}
 
+{% endif %}
 <style>
     .product-problem-solution {
         margin-top: 10rem;
