@@ -1,0 +1,263 @@
+{% if product.metafields.custom.introduce_ingredients != blank %}
+  <div class="product-ingredients gradient {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    <div class="page-width">
+      <div class="product-ingredients-contanier">
+        {% if product.metafields.custom.introduce_ingredients.value.story_title != blank %}
+          <h1 class="product-introduction-title {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+            {{ product.metafields.custom.introduce_ingredients.value.story_title | metafield_tag }}
+          </h1>
+        {% endif %}
+
+        {% if product.metafields.custom.introduce_ingredients.value.story_paragraph != blank %}
+          <div class="product-ingredients-paragraph {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+            {{ product.metafields.custom.introduce_ingredients.value.story_paragraph | metafield_tag }}
+          </div>
+        {% endif %}
+
+        {% if product.metafields.custom.introduce_ingredients.value.story_demo_image != blank %}
+          <div class="product-ingredients-demo-image">
+            {{ product.metafields.custom.introduce_ingredients.value.story_demo_image | img_tag: '', '', '690x460' }}
+          </div>
+        {% endif %}
+
+        <div class="product-ingredients-group {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {% if product.metafields.custom.introduce_ingredients.value.resort_story_image_1 != blank %}
+            <div class="product-ingredients-image">
+              {{
+                product.metafields.custom.introduce_ingredients.value.resort_story_image_1
+                | img_tag: '', '', '690x460'
+              }}
+            </div>
+          {% endif %}
+          <div class="product-ingredients-desc">
+            {% if product.metafields.custom.introduce_ingredients.value.resort_story_heading_1 != blank %}
+              <h3>
+                {{ product.metafields.custom.introduce_ingredients.value.resort_story_heading_1 | metafield_tag }}
+              </h3>
+            {% endif %}
+            {% if product.metafields.custom.introduce_ingredients.value.resort_story_description_1 != blank %}
+              {{ product.metafields.custom.introduce_ingredients.value.resort_story_description_1 | metafield_tag }}
+            {% endif %}
+          </div>
+        </div>
+
+        {% if product.metafields.custom.introduce_ingredients.value.ingredient_title != blank %}
+          <h1 class="product-introduction-title {% if  product.metafields.custom.introduce_ingredients.value.story_title != blank %} title-nth-child2 {% endif %} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+            {{ product.metafields.custom.introduce_ingredients.value.ingredient_title | metafield_tag }}
+          </h1>
+        {% endif %}
+
+        <div class="product-ingredients-group {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {% if product.metafields.custom.introduce_ingredients.value.image_1 != blank %}
+            <div class="product-ingredients-image">
+              {{ product.metafields.custom.introduce_ingredients.value.image_1 | img_tag: '', '', '690x460' }}
+            </div>
+          {% endif %}
+          <div class="product-ingredients-desc">
+            {% if product.metafields.custom.introduce_ingredients.value.heading_1 != blank %}
+              <h3>{{ product.metafields.custom.introduce_ingredients.value.heading_1 | metafield_tag }}</h3>
+            {% endif %}
+            {% if product.metafields.custom.introduce_ingredients.value.description_1 != blank %}
+              {{ product.metafields.custom.introduce_ingredients.value.description_1 | metafield_tag }}
+            {% endif %}
+          </div>
+        </div>
+        <div class="product-ingredients-group {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {% if product.metafields.custom.introduce_ingredients.value.image_2 != blank %}
+            <div class="product-ingredients-image">
+              {{ product.metafields.custom.introduce_ingredients.value.image_2 | img_tag: '', '', '690x460' }}
+            </div>
+          {% endif %}
+
+          <div class="product-ingredients-desc">
+            {% if product.metafields.custom.introduce_ingredients.value.heading_2 != blank %}
+              <h3>{{ product.metafields.custom.introduce_ingredients.value.heading_2 | metafield_tag }}</h3>
+            {% endif %}
+            {% if product.metafields.custom.introduce_ingredients.value.description_2 != blank %}
+              {{ product.metafields.custom.introduce_ingredients.value.description_2 | metafield_tag }}
+            {% endif %}
+          </div>
+        </div>
+        <div class="product-ingredients-group {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {% if product.metafields.custom.introduce_ingredients.value.image_3 != blank %}
+            <div class="product-ingredients-image">
+              {{ product.metafields.custom.introduce_ingredients.value.image_3 | img_tag: '', '', '690x460' }}
+            </div>
+          {% endif %}
+          <div class="product-ingredients-desc">
+            {% if product.metafields.custom.introduce_ingredients.value.heading_3 != blank %}
+              <h3>{{ product.metafields.custom.introduce_ingredients.value.heading_3 | metafield_tag }}</h3>
+            {% endif %}
+            {% if product.metafields.custom.introduce_ingredients.value.description_3 != blank %}
+              {{ product.metafields.custom.introduce_ingredients.value.description_3 | metafield_tag }}
+            {% endif %}
+          </div>
+        </div>
+        <div class="product-ingredients-group {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {% if product.metafields.custom.introduce_ingredients.value.image_4 != blank %}
+            <div class="product-ingredients-image">
+              {{ product.metafields.custom.introduce_ingredients.value.image_4 | img_tag: '', '', '690x460' }}
+            </div>
+          {% endif %}
+          <div class="product-ingredients-desc">
+            {% if product.metafields.custom.introduce_ingredients.value.heading_4 != blank %}
+              <h3>{{ product.metafields.custom.introduce_ingredients.value.heading_4 | metafield_tag }}</h3>
+            {% endif %}
+            {% if product.metafields.custom.introduce_ingredients.value.description_4 != blank %}
+              {{ product.metafields.custom.introduce_ingredients.value.description_4 | metafield_tag }}
+            {% endif %}
+          </div>
+        </div>
+        <div class="product-ingredients-group {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {% if product.metafields.custom.introduce_ingredients.value.image_5 != blank %}
+            <div class="product-ingredients-image">
+              {{ product.metafields.custom.introduce_ingredients.value.image_5 | img_tag: '', '', '690x460' }}
+            </div>
+          {% endif %}
+          <div class="product-ingredients-desc">
+            {% if product.metafields.custom.introduce_ingredients.value.heading_5 != blank %}
+              <h3>{{ product.metafields.custom.introduce_ingredients.value.heading_5 | metafield_tag }}</h3>
+            {% endif %}
+            {% if product.metafields.custom.introduce_ingredients.value.description_5 != blank %}
+              {{ product.metafields.custom.introduce_ingredients.value.description_5 | metafield_tag }}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% else %}
+
+{% endif %}
+<style>
+  .product-ingredients {
+    margin-top: 10rem;
+  }
+  .product-ingredients-contanier {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 94rem;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .product-introduction-title {
+    color: #595757;
+    font-family: Inter, Noto Sans JP;
+    font-size: 2.8rem;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .title-nth-child2 {
+    margin-top: 10rem;
+  }
+
+  .product-ingredients-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 5rem;
+  }
+
+  .product-ingredients-group .product-ingredients-image {
+    width: 34%;
+  }
+
+  .product-ingredients-group .product-ingredients-desc {
+    width: 67%;
+    padding-left: 3rem;
+  }
+
+  .product-ingredients-group .product-ingredients-image img {
+    width: 100%;
+  }
+
+  .product-ingredients-desc h3 {
+    color: #595757;
+    font-family: Inter, Noto Sans JP;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    margin: 0 !important;
+    margin-bottom: 2.4rem !important;
+  }
+
+  .product-ingredients-paragraph,
+  .product-ingredients-desc p {
+    color: #595757;
+    font-family: Inter, Noto Sans JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 2;
+    margin: 0 !important;
+  }
+
+  .product-ingredients-paragraph {
+    text-align: center;
+    margin-top: 3rem !important;
+    margin-bottom: 5rem !important;
+  }
+
+  @media screen and (max-width: 749px) {
+    .product-ingredients {
+      margin-top: 8rem;
+    }
+
+    .product-introduction-title {
+      font-size: 2.2rem;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .title-nth-child2 {
+      margin-top: 8rem;
+    }
+
+    .product-ingredients-group {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 3rem;
+    }
+
+    .product-ingredients-group .product-ingredients-image {
+      width: 100%;
+    }
+
+    .product-ingredients-group .product-ingredients-desc {
+      width: 100%;
+      padding-left: 0rem;
+    }
+
+    .product-ingredients-desc h3 {
+      font-size: 1.8rem;
+      font-style: normal;
+      font-weight: 600;
+      margin: 0 !important;
+      margin-top: 1rem !important;
+      margin-bottom: 1rem !important;
+      line-height: 1.8;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Introduce ingredients",
+  "tag": "section",
+  "class": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Introduce ingredients"
+    }
+  ]
+}
+{% endschema %}

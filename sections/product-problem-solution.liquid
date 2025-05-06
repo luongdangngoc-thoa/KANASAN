@@ -10,7 +10,7 @@
             </h1>
             <div class="product-problem-image">
               {% if product.metafields.custom.problem_solution.value.problem_image != blank  %}
-              {{ product.metafields.custom.problem_solution.value.problem_image | img_tag: '', '', '680x400' }}
+              {{ product.metafields.custom.problem_solution.value.problem_image | img_tag: '', '', '1360x800' }}
               {% endif %}
             </div>
             <div class="product-problem-list">
@@ -27,7 +27,7 @@
             </h1>
             <div class="product-solution-image">
               {% if product.metafields.custom.problem_solution.value.solution_image != blank  %}
-              {{ product.metafields.custom.problem_solution.value.solution_image | img_tag: '', '', '680x400' }}
+              {{ product.metafields.custom.problem_solution.value.solution_image | img_tag: '', '', '1360x800' }}
               {% endif %}
             </div>
           </div>
@@ -72,6 +72,10 @@
         margin: 0 auto;
     }
 
+
+    .product-problem-heading, .product-solution-heading {
+        text-align: center;
+    }
     .product-problem-heading span, .product-solution-heading span {
         color: #595757;
         font-size: 2.8rem;
