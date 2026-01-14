@@ -1,0 +1,120 @@
+{%- style -%}
+  #shopify-section-template--21487843705110__main .page-width {
+    max-width: 80rem !important;
+    padding: 0;
+  }
+
+   .page__title {
+    text-align: center;
+    color: #595757;
+    font-family: Inter, Noto Sans JP;
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(34 / 24);
+    margin-top: 14rem;
+    margin-bottom: 4rem;
+  }
+  .termsOfService__container {
+    width: 100%;
+  }
+  .termsOfService__form {
+    width: 100%;
+    height: 100%;
+    padding: 8.5rem;
+    border: 1px solid #eee;
+  }
+  .termsOfService__form p {
+    color: #595757;
+    font-family: Poppins , Noto Sans JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: calc(34 / 16);
+    margin: 0;
+  }
+  .termsOfService__form h3 {
+    margin : 0 ;
+    padding-top: 2.8rem;
+    padding-bottom: 1.2rem;
+    color: #595757;
+    font-family: Inter, Noto Sans JP;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(28 / 20);
+  }
+
+ .termsOfService__form h3:first-child {
+     padding-top: 0;
+ }
+
+  .ddict_btn {
+    display: none
+  }
+   .termsOfService__form a {
+     color: #575252;
+   }
+
+    .termsOfService__form a:hover {
+     color: #3353cd;
+   }
+
+  @media screen and (min-width: 750px) and (max-width: 900px) {
+    #shopify-section-template--21487843705110__main .page-width--narrow {
+      padding: 0 5rem !important;
+    }
+
+    .page__title {
+    margin-top: 10rem;
+    }
+
+    .termsOfService__form {
+      padding: 5rem;
+    }
+  }
+
+
+  @media screen and (max-width: 749px) {
+    .page__title {
+    margin-top: 4.5rem;
+    font-size: 2rem
+    }
+
+    .termsOfService__container {
+      width: 100%;
+      padding: 0 2.5rem
+    }
+    .termsOfService__form {
+      padding: 3.5rem 3rem;
+    }
+    .termsOfService__form h3 {
+     font-size: 1.6rem;
+    }
+    .termsOfService__form p {
+      font-size: 1.4rem
+    }
+  }
+
+
+{%- endstyle -%}
+
+<div class="page-width page-width--narrow">
+  <h3 class="page__title">利用規約</h3>
+  <div class="termsOfService__container">
+    <div class="termsOfService__form">
+      {{ shop.terms_of_service }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Terms of service",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+
+    ]
+  }
+{% endschema %}

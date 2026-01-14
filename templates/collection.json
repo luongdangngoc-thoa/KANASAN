@@ -1,0 +1,176 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "a9e9ddab-7b86-4d1d-a2f4-bba89d5ce5fb": {
+      "type": "page-banner",
+      "settings": {
+        "image_default": "shopify:\/\/shop_images\/line_oa_chat_240305_135820_1.jpg",
+        "heading_default": "KANASAN OKINAWA",
+        "sub_heading_default": "沖縄の恵みを感じて",
+        "image_resort": "shopify:\/\/shop_images\/line_oa_chat_240305_135820.jpg",
+        "heading_resort": "KANASAN RESORT",
+        "sub_heading_resort": "沖縄の恵みを感じて",
+        "image_style": "shopify:\/\/shop_images\/line_oa_chat_231120_181725_group_1.jpg",
+        "heading_style": "KANASAN STYLE",
+        "sub_heading_style": "沖縄の恵みを感じて",
+        "image_nature": "shopify:\/\/shop_images\/line_oa_chat_231120_181725_group_0.jpg",
+        "heading_nature": "KANASAN NATURE",
+        "sub_heading_nature": "沖縄の恵みを感じて",
+        "image_hairCare": "shopify:\/\/shop_images\/cc8e21fa691625590dc3a45bafaaf985.jpg",
+        "heading_hairCare": "ヘアケア",
+        "sub_heading_hairCare": "沖縄の恵みを感じて",
+        "image_bodyCare": "shopify:\/\/shop_images\/afd98e21d49d906ffef2636e84e9bc5d.jpg",
+        "heading_bodyCare": "ボディケア",
+        "sub_heading_bodyCare": "沖縄の恵みを感じて",
+        "image_faceCare": "shopify:\/\/shop_images\/652ec47b0bc2ea5c15a984290e01eb23.jpg",
+        "heading_faceCare": "フェイスケア",
+        "sub_heading_faceCare": "沖縄の恵みを感じて",
+        "image_hotelAmenity": "shopify:\/\/shop_images\/5af7fe444557e6fbc6b6055652ff60c5.jpg",
+        "heading_hotelAmenity": "ホテルアメニティ",
+        "sub_heading_hotelAmenity": "沖縄の恵みを感じて",
+        "image_foodAndBeverage": "shopify:\/\/shop_images\/436b80a9f22b68341b58d7b5ae003feb.jpg",
+        "heading_foodAndBeverage": "食品・飲料",
+        "sub_heading_foodAndBeverage": "沖縄の恵みを感じて",
+        "image_otherGoods": "shopify:\/\/shop_images\/f126c5197f5e6ed8da664986065ab8c2.jpg",
+        "heading_otherGoods": "その他雑貨",
+        "sub_heading_otherGoods": "沖縄の恵みを感じて",
+        "image_shellGinger": "shopify:\/\/shop_images\/0d1dbaaba06632d440373b3aea958380.jpg",
+        "heading_shellGinger": "月桃",
+        "sub_heading_shellGinger": "太陽と大地の恵み",
+        "image_acerola": "shopify:\/\/shop_images\/ad8a1226ff4978dd15f1a37a60ac949e.jpg",
+        "heading_acerola": "アセロラ",
+        "sub_heading_acerola": "太陽と大地の恵み",
+        "image_tamanu": "shopify:\/\/shop_images\/5a1dff21206eb88b7febf6227e272f9b.jpg",
+        "heading_tamanu": "タマヌ",
+        "sub_heading_tamanu": "太陽と大地の恵み",
+        "image_shikuwasa": "shopify:\/\/shop_images\/0b44444f3ce530d0ec540dfd4a76ea31.jpg",
+        "heading_shikuwasa": "シークワーサー",
+        "sub_heading_shikuwasa": "太陽と大地の恵み",
+        "image_peucedanumJaponicum": "shopify:\/\/shop_images\/4966d2d85dff5c0acffe05b88184ba9b.jpg",
+        "heading_peucedanumJaponicum": "長命草",
+        "sub_heading_peucedanumJaponicum": "太陽と大地の恵み",
+        "image_seaGrapes": "shopify:\/\/shop_images\/87b4ff7b54ddf9d61bbb219673557544.jpg",
+        "heading_seaGrapes": "海ぶどう",
+        "sub_heading_seaGrapes": "太陽と海の恵み",
+        "image_mozuku": "shopify:\/\/shop_images\/96f01c1a9ba53b7b0a2ec9d23ca8abcd.jpg",
+        "heading_mozuku": "沖縄もずく",
+        "sub_heading_mozuku": "太陽と海の恵み",
+        "image_seaWater": "shopify:\/\/shop_images\/5a89a7d361570ebe2651ba64135b112c.jpg",
+        "heading_seaWater": "久米島海洋深層水",
+        "sub_heading_seaWater": "海の恵み"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "4da14d08-3fb1-4242-86e0-dd53cb1d455c": {
+          "type": "Block",
+          "settings": {
+            "category-name": "ヘアケア",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=ヘアケア"
+          }
+        },
+        "78dd1fa5-5738-441c-8ec2-8863735e455f": {
+          "type": "Block",
+          "settings": {
+            "category-name": "ボディケア",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%83%9C%E3%83%87%E3%82%A3%E3%82%B1%E3%82%A2"
+          }
+        },
+        "d44428af-1292-4693-aa14-9288610c9feb": {
+          "type": "Block",
+          "settings": {
+            "category-name": "フェイスケア",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%B1%E3%82%A2"
+          }
+        },
+        "d8ccd658-011b-401a-b666-8ba19896ec92": {
+          "type": "Block",
+          "settings": {
+            "category-name": "ホテルアメニティ",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%83%9B%E3%83%86%E3%83%AB%E3%82%A2%E3%83%A1%E3%83%8B%E3%83%86%E3%82%A3"
+          }
+        },
+        "ec412918-8e36-4e63-b588-f187728f7e85": {
+          "type": "Block",
+          "settings": {
+            "category-name": "食品・飲料",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E9%A3%9F%E5%93%81%E3%83%BB%E9%A3%B2%E6%96%99"
+          }
+        },
+        "e81740df-f35a-4f54-93b4-95c66dfb937c": {
+          "type": "Block",
+          "settings": {
+            "category-name": "その他雑貨",
+            "url": "https:\/\/kanasan-okinawa.myshopify.com\/collections\/all?filter.p.product_type=%E3%81%9D%E3%81%AE%E4%BB%96%E9%9B%91%E8%B2%A8"
+          }
+        }
+      },
+      "block_order": [
+        "4da14d08-3fb1-4242-86e0-dd53cb1d455c",
+        "78dd1fa5-5738-441c-8ec2-8863735e455f",
+        "d44428af-1292-4693-aa14-9288610c9feb",
+        "d8ccd658-011b-401a-b666-8ba19896ec92",
+        "ec412918-8e36-4e63-b588-f187728f7e85",
+        "e81740df-f35a-4f54-93b4-95c66dfb937c"
+      ],
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 3,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "8eb54896-a171-44b5-a83d-d7bd1c57a3a8": {
+      "type": "rich-text",
+      "blocks": {
+        "template--21243532345622__8eb54896-a171-44b5-a83d-d7bd1c57a3a8-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "TOPへ戻る",
+            "button_link": "shopify:\/\/collections\/all",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "shopify:\/\/collections\/all",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "template--21243532345622__8eb54896-a171-44b5-a83d-d7bd1c57a3a8-button-1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "a9e9ddab-7b86-4d1d-a2f4-bba89d5ce5fb",
+    "product-grid",
+    "8eb54896-a171-44b5-a83d-d7bd1c57a3a8"
+  ]
+}
