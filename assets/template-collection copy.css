@@ -100,6 +100,7 @@
 
 .contact-btn .big-text {
   color: #595858;
+  font-family: Noto Sans JP;
   font-family: "Yu Gothic";
   font-size: 30px;
   font-weight: 700;
@@ -122,6 +123,7 @@
 
 .contact-btn .right .company-name {
   color: #ea617c;
+  font-family: Noto Sans JP;
   font-family: "Yu Gothic";
   font-size: 20px;
   font-weight: 700;
@@ -132,6 +134,7 @@
 
 .contact-btn .right .phone {
   color: #ea617c;
+  font-family: YuGothic;
   font-family: "Yu Gothic";
   font-size: 30px;
   font-weight: 500;
